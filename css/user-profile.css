@@ -1,0 +1,121 @@
+@import url(css/style.scss);
+.page-title {
+  font-size: 22px;
+}
+
+.page__user-profile {
+  color: rgb(250, 250, 250);
+}
+
+.user-profile__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-profile-info-block {
+  margin: 100px 0 300px 0;
+  background-color: var(--light-blue-color);
+  padding: 40px 30px 30px 30px;
+  border-radius: 20px;
+  border: 8px double var(--dark-blue-color);
+  -webkit-box-shadow: 0px 0px 20px 0px white;
+          box-shadow: 0px 0px 20px 0px white;
+}
+
+#profileForm {
+  padding-top: 50px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px 10px;
+}
+
+.input-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  font-size: 18px;
+}
+
+.input-block input {
+  border: 3px solid var(--light-blue-color);
+  border-radius: 10px;
+  padding: 5px 150px 5px 10px;
+  font-size: 14px;
+  -webkit-box-shadow: 0px 0px 30px 1px rgba(221, 221, 221, 0.5);
+          box-shadow: 0px 0px 30px 1px rgba(221, 221, 221, 0.5);
+  outline: none;
+}
+
+.input-block input:focus {
+  border: 3px solid var(--dark-blue-color);
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 800;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.profile-form-image1 {
+  position: absolute;
+  max-width: 600px;
+  border-radius: 10%;
+  left: -500px;
+  top: 40px;
+  z-index: -1;
+  border: 3px solid rgba(208, 208, 208, 0.086);
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(196, 196, 196);
+          box-shadow: 0px 0px 20px 0px rgb(196, 196, 196);
+}
+
+.profile-form-image2 {
+  position: absolute;
+  max-width: 600px;
+  height: 600px;
+  border-radius: 10%;
+  right: -400px;
+  top: -200px;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  -webkit-filter: FlipV;
+          filter: FlipV;
+  -ms-filter: "FlipV";
+  border: 3px solid rgba(208, 208, 208, 0.086);
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(196, 196, 196);
+          box-shadow: 0px 0px 20px 0px rgb(196, 196, 196);
+}
+
+#profileBtn {
+  max-width: 200px;
+  margin: 10px auto;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 30px;
+}
