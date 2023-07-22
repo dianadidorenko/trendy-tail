@@ -189,6 +189,11 @@ searchButton.addEventListener("click", () => {
       FormSearch.style.display = "none";
       wrapper.style.opacity = "0.3";
 
+      formNotFoundClose.addEventListener("click", () => {
+        notFound.style.display = "none";
+        wrapper.style.opacity = "1";
+      });
+
       leadToSearchPageFromNotFound.addEventListener("click", () => {
         notFoundInput.value = notFoundInput.value.toLowerCase();
 

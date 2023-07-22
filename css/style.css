@@ -296,7 +296,7 @@ input[type=search]::-webkit-search-results-decoration {
 .search-page-close-not-found-overlay {
   position: relative;
   left: -80px;
-  top: 50px;
+  top: 80px;
   width: 100vw;
   height: 100vh;
   display: none;
@@ -307,6 +307,9 @@ input[type=search]::-webkit-search-results-decoration {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -372,10 +375,25 @@ input[type=search]::-webkit-search-results-decoration {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 160px;
+  top: 130px;
   right: 10px;
 }
 
+@media (max-width: 714px) {
+  .search-page-button img {
+    top: 160px;
+  }
+}
+@media (max-width: 472px) {
+  .search-page-button img {
+    top: 190px;
+  }
+}
+@media (max-width: 373px) {
+  .search-not-found {
+    padding: 20px 31px 20px 31px;
+  }
+}
 .header {
   position: relative;
 }
@@ -698,12 +716,14 @@ input[type=search]::-webkit-search-results-decoration {
             transform: scale(1.1);
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 725px) {
   .header-links__block {
     -webkit-column-gap: 60px;
        -moz-column-gap: 60px;
             column-gap: 60px;
   }
+}
+@media (max-width: 650px) {
   .user-links {
     -webkit-column-gap: 15px;
        -moz-column-gap: 15px;
@@ -730,7 +750,17 @@ input[type=search]::-webkit-search-results-decoration {
     padding: 5px 10px;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 515px) {
+  .header-links__block {
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+  }
+  #userName {
+    font-size: 14px;
+  }
+}
+@media (max-width: 475px) {
   .burger-menu_active .menu__link {
     font-size: 22px;
   }
@@ -770,6 +800,12 @@ input[type=search]::-webkit-search-results-decoration {
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
             column-gap: 10px;
+  }
+}
+@media (max-width: 415px) {
+  #userName,
+#arrow {
+    display: none;
   }
 }
 @media (max-width: 360px) {
