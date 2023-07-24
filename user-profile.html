@@ -124,7 +124,10 @@
             />
             <h2 class="page-title">ПРОФІЛЬ</h2>
             <div class="user-profile-info-block">
-              <h3>ВАШІ ДАНІ</h3>
+              <div class="user-title-image">
+                <h3>ВАШІ ДАНІ</h3>
+                <img src="" id="img1" />
+              </div>
               <form id="profileForm">
                 <div class="input-block">
                   <label>Ім'я</label>
@@ -143,9 +146,14 @@
                     placeholder="+38 (___) -___-__-__"
                   />
                 </div>
+
                 <div class="input-block">
                   <label>E-mail:</label>
                   <input type="email" name="email" id="email" />
+                </div>
+                <div class="input-block">
+                   <label>Ваше фото:</label>
+                  <input type="file" id="myImg" />
                 </div>
                 <button id="profileBtn" class="button" type="submit">
                   Зберегти

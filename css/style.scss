@@ -313,8 +313,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 @media (max-width: 373px) {
   .search-not-found {
-  padding: 20px 31px 20px 31px;
-}
+    padding: 20px 31px 20px 31px;
+  }
 }
 
 // ========================================================================================
@@ -1173,11 +1173,30 @@ h1 {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 2px 2px 15px 7px rgba(209, 209, 209, 0.25);
-  transition: 0.3s ease 0s;
+  transition: all 0.2s ease 0s;
+  position: relative;
 }
-.vtrendy-main-pic:hover {
-  box-shadow: 4px 4px 25px 15px rgba(209, 209, 209, 0.4);
-  transform: scale(1.02);
+.vtrendy-item-image {
+  position: relative;
+}
+.vtrendy-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(163, 163, 163, 0.6);
+  display: none;
+  cursor: pointer;
+}
+.vtrendy-item-image:hover .vtrendy-search-icon {
+  display: block;
+  background-color: rgba(163, 163, 163, 0.6);
+  transition: all 0.2s ease 0s;
+}
+.vtrendy-item-image:hover .vtrendy-main-pic {
+  filter: opacity(0.6);
 }
 .vtrendy-item h3 {
   font-size: 18px;

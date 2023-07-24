@@ -38,3 +38,51 @@ profileBtn.addEventListener("click", () => {
 });
 
 // Insert profile name in the header
+
+// Insert user image to Profile
+
+myImg.onchange = function (event) {
+  var target = event.target;
+
+  if (!FileReader) {
+    alert("FileReader не підтримується");
+    return;
+  }
+
+  if (!target.files.length) {
+    alert("Нічого не завантажено");
+    return;
+  }
+
+  var fileReader = new FileReader();
+
+  profileBtn.addEventListener("click", () => {
+    localStorage.setItem("userPhoto", fileReader.result);
+    img1.src = localStorage.getItem("userPhoto");
+  });
+
+  // fileReader.onload = function() {
+  //     img1.src = fileReader.result;
+  // }
+
+  fileReader.readAsDataURL(target.files[0]);
+};
+
+if (localStorage.getItem("userPhoto").length > 1) {
+  img1.src = localStorage.getItem("userPhoto");
+} else {
+  img1.style.display = "none";
+}
+
+// Insert user image to Profile
+
+// Insert profile name in the header
+
+userName.innerText = localStorage.getItem("userProfileName");
+
+if (userName.innerText.length > 1) {
+  arrow.style.display = "flex";
+}
+profileUsername.value = localStorage.getItem("userProfileName");
+
+// Insert profile name in the header

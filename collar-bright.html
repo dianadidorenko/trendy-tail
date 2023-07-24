@@ -128,11 +128,20 @@
                   <img
                     src="img/info-item/collar-bright/01.png"
                     alt="Комірець Bright"
+                    onclick="fullView(this.src)"
                   />
                   <img
                     src="img/info-item/collar-bright/02.png"
                     alt="Комірець Bright"
+                    onclick="fullView(this.src)"
                   />
+                </div>
+
+                <div id="FullImageView">
+                  <img id="FullImage" />
+                  <span id="closeButton" onclick="closeFullView()"
+                    >&times;</span
+                  >
                 </div>
               </div>
               <div class="item-info-right-text-block">

@@ -31,4 +31,10 @@ burgerMenu(".burger-menu");
 
 // Burger menu
 
-
+function fullView(ImgLink) {
+  document.getElementById("FullImage").src = ImgLink;
+  document.getElementById("FullImageView").style.display = "block";
+}
+function closeFullView() {
+  document.getElementById("FullImageView").style.display = "none";
+}
