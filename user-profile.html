@@ -13,6 +13,49 @@
     <title>Профіль</title>
   </head>
   <body>
+    <!-- Search Pop Up Form -->
+    <div class="search-form">
+      <div class="search-input__block">
+        <input
+          type="text"
+          id="searchValue"
+          class="search-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" id="leadToSearchPage"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+        <img
+          src="img/search-pop-up/close-icon.svg"
+          id="closePopUpSearch"
+          class="search-close-button"
+          alt="Close Icon"
+        />
+      </div>
+      <div class="search-close-overlay"></div>
+    </div>
+    <!-- Search Pop Up Form -->
+
+    <!-- Nothing Found Search Page Form -->
+    <div class="search-not-found">
+      <div class="search-not-found-input__block">
+        <h1 class="search-not-found__body-h1">Упс!</h1>
+        <p class="search-not-found__body-text">
+          Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
+        </p>
+        <input
+          type="search"
+          id="notFoundInput"
+          class="search-not-found-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" class="search-page-button" id="leadToSearchPageFromNotFound"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+      </div>
+      <div class="search-page-close-not-found-overlay"></div>
+    </div>
+    <!-- Nothing Found Search Page Form -->
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -79,6 +122,7 @@
               <a href="#"
                 ><img
                   src="img/main-page/HEADER/search-icon.svg"
+                  id="searchButton"
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
@@ -96,7 +140,7 @@
                 alt="Arrow Down Icon"
               />
               <span id="userName"></span>
-              <a href="#"
+              <a href="user-profile.html"
                 ><img
                   src="img/main-page/HEADER/profile-icon.svg"
                   class="user-profile-image"
@@ -128,33 +172,78 @@
                 <h3>ВАШІ ДАНІ</h3>
                 <img src="" id="img1" />
               </div>
-              <form id="profileForm">
+              <form
+                id="profileForm"
+                method="POST"
+                onsubmit="return checkForm()"
+              >
                 <div class="input-block">
-                  <label>Ім'я</label>
-                  <input type="text" name="username" id="profileUsername" />
-                </div>
-                <div class="input-block">
-                  <label>Прізвище</label>
-                  <input type="text" name="surname" id="surname" />
-                </div>
-                <div class="input-block">
-                  <label>Телефон:</label>
-                  <input
-                    type="tel"
-                    name="tel"
-                    id="tel"
-                    placeholder="+38 (___) -___-__-__"
-                  />
+                  <div class="input-label">
+                    <label>Ім'я</label>
+                    <input type="text" name="username" id="profileUsername" />
+                  </div>
+
+                  <div id="errorName" class="error">
+                    <p>Введіть лише літери</p>
+                  </div>
                 </div>
 
                 <div class="input-block">
-                  <label>E-mail:</label>
-                  <input type="email" name="email" id="email" />
+                  <div class="input-label">
+                    <label>Прізвище</label>
+                    <input type="text" name="surname" id="surname" />
+                  </div>
+
+                  <div id="errorSurname" class="error">
+                    <p>Введіть лише літери</p>
+                  </div>
                 </div>
+
                 <div class="input-block">
-                   <label>Ваше фото:</label>
-                  <input type="file" id="myImg" />
+                  <div class="input-label">
+                    <label>Телефон:</label>
+                    <input
+                      type="tel"
+                      name="tel"
+                      id="tel"
+                      placeholder="+38 (___) -___-__-__"
+                    />
+                  </div>
+
+                  <div id="errorNumber" class="error">
+                    <p>Мінімум 9 символів</p>
+                  </div>
                 </div>
+
+                <div class="input-block">
+                  <div class="input-label">
+                    <label>E-mail:</label>
+                    <input type="email" name="email" id="email" />
+                  </div>
+
+                  <div id="errorMail" class="error">
+                    <p>Приклад ukr@.net</p>
+                  </div>
+                </div>
+
+                <div class="input-block">
+                  <div class="input-label">
+                    <label>Місто:</label>
+                    <input type="text" name="city" id="city" />
+                  </div>
+
+                  <div id="errorCity" class="error">
+                    <p>Введіть лише літери</p>
+                  </div>
+                </div>
+
+                <div class="input-block">
+                  <div class="input-label">
+                    <label>Ваше фото:</label>
+                    <input type="file" id="myImg" />
+                  </div>
+                </div>
+
                 <button id="profileBtn" class="button" type="submit">
                   Зберегти
                 </button>
@@ -261,5 +350,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/user-profile.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

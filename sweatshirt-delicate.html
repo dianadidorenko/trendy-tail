@@ -13,6 +13,49 @@
     <title>Толстовка Delicate</title>
   </head>
   <body>
+    <!-- Search Pop Up Form -->
+    <div class="search-form">
+      <div class="search-input__block">
+        <input
+          type="text"
+          id="searchValue"
+          class="search-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" id="leadToSearchPage"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+        <img
+          src="img/search-pop-up/close-icon.svg"
+          id="closePopUpSearch"
+          class="search-close-button"
+          alt="Close Icon"
+        />
+      </div>
+      <div class="search-close-overlay"></div>
+    </div>
+    <!-- Search Pop Up Form -->
+
+    <!-- Nothing Found Search Page Form -->
+    <div class="search-not-found">
+      <div class="search-not-found-input__block">
+        <h1 class="search-not-found__body-h1">Упс!</h1>
+        <p class="search-not-found__body-text">
+          Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
+        </p>
+        <input
+          type="search"
+          id="notFoundInput"
+          class="search-not-found-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" class="search-page-button" id="leadToSearchPageFromNotFound"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+      </div>
+      <div class="search-page-close-not-found-overlay"></div>
+    </div>
+    <!-- Nothing Found Search Page Form -->
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -81,6 +124,7 @@
               <a href="#"
                 ><img
                   src="img/main-page/HEADER/search-icon.svg"
+                  id="searchButton"
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
@@ -306,5 +350,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/items.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

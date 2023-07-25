@@ -35,9 +35,9 @@ body {
 
 #closeButton {
   position: absolute;
-  top: 60px;
-  font-size: 30px;
-  right: 460px;
+  top: 30px;
+  right: 30px;
+  font-size: 40px;
   color: white;
   cursor: pointer;
 }

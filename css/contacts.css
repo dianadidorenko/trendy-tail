@@ -68,7 +68,7 @@
 
 .phone-block a::before {
   position: absolute;
-  content: url(img/contacts/decor-left.svg);
+  content: url(../img/contacts/decor-left.svg);
   top: -25px;
   left: -35px;
   -webkit-animation: myAnim 2s ease 0s infinite normal forwards;
@@ -77,7 +77,7 @@
 
 .phone-block a::after {
   position: absolute;
-  content: url(img/contacts/decor-right.svg);
+  content: url(../img/contacts/decor-right.svg);
   bottom: -30px;
   right: -35px;
   -webkit-animation: myAnim 2s ease 0s infinite normal forwards;
@@ -159,7 +159,7 @@
 
 .mail-block a::before {
   position: absolute;
-  content: url(img/contacts/decor-left.svg);
+  content: url(../img/contacts/decor-left.svg);
   top: -25px;
   left: -35px;
   -webkit-animation: myAnim 2s ease 0s infinite normal forwards;
@@ -168,7 +168,7 @@
 
 .mail-block a::after {
   position: absolute;
-  content: url(img/contacts/decor-right.svg);
+  content: url(../img/contacts/decor-right.svg);
   bottom: -30px;
   right: -30px;
   -webkit-animation: myAnim 2s ease 0s infinite normal forwards;
