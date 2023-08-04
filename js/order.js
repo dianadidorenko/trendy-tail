@@ -1,4 +1,5 @@
 // Burger menu
+
 function burgerMenu(selector) {
   let menu = $(selector);
   let button = menu.find(".burger-menu__button");
@@ -27,61 +28,59 @@ function burgerMenu(selector) {
   }
 }
 burgerMenu(".burger-menu");
+
 // Burger menu
 
-// Check Form
+orderName.value = localStorage.getItem("userProfileName");
+orderSurname.value = localStorage.getItem("userSurname");
+orderTel.value = localStorage.getItem("phoneNumber");
+orderEmail.value = localStorage.getItem("userMail");
+
 function checkForm() {
   errorName.style.display = "none";
   errorSurname.style.display = "none";
   errorNumber.style.display = "none";
   errorMail.style.display = "none";
-  errorCity.style.display = "none";
 
-  var profileUsername = document.getElementById("profileUsername"),
-    surname = document.getElementById("surname"),
-    userNumber = document.getElementById("tel"),
-    userMail = document.getElementById("email"),
-    userCity = document.getElementById("city");
+  var orderNameInput = document.getElementById("orderName"),
+    orderSurnameInput = document.getElementById("orderSurname"),
+    orderTelInput = document.getElementById("orderTel"),
+    orderEmailInput = document.getElementById("orderEmail");
 
   checkName = true;
   checkSurname = true;
   checkNumber = true;
-  checkMail = true;
-  checkCity = true;
+  checkEmail = true;
 
-  profileUsername.style.border = "3px solid white";
-  surname.style.border = "3px solid white";
-  userNumber.style.border = "3px solid white";
-  userMail.style.border = "3px solid white";
-  userCity.style.border = "3px solid white";
+  orderNameInput.style.border = "3px solid grey";
+  orderSurnameInput.style.border = "3px solid grey";
+  orderTelInput.style.border = "3px solid grey";
+  orderEmailInput.style.border = "3px solid grey";
 
-  // Check Name
+  // Check Name and Surname
 
   patternLatters = /^[а-яА-Яa-zA-Z]+$/;
 
-  if (!patternLatters.test(profileUsername.value)) {
+  if (!patternLatters.test(orderNameInput.value)) {
     errorName.style.display = "block";
-    profileUsername.style.border = "3px solid red";
+    orderNameInput.style.border = "3px solid red";
     checkName = false;
   }
-  if (!patternLatters.test(surname.value)) {
+  if (!patternLatters.test(orderSurnameInput.value)) {
     errorSurname.style.display = "block";
-    surname.style.border = "3px solid red";
+    orderSurnameInput.style.border = "3px solid red";
     checkSurname = false;
   }
-  if (!patternLatters.test(userCity.value)) {
-    errorCity.style.display = "block";
-    userCity.style.border = "3px solid red";
-    checkCity = false;
-  }
+
+  // =================================================================
 
   // Check Phone Number
 
   patternDigit = /^\+380\d{9}$/;
 
-  if (!patternDigit.test(userNumber.value)) {
+  if (!patternDigit.test(orderTelInput.value)) {
     errorNumber.style.display = "block";
-    userNumber.style.border = "3px solid red";
+    orderTelInput.style.border = "3px solid red";
     checkNumber = false;
   }
   // =================================================================
@@ -90,89 +89,129 @@ function checkForm() {
 
   patternMail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
-  if (!patternMail.test(userMail.value)) {
+  if (!patternMail.test(orderEmailInput.value)) {
     errorMail.style.display = "block";
-    userMail.style.border = "3px solid red";
-    checkMail = false;
+    orderEmailInput.style.border = "3px solid red";
+    checkEmail = false;
   }
   // =================================================================
 
-  // Check form to send
+  // Show Need to Agree Block
+  let needToAgreeBlock = document.querySelector(".need-to-agree-block");
 
+  if (agreeConditions.checked) {
+    needToAgreeBlock.style.display = "none";
+    agreeConditions.checked;
+  } else {
+    let needToAgreeBlock = document.querySelector(".need-to-agree-block");
+    needToAgreeBlock.style.display = "flex";
+  }
+  // Show Need to Agree Block
+
+  // Show City Value to Delivery
+  chooseCityDeliveryValue = chooseCityDelivery.value;
+  // Show City Value to Delivery
+
+  // Show if need to phone client back
+  if (!noNeedToPhone.checked) {
+    noNeedToPhoneLabelValue = noNeedToPhoneLabel.innerText;
+  } else {
+    noNeedToPhoneLabelValue = "Треба передзвонити";
+  }
+  // Show if need to phone client back
+
+  if (novaPoshta.checked) {
+    // Save Chosen Delivery Type
+    novaPoshtaValue = novaPoshtaLabel.innerText.split(" ")[0];
+    deliveryType.innerText = novaPoshtaValue + ", " + chooseCityDeliveryValue;
+    deliveryType.style.display = "flex";
+  } else if (ukrPoshta.checked) {
+    ukrPoshtaValue = ukrPoshtaLabel.innerText.split(" ")[0];
+    deliveryType.innerText = ukrPoshtaValue + ", " + chooseCityDeliveryValue;
+    deliveryType.style.display = "flex";
+  } else if (meest.checked) {
+    meestaValue = meestLabel.innerText.split(" ")[0];
+    deliveryType.innerText = meestaValue + ", " + chooseCityDeliveryValue;
+    deliveryType.style.display = "flex";
+  } else if (!novaPoshta.checked && !ukrPoshta.checked && !meest.checked) {
+    alert("Треба обрати спосіб доставки");
+  }
+  // Save Chosen Delivery Type
+
+  // Check form to send
   if (
     checkName == true &&
     checkSurname == true &&
     checkNumber == true &&
-    checkMail == true &&
-    checkCity == true
+    checkEmail == true
   ) {
     return true;
   } else {
     return false;
   }
 }
-// Check Form
 
-// Insert values to the in the form
-profileBtn.addEventListener("click", () => {
-  username = localStorage.setItem("userProfileName", profileUsername.value);
-  userSurname = localStorage.setItem("userSurname", surname.value);
-  phoneNumber = localStorage.setItem("phoneNumber", tel.value);
-  userMail = localStorage.setItem("userMail", email.value);
-  userCity = localStorage.setItem("userCity", city.value);
+// Show Empty Block in Shopping Cart
+if (!localStorage.getItem("popUpGoodsTitleValue")) {
+  emptyOrderBlock.style.display = "flex";
+  orderBlock.style.display = "none";
+} else if (localStorage.getItem("popUpGoodsTitleValue")) {
+  orderBlock.style.display = "flex";
+  emptyOrderBlock.style.display = "none";
+}
+// Show Empty Block in Shopping Cart
+
+// Insert Chosen Values to the Order Confirm Form
+orderGoodsTitle.innerText = localStorage.getItem("popUpGoodsTitleValue");
+orderSize.innerText = localStorage.getItem("animalSizeProduct");
+orderPrice1Piece.innerText = localStorage.getItem("animalProductPrice");
+orderPrice.innerText = localStorage.getItem("animalProductPrice");
+popUpImage.src = localStorage.getItem("mainPicForPopUp");
+
+// // Quantity
+number = 1;
+
+plus.addEventListener("click", function () {
+  number++;
+  orderQuantity.innerText = number;
+  orderPrice.innerText =
+    parseInt(orderPrice.innerText) + parseInt(orderPrice1Piece.innerText);
+  quantityOrderValue = localStorage.setItem("quantityOrderValue", number);
 });
 
-profileUsername.value = localStorage.getItem("userProfileName");
-surname.value = localStorage.getItem("userSurname");
-tel.value = localStorage.getItem("phoneNumber");
-email.value = localStorage.getItem("userMail");
-city.value = localStorage.getItem("userCity");
-// Insert values to the in the form
-
-// Insert user image to Profile
-myImg.onchange = function (event) {
-  var target = event.target;
-
-  if (!FileReader) {
-    alert("FileReader не підтримується");
-    return;
+minus.addEventListener("click", function () {
+  if (orderQuantity.innerText == 0) {
+    orderQuantity.innerText = 0;
+  } else {
+    number--;
+    orderQuantity.innerText = number;
+    orderPrice.innerText =
+      parseInt(orderPrice.innerText) - parseInt(orderPrice1Piece.innerText);
   }
+  quantityOrderValue = localStorage.setItem("quantityOrderValue", number);
+});
 
-  if (!target.files.length) {
-    alert("Нічого не завантажено");
-    return;
-  }
-
-  var fileReader = new FileReader();
-
-  profileBtn.addEventListener("click", () => {
-    localStorage.setItem("userPhoto", fileReader.result);
-    img1.src = localStorage.getItem("userPhoto");
-  });
-
-  // fileReader.onload = function() {
-  //     img1.src = fileReader.result;
-  // }
-
-  fileReader.readAsDataURL(target.files[0]);
-};
-
-if (localStorage.getItem("userPhoto")) {
-  img1.src = localStorage.getItem("userPhoto");
-} else {
-  img1.style.display = "none";
+if (parseInt(localStorage.getItem("quantityOrderValue")) == 1) {
+  headerOrderQuantity.style.display = "flex";
+  quantityOrderValue = localStorage.setItem("quantityOrderValue", number);
 }
-// Insert user image to Profile
 
-// Insert profile name in the header
-userName.innerText = localStorage.getItem("userProfileName");
+// // Quantity
 
-if (userName.innerText.length > 1) {
-  arrow.style.display = "flex";
-}
-// Insert profile name in the header
+// // Save Chosen City to Deliver
+chooseCityDelivery.addEventListener("change", () => {
+  chooseCityDeliveryValue = localStorage.setItem(
+    "CityDeliveryValue",
+    chooseCityDelivery.value
+  );
+  chooseCityDeliveryValueToSend = localStorage.getItem("CityDeliveryValue");
+});
+
+// // Save Chosen City to Deliver
+// Insert Chosen Values to the Order Confirm Form
 
 // Anchor adding
+
 window.addEventListener("mousemove", (e) => {
   if (e.pageY >= 1150) {
     ancorImg.style.display = "block";
@@ -180,9 +219,11 @@ window.addEventListener("mousemove", (e) => {
     ancorImg.style.display = "none";
   }
 });
+
 // Anchor adding
 
 // Changing theme
+
 const toggle = document.querySelector(".toggle");
 let root = document.documentElement;
 
@@ -254,7 +295,18 @@ toggle.addEventListener("change", (e) => {
     inputThemeText.innerText = "Зробити темніше?";
   }
 });
+
 // Changing theme
+
+// Close Need To Agree Pop Up
+
+closeNeedAgreeBlock.addEventListener("click", () => {
+  let needToAgreeBlock = document.querySelector(".need-to-agree-block");
+
+  needToAgreeBlock.style.display = "none";
+});
+
+// Close Need To Agree Pop Up
 
 // Insert Product Quantity to the Header Shopping Cart
 if (
@@ -267,3 +319,13 @@ if (
   headerOrderQuantity.innerText = localStorage.getItem("quantityOrderValue");
 }
 // Insert Product Quantity to the Header Shopping Cart
+
+// Insert profile name in the header
+
+userName.innerText = localStorage.getItem("userProfileName");
+
+if (userName.innerText.length > 1) {
+  arrow.style.display = "flex";
+}
+
+// Insert profile name in the header

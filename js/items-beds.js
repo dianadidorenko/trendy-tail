@@ -31,128 +31,102 @@ burgerMenu(".burger-menu");
 
 // Burger menu
 
-// Main Slider
+// Click for full image view
 
-const swiperMain = new Swiper(".main-swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-  autoplay: true,
+function fullView(ImgLink) {
+  document.getElementById("FullImage").src = ImgLink;
+  document.getElementById("FullImageView").style.display = "block";
+}
+function closeFullView() {
+  document.getElementById("FullImageView").style.display = "none";
+}
 
-  // If we need pagination
-  pagination: {
-    el: ".main-swiper-pagination",
-  },
+// Click for full image view
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".main-swiper-button-next",
-    prevEl: ".main-swiper-button-prev",
-  },
+// Exact price depends on the size click
+
+sizes.addEventListener("mousedown", (e) => {
+  xsGroup.style.background = "rgba(128, 180, 182, 0.1)";
+  sGroup.style.background = "rgba(128, 180, 182, 0.1)";
+
+  if (
+    e.target.id == "small" &&
+    e.srcElement.parentElement.className == "check-group"
+  ) {
+    e.srcElement.parentElement.style.background = "rgba(128, 180, 182, 0.4)";
+    price.innerText = "1088";
+  } else if (
+    e.target.id == "big" &&
+    e.srcElement.parentElement.className == "check-group"
+  ) {
+    e.srcElement.parentElement.style.background = "rgba(128, 180, 182, 0.4)";
+    price.innerText = "1215";
+  }
 });
 
-// V trendy Slider
+// Exact price depends on the size click
 
-const swiperVTrendy = new Swiper(".vtrendy-swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-  // autoplay: true,
+// Pop Up Added Item To The Shopping Cart
 
-  // If we need pagination
-  pagination: {
-    el: ".vtrendy-swiper-pagination",
-  },
+buy.addEventListener("click", () => {
+  let checked = document.querySelectorAll('input[type="radio"]:checked'),
+    wrapper = document.querySelector(".wrapper");
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".vtrendy-swiper-button-next",
-    prevEl: ".vtrendy-swiper-button-prev",
-  },
-});
+  popUpShoppingCart.style.display = "flex";
+  wrapper.style.opacity = "0.3";
 
-// Form Validation
+  document.getElementById("popUpImage").src = mainPicForPopUp.src;
 
-function checkForm() {
-  errorName.style.display = "none";
-  errorEmail.style.display = "none";
-  errorQuestion.style.display = "none";
+  mainPicForPopUp = localStorage.setItem(
+    "mainPicForPopUp",
+    mainPicForPopUp.src
+  );
 
-  let footerFormUserName = document.getElementById("footerFormUserName"),
-    footerFormUserNameValue =
-      document.getElementById("footerFormUserName").value,
-    footerFormEmail = document.getElementById("footerFormEmail"),
-    footerFormEmailValue = document.getElementById("footerFormEmail").value,
-    footerFormTextarea = document.getElementById("footerFormTextarea"),
-    footerFormTextareaValue =
-      document.getElementById("footerFormTextarea").value,
-    sendFooterBtn = document.getElementById("sendFooterBtn");
+  popUpGoodsTitle.innerText = h1.innerText;
 
-  footerFormUserName.style.border = "none";
-  footerFormEmail.style.border = "none";
-  footerFormTextarea.style.border = "none";
+  popUpGoodsTitleValue = localStorage.setItem(
+    "popUpGoodsTitleValue",
+    popUpGoodsTitle.innerText
+  );
 
-  sendFooterBtn.addEventListener("click", () => {
-    localStorage.setItem("username", footerFormUserName.value);
-    localStorage.setItem("usermail", footerFormEmail.value);
+  for (check of checked) {
+    if (check.id == "small") {
+      popUpSize.innerText = check.id + " - " + smallLabel.innerText;
+      popUpQuantity.innerText = "1";
+      popUpPrice.innerText = price.innerText;
+    } else if (check.id == "big") {
+      popUpSize.innerText = check.id + " - " + bigLabel.innerText;
+      popUpQuantity.innerText = "1";
+      popUpPrice.innerText = price.innerText;
+    }
+  }
+
+  animalSizeProduct = localStorage.setItem(
+    "animalSizeProduct",
+    popUpSize.innerText
+  );
+  animalProductPrice = localStorage.setItem(
+    "animalProductPrice",
+    popUpPrice.innerText
+  );
+
+  closePopUp.addEventListener("click", () => {
+    popUpShoppingCart.style.display = "none";
+    wrapper.style.opacity = "1";
   });
 
-  checkName = true;
-  checkEmail = true;
-  checkQuestion = true;
+  continueBtn.addEventListener("click", () => {
+    popUpShoppingCart.style.display = "none";
+    wrapper.style.opacity = "1";
+  });
+});
 
-  // Check Name
-
-  patternName = /^[а-яА-Яa-zA-Z]+$/; // щоб були лише букви від і до
-
-  if (!patternName.test(footerFormUserNameValue)) {
-    errorName.style.display = "block";
-    footerFormUserName.style.border = "1px solid red";
-    checkName = false;
-  }
-  // =================================================================
-  // Check Email
-
-  patternMail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-
-  if (!patternMail.test(footerFormEmailValue)) {
-    errorEmail.style.display = "block";
-    footerFormEmail.style.border = "1px solid red";
-    checkEmail = false;
-  }
-  // =================================================================
-  // Check Question
-
-  if (footerFormTextareaValue.length < 10) {
-    errorQuestion.style.display = "block";
-    footerFormTextarea.style.border = "1px solid red";
-    checkQuestion = false;
-  }
-  // =================================================================
-
-  // Check form to send
-  if (checkName == true && checkEmail == true && checkQuestion == true) {
-    return true;
-  } else {
-    return false;
-  }
-  //
-}
-
-// Insert profile name in the header
-
-userName.innerText = localStorage.getItem("userProfileName");
-
-if (userName.innerText.length > 1) {
-  arrow.style.display = "flex";
-}
-
-// Insert profile name in the header
+// Pop Up Added Item To The Shopping Cart
 
 // Anchor adding
 
 window.addEventListener("mousemove", (e) => {
-  if (e.pageY >= 4000) {
+  if (e.pageY >= 1500) {
     ancorImg.style.display = "block";
   } else {
     ancorImg.style.display = "none";
@@ -248,3 +222,13 @@ if (
   headerOrderQuantity.innerText = localStorage.getItem("quantityOrderValue");
 }
 // Insert Product Quantity to the Header Shopping Cart
+
+// Insert profile name in the header
+
+userName.innerText = localStorage.getItem("userProfileName");
+
+if (userName.innerText.length > 1) {
+  arrow.style.display = "flex";
+}
+
+// Insert profile name in the header

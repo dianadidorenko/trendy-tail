@@ -33,6 +33,26 @@ searchButton.addEventListener("click", () => {
       leadToSearchPage.setAttribute("href", "collar-bright.html");
     } else if (searchValue.value == "ascold") {
       leadToSearchPage.setAttribute("href", "bed-ascold.html");
+    } else if (
+      searchValue.value == "ліжка" ||
+      searchValue.value == "ліжко" ||
+      searchValue.value == "ліжаки"
+    ) {
+      leadToSearchPage.setAttribute("href", "beds.html");
+    } else if (
+      searchValue.value == "аксесуари" ||
+      searchValue.value == "аксессуари"
+    ) {
+      leadToSearchPage.setAttribute("href", "accessories.html");
+    } else if (searchValue.value == "одяг") {
+      leadToSearchPage.setAttribute("href", "clothes.html");
+    } else if (
+      searchValue.value == "перенесення" ||
+      searchValue.value == "сумки"
+    ) {
+      leadToSearchPage.setAttribute("href", "carrying.html");
+    } else if (searchValue.value == "знижки" || searchValue.value == "знижка") {
+      leadToSearchPage.setAttribute("href", "discount.html");
     } else {
       // Search Not Found
       let notFound = document.querySelector(".search-not-found"),
@@ -41,7 +61,9 @@ searchButton.addEventListener("click", () => {
           ".search-page-close-not-found-overlay"
         );
 
-      notFoundInput.value = "";
+      console.log(searchValue.value);
+
+      // notFoundInput.value = "";
 
       notFound.style.display = "block";
       formNotFoundClose.style.display = "block";
@@ -75,7 +97,31 @@ searchButton.addEventListener("click", () => {
           );
         } else if (notFoundInput.value == "ascold") {
           leadToSearchPageFromNotFound.setAttribute("href", "bed-ascold.html");
+        } else if (
+          notFoundInput.value == "ліжка" ||
+          notFoundInput.value == "ліжко" ||
+          notFoundInput.value == "ліжаки"
+        ) {
+          leadToSearchPageFromNotFound.setAttribute("href", "beds.html");
+        } else if (
+          notFoundInput.value == "аксессуари" ||
+          notFoundInput.value == "аксесуари"
+        ) {
+          leadToSearchPageFromNotFound.setAttribute("href", "accessories.html");
+        } else if (notFoundInput.value == "одяг") {
+          leadToSearchPageFromNotFound.setAttribute("href", "clothes.html");
+        } else if (
+          notFoundInput.value == "перенесення" ||
+          notFoundInput.value == "сумки"
+        ) {
+          leadToSearchPageFromNotFound.setAttribute("href", "carrying.html");
+        } else if (
+          notFoundInput.value == "знижки" ||
+          notFoundInput.value == "знижка"
+        ) {
+          leadToSearchPageFromNotFound.setAttribute("href", "discounts.html");
         } else {
+          notFoundInput.value = "";
           alert("Нічого не було знайдено");
         }
       });
