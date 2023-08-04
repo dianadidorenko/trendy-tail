@@ -1,4 +1,4 @@
-@import url(css/style.scss);
+@import url(css/style.css);
 
 .pagination {
   display: flex;
@@ -12,6 +12,7 @@
     cursor: pointer;
   }
 }
+
 .active-page {
   padding: 3px 10px;
   background: var(--orange-color);
@@ -29,8 +30,8 @@
     column-gap: 7px;
   }
   a {
-    color: var(--primary-color);
-    max-width: 82px;
+    display: block;
+    color: var(--not-active-link);
   }
   span {
     color: var(--secondary-color);
@@ -40,10 +41,9 @@
 
 @media (max-width: 460px) {
   .page-back {
-  margin: 20px 0 20px 0;
-}
+    margin: 20px 0 20px 0;
   }
-
+}
 
 .swiper-backface-hidden .swiper-slide {
   position: relative;
@@ -54,7 +54,7 @@
   text-align: center;
   border: 3px solid var(--stroke-stroke, rgba(248, 248, 248, 0.7));
   background: rgba(133, 133, 133, 0.3);
-  color: var(--background-color);
+  color: white;
   padding: 55px 24px;
   position: absolute;
   top: 65%;
@@ -114,7 +114,7 @@
     border: 3px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 15px 10px rgba(255, 255, 255, 0.4);
     font-size: 25px;
-    color: var(--background-color);
+    color: white;
     transition: all 0.3s ease 0s;
   }
   img {
@@ -156,8 +156,8 @@
 .picture {
   position: absolute;
   z-index: 2;
-  top: 50%;
-  left: 57.4%;
+  top: 47%;
+  left: 55%;
   transform: translate(-50%, -50%);
   img:hover {
     animation: myAnim 2s ease 0s 1 normal forwards;
@@ -201,14 +201,14 @@
     transform: translateY(0px);
   }
 }
-.collection a {
-  padding: 72px 20px;
+.carrying a {
+  padding: 90px 8px;
   background: #6781de;
   position: relative;
   top: 20px;
 }
 .sale a {
-  padding: 80px 45px;
+  padding: 72px 30px;
   background: #a33e68;
   position: relative;
   top: -40px;
@@ -242,12 +242,13 @@
     top: 50%;
     left: 56.5%;
   }
-  .collection a {
-    padding: 50px 10 px;
+  .carrying a {
+    font-size: 16px;
+    padding: 75px 10px;
     top: 10px;
   }
   .sale a {
-    padding: 50px 25px;
+    padding: 60px 25px;
     top: -30px;
   }
 }
@@ -282,13 +283,14 @@
     top: 70%;
     left: 70%;
   }
-  .collection a {
-    padding: 45px 15px;
+  .carrying a {
+    font-size: 12px;
+    padding: 60px 10px;
     left: -15px;
     top: -15px;
   }
   .sale a {
-    padding: 45px 25px;
+    padding: 50px 25px;
     top: 2px;
     left: -20px;
   }
@@ -314,12 +316,13 @@
     top: 73%;
     left: 72%;
   }
-  .collection a {
-    padding: 30px 9px;
+  .carrying a {
+    font-size: 8px;
+    padding: 40px 9px;
     top: -12px;
   }
   .sale a {
-    padding: 27px 13px;
+    padding: 30px 13px;
   }
 }
 @media (max-width: 370px) {
@@ -337,7 +340,7 @@ aside {
   border: 4px double rgba(33, 130, 135, 0.24);
   background: rgba(208, 208, 208, 0);
   box-shadow: 2px 2px 15px 7px rgba(209, 209, 209, 0.25);
-  padding: 34px 163px 34px 29px;
+  padding: 34px 100px 34px 29px;
 }
 .catalogue-menu {
 }
@@ -378,11 +381,18 @@ aside {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  label {
+    min-width: 120px;
+  }
 }
 .li-list-title {
   display: flex;
   align-items: center;
   column-gap: 10px;
+  p,
+  img {
+    cursor: pointer;
+  }
 }
 input[type="radio"] {
   position: relative;
@@ -459,11 +469,43 @@ input[type="radio"]:checked::after {
     ),
     rgba(231, 231, 231, 0.8);
   box-shadow: 0px 0px 30px 5px rgba(255, 255, 255, 0.8);
+  p,
+  h3 {
+    color: var(--vtrendy-text-color);
+    text-align: center;
+  }
+}
+.catalogue-menu-image {
+  position: relative;
+}
+.catalogue-menu-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(163, 163, 163, 0.6);
+  display: none;
+  cursor: pointer;
+}
+.catalogue-menu-image:hover .catalogue-menu-search-icon {
+  display: block;
+  background-color: rgba(163, 163, 163, 0.6);
+  transition: all 0.2s ease 0s;
+}
+.catalogue-menu-image:hover .catalogue-menu-main-pic {
+  filter: opacity(0.6);
+}
+
+.dot {
+  opacity: 0.6;
 }
 .catalogue-menu-block-item-price {
   font-size: 20px;
 }
 .brand {
+  color: var(--vtrendy-text-color);
 }
 .info-block {
   display: flex;

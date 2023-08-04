@@ -1,4 +1,4 @@
-@import url(css/style.scss);
+@import url(css/style.css);
 
 .page-title {
   font-size: 22px;
@@ -70,10 +70,10 @@
   box-shadow: 0px 0px 30px 1px rgba(221, 221, 221, 0.5);
   outline: none;
 }
-input:focus {
+#profileForm input:focus {
   border: 3px solid var(--dark-blue-color);
 }
-input::-webkit-file-upload-button {
+#profileForm input::-webkit-file-upload-button {
   background-color: var(--light-blue-color);
   color: white;
   border-radius: 3px;

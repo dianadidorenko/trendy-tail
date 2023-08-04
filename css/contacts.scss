@@ -1,4 +1,4 @@
-@import url(css/style.scss);
+@import url(css/style.css);
 
 .contacts__container {
   display: flex;
@@ -11,7 +11,7 @@
 .contacts-block {
   display: flex;
   justify-content: center;
-  color: var(--background-color);
+  color: var(--contact-page-color);
   position: relative;
   padding-top: 200px;
   padding-bottom: 250px;
@@ -35,7 +35,7 @@
   border-radius: 10px 10px 70px 70px;
 }
 .phone-block a {
-  color: var(--background-color);
+  color: var(--contact-page-color);
   font-size: 20px;
   font-weight: 500;
   line-height: 108%; /* 43.2px */
@@ -97,7 +97,7 @@
   border-radius: 70px 70px 10px 10px;
 }
 .mail-block a {
-  color: var(--background-color);
+  color: var(--contact-page-color);
   font-size: 20px;
   font-weight: 500;
   line-height: 108%; /* 43.2px */
@@ -228,7 +228,7 @@
   margin-bottom: 100px;
   display: flex;
   border-radius: 0 20px 0 20px;
-  border: 14px double var(--background-color);
+  border: 14px double var(--contact-page-color);
   background-color: var(--light-blue-color);
   column-gap: 100px;
   padding: 70px 87px 70px 87px;
@@ -262,7 +262,7 @@ input,
 textarea {
   background-color: transparent;
   border: 0;
-  border-bottom: 3px solid var(--background-color);
+  border-bottom: 3px solid var(--contact-page-color);
   display: block;
   width: 100%;
   font-size: 23px;
@@ -273,7 +273,7 @@ textarea {
 }
 textarea {
   padding: 28px 200px 200px 18px;
-  border: 3px solid var(--background-color);
+  border: 3px solid var(--contact-page-color);
   resize: none;
 }
 .form-left-part label {
@@ -292,7 +292,7 @@ textarea {
 .form-right-part label span {
   display: inline-block;
   font-size: 18px;
-  color: var(--background-color);
+  color: var(--contact-page-color);
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   letter-spacing: 1px;
 }
@@ -309,7 +309,7 @@ textarea:valid + label span {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  border-bottom: 3px solid var(--background-color);
+  border-bottom: 3px solid var(--contact-page-color);
   -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
