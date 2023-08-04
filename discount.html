@@ -10,8 +10,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/feedback.css" />
-    <title>Відгуки</title>
+    <link rel="stylesheet" href="css/category-items.css" />
+    <title>Ліжаки</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -102,7 +102,6 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
-
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -115,7 +114,9 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
@@ -129,7 +130,7 @@
                   <a href="contacts.html" class="menu__link">Контакти</a>
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link active__link">Відгуки</a>
+                  <a href="feedback.html" class="menu__link">Відгуки</a>
                 </li>
               </ul>
             </nav>
@@ -172,53 +173,21 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Відгуки</span>
+            <a href="index.html"> Головна ></a>
+            <a href="catalog.html">Каталог > </a>
+            <span>Ліжаки</span>
           </div>
         </div>
 
-        <section class="page__feedback feedback">
-          <div class="feedback__container">
+        <section class="page__catalogue-menu catalogue-menu">
+          <div class="catalogue-menu-title-block">
             <img
               src="img/main-page/ABOUT/heart-icon.svg"
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">Відгуки</h2>
-
-            <div id="commentBlock" class="comment-block"></div>
-
-            <div class="leave-comment-block">
-              <p class="leave-comment-title">Залиште коментар</p>
-              <form id="formBlock" class="form-block">
-                <div>
-                  <label> Ім'я і фамілія: </label>
-                  <input type="text" id="userInfo" />
-                </div>
-                <div>
-                  <label> Коментар: </label>
-                  <textarea id="userComment"></textarea>
-                </div>
-                <img
-                  src="img/feedback/01.jpg"
-                  class="feedback-img1"
-                  alt="Feedback image"
-                />
-                <img
-                  src="img/feedback/02.jpg"
-                  class="feedback-img2"
-                  alt="Feedback image"
-                />
-                <img
-                  src="img/feedback/03.jpg"
-                  class="feedback-img3"
-                  alt="Feedback image"
-                />
-              </form>
-              <button id="enter" class="button" type="submit">
-                Додати коментар
-              </button>
-            </div>
+            <h2 class="page-title">ЗНИЖКИ</h2>
+            <h1 style="padding-top: 50px">В стадії розробки!</h1>
           </div>
         </section>
       </main>
@@ -307,9 +276,11 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/feedback.js"></script>
+    <script src="js/catalog.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/items.js"></script>
   </body>
 </html>

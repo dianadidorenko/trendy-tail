@@ -10,8 +10,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/feedback.css" />
-    <title>Відгуки</title>
+    <link rel="stylesheet" href="css/category-items.css" />
+    <title>Аксесури</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -102,7 +102,6 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
-
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -115,7 +114,9 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
@@ -129,7 +130,7 @@
                   <a href="contacts.html" class="menu__link">Контакти</a>
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link active__link">Відгуки</a>
+                  <a href="feedback.html" class="menu__link">Відгуки</a>
                 </li>
               </ul>
             </nav>
@@ -172,52 +173,149 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Відгуки</span>
+            <a href="index.html"> Головна ></a>
+            <a href="catalog.html">Каталог > </a>
+            <span>Аксесури</span>
           </div>
         </div>
 
-        <section class="page__feedback feedback">
-          <div class="feedback__container">
+        <section class="page__catalogue-menu catalogue-menu">
+          <div class="catalogue-menu-title-block">
             <img
               src="img/main-page/ABOUT/heart-icon.svg"
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">Відгуки</h2>
+            <h2 class="page-title">АКСЕСУАРИ</h2>
+          </div>
+          <div class="catalogue-menu__container">
+            <aside>
+              <nav class="catalogue-menu-nav">
+                <ul id="catalogueMenuAside" class="catalogue-menu-aside">
+                  <li class="li-title li-list">
+                    <div id="categoryItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        alt="Arrow down icon"
+                      />
+                      <p>КАТЕГОРІЯ</p>
+                    </div>
+                    <ul
+                      id="catalogueMenuCategory"
+                      class="catalogue-menu-category"
+                      style="display: none"
+                    >
+                      <li>
+                        <input type="radio" name="catalogMenuRadio" id="wear" />
+                        <label>Одяг</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="catalogMeuRadio" id="beds" />
+                        <label>Ліжаки</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="catalogMenuRadio"
+                          id="collar"
+                          checked
+                        />
+                        <label>Аксесуари</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="catalogMenuRadio"
+                          id="carrying"
+                        />
+                        <label>Переноски</label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>БРЕНД</p>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>ЦІНА</p>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>РОЗМІРИ</p>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>НАЯВНІСТЬ</p>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <div class="catalogue-menu-block">
+              <div class="catalogue-menu-block-items">
+                <div class="catalogue-menu-block-item">
+                  <a href="collar-bright.html">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/07.jpg"
+                      class="catalogue-menu-main-pic"
+                      alt="Комірець Bright"
+                  /></a>
 
-            <div id="commentBlock" class="comment-block"></div>
+                  <p class="brand">PET FASHION</p>
+                  <h3>Комірець Bright</h3>
+                  <p>XS-XS2 S-M</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">204 грн</p>
+                  <button class="button">КУПИТЬ</button>
+                </div>
 
-            <div class="leave-comment-block">
-              <p class="leave-comment-title">Залиште коментар</p>
-              <form id="formBlock" class="form-block">
-                <div>
-                  <label> Ім'я і фамілія: </label>
-                  <input type="text" id="userInfo" />
+                <div class="catalogue-menu-block-item">
+                  <a href="#"
+                    ><img
+                      src="img/catalog-page/CATALOGUE-MENU/08.jpg"
+                      class="catalogue-menu-main-pic"
+                      alt="Комірець Mood"
+                  /></a>
+                  <p class="brand">PET FASHION</p>
+                  <h3>Кепка Mood</h3>
+                  <p>XS S M</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">173 грн</p>
+                  <button class="button">КУПИТЬ</button>
                 </div>
-                <div>
-                  <label> Коментар: </label>
-                  <textarea id="userComment"></textarea>
-                </div>
+              </div>
+
+              <!-- <div class="pagination">
                 <img
-                  src="img/feedback/01.jpg"
-                  class="feedback-img1"
-                  alt="Feedback image"
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
+                  alt="Arrow Left Icon"
                 />
+                <p class="active-page">1</p>
                 <img
-                  src="img/feedback/02.jpg"
-                  class="feedback-img2"
-                  alt="Feedback image"
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
+                  alt="Arrow Right Icon"
                 />
-                <img
-                  src="img/feedback/03.jpg"
-                  class="feedback-img3"
-                  alt="Feedback image"
-                />
-              </form>
-              <button id="enter" class="button" type="submit">
-                Додати коментар
-              </button>
+              </div> -->
             </div>
           </div>
         </section>
@@ -307,9 +405,10 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/feedback.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/items.js"></script>
   </body>
 </html>

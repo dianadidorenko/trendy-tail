@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -54,6 +55,20 @@
       <div class="search-page-close-not-found-overlay"></div>
     </div>
     <!-- Nothing Found Search Page Form -->
+
+    <!-- Anchor To The Top -->
+    <a href="#top"
+      ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
+    /></a>
+    <!-- Anchor To The Top -->
+
+    <!-- Changing Color Theme -->
+    <div class="toggle">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle"></label>
+      <p id="inputThemeText">Зробити темніше?</p>
+    </div>
+    <!-- Changing Color Theme -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -125,12 +140,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
-              <a href="#"
+              <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
                   class="user-links-image"
-                  alt="Shopping Cart Icon"
-              /></a>
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <img
@@ -266,7 +282,7 @@
                   src="img/main-page/CATALOG/01.png"
                   alt="Фото Категорія Ошійники"
                 />
-                <a href="#">ОШІЙНИКИ</a>
+                <a href="discount.html">ОШІЙНИКИ</a>
               </div>
 
               <div class="catalogue-menu__item">
@@ -274,7 +290,7 @@
                   src="img/main-page/CATALOG/02.png"
                   alt="Фото Категорія Вуличний Одяг"
                 />
-                <a href="#">ВУЛИЧНИЙ ОДЯГ</a>
+                <a href="clothes.html">ВУЛИЧНИЙ ОДЯГ</a>
               </div>
 
               <div class="catalogue-menu__item">
@@ -282,7 +298,7 @@
                   src="img/main-page/CATALOG/03.png"
                   alt="Фото Категорія Домашній Одяг"
                 />
-                <a href="#">ДОМАШНІЙ ОДЯГ</a>
+                <a href="clothes.html">ДОМАШНІЙ ОДЯГ</a>
               </div>
 
               <div class="catalogue-menu__item">
@@ -290,7 +306,7 @@
                   src="img/main-page/CATALOG/04.png"
                   alt="Фото Категорія Дощевики"
                 />
-                <a href="#">ДОЩЕВИКИ</a>
+                <a href="discount.html">ДОЩЕВИКИ</a>
               </div>
 
               <div class="catalogue-menu__item">
@@ -298,7 +314,7 @@
                   src="img/main-page/CATALOG/05.png"
                   alt="Фото Категорія Іграшки"
                 />
-                <a href="#">ІГРАШКИ</a>
+                <a href="discount.html">ІГРАШКИ</a>
               </div>
 
               <div class="catalogue-menu__item">
@@ -306,7 +322,7 @@
                   src="img/main-page/CATALOG/06.png"
                   alt="Фото Категорія Ліжаки"
                 />
-                <a href="#">ЛІЖАКИ</a>
+                <a href="beds.html">ЛІЖАКИ</a>
               </div>
             </div>
           </div>
@@ -343,11 +359,7 @@
                       /></a>
                     </div>
                     <h3>ДОЩОВИК ARIEL</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">829 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -364,11 +376,7 @@
                       /></a>
                     </div>
                     <h3>СВЕТЕР GRACE</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">489 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -385,11 +393,7 @@
                       /></a>
                     </div>
                     <h3>ДОЩОВИК ARIEL</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">383 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -406,11 +410,7 @@
                       /></a>
                     </div>
                     <h3>ТОЛСТОВКА BIM</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">784 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                 </div>
 
@@ -430,11 +430,7 @@
                       /></a>
                     </div>
                     <h3>ДОЩОВИК ARIEL</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">829 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -451,11 +447,7 @@
                       /></a>
                     </div>
                     <h3>СВЕТЕР GRACE</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">489 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -472,11 +464,7 @@
                       /></a>
                     </div>
                     <h3>ДОЩОВИК ARIEL</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">383 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -493,11 +481,7 @@
                       /></a>
                     </div>
                     <h3>ТОЛСТОВКА BIM</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">784 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                 </div>
 
@@ -517,11 +501,7 @@
                       /></a>
                     </div>
                     <h3>ДОЩОВИК ARIEL</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">829 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -538,11 +518,7 @@
                       /></a>
                     </div>
                     <h3>СВЕТЕР GRACE</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">489 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -559,11 +535,7 @@
                       /></a>
                     </div>
                     <h3>ДОЩОВИК ARIEL</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">383 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
@@ -580,11 +552,7 @@
                       /></a>
                     </div>
                     <h3>ТОЛСТОВКА BIM</h3>
-                    <div class="vtrendy-info">
-                      <p class="vtrendy-size">XS, S, M, L</p>
-                      <p class="vtrendy-price">784 грн</p>
-                    </div>
-                    <a href="#" class="button">КУПИТЬ</a>
+                    <p class="vtrendy-size">XS, S, M, L</p>
                   </div>
                 </div>
               </div>

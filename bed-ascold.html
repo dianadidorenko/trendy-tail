@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -56,6 +57,52 @@
       <div class="search-page-close-not-found-overlay"></div>
     </div>
     <!-- Nothing Found Search Page Form -->
+
+    <!-- Anchor To The Top -->
+    <a href="#top"
+      ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
+    /></a>
+    <!-- Anchor To The Top -->
+
+    <!-- Changing Color Theme -->
+    <div class="toggle">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle"></label>
+      <p id="inputThemeText">Зробити темніше?</p>
+    </div>
+    <!-- Changing Color Theme -->
+
+    <!-- Pop Up Added Item To The Shopping Cart -->
+    <div id="popUpShoppingCart" class="pop-up-shopping-cart">
+      <div class="pop-up-shopping-cart-block">
+        <div class="pop-up-shopping-cart-title-info">
+          <p class="pop-up-shopping-cart-title">
+            ТОВАР УСПІШНО ДОДАНО <br />
+            ДО ВАШОГО КОШИКА
+          </p>
+          <span id="closePopUp">&times;</span>
+        </div>
+        <div class="image-and-goods-info">
+          <div class="image-and-goods-info-left-part">
+            <img id="popUpImage" />
+          </div>
+          <div class="image-and-goods-info-right-part">
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <p>Розмір: <span id="popUpSize">XS</span></p>
+            <p>Кількість: <span id="popUpQuantity">1</span></p>
+            <p>Ітого: <span id="popUpPrice">705</span> грн</p>
+          </div>
+        </div>
+        <button id="continueBtn" class="pop-up-button">
+          Продовжити покупки
+        </button>
+        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+          Оформити замовлення
+        </a>
+      </div>
+    </div>
+    <!-- Pop Up Added Item To The Shopping Cart -->
+
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -128,12 +175,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
-              <a href="#"
+              <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
                   class="user-links-image"
-                  alt="Shopping Cart Icon"
-              /></a>
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <img
@@ -156,7 +204,8 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="catalog.html"> Головна > Каталог ></a>
+            <a href="index.html">Головна > </a>
+            <a href="catalog.html">Каталог ></a>
             <span> Ліжко Ascold</span>
           </div>
         </div>
@@ -177,13 +226,14 @@
                     onclick="fullView(this.src)"
                   />
                   <img
-                    src="img/info-item/bed-ascold/03.png"
+                    src="img/info-item/bed-ascold/04.png"
                     alt="Ліжко Ascold"
                     onclick="fullView(this.src)"
                   />
                   <img
-                    src="img/info-item/bed-ascold/04.png"
+                    src="img/info-item/bed-ascold/03.png"
                     alt="Ліжко Ascold"
+                    id="mainPicForPopUp"
                     onclick="fullView(this.src)"
                   />
                 </div>
@@ -196,7 +246,7 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1>Ліжко Ascold</h1>
+                <h1 id="h1">Ліжко Ascold</h1>
                 <p class="item-info-right-text-block-description">
                   М'яка тканина, плавні лінії, округлі бортики - все це робить
                   лежак MOLLY чудовим місцем відпочинку для улюбленця і
@@ -211,20 +261,22 @@
                   <p>Наявність: <span>В наявності</span></p>
                 </div>
                 <p class="size">Розмір:</p>
-                <div class="sizes">
-                  <p>52x40x17 см</p>
-                  <p>62x50x19 см</p>
+                <div class="sizes" id="sizes">
+                  <div id="xsGroup" class="check-group">
+                    <input type="radio" id="small" name="size" />
+                    <label id="smallLabel">52x40x17 см</label>
+                  </div>
+                  <div id="sGroup" class="check-group">
+                    <input type="radio" id="big" name="size" />
+                    <label id="bigLabel">62x50x19 см</label>
+                  </div>
                 </div>
-                <div class="table-sizes">
-                  <a href="#">Таблиця розмірів</a>
-                  <img src="img/info-item/sizes.svg" alt="Sizes icon" />
-                </div>
-                <p class="item-price">1088 грн</p>
-                <button class="button">КУПИТЬ</button>
+                <p class="item-price"><span id="price">1088</span> грн</p>
+                <button id="buy" class="button">КУПИТЬ</button>
               </div>
             </div>
             <img
-              src="img/info-item/paws-decor.png"
+              src="img/info-item/paws.png "
               class="paws-decor"
               alt="Paws Decor"
             />
@@ -343,7 +395,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/items.js"></script>
+    <script src="js/items-beds.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

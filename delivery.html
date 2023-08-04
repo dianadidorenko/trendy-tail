@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -56,6 +57,21 @@
       <div class="search-page-close-not-found-overlay"></div>
     </div>
     <!-- Nothing Found Search Page Form -->
+
+    <!-- Anchor To The Top -->
+    <a href="#top"
+      ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
+    /></a>
+    <!-- Anchor To The Top -->
+
+    <!-- Changing Color Theme -->
+    <div class="toggle">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle"></label>
+      <p id="inputThemeText">Зробити темніше?</p>
+    </div>
+    <!-- Changing Color Theme -->
+
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -104,7 +120,7 @@
                   <a href="about-us.html" class="menu__link">О нас</a>
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link"
+                  <a href="delivery.html" class="menu__link active__link"
                     >Доставка і оплата</a
                   >
                 </li>
@@ -118,7 +134,7 @@
             </nav>
           </div>
           <div class="header-links__block">
-            <div class="header__user-links user-links">
+           <div class="header__user-links user-links">
               <a href="#"
                 ><img
                   src="img/main-page/HEADER/search-icon.svg"
@@ -126,12 +142,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
-              <a href="#"
+              <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
                   class="user-links-image"
-                  alt="Shopping Cart Icon"
-              /></a>
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <img
@@ -286,7 +303,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- <script src="js/catalog.js"></script> -->
+    <script src="js/delivery.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

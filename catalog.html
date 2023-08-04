@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -55,6 +56,21 @@
       <div class="search-page-close-not-found-overlay"></div>
     </div>
     <!-- Nothing Found Search Page Form -->
+
+    <!-- Anchor To The Top -->
+    <a href="#top"
+      ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
+    /></a>
+    <!-- Anchor To The Top -->
+
+    <!-- Changing Color Theme -->
+    <div class="toggle">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle"></label>
+      <p id="inputThemeText">Зробити темніше?</p>
+    </div>
+    <!-- Changing Color Theme -->
+
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -127,12 +143,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
-              <a href="#"
+              <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
                   class="user-links-image"
-                  alt="Shopping Cart Icon"
-              /></a>
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <img
@@ -239,11 +256,11 @@
                   />
                 </div>
                 <div>
-                  <div class="collection">
-                    <a href="collection.html">КОЛЕКЦІЯ</a>
+                  <div class="carrying">
+                    <a href="carrying.html">ПЕРЕНЕСЕННЯ</a>
                   </div>
                   <div class="sale">
-                    <a href="collection.html">СКІДКИ</a>
+                    <a href="discount.html">ЗНИЖКИ</a>
                   </div>
                 </div>
               </div>
@@ -260,9 +277,10 @@
                     <div id="categoryItem" class="li-list-title">
                       <img
                         src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        id="asideArrowCategory"
                         alt="Arrow down icon"
                       />
-                      <p>КАТЕГОРІЯ</p>
+                      <p id="category">КАТЕГОРІЯ</p>
                     </div>
                     <ul
                       id="catalogueMenuCategory"
@@ -281,7 +299,7 @@
                         <input
                           type="radio"
                           name="catalogMenRadio"
-                          id="collar"
+                          id="accessories"
                         />
                         <label>Аксесуари</label>
                       </li>
@@ -295,355 +313,445 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="li-title">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
-                      alt="Arrow down icon"
-                    />
-                    <p>БРЕНД</p>
+                  <li class="li-title li-list">
+                    <div id="brandItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        id="asideArrowBrand"
+                        alt="Arrow down icon"
+                      />
+                      <p id="brand">БРЕНД</p>
+                    </div>
+                    <ul
+                      id="brandMenuCategory"
+                      class="catalogue-menu-category"
+                      style="display: none"
+                    >
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="petFashion"
+                        />
+                        <label>Pet Fashion</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="harleyCho"
+                        />
+                        <label>Harley&Cho</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="brandMenuRadio" id="collar" />
+                        <label>Collar</label>
+                      </li>
+                      <li>
+                        <input type="radio" name="brandMenuRadio" id="trixie" />
+                        <label>Trixie</label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li-title li-list">
+                    <div id="priceItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        id="asideArrowPrice"
+                        alt="Arrow down icon"
+                      />
+                      <p id="price">ЦІНА</p>
+                    </div>
+                    <ul
+                      id="priceMenuCategory"
+                      class="catalogue-menu-category"
+                      style="display: none"
+                    >
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFirstPrice"
+                        />
+                        <label> до 499 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeSecondPrice"
+                        />
+                        <label>500-999 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeThirdPrice"
+                        />
+                        <label>1000-1499 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFourthPrice"
+                        />
+                        <label>1500-1999 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFifthPrice"
+                        />
+                        <label> від 2000 грн</label>
+                      </li>
+                    </ul>
                   </li>
                   <li class="li-title">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
-                      alt="Arrow down icon"
-                    />
-                    <p>ЦІНА</p>
-                  </li>
-                  <li class="li-title">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
-                      alt="Arrow down icon"
-                    />
-                    <p>РОЗМІРИ</p>
-                  </li>
-                  <li class="li-title">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
-                      alt="Arrow down icon"
-                    />
-                    <p>НАЯВНІСТЬ</p>
+                    <div id="sizeItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        alt="Arrow down icon"
+                      />
+                      <p>РОЗМІРИ</p>
+                    </div>
                   </li>
                 </ul>
               </nav>
             </aside>
             <div class="catalogue-menu-block">
               <div class="catalogue-menu-block-items">
-                <div class="catalogue-menu-block-item">
-                  <a href="raincoat-ariel.html">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/01.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Дощовик Ariel"
-                  /></a>
+                <div
+                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="raincoat-ariel.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/01.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Дощовик Ariel"
+                    /></a>
+                    <a
+                      href="raincoat-ariel.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
                   <p class="brand">PET FASHION</p>
                   <h3>Дощовик Ariel</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
+                  <p class="sizes">XS XS2 S M L</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
                   <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#"
-                    ><img
-                      src="img/catalog-page/CATALOGUE-MENU/02.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Футболка Maria"
-                  /></a>
+                <div
+                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="raincoat-ariel.html"
+                      ><img
+                        src="img/catalog-page/CATALOGUE-MENU/02.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Футболка Maria"
+                    /></a>
+                    <a
+                      href="raincoat-ariel.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
                   <p class="brand">PET FASHION</p>
                   <h3>Футболка Maria</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">XS XS2 S M L</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">719 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/03.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Худі Sofia"
-                  /></a>
+                <div
+                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="raincoat-ariel.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/03.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Худі Sofia"
+                    /></a>
+                    <a
+                      href="raincoat-ariel.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
                   <p class="brand">PET FASHION</p>
                   <h3>Худі Sofia</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">XS XS2 S M L</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">863 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="bed-ascold.html">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/04.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Ліжак Ascold"
-                  /></a>
-                  <p class="brand">PET FASHION</p>
+                <div
+                  class="catalogue-menu-block-item beds-category harleyCho range-third-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="bed-ascold.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/04.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Ліжак Ascold"
+                    /></a>
+                    <a href="bed-ascold.html" class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
+                  <p class="brand">Harley&Cho</p>
                   <h3>Ліжак Ascold</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">52*40*17, 62*50*19</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">1088 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/05.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Ліжак Prime"
-                  /></a>
-                  <p class="brand">PET FASHION</p>
+                <div
+                  class="catalogue-menu-block-item beds-category harleyCho range-fifth-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="bed-ascold.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/05.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Ліжак Prime"
+                    /></a>
+                    <a href="bed-ascold.html" class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
+                  <p class="brand">Harley&Cho</p>
                   <h3>Ліжак Prime</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">60х50х18, 78х60х20</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">2065 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/06.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Ліжак Denver"
-                  /></a>
-                  <p class="brand">PET FASHION</p>
+                <div
+                  class="catalogue-menu-block-item beds-category harleyCho range-third-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="bed-ascold.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/06.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Ліжак Denver"
+                    /></a>
+                    <a href="bed-ascold.html" class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
+                  <p class="brand">Harley&Cho</p>
                   <h3>Ліжак Denver</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">80*60*13, 102*76*14</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">1435 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="collar-bright.html">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/07.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Комірець Bright"
-                  /></a>
-
-                  <p class="brand">PET FASHION</p>
+                <div
+                  class="catalogue-menu-block-item accessories-category trixie range-first-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="collar-bright.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/07.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Комірець Bright"
+                    /></a>
+                    <a
+                      href="collar-bright.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
+                  <p class="brand">Trixie</p>
                   <h3>Комірець Bright</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">XS-XS2 S-M</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">204 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#"
-                    ><img
-                      src="img/catalog-page/CATALOGUE-MENU/08.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Комірець Mood"
-                  /></a>
-
-                  <p class="brand">PET FASHION</p>
-                  <h3>Комірець Mood</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
+                <div
+                  class="catalogue-menu-block-item accessories-category trixie range-first-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="collar-bright.html"
+                      ><img
+                        src="img/catalog-page/CATALOGUE-MENU/08.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Комірець Mood"
+                    /></a>
+                    <a
+                      href="collar-bright.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
                   </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="brand">Trixie</p>
+                  <h3>Кепка Mood</h3>
+                  <p class="sizes">XS S M</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">173 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/09.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Сумка-переноска Remy"
-                  /></a>
-
-                  <p class="brand">PET FASHION</p>
+                <div
+                  class="catalogue-menu-block-item carrying-category collar range-fourth-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="carrying-remy.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/09.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Сумка-переноска Remy"
+                    /></a>
+                    <a
+                      href="carrying-remy.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
+                  <p class="brand">COLLAR</p>
                   <h3>Сумка-переноска Remy</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p>40x28x21</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">1829 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="sweatshirt-delicate.html">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/10.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Толстовка Delicate"
-                  /></a>
-
+                <div
+                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="sweatshirt-delicate.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/10.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Толстовка Delicate"
+                    /></a>
+                    <a
+                      href="sweatshirt-delicate.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
                   <p class="brand">PET FASHION</p>
                   <h3>Толстовка Delicate</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">XS XS2 S M L</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">652 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/11.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Комбінезон Puzzle"
-                  /></a>
-
+                <div
+                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="sweatshirt-delicate.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/11.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Комбінезон Puzzle"
+                    /></a>
+                    <a
+                      href="sweatshirt-delicate.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
                   <p class="brand">PET FASHION</p>
                   <h3>Комбінезон Puzzle</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">S2</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">939 грн</p>
                 </div>
-
-                <div class="catalogue-menu-block-item">
-                  <a href="#">
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/12.jpg"
-                      class="catalogue-menu-main-pic"
-                      alt="Худі Snoodie"
-                  /></a>
-
+                <div
+                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
+                >
+                  <div class="catalogue-menu-image">
+                    <a href="sweatshirt-delicate.html">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/12.jpg"
+                        class="catalogue-menu-main-pic"
+                        alt="Худі Snoodie"
+                    /></a>
+                    <a
+                      href="sweatshirt-delicate.html"
+                      class="catalogue-menu-search-icon"
+                      ><img
+                        src="img/main-page/HEADER/search-icon.svg"
+                        alt="Search Icon"
+                    /></a>
+                  </div>
                   <p class="brand">PET FASHION</p>
                   <h3>Худі Snoodie</h3>
-                  <div class="info-block">
-                    <p>Розмір S</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>В наявності</p>
-                    <img
-                      src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                      alt="Dot icon"
-                    />
-                    <p>Рожевий</p>
-                  </div>
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                  <button class="button">КУПИТЬ</button>
+                  <p class="sizes">S SM M M2</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">613 грн</p>
                 </div>
               </div>
 

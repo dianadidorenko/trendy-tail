@@ -3,15 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
+        <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="img/favicon.ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="img/favicon.ico//apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="img/favicon.ico//apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="img/favicon.ico//apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="img/favicon.ico//apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="img/favicon.ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="img/favicon.ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/favicon.ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/favicon.ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="img/favicon.ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon.ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="img/favicon.ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon.ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/feedback.css" />
-    <title>Відгуки</title>
+    <link rel="stylesheet" href="css/category-items.css" />
+    <title>Ліжаки</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -102,7 +171,6 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
-
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -115,7 +183,9 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
@@ -129,7 +199,7 @@
                   <a href="contacts.html" class="menu__link">Контакти</a>
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link active__link">Відгуки</a>
+                  <a href="feedback.html" class="menu__link">Відгуки</a>
                 </li>
               </ul>
             </nav>
@@ -172,52 +242,173 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Відгуки</span>
+            <a href="index.html"> Головна ></a>
+            <a href="catalog.html">Каталог > </a>
+            <span>Ліжаки</span>
           </div>
         </div>
 
-        <section class="page__feedback feedback">
-          <div class="feedback__container">
+        <section class="page__catalogue-menu catalogue-menu">
+          <div class="catalogue-menu-title-block">
             <img
               src="img/main-page/ABOUT/heart-icon.svg"
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">Відгуки</h2>
-
-            <div id="commentBlock" class="comment-block"></div>
-
-            <div class="leave-comment-block">
-              <p class="leave-comment-title">Залиште коментар</p>
-              <form id="formBlock" class="form-block">
-                <div>
-                  <label> Ім'я і фамілія: </label>
-                  <input type="text" id="userInfo" />
+            <h2 class="page-title">ЛІЖАКИ</h2>
+          </div>
+          <div class="catalogue-menu__container">
+            <aside>
+              <nav class="catalogue-menu-nav">
+                <ul id="catalogueMenuAside" class="catalogue-menu-aside">
+                  <li class="li-title li-list">
+                    <div id="categoryItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        alt="Arrow down icon"
+                      />
+                      <p>КАТЕГОРІЯ</p>
+                    </div>
+                    <ul
+                      id="catalogueMenuCategory"
+                      class="catalogue-menu-category"
+                      style="display: none"
+                    >
+                      <li>
+                        <input type="radio" name="catalogMenRadio" id="wear" />
+                        <label>Одяг</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="catalogMenRadio"
+                          id="beds"
+                          checked
+                        />
+                        <label>Ліжаки</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="catalogMenRadio"
+                          id="collar"
+                        />
+                        <label>Аксесуари</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="catalogMenRadio"
+                          id="carrying"
+                        />
+                        <label>Перенесення</label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>БРЕНД</p>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>ЦІНА</p>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>РОЗМІРИ</p>
+                  </li>
+                  <li class="li-title">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                      alt="Arrow down icon"
+                    />
+                    <p>НАЯВНІСТЬ</p>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <div class="catalogue-menu-block">
+              <div class="catalogue-menu-block-items">
+                <div class="catalogue-menu-block-item">
+                  <a href="bed-ascold.html">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/04.jpg"
+                      class="catalogue-menu-main-pic"
+                      alt="Ліжак Ascold"
+                  /></a>
+                  <p class="brand">M-PETS</p>
+                  <h3>Ліжак Ascold</h3>
+                  <p>52x40x17 см</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">1088 грн</p>
+                  <button class="button">КУПИТЬ</button>
                 </div>
-                <div>
-                  <label> Коментар: </label>
-                  <textarea id="userComment"></textarea>
+
+                <div class="catalogue-menu-block-item">
+                  <a href="#">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/05.jpg"
+                      class="catalogue-menu-main-pic"
+                      alt="Ліжак Prime"
+                  /></a>
+                  <p class="brand">M-PETS</p>
+                  <h3>Ліжак Prime</h3>
+                  <p>52x40x17 см</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">2065 грн</p>
+                  <button class="button">КУПИТЬ</button>
                 </div>
+
+                <div class="catalogue-menu-block-item">
+                  <a href="#">
+                    <img
+                      src="img/catalog-page/CATALOGUE-MENU/06.jpg"
+                      class="catalogue-menu-main-pic"
+                      alt="Ліжак Denver"
+                  /></a>
+                  <p class="brand">M-PETS</p>
+                  <h3>Ліжак Denver</h3>
+                  <p>62x50x19 см</p>
+                  <img
+                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
+                    class="dot"
+                    alt="Dot icon"
+                  />
+                  <p class="catalogue-menu-block-item-price">1435 грн</p>
+                  <button class="button">КУПИТЬ</button>
+                </div>
+              </div>
+
+              <div class="pagination">
                 <img
-                  src="img/feedback/01.jpg"
-                  class="feedback-img1"
-                  alt="Feedback image"
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
+                  alt="Arrow Left Icon"
                 />
+                <p class="active-page">1</p>
+                <p>2</p>
+                <p>3</p>
                 <img
-                  src="img/feedback/02.jpg"
-                  class="feedback-img2"
-                  alt="Feedback image"
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
+                  alt="Arrow Right Icon"
                 />
-                <img
-                  src="img/feedback/03.jpg"
-                  class="feedback-img3"
-                  alt="Feedback image"
-                />
-              </form>
-              <button id="enter" class="button" type="submit">
-                Додати коментар
-              </button>
+              </div>
             </div>
           </div>
         </section>
@@ -307,9 +498,11 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/feedback.js"></script>
+    <!-- <script src="js/catalog.js"></script> -->
     <script src="js/search.js"></script>
+    <script src="js/items.js"></script>
   </body>
 </html>

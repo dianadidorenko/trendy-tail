@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -56,6 +57,52 @@
       <div class="search-page-close-not-found-overlay"></div>
     </div>
     <!-- Nothing Found Search Page Form -->
+
+    <!-- Anchor To The Top -->
+    <a href="#top"
+      ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
+    /></a>
+    <!-- Anchor To The Top -->
+
+    <!-- Changing Color Theme -->
+    <div class="toggle">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle"></label>
+      <p id="inputThemeText">Зробити темніше?</p>
+    </div>
+    <!-- Changing Color Theme -->
+
+    <!-- Pop Up Added Item To The Shopping Cart -->
+    <div id="popUpShoppingCart" class="pop-up-shopping-cart">
+      <div class="pop-up-shopping-cart-block">
+        <div class="pop-up-shopping-cart-title-info">
+          <p class="pop-up-shopping-cart-title">
+            ТОВАР УСПІШНО ДОДАНО <br />
+            ДО ВАШОГО КОШИКА
+          </p>
+          <span id="closePopUp">&times;</span>
+        </div>
+        <div class="image-and-goods-info">
+          <div class="image-and-goods-info-left-part">
+            <img id="popUpImage" />
+          </div>
+          <div class="image-and-goods-info-right-part">
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <p>Розмір: <span id="popUpSize">XS</span></p>
+            <p>Кількість: <span id="popUpQuantity">1</span></p>
+            <p>Ітого: <span id="popUpPrice">705</span> грн</p>
+          </div>
+        </div>
+        <button id="continueBtn" class="pop-up-button">
+          Продовжити покупки
+        </button>
+        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+          Оформити замовлення
+        </a>
+      </div>
+    </div>
+    <!-- Pop Up Added Item To The Shopping Cart -->
+
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -128,12 +175,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
-              <a href="#"
+              <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
                   class="user-links-image"
-                  alt="Shopping Cart Icon"
-              /></a>
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <img
@@ -156,7 +204,8 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="catalog.html"> Головна > Каталог ></a>
+            <a href="index.html">Головна > </a>
+            <a href="catalog.html">Каталог ></a>
             <span> Дощовик Ariel</span>
           </div>
         </div>
@@ -183,6 +232,7 @@
                   />
                   <img
                     src="img/info-item/raincoat-ariel/01.jpg"
+                    id="mainPicForPopUp"
                     alt="Дощовик Ariel"
                     onclick="fullView(this.src)"
                   />
@@ -196,7 +246,7 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1>Дощовик Ariel</h1>
+                <h1 id="h1" class="raincoatAriel">Дощовик Ariel</h1>
                 <p class="item-info-right-text-block-description">
                   Зручно та стильно! Дощовик ARIEL створено спеціально для
                   хвостатих модниць, які воліють почуватися у будь-яку погоду
@@ -216,23 +266,259 @@
                   <p>Наявність: <span>В наявності</span></p>
                 </div>
                 <p class="size">Розмір:</p>
-                <div class="sizes">
-                  <p>XS</p>
-                  <p>S</p>
-                  <p>M</p>
-                  <p>L</p>
-                  <p>XL</p>
+                <div class="sizes" id="sizes">
+                  <div id="xsGroup" class="check-group">
+                    <input type="radio" id="xs" name="size" />
+                    <label>XS</label>
+                  </div>
+                  <div id="sGroup" class="check-group">
+                    <input type="radio" id="s" name="size" />
+                    <label>S</label>
+                  </div>
+                  <div id="mGroup" class="check-group">
+                    <input type="radio" id="m" name="size" />
+                    <label>M</label>
+                  </div>
+                  <div id="lGroup" class="check-group">
+                    <input type="radio" id="l" name="size" />
+                    <label>L</label>
+                  </div>
+                  <div id="xlGroup" class="check-group">
+                    <input type="radio" id="xl" name="size" />
+                    <label>XL</label>
+                  </div>
                 </div>
                 <div class="table-sizes">
-                  <a href="#">Таблиця розмірів</a>
-                  <img src="img/info-item/sizes.svg" alt="Sizes icon" />
+                  <div class="table-sizes-title-block">
+                    <a id="sizesTable">Таблиця розмірів</a>
+                    <img src="img/info-item/sizes.svg" alt="Sizes icon" />
+                  </div>
                 </div>
-                <p class="item-price">829 грн</p>
-                <button class="button">КУПИТЬ</button>
+                <p class="item-price"><span id="price">829</span> грн</p>
+                <button id="buy" class="button">КУПИТЬ</button>
               </div>
             </div>
+
+            <!-- Sizes table -->
+            <div class="sizes-table">
+              <span id="closeSizesTable">&times</span>
+              <h2 class="sizes-table-title">Розмірна сітка</h2>
+              <div class="size-table-block">
+                <div class="sizes-table-left-part">
+                  <div class="item-block">
+                    <h3>Довжина тіла "A"</h3>
+                    <img
+                      src="img/info-item/back-length.jpeg"
+                      alt="Заміри спини"
+                    />
+                    <p>&Xi;</p>
+                    <p>
+                      Переконайтесь, що ваш собака стоїть прямо. Виміряйте
+                      довжину тіла від шиї до хвоста. Якщо довжина тіла між
+                      розмірами, то краще вибрати більшу.
+                    </p>
+                  </div>
+                  <div class="item-block">
+                    <h3>Об'єм грудей "B"</h3>
+                    <img
+                      src="img/info-item/chest-meisure.jpeg"
+                      alt="Заміри грудної клітки"
+                    />
+                    <p>&Xi;</p>
+                    <p>
+                      Відміряйте найширшу частину грудей вашого вихованця.
+                      Зверніть увагу, що модель одягу може бути тонкою або
+                      вільною відповідно до дизайну, тканини або за власним
+                      смаком.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="sizes-table-right-part">
+                  <table>
+                    <tbody>
+                      <tr style="background-color: #f3f3f3">
+                        <th style="font-weight: bold">Розмір</th>
+                        <th>"A" довжина спини (см)</th>
+                        <th>“В” об’єм грудей (см)</th>
+                        <th>Вага (кг)</th>
+                        <th>Рекомендовані породи</th>
+                      </tr>
+                      <tr>
+                        <td>XXS</td>
+                        <td>20-22</td>
+                        <td>25-29</td>
+                        <td>до 1.5</td>
+                        <td>Цуценята дрібних порід</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>XS</td>
+                        <td>23-25</td>
+                        <td>28-32</td>
+                        <td>1.5-2.5</td>
+                        <td>
+                          Мініатюрний йоркширський тер'єр, чихуахуа, мініатюрний
+                          пінчер, той-тер'єр
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XS такса</td>
+                        <td>33-35</td>
+                        <td>42-52</td>
+                        <td>6.0-8.0</td>
+                        <td>Такса</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>XS2</td>
+                        <td>26-28</td>
+                        <td>32-39</td>
+                        <td>2.0-3.0</td>
+                        <td>
+                          Йоркширський тер'єр, чихуахуа, мініатюрний пінчер,
+                          той-тер'єр, померанський шпіц, мальтезе, мальтіпу
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>S</td>
+                        <td>27-29</td>
+                        <td>37-44</td>
+                        <td>2.5-3.5</td>
+                        <td>
+                          Йоркширський тер'єр, чихуахуа, мініатюрний пінчер,
+                          той-тер'єр, померанський шпіц, мальтезе, мальтіпу
+                        </td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>S такса</td>
+                        <td>38-40</td>
+                        <td>44-54</td>
+                        <td>8.0-10.0</td>
+                        <td>Такса</td>
+                      </tr>
+                      <tr>
+                        <td>S2</td>
+                        <td>28-30</td>
+                        <td>50-57</td>
+                        <td>7.0-9.0</td>
+                        <td>Мопс, французький бульдог</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>S2 такса</td>
+                        <td>38-40</td>
+                        <td>50-62</td>
+                        <td>12.0-15.0</td>
+                        <td>Такса, пекінес, невеликі коргі</td>
+                      </tr>
+                      <tr>
+                        <td>SM</td>
+                        <td>28-30</td>
+                        <td>44-52</td>
+                        <td>4.0-6.0</td>
+                        <td>Пінчер, бішон фризе, джек-рассел-тер'єр</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>M</td>
+                        <td>34-36</td>
+                        <td>40-48</td>
+                        <td>3.0-6.0</td>
+                        <td>
+                          Мальтезе, ши-тцу, той- пудель, карликовий пудель
+                          (собаки середніх порід), бішон фризе,
+                          кавалер-кінг-чарльз-спанієль
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>M такса</td>
+                        <td>43-45</td>
+                        <td>50-62</td>
+                        <td>10.0-13.0</td>
+                        <td>Такса</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>M2</td>
+                        <td>32-34</td>
+                        <td>55-65</td>
+                        <td>10.0-14.0</td>
+                        <td>Мопс, французький бульдог</td>
+                      </tr>
+                      <tr>
+                        <td>ML</td>
+                        <td>33-35</td>
+                        <td>44-55</td>
+                        <td>4.0-7.0</td>
+                        <td>Джек-рассел-тер'єр</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>L</td>
+                        <td>38-40</td>
+                        <td>47-56</td>
+                        <td>6.0-13.0</td>
+                        <td>
+                          Китайська чубата, ши-тцу, той- пудель, пудель,
+                          шнауцер, японський хін, кокер-спанієль
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XL</td>
+                        <td>41-43</td>
+                        <td>55-65</td>
+                        <td>10.0-15.0</td>
+                        <td>
+                          Шнауцер, кокер-спаніель, фокстер'єр, скотчтер'єр,
+                          цвергшнауцер, англійський спанієль, міні бультер'єр
+                        </td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>2XL</td>
+                        <td>44-46</td>
+                        <td>60-72</td>
+                        <td>20.0-25.0</td>
+                        <td>Самоїд, бультер'єр</td>
+                      </tr>
+                      <tr>
+                        <td>3XL</td>
+                        <td>47-49</td>
+                        <td>68-80</td>
+                        <td>25.0-30.0</td>
+                        <td>Самоїд великий, стаффорд, бультер'єр</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>4XL</td>
+                        <td>49-51</td>
+                        <td>72-85</td>
+                        <td>30.0-35.0</td>
+                        <td>Стаффорд, хаскі</td>
+                      </tr>
+                      <tr>
+                        <td>5XL</td>
+                        <td>55-57</td>
+                        <td>78-91</td>
+                        <td>35.0-45.0</td>
+                        <td>Ретрівер, лабрадор, боксер</td>
+                      </tr>
+                      <tr style="background-color: #f3f3f3">
+                        <td>6XL</td>
+                        <td>61-63</td>
+                        <td>82-95</td>
+                        <td>45.0-50.0</td>
+                        <td>Вівчарка, ротвейлер, доберман</td>
+                      </tr>
+                      <tr>
+                        <td>7XL</td>
+                        <td>70-72</td>
+                        <td>86-99</td>
+                        <td>60.0-66.0</td>
+                        <td>Кане-корсо</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Sizes table -->
+
             <img
-              src="img/info-item/paws-decor.png"
+              src="img/info-item/paws.png "
               class="paws-decor"
               alt="Paws Decor"
             />
@@ -341,7 +627,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/items.js"></script>
+    <script src="js/items-clothes.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

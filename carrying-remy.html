@@ -10,8 +10,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/feedback.css" />
-    <title>Відгуки</title>
+    <link rel="stylesheet" href="css/items.css" />
+    <title>Сумка-переноска Remy</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -72,6 +72,37 @@
     </div>
     <!-- Changing Color Theme -->
 
+    <!-- Pop Up Added Item To The Shopping Cart -->
+    <div id="popUpShoppingCart" class="pop-up-shopping-cart">
+      <div class="pop-up-shopping-cart-block">
+        <div class="pop-up-shopping-cart-title-info">
+          <p class="pop-up-shopping-cart-title">
+            ТОВАР УСПІШНО ДОДАНО <br />
+            ДО ВАШОГО КОШИКА
+          </p>
+          <span id="closePopUp">&times;</span>
+        </div>
+        <div class="image-and-goods-info">
+          <div class="image-and-goods-info-left-part">
+            <img id="popUpImage" />
+          </div>
+          <div class="image-and-goods-info-right-part">
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <p>Розмір: <span id="popUpSize">XS</span></p>
+            <p>Кількість: <span id="popUpQuantity">1</span></p>
+            <p>Ітого: <span id="popUpPrice">705</span> грн</p>
+          </div>
+        </div>
+        <button id="continueBtn" class="pop-up-button">
+          Продовжити покупки
+        </button>
+        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+          Оформити замовлення
+        </a>
+      </div>
+    </div>
+    <!-- Pop Up Added Item To The Shopping Cart -->
+
     <div class="wrapper">
       <!-- Burger Menu  -->
       <div class="burger-menu">
@@ -102,7 +133,6 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
-
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -115,7 +145,9 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
@@ -129,7 +161,7 @@
                   <a href="contacts.html" class="menu__link">Контакти</a>
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link active__link">Відгуки</a>
+                  <a href="feedback.html" class="menu__link">Відгуки</a>
                 </li>
               </ul>
             </nav>
@@ -172,52 +204,86 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Відгуки</span>
+            <a href="index.html">Головна > </a>
+            <a href="catalog.html">Каталог ></a>
+            <span> Сумка-переноска Remy</span>
           </div>
         </div>
 
-        <section class="page__feedback feedback">
-          <div class="feedback__container">
+        <section class="page__item-info item-info">
+          <div class="item-info__container">
+            <div class="blocks">
+              <div class="item-info-left-photo-block">
+                <div class="item-info-left-photo-block-items">
+                  <img
+                    src="img/info-item/carrying-remy/01.jpg"
+                    id="mainPicForPopUp"
+                    alt="Сумка-переноска Remy"
+                    onclick="fullView(this.src)"
+                    style="max-width: 400px"
+                  />
+                </div>
+                
+                <div id="FullImageView">
+                  <img id="FullImage" />
+                  <span id="closeButton" onclick="closeFullView()"
+                    >&times;</span
+                  >
+                </div>
+              </div>
+              <div class="item-info-right-text-block">
+                <h1 id="h1">Сумка-переноска Remy</h1>
+                <p class="item-info-right-text-block-description">
+                  Створено з турботою про комфорт господаря і улюбленця!
+                  Переваги моделі: оптимальна форма, зйомний «дах», віконечко з
+                  сіткою, довгі м’які ручки, кишеня для дрібниць.
+                </p>
+                <div class="info-block-p">
+                  <p>Бренд: <span>PF Trends</span></p>
+                  <p>Розмір: <span>40x28x21 см</span></p>
+                  <p>Матеріал: <span>100% поліестер</span></p>
+                  <p>Колір: <span>Чорний</span></p>
+                  <p>Наявність: <span>В наявності</span></p>
+                </div>
+                <p class="size">Розмір:</p>
+                <div class="sizes" id="sizes">
+                  <div id="sGroup" class="check-group">
+                    <input type="radio" id="big" name="size" />
+                    <label id="bigLabel">40x28x21 см</label>
+                  </div>
+                </div>
+                <p class="item-price"><span id="price">1829</span> грн</p>
+                <button id="buy" class="button">КУПИТЬ</button>
+              </div>
+            </div>
             <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
+              src="img/info-item/paws.png "
+              class="paws-decor"
+              alt="Paws Decor"
             />
-            <h2 class="page-title">Відгуки</h2>
-
-            <div id="commentBlock" class="comment-block"></div>
-
-            <div class="leave-comment-block">
-              <p class="leave-comment-title">Залиште коментар</p>
-              <form id="formBlock" class="form-block">
-                <div>
-                  <label> Ім'я і фамілія: </label>
-                  <input type="text" id="userInfo" />
-                </div>
-                <div>
-                  <label> Коментар: </label>
-                  <textarea id="userComment"></textarea>
-                </div>
-                <img
-                  src="img/feedback/01.jpg"
-                  class="feedback-img1"
-                  alt="Feedback image"
-                />
-                <img
-                  src="img/feedback/02.jpg"
-                  class="feedback-img2"
-                  alt="Feedback image"
-                />
-                <img
-                  src="img/feedback/03.jpg"
-                  class="feedback-img3"
-                  alt="Feedback image"
-                />
-              </form>
-              <button id="enter" class="button" type="submit">
-                Додати коментар
-              </button>
+            <div class="below-block">
+              <p class="description">ОПИС</p>
+              <div class="characteristics">
+                <p>
+                  Витончений лежак сподобається улюбленцям і завдяки м'якій
+                  подушці, зшитий з плюшу та меблевої тканини - її можна
+                  перевертати більш м'якої або цупкою стороною під настрій.
+                </p>
+                <p>Переваги лежака:</p>
+                <ul>
+                  <li>вишуканий дизайн і модний колір;</li>
+                  <li>
+                    якісні матеріали: щільна меблева тканина, холлофайбер;
+                  </li>
+                  <li>прикраса - декоративна нашивка з логотипом.</li>
+                </ul>
+                <p>Подушка: знімна</p>
+                <p>Наповнювач: гіпоалергенний холофайбер</p>
+                <p>
+                  Правила догляду: ручне прання при температурі не вище 40
+                  градусів
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -307,9 +373,10 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/feedback.js"></script>
+    <script src="js/items-carrying.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>
