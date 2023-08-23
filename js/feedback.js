@@ -1,38 +1,4 @@
-// Burger menu
-
-function burgerMenu(selector) {
-  let menu = $(selector);
-  let button = menu.find(".burger-menu__button");
-  let links = menu.find(".burger-menu__link");
-  let overlay = menu.find(".burger-menu__overlay");
-
-  button.on("click", (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-
-  links.on("click", () => toggleMenu());
-  overlay.on("click", () => toggleMenu());
-
-  function toggleMenu() {
-    menu.toggleClass("burger-menu_active");
-    if (menu.hasClass("burger-menu_active")) {
-      // calling burger menu
-      $("body").css("overflow", "hidden");
-      $(".burger-header-menu").css("display", "flex");
-    } else {
-      // when clicking outside the burger menu
-      $("body").css("overflow", "visible");
-      $(".burger-header-menu").css("display", "none");
-    }
-  }
-}
-burgerMenu(".burger-menu");
-
-// Burger menu
-
 // Feedback save
-
 date = new Date().toLocaleDateString();
 
 const itemsArray = localStorage.getItem("items")
@@ -44,19 +10,72 @@ document.querySelector("#enter").addEventListener("click", () => {
   createItem(userInfo);
 });
 
-document.querySelector("#userInfo").addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    const userInfo = document.querySelector("#userInfo");
-    createItem(userInfo);
+if (localStorage.getItem("items")) {
+  let feedback = document.querySelector(".feedback");
+  leaveCommentBlock.style.display = "none";
+  feedback.style.paddingBottom = "70px";
+}
+
+function getUserInfo() {
+  let request;
+  if (window.XMLHttpRequest) {
+    request = new XMLHttpRequest();
+  } else {
+    request = new ActiveXObject("Microsoft.XMLHTTP");
   }
-});
+  request.open("GET", "https://randomuser.me/api/");
+  request.onload = function () {
+    if (request.status === 200) {
+      let weatherObject = JSON.parse(request.response);
+      // console.log(weatherObject.results[0]);
+
+      var userFirstAndLastName =
+        weatherObject.results[0].name.first +
+        " " +
+        weatherObject.results[0].name.last;
+
+      localStorage.setItem("userFirstAndLastName", userFirstAndLastName);
+    } else if (request.status == 404) {
+      alret("Щось пішло не так");
+    }
+  };
+  request.send();
+}
+
+getUserInfo();
 
 function displayItems() {
   let items = "";
+
+  // Для того щоб юзер бачив відгуки, а не порожню сторінку
+  items = `<div class="comment">
+              <p class='date'>10.08.2023</p>
+              <div class='items'>
+                <p class='username'>${localStorage.getItem(
+                  "userFirstAndLastName"
+                )}</p>
+                <p class='comment-text'>Все було супер, я задоволена якістю.</p>
+                <div class="example-star-block">
+                      <img src="img/feedback/star.svg" />
+                      <img src="img/feedback/star.svg" />
+                      <img src="img/feedback/star.svg" />
+                      <img src="img/feedback/star.svg" />
+                      <img src="img/feedback/star.svg" />
+                    </div>
+              </div>
+            </div>`;
+  // Для того щоб юзер бачив відгуки, а не порожню сторінку
+
   for (let i = 0; i < itemsArray.length; i++) {
     items += `<div class="comment">
-                  <p class='date'> ${date} </p>
-                  <p class='items'> ${itemsArray[i]} </p>
+                <p class='date'> ${date} </p>
+                <div class='items'>
+                  <p class='username'>${itemsArray[i].name}</p>
+                  <p class='comment-text'>${itemsArray[i].comment}</p>
+                  <div class="star-block">
+                  ${itemsArray[i].stars}
+                  </div>
+                </div>
               </div>`;
   }
   document.querySelector(".comment-block").innerHTML = items;
@@ -66,20 +85,22 @@ function createItem(userInfo) {
   if (userInfo.value.length == "" && userComment.value.length == "") {
     alert("Введіть будь-ласка коментар.");
   } else {
-    itemsArray.push(userInfo.value + ", <br> " + userComment.value);
-    localStorage.setItem("items", JSON.stringify(itemsArray));
-    location.reload();
+    itemsArray.push({
+      name: `${userInfo.value}`,
+      comment: `${userComment.value}`,
+      stars: `${starBlock.innerHTML}`,
+    });
   }
+
+  localStorage.setItem("items", JSON.stringify(itemsArray));
+  location.reload();
 }
 
-window.onload = function () {
-  displayItems();
-};
+displayItems();
 
 // Feedback save
 
 // Anchor adding
-
 window.addEventListener("mousemove", (e) => {
   if (e.pageY >= 1450) {
     ancorImg.style.display = "block";
@@ -87,103 +108,24 @@ window.addEventListener("mousemove", (e) => {
     ancorImg.style.display = "none";
   }
 });
-
 // Anchor adding
 
-// Changing theme
-
-const toggle = document.querySelector(".toggle");
-let root = document.documentElement;
-
-var checked = JSON.parse(localStorage.getItem("toggle")),
-  checkbox = document.querySelector("#toggle");
-
-inputThemeText.innerText = "Зробити темніше?";
-
-if (checked == true) {
-  checkbox.checked = true;
-  root.style.setProperty("--background", localStorage.getItem("background"));
-  root.style.setProperty("--background-color", "#795555");
-  root.style.setProperty("--primary-color", "white");
-  root.style.setProperty("--secondary-color", "white");
-  root.style.setProperty("--footer-bg", "#218287");
-  root.style.setProperty("--footer-text-color", "white");
-  root.style.setProperty("--thirdly-color", "white");
-  root.style.setProperty("--search-background-color", "#cacaca");
-  root.style.setProperty("--search-text-color", "#333");
-  root.style.setProperty("--not-active-link", "#e9e9e9");
-
-  inputThemeText.innerText = "Зробити світліше?";
-} else {
-  localStorage.removeItem("toggle");
-  root.style.setProperty("--background", "white");
-  root.style.setProperty("--background-color", "white");
-  root.style.setProperty("--primary-color", "#000");
-  root.style.setProperty("--secondary-color", "#000");
-  root.style.setProperty("--button-color", "white");
-  root.style.setProperty("--footer-bg", "#d2e5dc");
-  root.style.setProperty("--footer-text-color", "#333");
-  root.style.setProperty("--search-background-color", "white");
-  root.style.setProperty("--search-text-color", "white");
-  root.style.setProperty("--not-active-link", "#757575");
-
-  inputThemeText.innerText = "Зробити темніше?";
-}
-
-toggle.addEventListener("change", (e) => {
-  if (e.target.checked) {
-    localStorage.setItem("toggle", checkbox.checked);
-
-    localStorage.setItem("background", "#795555");
-    root.style.setProperty("--background", localStorage.getItem("background"));
-    root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "white");
-    root.style.setProperty("--secondary-color", "white");
-    root.style.setProperty("--button-color", "white");
-    root.style.setProperty("--footer-bg", "#218287");
-    root.style.setProperty("--footer-text-color", "white");
-    root.style.setProperty("--search-background-color", "#cacaca");
-    root.style.setProperty("--search-text-color", "#333");
-    root.style.setProperty("--not-active-link", "#e9e9e9");
-
-    inputThemeText.innerText = "Зробити світліше?";
-  } else {
-    localStorage.removeItem("toggle");
-    root.style.setProperty("--background", "white");
-    root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "#000");
-    root.style.setProperty("--secondary-color", "#000");
-    root.style.setProperty("--button-color", "white");
-    root.style.setProperty("--footer-bg", "#d2e5dc");
-    root.style.setProperty("--footer-text-color", "#333");
-    root.style.setProperty("--search-background-color", "white");
-    root.style.setProperty("--search-text-color", "white");
-    root.style.setProperty("--not-active-link", "#757575");
-
-    inputThemeText.innerText = "Зробити темніше?";
-  }
+// Rating
+$(function () {
+  $(".star-block img").click(function (e) {
+    let stars = $(".star-block").children();
+    $(stars).slice(0, 5).attr("src", "img/feedback/unstar.svg");
+    if (e.target == stars[0]) {
+      $(stars[0]).attr("src", "img/feedback/star.svg");
+    } else if (e.target == stars[1]) {
+      $(stars).slice(0, 2).attr("src", "img/feedback/star.svg");
+    } else if (e.target == stars[2]) {
+      $(stars).slice(0, 3).attr("src", "img/feedback/star.svg");
+    } else if (e.target == stars[3]) {
+      $(stars).slice(0, 4).attr("src", "img/feedback/star.svg");
+    } else if (e.target == stars[4]) {
+      $(stars).slice(0, 5).attr("src", "img/feedback/star.svg");
+    }
+  });
 });
-
-// Changing theme
-
-// Insert Product Quantity to the Header Shopping Cart
-if (
-  parseInt(localStorage.getItem("quantityOrderValue")) == 0 ||
-  !localStorage.getItem("quantityOrderValue")
-) {
-  headerOrderQuantity.style.display = "none";
-} else {
-  headerOrderQuantity.style.display = "flex";
-  headerOrderQuantity.innerText = localStorage.getItem("quantityOrderValue");
-}
-// Insert Product Quantity to the Header Shopping Cart
-
-// Insert profile name in the header
-
-userName.innerText = localStorage.getItem("userProfileName");
-
-if (userName.innerText.length > 1) {
-  arrow.style.display = "flex";
-}
-
-// Insert profile name in the header
+// Rating

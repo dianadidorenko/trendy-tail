@@ -1,5 +1,4 @@
 // Burger menu
-
 function burgerMenu(selector) {
   let menu = $(selector);
   let button = menu.find(".burger-menu__button");
@@ -28,116 +27,19 @@ function burgerMenu(selector) {
   }
 }
 burgerMenu(".burger-menu");
-
 // Burger menu
 
-// Click for full image view
-
-function fullView(ImgLink) {
-  document.getElementById("FullImage").src = ImgLink;
-  document.getElementById("FullImageView").style.display = "block";
-}
-function closeFullView() {
-  document.getElementById("FullImageView").style.display = "none";
-}
-
-// Click for full image view
-
-// Exact price depends on the size click
-
-sizes.addEventListener("mousedown", (e) => {
-  sGroup.style.background = "rgba(128, 180, 182, 0.1)";
-
-  if (
-    e.target.id == "big" &&
-    e.srcElement.parentElement.className == "check-group"
-  ) {
-    e.srcElement.parentElement.style.background = "rgba(128, 180, 182, 0.4)";
-    price.innerText = "1829";
-  }
-});
-
-// Exact price depends on the size click
-
-// Pop Up Added Item To The Shopping Cart
-
-buy.addEventListener("click", () => {
-  let checked = document.querySelectorAll('input[type="radio"]:checked'),
-    wrapper = document.querySelector(".wrapper");
-
-  popUpShoppingCart.style.display = "flex";
-  wrapper.style.opacity = "0.3";
-
-  document.getElementById("popUpImage").src = mainPicForPopUp.src;
-
-  mainPicForPopUp = localStorage.setItem(
-    "mainPicForPopUp",
-    mainPicForPopUp.src
-  );
-
-  popUpGoodsTitle.innerText = h1.innerText;
-
-  popUpGoodsTitleValue = localStorage.setItem(
-    "popUpGoodsTitleValue",
-    popUpGoodsTitle.innerText
-  );
-
-  for (check of checked) {
-    if (check.id == "big") {
-      popUpSize.innerText = check.id + " - " + bigLabel.innerText;
-      popUpQuantity.innerText = "1";
-      popUpPrice.innerText = price.innerText;
-    }
-  }
-
-  animalSizeProduct = localStorage.setItem(
-    "animalSizeProduct",
-    popUpSize.innerText
-  );
-  animalProductPrice = localStorage.setItem(
-    "animalProductPrice",
-    popUpPrice.innerText
-  );
-
-  closePopUp.addEventListener("click", () => {
-    popUpShoppingCart.style.display = "none";
-    wrapper.style.opacity = "1";
-  });
-
-  continueBtn.addEventListener("click", () => {
-    popUpShoppingCart.style.display = "none";
-    wrapper.style.opacity = "1";
-  });
-});
-
-// Pop Up Added Item To The Shopping Cart
-
-// Anchor adding
-
-window.addEventListener("mousemove", (e) => {
-  if (e.pageY >= 1350) {
-    ancorImg.style.display = "block";
-  } else {
-    ancorImg.style.display = "none";
-  }
-});
-
-// Anchor adding
-
 // Changing theme
-
 const toggle = document.querySelector(".toggle");
 let root = document.documentElement;
 
 var checked = JSON.parse(localStorage.getItem("toggle")),
   checkbox = document.querySelector("#toggle");
 
-inputThemeText.innerText = "Зробити темніше?";
-
 if (checked == true) {
   checkbox.checked = true;
   root.style.setProperty("--background", localStorage.getItem("background"));
-  root.style.setProperty("--background-color", "#795555");
+  root.style.setProperty("--background-color", "#1e595c");
   root.style.setProperty("--primary-color", "white");
   root.style.setProperty("--secondary-color", "white");
   root.style.setProperty("--footer-bg", "#218287");
@@ -148,11 +50,12 @@ if (checked == true) {
   root.style.setProperty("--not-active-link", "#e9e9e9");
 
   inputThemeText.innerText = "Зробити світліше?";
+  inputThemeText.setAttribute("data-lang", "home_page-41");
 } else {
   localStorage.removeItem("toggle");
   root.style.setProperty("--background", "white");
   root.style.setProperty("--background-color", "white");
-  root.style.setProperty("--primary-color", "#000");
+  root.style.setProperty("--primary-color", "#5c5757");
   root.style.setProperty("--secondary-color", "#000");
   root.style.setProperty("--button-color", "white");
   root.style.setProperty("--footer-bg", "#d2e5dc");
@@ -162,15 +65,15 @@ if (checked == true) {
   root.style.setProperty("--not-active-link", "#757575");
 
   inputThemeText.innerText = "Зробити темніше?";
+  inputThemeText.setAttribute("data-lang", "home_page-40");
 }
 
 toggle.addEventListener("change", (e) => {
   if (e.target.checked) {
     localStorage.setItem("toggle", checkbox.checked);
 
-    localStorage.setItem("background", "#795555");
+    localStorage.setItem("background", "#1e595c");
     root.style.setProperty("--background", localStorage.getItem("background"));
-    root.style.setProperty("--background-color", "white");
     root.style.setProperty("--primary-color", "white");
     root.style.setProperty("--secondary-color", "white");
     root.style.setProperty("--button-color", "white");
@@ -181,11 +84,12 @@ toggle.addEventListener("change", (e) => {
     root.style.setProperty("--not-active-link", "#e9e9e9");
 
     inputThemeText.innerText = "Зробити світліше?";
+    inputThemeText.setAttribute("data-lang", "home_page-41");
   } else {
     localStorage.removeItem("toggle");
     root.style.setProperty("--background", "white");
     root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "#000");
+    root.style.setProperty("--primary-color", "#5c5757");
     root.style.setProperty("--secondary-color", "#000");
     root.style.setProperty("--button-color", "white");
     root.style.setProperty("--footer-bg", "#d2e5dc");
@@ -195,9 +99,9 @@ toggle.addEventListener("change", (e) => {
     root.style.setProperty("--not-active-link", "#757575");
 
     inputThemeText.innerText = "Зробити темніше?";
+    inputThemeText.setAttribute("data-lang", "home_page-40");
   }
 });
-
 // Changing theme
 
 // Insert Product Quantity to the Header Shopping Cart
@@ -213,11 +117,12 @@ if (
 // Insert Product Quantity to the Header Shopping Cart
 
 // Insert profile name in the header
-
 userName.innerText = localStorage.getItem("userProfileName");
-
-if (userName.innerText.length > 1) {
-  arrow.style.display = "flex";
-}
-
 // Insert profile name in the header
+
+$(function () {
+  $(".btn-slide").click(function () {
+    $("#panel").slideToggle("fast");
+    $("#panel").css("display", "flex");
+  });
+});

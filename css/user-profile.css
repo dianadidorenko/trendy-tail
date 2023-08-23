@@ -18,7 +18,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 40px;
   position: relative;
 }
@@ -26,10 +26,10 @@
 #img1 {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 0px;
   border-radius: 10px;
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 130px;
+  max-height: 90px;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-box-shadow: 0px 0px 20px 0px white;
@@ -176,7 +176,7 @@ h3 {
 
 #profileBtn {
   max-width: 200px;
-  margin: 10px auto;
+  margin: 10px auto 0px;
   font-weight: 700;
   font-size: 14px;
   padding: 8px 30px;
@@ -193,4 +193,62 @@ h3 {
   margin: 0 auto;
   margin-top: 10px;
   display: none;
+}
+
+.exit-button {
+  max-width: 150px;
+  margin: 10px auto 0px;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.exit-button:hover {
+  -webkit-box-shadow: 1px 1px 12px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 12px 3px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 550px) {
+  .input-block input {
+    max-width: 200px;
+  }
+  #profileForm {
+    padding-top: 20px;
+    gap: 10px 10px;
+  }
+  #profileBtn,
+.exit-button {
+    font-size: 11px;
+    margin: 10px auto 5px;
+  }
+  .user-title-image {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 390px) {
+  .input-block input {
+    max-width: 160px;
+    font-size: 12px;
+  }
+  #profileForm {
+    padding-top: 20px;
+    gap: 10px 10px;
+  }
+  #profileBtn {
+    font-size: 11px;
+    margin: 15px auto 10px;
+  }
+  .user-title-image {
+    padding-bottom: 20px;
+  }
+  .input-label {
+    -webkit-column-gap: 5px;
+       -moz-column-gap: 5px;
+            column-gap: 5px;
+  }
 }

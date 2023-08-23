@@ -1,5 +1,11 @@
 @import url(css/style.css);
 
+.header__btn_active,
+.header__btn:hover,
+.multi__link:hover {
+  color: var(--light-blue-color);
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -32,6 +38,7 @@
   a {
     display: block;
     color: var(--not-active-link);
+    opacity: 0.8;
   }
   span {
     color: var(--secondary-color);
@@ -39,6 +46,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .page-back {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  .page-back {
+    font-size: 12px;
+  }
+}
 @media (max-width: 460px) {
   .page-back {
     margin: 20px 0 20px 0;
@@ -60,6 +77,7 @@
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
+  // max-width: 400px;
 }
 
 @media (max-width: 1024px) {
@@ -118,8 +136,8 @@
     transition: all 0.3s ease 0s;
   }
   img {
-    max-width: 250px;
-    height: 400px;
+    max-width: 200px;
+    height: 350px;
   }
 }
 .wear a {
@@ -130,7 +148,7 @@
 }
 .wear a:hover,
 .beds a:hover,
-.collection a:hover,
+.carrying a:hover,
 .sale a:hover {
   z-index: 3;
   box-shadow: 0px 0px 25px 15px rgba(255, 255, 255, 0.4);
@@ -147,6 +165,15 @@
   background: #5bb680;
   position: relative;
   top: -20px;
+  max-width: 220px;
+}
+.carrying a {
+  text-align: center;
+  padding: 80px 20px;
+  background: #5b69b6;
+  position: relative;
+  top: 20px;
+  max-width: 220px;
 }
 .accessories a:hover {
   box-shadow: 0px 0px 25px 15px rgba(255, 255, 255, 0.4);
@@ -156,8 +183,8 @@
 .picture {
   position: absolute;
   z-index: 2;
-  top: 47%;
-  left: 55%;
+  top: 50%;
+  left: 56.5%;
   transform: translate(-50%, -50%);
   img:hover {
     animation: myAnim 2s ease 0s 1 normal forwards;
@@ -201,14 +228,8 @@
     transform: translateY(0px);
   }
 }
-.carrying a {
-  padding: 90px 8px;
-  background: #6781de;
-  position: relative;
-  top: 20px;
-}
 .sale a {
-  padding: 72px 30px;
+  padding: 80px 38px;
   background: #a33e68;
   position: relative;
   top: -40px;
@@ -222,8 +243,8 @@
       font-size: 20px;
     }
     img {
-      max-width: 200px;
-      height: 300px;
+      max-width: 150px;
+      height: 250px;
     }
   }
   .wear a {
@@ -243,12 +264,12 @@
     left: 56.5%;
   }
   .carrying a {
-    font-size: 16px;
-    padding: 75px 10px;
+    padding: 55px 10px;
     top: 10px;
+    max-width: 160px;
   }
   .sale a {
-    padding: 60px 25px;
+    padding: 50px 15px;
     top: -30px;
   }
 }
@@ -261,7 +282,7 @@
       font-size: 15px;
     }
     img {
-      max-width: 150px;
+      max-width: 100px;
       height: 200px;
     }
   }
@@ -281,16 +302,16 @@
   }
   .picture {
     top: 70%;
-    left: 70%;
+    left: 72%;
   }
   .carrying a {
-    font-size: 12px;
-    padding: 60px 10px;
+    padding: 45px 15px;
     left: -15px;
     top: -15px;
+    max-width: 130px;
   }
   .sale a {
-    padding: 50px 25px;
+    padding: 45px 20px;
     top: 2px;
     left: -20px;
   }
@@ -300,6 +321,10 @@
     padding: 20px 60px 10px 45px;
     div a {
       font-size: 10px;
+    }
+    img {
+      max-width: 100px;
+      height: 140px;
     }
   }
   .wear a {
@@ -317,22 +342,51 @@
     left: 72%;
   }
   .carrying a {
+    padding: 33px 11px;
     font-size: 8px;
-    padding: 40px 9px;
-    top: -12px;
+    top: -4px;
+    max-width: 90px;
   }
   .sale a {
     padding: 30px 13px;
+    font-size: 8px;
   }
 }
-@media (max-width: 370px) {
+@media (max-width: 440px) {
   .catalogue-block {
     padding: 20px 25px 10px 20px;
+  }
+  .picture {
+    left: 75%;
+  }
+  .catalogue-block div a {
+    font-size: 8px;
+  }
+  .wear a {
+    padding: 22px 15px;
+    top: -5px;
+  }
+  .beds a {
+    padding: 27px 15px;
+  }
+  .accessories a {
+    padding: 30px 10px;
+  }
+  .carrying a {
+    padding: 25px 10px;
+    top: -6px;
+    left: -22px;
+        max-width: 75px;
+  }
+  .sale a {
+    padding: 25px 12px;
+    font-size: 8px;
+    left: -24px;
   }
 }
 // ========================================================================================
 .page__catalogue-menu {
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 38px;
 }
 aside {
@@ -341,8 +395,6 @@ aside {
   background: rgba(208, 208, 208, 0);
   box-shadow: 2px 2px 15px 7px rgba(209, 209, 209, 0.25);
   padding: 34px 100px 34px 29px;
-}
-.catalogue-menu {
 }
 .catalogue-menu__container {
   display: flex;
@@ -363,7 +415,7 @@ aside {
 .catalogue-menu-aside {
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  row-gap: 35px;
 }
 .catalogue-menu-category {
   display: flex;
@@ -374,8 +426,6 @@ aside {
     align-items: center;
     column-gap: 10px;
   }
-}
-.catalogue-menu-block {
 }
 .li-list {
   display: flex;
@@ -424,6 +474,17 @@ input[type="radio"]:checked::after {
   width: 8px;
   height: 8px;
   background-color: var(--light-blue-color);
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+input[type="radio"]:disabled::after {
+  content: "";
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: grey;
   transform: translate(-50%, -50%);
   visibility: visible;
 }
@@ -478,6 +539,42 @@ input[type="radio"]:checked::after {
 .catalogue-menu-image {
   position: relative;
 }
+#newAndDiscountItem label {
+  min-width: 40px;
+}
+#newAndDiscountItem .li-list-title {
+  column-gap: 20px;
+}
+#newAndDiscountItem ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+#newAndDiscountItem ul li {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.new {
+  color: white;
+  font-size: 14px;
+  background-color: rgb(18, 187, 18);
+  padding: 5px 7px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+}
+.discount {
+  color: white;
+  background-color: rgb(230, 53, 29);
+  font-size: 16px;
+  padding: 5px 7px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+}
 .catalogue-menu-search-icon {
   position: absolute;
   top: 50%;
@@ -497,7 +594,6 @@ input[type="radio"]:checked::after {
 .catalogue-menu-image:hover .catalogue-menu-main-pic {
   filter: opacity(0.6);
 }
-
 .dot {
   opacity: 0.6;
 }

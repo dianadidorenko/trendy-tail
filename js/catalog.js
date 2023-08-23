@@ -1,34 +1,3 @@
-// Burger menu
-function burgerMenu(selector) {
-  let menu = $(selector);
-  let button = menu.find(".burger-menu__button");
-  let links = menu.find(".burger-menu__link");
-  let overlay = menu.find(".burger-menu__overlay");
-
-  button.on("click", (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-
-  links.on("click", () => toggleMenu());
-  overlay.on("click", () => toggleMenu());
-
-  function toggleMenu() {
-    menu.toggleClass("burger-menu_active");
-    if (menu.hasClass("burger-menu_active")) {
-      // calling burger menu
-      $("body").css("overflow", "hidden");
-      $(".burger-header-menu").css("display", "flex");
-    } else {
-      // when clicking outside the burger menu
-      $("body").css("overflow", "visible");
-      $(".burger-header-menu").css("display", "none");
-    }
-  }
-}
-burgerMenu(".burger-menu");
-// Burger menu
-
 // Main Slider
 const swiperCategoryMain = new Swiper(".main-swiper", {
   // Optional parameters
@@ -62,6 +31,9 @@ category.addEventListener("click", () => {
   priceMenuCategory.style.display = "none";
   asideArrowBrand.style.transform = "rotate(0deg)";
   asideArrowPrice.style.transform = "rotate(0deg)";
+
+  newInput.checked = false;
+  discountInput.checked = false;
 });
 
 brand.addEventListener("click", () => {
@@ -76,6 +48,9 @@ brand.addEventListener("click", () => {
   priceMenuCategory.style.display = "none";
   asideArrowCategory.style.transform = "rotate(0deg)";
   asideArrowPrice.style.transform = "rotate(0deg)";
+
+  newInput.checked = false;
+  discountInput.checked = false;
 });
 
 price.addEventListener("click", () => {
@@ -90,359 +65,433 @@ price.addEventListener("click", () => {
   brandMenuCategory.style.display = "none";
   asideArrowPrice.style.transform = "rotate(0deg)";
   asideArrowCategory.style.transform = "rotate(0deg)";
+
+  newInput.checked = false;
+  discountInput.checked = false;
 });
 // Aside Menu
 
+// Catalog items add
+import catalog from "./catalog.json" assert { type: "json" };
+// console.log(catalog);
+
+// pagination
+
+// pagination
+
+for (let i = 0; i < catalog.length; i++) {
+  // console.log(catalog[i]);
+
+  let catalogueMenuBlockItems = document.querySelector(
+    ".catalogue-menu-block-items"
+  );
+
+  let catalogueMenuBlockItem = document.createElement("div");
+
+  // addind classes depends on inner features
+  // without price range
+  if (catalog[i].type == "clothes") {
+    catalogueMenuBlockItem.className =
+      "catalogue-menu-block-item clothesCategory petFashion";
+  }
+  if (catalog[i].type == "beds") {
+    catalogueMenuBlockItem.className =
+      "catalogue-menu-block-item bedsCategory harleyCho";
+  }
+  if (catalog[i].type == "accessories") {
+    catalogueMenuBlockItem.className =
+      "catalogue-menu-block-item accessoriesCategory trixie";
+  }
+  if (catalog[i].type == "carrying") {
+    catalogueMenuBlockItem.className =
+      "catalogue-menu-block-item carryingCategory collar";
+  }
+  // without price range
+
+  // with price range
+  if (catalog[i].priceRange == "first") {
+    catalogueMenuBlockItem.className += " first";
+  }
+  if (catalog[i].priceRange == "second") {
+    catalogueMenuBlockItem.className += " second";
+  }
+  if (catalog[i].priceRange == "third") {
+    catalogueMenuBlockItem.className += " third";
+  }
+  if (catalog[i].priceRange == "fourth") {
+    catalogueMenuBlockItem.className += " fourth";
+  }
+  if (catalog[i].priceRange == "fifth") {
+    catalogueMenuBlockItem.className += " fifth";
+  }
+  // with price range
+
+  // with New and Discount sign
+  if (catalog[i].new == "NEW") {
+    catalogueMenuBlockItem.className += " newItem";
+  }
+  if (catalog[i].discount == "%") {
+    catalogueMenuBlockItem.className += " discountItem";
+  }
+  // with New and Discount sign
+
+  // addind classes depends on inner features
+  catalogueMenuBlockItems.appendChild(catalogueMenuBlockItem);
+
+  let catalogueMenuImage = document.createElement("div");
+  catalogueMenuImage.className = "catalogue-menu-image";
+
+  let link1 = document.createElement("a"),
+    link2 = document.createElement("a"),
+    catalogueMenuMainPic = document.createElement("img"),
+    imgSearchIcon = document.createElement("img"),
+    brandCatalog = document.createElement("p"),
+    h3 = document.createElement("h3"),
+    sizes = document.createElement("p"),
+    dotImg = document.createElement("img"),
+    priceCatalog = document.createElement("p"),
+    newTitle = document.createElement("h4"),
+    discountTitle = document.createElement("h4");
+
+  catalogueMenuBlockItem.appendChild(catalogueMenuImage);
+  catalogueMenuImage.appendChild(link1);
+  catalogueMenuImage.appendChild(link2);
+
+  link1.setAttribute("href", catalog[i].linkOnModel);
+  link2.setAttribute("href", catalog[i].linkOnModel);
+  link1.appendChild(catalogueMenuMainPic);
+  link2.appendChild(dotImg);
+  link2.appendChild(imgSearchIcon).className = "catalogue-menu-search-icon";
+
+  catalogueMenuMainPic.className = "catalogue-menu-main-pic";
+  catalogueMenuMainPic.setAttribute("src", "");
+  catalogueMenuMainPic.src = catalog[i].imgPath1;
+  imgSearchIcon.setAttribute("src", "/");
+  imgSearchIcon.src = catalog[i].searchIcon;
+
+  brandCatalog.innerText = catalog[i].brand;
+  catalogueMenuBlockItem.appendChild(brandCatalog).className = "brand";
+
+  catalogueMenuBlockItem.appendChild(h3);
+  h3.innerText = catalog[i].model;
+
+  catalogueMenuBlockItem.appendChild(sizes).className = "sizes";
+  sizes.innerText = catalog[i].sizes;
+
+  dotImg.setAttribute("src", "");
+  dotImg.src = catalog[i].dotIcon;
+  catalogueMenuBlockItem.appendChild(dotImg).className = "dot";
+
+  catalogueMenuBlockItem.appendChild(priceCatalog).className =
+    "catalogue-menu-block-item-price";
+  priceCatalog.innerText = catalog[i].price;
+
+  catalogueMenuImage.appendChild(newTitle).className = "new";
+  newTitle.innerText = catalog[i].new;
+
+  catalogueMenuImage.appendChild(discountTitle).className = "discount";
+  discountTitle.innerText = catalog[i].discount;
+}
+// addind classes depends on inner features
+
 // Filter
-let inputs = document.querySelectorAll("input"),
-  bedsCategory = document.querySelectorAll(".beds-category"),
-  wearCategory = document.querySelectorAll(".wear-category"),
-  accessoriesCategory = document.querySelectorAll(".accessories-category"),
-  carryingCategory = document.querySelectorAll(".carrying-category"),
-  petFashions = document.querySelectorAll(".pet-fashion"),
+let bedsCategory = document.querySelectorAll(".bedsCategory"),
+  wearCategory = document.querySelectorAll(".clothesCategory"),
+  accessoriesCategory = document.querySelectorAll(".accessoriesCategory"),
+  carryingCategory = document.querySelectorAll(".carryingCategory"),
+  petFashions = document.querySelectorAll(".petFashion"),
   harleyChos = document.querySelectorAll(".harleyCho"),
   collars = document.querySelectorAll(".collar"),
   trixies = document.querySelectorAll(".trixie"),
-  rangeFirstPriceBlock = document.querySelectorAll(".range-first-price"),
-  rangeSecondPriceBlock = document.querySelectorAll(".range-second-price"),
-  rangeThirdPriceBlock = document.querySelectorAll(".range-third-price"),
-  rangeFourthPriceBlock = document.querySelectorAll(".range-fourth-price"),
-  rangeFifthPriceBlock = document.querySelectorAll(".range-fifth-price");
+  rangeFirstPriceBlock = document.querySelectorAll(".first"),
+  rangeSecondPriceBlock = document.querySelectorAll(".second"),
+  rangeThirdPriceBlock = document.querySelectorAll(".third"),
+  rangeFourthPriceBlock = document.querySelectorAll(".fourth"),
+  rangeFifthPriceBlock = document.querySelectorAll(".fifth"),
+  newItems = document.querySelectorAll(".newItem"),
+  discountItems = document.querySelectorAll(".discountItem");
 
 let sizesCatalog = document.querySelectorAll(
   ".catalogue-menu-block-item-price"
 );
 
-// Filter by price
-rangeFirstPrice.addEventListener("click", (e) => {
-  for (i of sizesCatalog) {
-    if (parseInt(i.innerText.split(" ")[0]) <= 499) {
-      for (i of rangeFirstPriceBlock) {
-        i.style.display = "flex";
-      }
-      for (i of rangeSecondPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeThirdPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFourthPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFifthPriceBlock) {
-        i.style.display = "none";
-      }
-    }
-  }
+wearCategory.forEach((wear) => {
+  wear.style.display = "flex";
 });
-rangeSecondPrice.addEventListener("click", (e) => {
-  for (i of sizesCatalog) {
-    if (
-      parseInt(i.innerText.split(" ")[0]) >= 500 ||
-      parseInt(i.innerText.split(" ")[0]) <= 999
-    ) {
-      for (i of rangeFirstPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeSecondPriceBlock) {
-        i.style.display = "flex";
-      }
-      for (i of rangeThirdPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFourthPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFifthPriceBlock) {
-        i.style.display = "none";
-      }
-    }
-  }
-});
-rangeThirdPrice.addEventListener("click", (e) => {
-  for (i of sizesCatalog) {
-    if (
-      parseInt(i.innerText.split(" ")[0]) >= 1000 ||
-      parseInt(i.innerText.split(" ")[0]) <= 1499
-    ) {
-      for (i of rangeFirstPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeSecondPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeThirdPriceBlock) {
-        i.style.display = "flex";
-      }
-      for (i of rangeFourthPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFifthPriceBlock) {
-        i.style.display = "none";
-      }
-    }
-  }
-});
-rangeFourthPrice.addEventListener("click", (e) => {
-  for (i of sizesCatalog) {
-    if (
-      parseInt(i.innerText.split(" ")[0]) >= 1500 ||
-      parseInt(i.innerText.split(" ")[0]) <= 1999
-    ) {
-      for (i of rangeFirstPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeSecondPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeThirdPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFourthPriceBlock) {
-        i.style.display = "flex";
-      }
-      for (i of rangeFifthPriceBlock) {
-        i.style.display = "none";
-      }
-    }
-  }
-});
-rangeFifthPrice.addEventListener("click", (e) => {
-  for (i of sizesCatalog) {
-    if (parseInt(i.innerText.split(" ")[0]) >= 1999) {
-      for (i of rangeFirstPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeSecondPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeThirdPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFourthPriceBlock) {
-        i.style.display = "none";
-      }
-      for (i of rangeFifthPriceBlock) {
-        i.style.display = "flex";
-      }
-    }
-  }
-});
-// Filter by price
+// Catalog items add
 
-// Filter by category, brand
-for (input of inputs) {
-  input.addEventListener("click", (e) => {
-    if (e.target.id == "wear") {
-      for (wear of wearCategory) {
-        wear.style.display = "flex";
-      }
-      for (bed of bedsCategory) {
-        bed.style.display = "none";
-      }
-      for (accessorice of accessoriesCategory) {
-        accessorice.style.display = "none";
-      }
-      for (carry of carryingCategory) {
-        carry.style.display = "none";
-      }
-    } else if (e.target.id == "beds") {
-      for (bed of bedsCategory) {
-        bed.style.display = "flex";
-      }
-      for (wear of wearCategory) {
-        wear.style.display = "none";
-      }
-      for (accessorice of accessoriesCategory) {
-        accessorice.style.display = "none";
-      }
-      for (carry of carryingCategory) {
-        carry.style.display = "none";
-      }
-    } else if (e.target.id == "accessories") {
-      for (accessorice of accessoriesCategory) {
-        accessorice.style.display = "flex";
-      }
-      for (wear of wearCategory) {
-        wear.style.display = "none";
-      }
-      for (carry of carryingCategory) {
-        carry.style.display = "none";
-      }
-      for (bed of bedsCategory) {
-        bed.style.display = "none";
-      }
-    } else if (e.target.id == "carrying") {
-      for (carry of carryingCategory) {
-        carry.style.display = "flex";
-      }
-      for (wear of wearCategory) {
-        wear.style.display = "none";
-      }
-      for (accessorice of accessoriesCategory) {
-        accessorice.style.display = "none";
-      }
-      for (bed of bedsCategory) {
-        bed.style.display = "none";
-      }
-    } else if (e.target.id == "petFashion") {
-      for (petFashion of petFashions) {
-        petFashion.style.display = "flex";
-      }
-      for (harleyCho of harleyChos) {
-        harleyCho.style.display = "none";
-      }
-      for (trixie of trixies) {
-        trixie.style.display = "none";
-      }
-      for (collar of collars) {
-        collar.style.display = "none";
-      }
-    } else if (e.target.id == "harleyCho") {
-      for (petFashion of petFashions) {
-        petFashion.style.display = "none";
-      }
-      for (harleyCho of harleyChos) {
-        harleyCho.style.display = "flex";
-      }
-      for (trixie of trixies) {
-        trixie.style.display = "none";
-      }
-      for (collar of collars) {
-        collar.style.display = "none";
-      }
-    } else if (e.target.id == "trixie") {
-      for (petFashion of petFashions) {
-        petFashion.style.display = "none";
-      }
-      for (harleyCho of harleyChos) {
-        harleyCho.style.display = "none";
-      }
-      for (trixie of trixies) {
-        trixie.style.display = "flex";
-      }
-      for (collar of collars) {
-        collar.style.display = "none";
-      }
-    } else if (e.target.id == "collar") {
-      for (petFashion of petFashions) {
-        petFashion.style.display = "none";
-      }
-      for (harleyCho of harleyChos) {
-        harleyCho.style.display = "none";
-      }
-      for (trixie of trixies) {
-        trixie.style.display = "none";
-      }
-      for (collar of collars) {
-        collar.style.display = "flex";
-      }
+// New Sign Show
+let newSigns = document.querySelectorAll("h4");
+
+newSigns.forEach((newSign) => {
+  if (newSign.innerText != "NEW" && newSign.innerText != "%") {
+    newSign.style.display = "none";
+  }
+});
+// New Sign Show
+
+// Filter
+// // Filter by price
+rangeFirstPrice.addEventListener("click", () => {
+  sizesCatalog.forEach((price) => {
+    if (parseInt(price.innerText.split(" ")[0]) < 499) {
+      rangeFirstPriceBlock.forEach((first) => {
+        first.style.display = "flex";
+      });
+      rangeSecondPriceBlock.forEach((second) => {
+        second.style.display = "none";
+      });
+      rangeThirdPriceBlock.forEach((third) => {
+        third.style.display = "none";
+      });
+      rangeFourthPriceBlock.forEach((fourth) => {
+        fourth.style.display = "none";
+      });
+      rangeFifthPriceBlock.forEach((fifth) => {
+        fifth.style.display = "none";
+      });
     }
   });
-}
+});
+rangeSecondPrice.addEventListener("click", () => {
+  sizesCatalog.forEach((price) => {
+    if (
+      parseInt(price.innerText.split(" ")[0]) >= 500 &&
+      parseInt(price.innerText.split(" ")[0]) <= 999
+    ) {
+      rangeFirstPriceBlock.forEach((first) => {
+        first.style.display = "none";
+      });
+      rangeSecondPriceBlock.forEach((second) => {
+        second.style.display = "flex";
+      });
+      rangeThirdPriceBlock.forEach((third) => {
+        third.style.display = "none";
+      });
+      rangeFourthPriceBlock.forEach((fourth) => {
+        fourth.style.display = "none";
+      });
+      rangeFifthPriceBlock.forEach((fifth) => {
+        fifth.style.display = "none";
+      });
+    }
+  });
+});
+rangeThirdPrice.addEventListener("click", () => {
+  sizesCatalog.forEach((price) => {
+    if (
+      parseInt(price.innerText.split(" ")[0]) >= 1000 &&
+      parseInt(price.innerText.split(" ")[0]) <= 1499
+    ) {
+      rangeFirstPriceBlock.forEach((first) => {
+        first.style.display = "none";
+      });
+      rangeSecondPriceBlock.forEach((second) => {
+        second.style.display = "none";
+      });
+      rangeThirdPriceBlock.forEach((third) => {
+        third.style.display = "flex";
+      });
+      rangeFourthPriceBlock.forEach((fourth) => {
+        fourth.style.display = "none";
+      });
+      rangeFifthPriceBlock.forEach((fifth) => {
+        fifth.style.display = "none";
+      });
+    }
+  });
+});
+rangeFourthPrice.addEventListener("click", () => {
+  sizesCatalog.forEach((price) => {
+    if (
+      parseInt(price.innerText.split(" ")[0]) >= 1500 &&
+      parseInt(price.innerText.split(" ")[0]) <= 1999
+    ) {
+      rangeFirstPriceBlock.forEach((first) => {
+        first.style.display = "none";
+      });
+      rangeSecondPriceBlock.forEach((second) => {
+        second.style.display = "none";
+      });
+      rangeThirdPriceBlock.forEach((third) => {
+        third.style.display = "none";
+      });
+      rangeFourthPriceBlock.forEach((fourth) => {
+        fourth.style.display = "flex";
+      });
+      rangeFifthPriceBlock.forEach((fifth) => {
+        fifth.style.display = "none";
+      });
+    }
+  });
+});
+rangeFifthPrice.addEventListener("click", () => {
+  sizesCatalog.forEach((price) => {
+    if (parseInt(price.innerText.split(" ")[0]) >= 1999) {
+      rangeFirstPriceBlock.forEach((first) => {
+        first.style.display = "none";
+      });
+      rangeSecondPriceBlock.forEach((second) => {
+        second.style.display = "none";
+      });
+      rangeThirdPriceBlock.forEach((third) => {
+        third.style.display = "none";
+      });
+      rangeFourthPriceBlock.forEach((fourth) => {
+        fourth.style.display = "none";
+      });
+      rangeFifthPriceBlock.forEach((fifth) => {
+        fifth.style.display = "flex";
+      });
+    }
+  });
+});
+// Filter by price
+
+// Filter by category, brand
+let inputs = document.querySelectorAll("input");
+
+inputs.forEach((input) => {
+  input.addEventListener("click", (e) => {
+    let catalogueMenuBlockItem = document.querySelectorAll(
+      ".catalogue-menu-block-item"
+    );
+    if (e.target.id == "wear") {
+      wearCategory.forEach((wear) => {
+        wear.style.display = "flex";
+      });
+      bedsCategory.forEach((beds) => {
+        beds.style.display = "none";
+      });
+      accessoriesCategory.forEach((accessories) => {
+        accessories.style.display = "none";
+      });
+      carryingCategory.forEach((carrying) => {
+        carrying.style.display = "none";
+      });
+    } else if (e.target.id == "beds") {
+      wearCategory.forEach((wear) => {
+        wear.style.display = "none";
+      });
+      bedsCategory.forEach((beds) => {
+        beds.style.display = "flex";
+      });
+      accessoriesCategory.forEach((accessories) => {
+        accessories.style.display = "none";
+      });
+      carryingCategory.forEach((carrying) => {
+        carrying.style.display = "none";
+      });
+    } else if (e.target.id == "accessories") {
+      wearCategory.forEach((wear) => {
+        wear.style.display = "none";
+      });
+      bedsCategory.forEach((beds) => {
+        beds.style.display = "none";
+      });
+      accessoriesCategory.forEach((accessories) => {
+        accessories.style.display = "flex";
+      });
+      carryingCategory.forEach((carrying) => {
+        carrying.style.display = "none";
+      });
+    } else if (e.target.id == "carrying") {
+      wearCategory.forEach((wear) => {
+        wear.style.display = "none";
+      });
+      bedsCategory.forEach((beds) => {
+        beds.style.display = "none";
+      });
+      accessoriesCategory.forEach((accessories) => {
+        accessories.style.display = "none";
+      });
+      carryingCategory.forEach((carrying) => {
+        carrying.style.display = "flex";
+      });
+    } else if (e.target.id == "petFashion") {
+      petFashions.forEach((pf) => {
+        pf.style.display = "flex";
+      });
+      harleyChos.forEach((hc) => {
+        hc.style.display = "none";
+      });
+      collars.forEach((c) => {
+        c.style.display = "none";
+      });
+      trixies.forEach((t) => {
+        t.style.display = "none";
+      });
+    } else if (e.target.id == "harleyCho") {
+      petFashions.forEach((pf) => {
+        pf.style.display = "none";
+      });
+      harleyChos.forEach((hc) => {
+        hc.style.display = "flex";
+      });
+      collars.forEach((c) => {
+        c.style.display = "none";
+      });
+      trixies.forEach((t) => {
+        t.style.display = "none";
+      });
+    } else if (e.target.id == "trixie") {
+      petFashions.forEach((pf) => {
+        pf.style.display = "none";
+      });
+      harleyChos.forEach((hc) => {
+        hc.style.display = "none";
+      });
+      collars.forEach((c) => {
+        c.style.display = "none";
+      });
+      trixies.forEach((t) => {
+        t.style.display = "flex";
+      });
+    } else if (e.target.id == "collar") {
+      petFashions.forEach((pf) => {
+        pf.style.display = "none";
+      });
+      harleyChos.forEach((hc) => {
+        hc.style.display = "none";
+      });
+      collars.forEach((c) => {
+        c.style.display = "flex";
+      });
+      trixies.forEach((t) => {
+        t.style.display = "none";
+      });
+    } else if (e.target.id == "newInput") {
+      brandMenuCategory.style.display = "none";
+      catalogueMenuCategory.style.display = "none";
+      priceMenuCategory.style.display = "none";
+      catalogueMenuBlockItem.forEach((item) => {
+        if (!item.classList.contains("newItem")) {
+          item.style.display = "none";
+        }
+      });
+      newItems.forEach((ni) => {
+        ni.style.display = "flex";
+      });
+      discountItems.forEach((di) => {
+        di.style.display = "none";
+      });
+    } else if (e.target.id == "discountInput") {
+      brandMenuCategory.style.display = "none";
+      catalogueMenuCategory.style.display = "none";
+      priceMenuCategory.style.display = "none";
+      catalogueMenuBlockItem.forEach((item) => {
+        if (!item.classList.contains("discountItem")) {
+          item.style.display = "none";
+        }
+      });
+      newItems.forEach((ni) => {
+        ni.style.display = "none";
+      });
+      discountItems.forEach((di) => {
+        di.style.display = "flex";
+      });
+    }
+  });
+});
 // Filter by category, brand
 // Filter
-
-// Anchor adding
-window.addEventListener("mousemove", (e) => {
-  if (e.pageY >= 3850) {
-    ancorImg.style.display = "block";
-  } else {
-    ancorImg.style.display = "none";
-  }
-});
-// Anchor adding
-
-// Changing theme
-const toggle = document.querySelector(".toggle");
-let root = document.documentElement;
-
-var checked = JSON.parse(localStorage.getItem("toggle")),
-  checkbox = document.querySelector("#toggle");
-
-inputThemeText.innerText = "Зробити темніше?";
-
-if (checked == true) {
-  checkbox.checked = true;
-  root.style.setProperty("--background", localStorage.getItem("background"));
-  root.style.setProperty("--background-color", "#795555");
-  root.style.setProperty("--primary-color", "white");
-  root.style.setProperty("--secondary-color", "white");
-  root.style.setProperty("--footer-bg", "#218287");
-  root.style.setProperty("--footer-text-color", "white");
-  root.style.setProperty("--thirdly-color", "white");
-  root.style.setProperty("--search-background-color", "#cacaca");
-  root.style.setProperty("--search-text-color", "#333");
-  root.style.setProperty("--not-active-link", "#e9e9e9");
-
-  inputThemeText.innerText = "Зробити світліше?";
-} else {
-  localStorage.removeItem("toggle");
-  root.style.setProperty("--background", "white");
-  root.style.setProperty("--background-color", "white");
-  root.style.setProperty("--primary-color", "#000");
-  root.style.setProperty("--secondary-color", "#000");
-  root.style.setProperty("--button-color", "white");
-  root.style.setProperty("--footer-bg", "#d2e5dc");
-  root.style.setProperty("--footer-text-color", "#333");
-  root.style.setProperty("--search-background-color", "white");
-  root.style.setProperty("--search-text-color", "white");
-  root.style.setProperty("--not-active-link", "#757575");
-
-  inputThemeText.innerText = "Зробити темніше?";
-}
-
-toggle.addEventListener("change", (e) => {
-  if (e.target.checked) {
-    localStorage.setItem("toggle", checkbox.checked);
-
-    localStorage.setItem("background", "#795555");
-    root.style.setProperty("--background", localStorage.getItem("background"));
-    root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "white");
-    root.style.setProperty("--secondary-color", "white");
-    root.style.setProperty("--button-color", "white");
-    root.style.setProperty("--footer-bg", "#218287");
-    root.style.setProperty("--footer-text-color", "white");
-    root.style.setProperty("--search-background-color", "#cacaca");
-    root.style.setProperty("--search-text-color", "#333");
-    root.style.setProperty("--not-active-link", "#e9e9e9");
-
-    inputThemeText.innerText = "Зробити світліше?";
-  } else {
-    localStorage.removeItem("toggle");
-    root.style.setProperty("--background", "white");
-    root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "#000");
-    root.style.setProperty("--secondary-color", "#000");
-    root.style.setProperty("--button-color", "white");
-    root.style.setProperty("--footer-bg", "#d2e5dc");
-    root.style.setProperty("--footer-text-color", "#333");
-    root.style.setProperty("--search-background-color", "white");
-    root.style.setProperty("--search-text-color", "white");
-    root.style.setProperty("--not-active-link", "#757575");
-
-    inputThemeText.innerText = "Зробити темніше?";
-  }
-});
-// Changing theme
-
-// Insert profile name in the header
-userName.innerText = localStorage.getItem("userProfileName");
-
-if (userName.innerText.length > 1) {
-  arrow.style.display = "flex";
-}
-// Insert profile name in the header
-
-// Insert Product Quantity to the Header Shopping Cart
-if (
-  parseInt(localStorage.getItem("quantityOrderValue")) == 0 ||
-  !localStorage.getItem("quantityOrderValue")
-) {
-  headerOrderQuantity.style.display = "none";
-} else {
-  headerOrderQuantity.style.display = "flex";
-  headerOrderQuantity.innerText = localStorage.getItem("quantityOrderValue");
-}
-// Insert Product Quantity to the Header Shopping Cart

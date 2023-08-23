@@ -1,40 +1,4 @@
-// Burger menu
-
-function burgerMenu(selector) {
-  let menu = $(selector);
-  let button = menu.find(".burger-menu__button");
-  let links = menu.find(".burger-menu__link");
-  let overlay = menu.find(".burger-menu__overlay");
-
-  button.on("click", (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-
-  links.on("click", () => toggleMenu());
-  overlay.on("click", () => toggleMenu());
-
-  function toggleMenu() {
-    menu.toggleClass("burger-menu_active");
-    if (menu.hasClass("burger-menu_active")) {
-      // calling burger menu
-      $("body").css("overflow", "hidden");
-      $(".burger-header-menu").css("display", "flex");
-    } else {
-      // when clicking outside the burger menu
-      $("body").css("overflow", "visible");
-      $(".burger-header-menu").css("display", "none");
-    }
-  }
-}
-burgerMenu(".burger-menu");
-
-// Burger menu
-
-orderName.value = localStorage.getItem("userProfileName");
-orderSurname.value = localStorage.getItem("userSurname");
-orderTel.value = localStorage.getItem("phoneNumber");
-orderEmail.value = localStorage.getItem("userMail");
+import catalog from "./catalog.json" assert { type: "json" };
 
 function checkForm() {
   errorName.style.display = "none";
@@ -123,16 +87,16 @@ function checkForm() {
   if (novaPoshta.checked) {
     // Save Chosen Delivery Type
     novaPoshtaValue = novaPoshtaLabel.innerText.split(" ")[0];
-    deliveryType.innerText = novaPoshtaValue + ", " + chooseCityDeliveryValue;
-    deliveryType.style.display = "flex";
+    ukrPoshta.value = "";
+    meest.value = "";
   } else if (ukrPoshta.checked) {
     ukrPoshtaValue = ukrPoshtaLabel.innerText.split(" ")[0];
-    deliveryType.innerText = ukrPoshtaValue + ", " + chooseCityDeliveryValue;
-    deliveryType.style.display = "flex";
+    novaPoshta.value = "";
+    meest.value = "";
   } else if (meest.checked) {
     meestaValue = meestLabel.innerText.split(" ")[0];
-    deliveryType.innerText = meestaValue + ", " + chooseCityDeliveryValue;
-    deliveryType.style.display = "flex";
+    novaPoshta.value = "";
+    ukrPoshta.value = "";
   } else if (!novaPoshta.checked && !ukrPoshta.checked && !meest.checked) {
     alert("Треба обрати спосіб доставки");
   }
@@ -151,51 +115,205 @@ function checkForm() {
   }
 }
 
+orderName.value = localStorage.getItem("userProfileName");
+orderSurname.value = localStorage.getItem("userSurname");
+orderTel.value = localStorage.getItem("phoneNumber");
+orderEmail.value = localStorage.getItem("userMail");
+
+// let orderInfoBlockRightPart = document.querySelector(
+//     ".order-info-block-right-part"
+//   ),
+//   orderBlockInfo = document.createElement("div"),
+//   orderBlockInfoLeftPart = document.createElement("div"),
+//   popUpImage = document.createElement("img"),
+//   trashIcon = document.createElement("img");
+
 // Show Empty Block in Shopping Cart
-if (!localStorage.getItem("popUpGoodsTitleValue")) {
-  emptyOrderBlock.style.display = "flex";
-  orderBlock.style.display = "none";
-} else if (localStorage.getItem("popUpGoodsTitleValue")) {
+if (localStorage.getItem("orderItems")) {
   orderBlock.style.display = "flex";
   emptyOrderBlock.style.display = "none";
+} else if (localStorage.getItem("orderItems2")) {
+  orderBlock.style.display = "flex";
+  emptyOrderBlock.style.display = "none";
+} else {
+  orderBlock.style.display = "none";
+  emptyOrderBlock.style.display = "flex";
 }
+
 // Show Empty Block in Shopping Cart
 
 // Insert Chosen Values to the Order Confirm Form
-orderGoodsTitle.innerText = localStorage.getItem("popUpGoodsTitleValue");
-orderSize.innerText = localStorage.getItem("animalSizeProduct");
-orderPrice1Piece.innerText = localStorage.getItem("animalProductPrice");
-orderPrice.innerText = localStorage.getItem("animalProductPrice");
-popUpImage.src = localStorage.getItem("mainPicForPopUp");
+// const itemsArray = localStorage.getItem("orderItems")
+//   ? JSON.parse(localStorage.getItem("orderItems"))
+//   : [];
 
-// // Quantity
-number = 1;
+let itemsOrder = JSON.parse(localStorage.getItem("orderItems"));
 
-plus.addEventListener("click", function () {
-  number++;
-  orderQuantity.innerText = number;
-  orderPrice.innerText =
-    parseInt(orderPrice.innerText) + parseInt(orderPrice1Piece.innerText);
-  quantityOrderValue = localStorage.setItem("quantityOrderValue", number);
-});
+window.addEventListener("DOMContentLoaded", () => {
+  let items = "";
 
-minus.addEventListener("click", function () {
-  if (orderQuantity.innerText == 0) {
-    orderQuantity.innerText = 0;
-  } else {
-    number--;
-    orderQuantity.innerText = number;
-    orderPrice.innerText =
-      parseInt(orderPrice.innerText) - parseInt(orderPrice1Piece.innerText);
+  for (var i = 0; i < itemsOrder.length; i++) {
+    items += `<div class="order-block-info" data-id='${catalog[i].id}'>
+                <div class="order-block-info-left-part">
+                  <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
+                    22
+                  )}'/>
+                </div>
+                <div class="order-block-info-right-part">
+                  <p class="orderGoodsTitle">${itemsOrder[i].name}</p>
+                  <p>Розмір: <span class="orderSize">${
+                    itemsOrder[i].size
+                  }</span></p>
+                  <p>Ціна за одиницю:
+                    <span class="orderPrice1Piece">${
+                      itemsOrder[i].price
+                    }</span> грн
+                  </p>
+                  <div class="quantity-block">
+                    <p>Кількість:</p>
+                    <span data-action="minus"class="minus">-</span>
+                    <span class="orderQuantity" data-counter>1</span>
+                    <span data-action="plus" class="plus">+</span>
+                    <img class='trash' src='img/order/trash.svg'/>
+                  </div>
+                </div>
+              </div>`;
   }
-  quantityOrderValue = localStorage.setItem("quantityOrderValue", number);
+  document.querySelector(".order-info-block-right-part").innerHTML = items;
 });
 
-if (parseInt(localStorage.getItem("quantityOrderValue")) == 1) {
-  headerOrderQuantity.style.display = "flex";
-  quantityOrderValue = localStorage.setItem("quantityOrderValue", number);
+// Total price of all goods
+// let orderPrices = document.querySelectorAll(".orderPrice");
+// var total = [];
+
+// orderPrices.forEach((price) => {
+//   total.push(parseInt(price.innerText));
+
+//   let totalValue = total.reduce((a, b) => a + b);
+
+//   totalSum.innerText = totalValue;
+// });
+// Total price of all goods
+
+// initial order quantity in the header
+// if (document.querySelectorAll(".order-block-info").length) {
+//   localStorage.setItem(
+//     "quantityOrderValue",
+//     document.querySelectorAll(".order-block-info").length
+//   );
+// }
+// initial order quantity in the header
+
+// Calculate quantity
+// const btnMinus = document.querySelector('[data-action="minus"]');
+// const btnPlus = document.querySelector('[data-action="plus"]');
+// const counter = document.querySelector("[data-counter]");
+
+window.addEventListener("click", (e) => {
+  let counter;
+
+  if (
+    e.target.dataset.action === "plus" ||
+    e.target.dataset.action === "minus"
+  ) {
+    const quantityBlock = e.target.closest(".quantity-block");
+    counter = quantityBlock.querySelector("[data-counter]");
+  }
+  if (e.target.dataset.action === "plus") {
+    counter.innerText = ++counter.innerText;
+  }
+
+  if (e.target.dataset.action === "minus") {
+    if (parseInt(counter.innerText) > 1) {
+      counter.innerText = --counter.innerText;
+    }
+
+    if (
+      e.target.closest(".order-block-info") &&
+      parseInt(counter.innerText) === 1
+    ) {
+      e.target.closest(".order-block-info").remove();
+    }
+
+    // click on trash icon
+    if (e.target.classList.value === "trash") {
+      e.target.closest(".order-block-info").remove();
+    }
+    // click on trash icon
+  }
+  // for (var i = 0; i < itemsOrder.length; i++) {
+  //   // console.log(i);
+  //   // console.log(catalog[i].id);
+  //   // console.log(parseInt(e.target.closest(".order-block-info").dataset.id));
+  //   if (i == parseInt(e.target.closest(".order-block-info").dataset.id)) {
+  //     delete itemsOrder[i];
+  //     // console.log(itemsOrder);
+
+  //     localStorage.setItem("orderItems2", JSON.stringify(itemsOrder));
+  //     localStorage.removeItem("orderItems");
+  //     let itemsOrder2 = JSON.parse(localStorage.getItem("orderItems2"));
+
+  //     let items2 = "";
+  //     for (var i = 0; i < itemsOrder2.length; i++) {
+  //       items2 += `<div class="order-block-info" data-id='${catalog[i].id}'>
+  //               <div class="order-block-info-left-part">
+  //                 <img class="popUpImage" src='${itemsOrder2[i].imgPath.slice(
+  //                   22
+  //                 )}'/>
+  //               </div>
+  //               <div class="order-block-info-right-part">
+  //                 <p class="orderGoodsTitle">${itemsOrder2[i].name}</p>
+  //                 <p>Розмір: <span class="orderSize">${
+  //                   itemsOrder2[i].size
+  //                 }</span></p>
+  //                 <p>Ціна за одиницю:
+  //                   <span class="orderPrice1Piece">${
+  //                     itemsOrder2[i].price
+  //                   }</span> грн
+  //                 </p>
+  //                 <div class="quantity-block">
+  //                   <p>Кількість:</p>
+  //                   <span data-action="minus"class="minus">-</span>
+  //                   <span class="orderQuantity" data-counter>1</span>
+  //                   <span data-action="plus" class="plus">+</span>
+  //                   <img class='trash' src='img/order/trash.svg'/>
+  //                 </div>
+  //                 <p>Разом: <span class="orderPrice">${
+  //                   itemsOrder2[i].price
+  //                 }</span> грн</p>
+  //                 </div>
+  //             </div>`;
+  //     }
+  //     document.querySelector(".order-info-block-right-part").innerHTML = items2;
+  //   }
+  // }
+});
+// Calculate quantity
+
+// window.addEventListener("DOMContentLoaded", () => {
+//   calcCartPrice();
+// });
+
+function calcCartPrice() {
+  const cartItems = document.querySelectorAll(".order-block-info");
+
+  cartItems.forEach((item) => {
+    const amountEl = item.querySelector("[data-counter]");
+    const priceEl = item.querySelector(".orderPrice1Piece");
+    console.log(priceEl);
+
+    const currentPrice =
+      parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
+    console.log(currentPrice);
+  });
 }
 
+calcCartPrice();
+
+// // Quantity
+if (parseInt(localStorage.getItem("quantityOrderValue")) == 1) {
+  headerOrderQuantity.style.display = "flex";
+}
 // // Quantity
 
 // // Save Chosen City to Deliver
@@ -206,12 +324,9 @@ chooseCityDelivery.addEventListener("change", () => {
   );
   chooseCityDeliveryValueToSend = localStorage.getItem("CityDeliveryValue");
 });
-
 // // Save Chosen City to Deliver
-// Insert Chosen Values to the Order Confirm Form
 
 // Anchor adding
-
 window.addEventListener("mousemove", (e) => {
   if (e.pageY >= 1150) {
     ancorImg.style.display = "block";
@@ -219,113 +334,12 @@ window.addEventListener("mousemove", (e) => {
     ancorImg.style.display = "none";
   }
 });
-
 // Anchor adding
 
-// Changing theme
-
-const toggle = document.querySelector(".toggle");
-let root = document.documentElement;
-
-var checked = JSON.parse(localStorage.getItem("toggle")),
-  checkbox = document.querySelector("#toggle");
-
-inputThemeText.innerText = "Зробити темніше?";
-
-if (checked == true) {
-  checkbox.checked = true;
-  root.style.setProperty("--background", localStorage.getItem("background"));
-  root.style.setProperty("--background-color", "#795555");
-  root.style.setProperty("--primary-color", "white");
-  root.style.setProperty("--secondary-color", "white");
-  root.style.setProperty("--footer-bg", "#218287");
-  root.style.setProperty("--footer-text-color", "white");
-  root.style.setProperty("--thirdly-color", "white");
-  root.style.setProperty("--search-background-color", "#cacaca");
-  root.style.setProperty("--search-text-color", "#333");
-  root.style.setProperty("--not-active-link", "#e9e9e9");
-
-  inputThemeText.innerText = "Зробити світліше?";
-} else {
-  localStorage.removeItem("toggle");
-  root.style.setProperty("--background", "white");
-  root.style.setProperty("--background-color", "white");
-  root.style.setProperty("--primary-color", "#000");
-  root.style.setProperty("--secondary-color", "#000");
-  root.style.setProperty("--button-color", "white");
-  root.style.setProperty("--footer-bg", "#d2e5dc");
-  root.style.setProperty("--footer-text-color", "#333");
-  root.style.setProperty("--search-background-color", "white");
-  root.style.setProperty("--search-text-color", "white");
-  root.style.setProperty("--not-active-link", "#757575");
-
-  inputThemeText.innerText = "Зробити темніше?";
-}
-
-toggle.addEventListener("change", (e) => {
-  if (e.target.checked) {
-    localStorage.setItem("toggle", checkbox.checked);
-
-    localStorage.setItem("background", "#795555");
-    root.style.setProperty("--background", localStorage.getItem("background"));
-    root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "white");
-    root.style.setProperty("--secondary-color", "white");
-    root.style.setProperty("--button-color", "white");
-    root.style.setProperty("--footer-bg", "#218287");
-    root.style.setProperty("--footer-text-color", "white");
-    root.style.setProperty("--search-background-color", "#cacaca");
-    root.style.setProperty("--search-text-color", "#333");
-    root.style.setProperty("--not-active-link", "#e9e9e9");
-
-    inputThemeText.innerText = "Зробити світліше?";
-  } else {
-    localStorage.removeItem("toggle");
-    root.style.setProperty("--background", "white");
-    root.style.setProperty("--background-color", "white");
-    root.style.setProperty("--primary-color", "#000");
-    root.style.setProperty("--secondary-color", "#000");
-    root.style.setProperty("--button-color", "white");
-    root.style.setProperty("--footer-bg", "#d2e5dc");
-    root.style.setProperty("--footer-text-color", "#333");
-    root.style.setProperty("--search-background-color", "white");
-    root.style.setProperty("--search-text-color", "white");
-    root.style.setProperty("--not-active-link", "#757575");
-
-    inputThemeText.innerText = "Зробити темніше?";
-  }
-});
-
-// Changing theme
-
 // Close Need To Agree Pop Up
-
 closeNeedAgreeBlock.addEventListener("click", () => {
   let needToAgreeBlock = document.querySelector(".need-to-agree-block");
 
   needToAgreeBlock.style.display = "none";
 });
-
 // Close Need To Agree Pop Up
-
-// Insert Product Quantity to the Header Shopping Cart
-if (
-  parseInt(localStorage.getItem("quantityOrderValue")) == 0 ||
-  !localStorage.getItem("quantityOrderValue")
-) {
-  headerOrderQuantity.style.display = "none";
-} else {
-  headerOrderQuantity.style.display = "flex";
-  headerOrderQuantity.innerText = localStorage.getItem("quantityOrderValue");
-}
-// Insert Product Quantity to the Header Shopping Cart
-
-// Insert profile name in the header
-
-userName.innerText = localStorage.getItem("userProfileName");
-
-if (userName.innerText.length > 1) {
-  arrow.style.display = "flex";
-}
-
-// Insert profile name in the header
