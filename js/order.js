@@ -156,7 +156,7 @@ window.addEventListener("DOMContentLoaded", () => {
     items += `<div class="order-block-info" data-id='${catalog[i].id}'>
                 <div class="order-block-info-left-part">
                   <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    22
+                    45
                   )}'/>
                 </div>
                 <div class="order-block-info-right-part">
