@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
-    <title>Ліжко Ascold</title>
+    <title data-lang="bed-ascold_page-title">Ліжко Ascold</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -65,10 +61,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -113,19 +123,41 @@
         <nav class="burger-header-menu menu">
           <ul class="burger-header-menu__list">
             <li class="menu__item">
-              <a href="catalog.html" class="menu__link">Каталог</a>
+              <a href="catalog.html" class="menu__link" data-lang="home_page-35"
+                >Каталог</a
+              >
             </li>
             <li class="menu__item">
-              <a href="about-us.html" class="menu__link">О нас</a>
+              <a
+                href="about-us.html"
+                class="menu__link"
+                data-lang="home_page-36"
+                >О нас</a
+              >
             </li>
             <li class="menu__item">
-              <a href="delivery.html" class="menu__link">Доставка і оплата</a>
+              <a
+                href="delivery.html"
+                class="menu__link"
+                data-lang="home_page-37"
+                >Доставка і оплата</a
+              >
             </li>
             <li class="menu__item">
-              <a href="contacts.html" class="menu__link">Контакти</a>
+              <a
+                href="contacts.html"
+                class="menu__link"
+                data-lang="home_page-38"
+                >Контакти</a
+              >
             </li>
             <li class="menu__item">
-              <a href="feedback.html" class="menu__link">Відгуки</a>
+              <a
+                href="feedback.html"
+                class="menu__link"
+                data-lang="home_page-39"
+                >Відгуки</a
+              >
             </li>
           </ul>
         </nav>
@@ -133,6 +165,7 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
+
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -145,23 +178,44 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link active__link"
+                  <a
+                    href="catalog.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-1"
                     >Каталог</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="about-us.html" class="menu__link">О нас</a>
+                  <a
+                    href="about-us.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-2"
+                    >О нас</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link"
+                  <a
+                    href="delivery.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-3"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="contacts.html" class="menu__link">Контакти</a>
+                  <a
+                    href="contacts.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-4"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link">Відгуки</a>
+                  <a
+                    href="feedback.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-5"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -184,11 +238,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -204,9 +253,9 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html">Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span> Ліжко Ascold</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог</a>
+            <span data-lang="bed-ascold_page-1"> Ліжко Ascold</span>
           </div>
         </div>
 
@@ -246,32 +295,59 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1 id="h1">Ліжко Ascold</h1>
-                <p class="item-info-right-text-block-description">
+                <h1 id="h1" data-lang="bed-ascold_page-2">Ліжко Ascold</h1>
+                <p
+                  class="item-info-right-text-block-description"
+                  data-lang="bed-ascold_page-2-5"
+                >
                   М'яка тканина, плавні лінії, округлі бортики - все це робить
-                  лежак MOLLY чудовим місцем відпочинку для улюбленця і
+                  лежак ASCOLD чудовим місцем відпочинку для улюбленця і
                   прикрасою будинку.
                 </p>
                 <div class="info-block-p">
-                  <p>Бренд: <span>Pet Fashion</span></p>
-                  <p>Розмір: <span>52x40x17 см, 62x50x19 см</span></p>
-                  <p>Матеріал: <span>100% поліестер</span></p>
-                  <p>Серія: <span>PF Trends</span></p>
-                  <p>Колір: <span>Бежевий</span></p>
-                  <p>Наявність: <span>В наявності</span></p>
+                  <div>
+                    <p data-lang="bed-ascold_page-3">Бренд:</p>
+                    <p>Harley & Cho</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-4">Розмір</p>
+                    <p data-lang="bed-ascold_page-5">
+                      52x40x17 см, 62x50x19 см
+                    </p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-6">Матеріал:</p>
+                    <p data-lang="bed-ascold_page-7">100% поліестер</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-8">Серія:</p>
+                    <p>PF Trends</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-9">Колір:</p>
+                    <p data-lang="bed-ascold_page-10">Бежевий</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-11">Наявність:</p>
+                    <p data-lang="bed-ascold_page-12">В наявності</p>
+                  </div>
                 </div>
-                <p class="size">Розмір:</p>
+                <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
-                  <div id="xsGroup" class="check-group">
+                  <div id="smallGroup" class="check-group">
                     <input type="radio" id="small" name="size" />
-                    <label id="smallLabel">52x40x17 см</label>
+                    <label id="smallLabel" data-lang="bed-ascold_page-14"
+                      >52x40x17 см</label
+                    >
                   </div>
-                  <div id="sGroup" class="check-group">
+                  <div id="bigGroup" class="check-group">
                     <input type="radio" id="big" name="size" />
-                    <label id="bigLabel">62x50x19 см</label>
+                    <label id="bigLabel" data-lang="bed-ascold_page-15"
+                      >62x50x19 см</label
+                    >
                   </div>
                 </div>
-                <p class="item-price"><span id="price">1088</span> грн</p>
+                <p class="item-price"><span id="price">1088</span> ₴</p>
                 <button id="buy" class="button">КУПИТЬ</button>
               </div>
             </div>
@@ -288,7 +364,7 @@
                   подушці, зшитий з плюшу та меблевої тканини - її можна
                   перевертати більш м'якої або цупкою стороною під настрій.
                 </p>
-                <p>Переваги лежака:</p>
+                <p><strong>Переваги лежака:</strong></p>
                 <ul>
                   <li>вишуканий дизайн і модний колір;</li>
                   <li>
@@ -296,11 +372,11 @@
                   </li>
                   <li>прикраса - декоративна нашивка з логотипом.</li>
                 </ul>
-                <p>Подушка: знімна</p>
-                <p>Наповнювач: гіпоалергенний холофайбер</p>
+                <p>Подушка: знімна.</p>
+                <p>Наповнювач: гіпоалергенний холофайбер.</p>
                 <p>
                   Правила догляду: ручне прання при температурі не вище 40
-                  градусів
+                  градусів.
                 </p>
               </div>
             </div>
@@ -316,7 +392,7 @@
               class="footer-logo"
               alt="Trendy Tail Logo"
             />
-            <p>
+            <p data-lang="home_page-42">
               Тому що ми <br />
               піклуємося про собак
             </p>
@@ -324,21 +400,56 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Каталог</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-43">
+                  Каталог
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Домашній одяг</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-44"
+                    >Новинки</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">Дощевіки</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-45"
+                    >Аксесуари</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link">Верхній одяг</a>
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-46"
+                    >Одяг</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Ліжаки</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-47"
+                    >Сумки-переноски</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Іграшки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-48"
+                    >Ліжаки</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-49"
+                    >Знижки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -347,33 +458,131 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Меню</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-50">
+                  Меню
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Каталог</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-51"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">О нас</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-52"
+                    >О нас</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link"
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-53"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Контакти</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-54"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Відгуки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-55"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
           </div>
 
+          <div class="footer-form">
+            <h3 class="footer__form-title" data-lang="home_page-56">
+              Зв’язатися з нами
+            </h3>
+            <form
+              id="footerForm"
+              class="footer__form"
+              action="telegramMain.php"
+              method="POST"
+              onsubmit="return checkForm()"
+            >
+              <label data-lang="home_page-57">Ім'я</label>
+              <input
+                type="text"
+                name="footerInputUserName"
+                id="footerFormUserName"
+                placeholder="Trendy"
+                required
+              />
+              <div
+                class="error-not"
+                id="errorName"
+                style="display: none"
+                data-lang="home_page-58"
+              >
+                Ім'я повинно складатись лише з літер
+              </div>
+              <label data-lang="home_page-59">E-mail</label>
+              <input
+                type="email"
+                name="footerFormInputEmail"
+                id="footerFormEmail"
+                placeholder="trendy@ukr.net"
+                required
+              />
+              <div
+                class="error-not"
+                id="errorEmail"
+                style="display: none"
+                data-lang="home_page-60"
+              >
+                Імейл повинен бути у форматі user@ukr.net
+              </div>
+
+              <label data-lang="home_page-61">Текст повідомлення</label>
+              <textarea
+                name="footerTextarea"
+                id="footerFormTextarea"
+                placeholder="Your text.."
+                required
+              ></textarea>
+              <div
+                class="error-not"
+                id="errorQuestion"
+                style="display: none"
+                data-lang="home_page-62"
+              >
+                Питання повинно містити мінімум 10 символів
+              </div>
+              <button type="submit" id="sendFooterBtn" data-lang="home_page-63">
+                Надіслати
+              </button>
+            </form>
+          </div>
+
           <div class="footer-item">
-            <h3 class="footer__menu-title">Наші контакти</h3>
-            <a href="tel:+380974379424">Тел:+38 (097) 437 94 24</a>
-            <p class="footer__work-hours">Графік роботи: Пн - Нд 9.00-19.00</p>
-            <a href="mailto:trendytail@ukr.net">Пошта: trendytail@ukr.net</a>
+            <h3 class="footer__menu-title" data-lang="home_page-64">
+              Наші контакти
+            </h3>
+            <a href="tel:+380974379424" data-lang="home_page-65"
+              >Тел:+38 (097) 437 94 24</a
+            >
+            <p class="footer__work-hours" data-lang="home_page-66">
+              Графік роботи: Пн - Нд 9.00-19.00
+            </p>
+            <a href="mailto:trendytail@ukr.net" data-lang="home_page-67"
+              >Пошта: trendytail@ukr.net</a
+            >
             <div class="footer__socs">
               <a href="#"
                 ><img src="img/main-page/FOOTER/insta.svg" alt="Instagram Icon"
@@ -389,13 +598,123 @@
         </div>
       </footer>
       <footer class="footer-copy">
-        <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
+        <p>
+          TrendyTail © Copyright 2023 |
+          <span data-lang="home_page-68">Всі права захищені</span>
+        </p>
       </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/items-beds.js"></script>
+    <script type="text/javascript">
+      // Click for full image view
+      function fullView(ImgLink) {
+        document.getElementById("FullImage").src = ImgLink;
+        document.getElementById("FullImageView").style.display = "block";
+      }
+      function closeFullView() {
+        document.getElementById("FullImageView").style.display = "none";
+      }
+      // Click for full image view
+
+      // Anchor adding
+      window.addEventListener("mousemove", (e) => {
+        if (e.pageY >= 1500) {
+          ancorImg.style.display = "block";
+        } else {
+          ancorImg.style.display = "none";
+        }
+      });
+      // Anchor adding
+
+      // Exact price depends on the size click
+      sizes.addEventListener("mousedown", (e) => {
+        smallGroup.style.background = "rgba(128, 180, 182, 0.1)";
+        bigGroup.style.background = "rgba(128, 180, 182, 0.1)";
+
+        if (
+          e.target.id == "small" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "1088";
+        } else if (
+          e.target.id == "big" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "1457";
+        }
+      });
+      // Exact price depends on the size click
+
+      // Pop Up Added Item To The Shopping Cart
+      const h1Text = document.getElementById("h1").innerText;
+
+      buy.addEventListener("click", () => {
+        const itemsArray = localStorage.getItem("orderItems")
+          ? JSON.parse(localStorage.getItem("orderItems"))
+          : [];
+
+        function createItem() {
+          let inputs = document.querySelectorAll("input");
+
+          for (input of inputs) {
+            if (input.checked) {
+              idSize = input.id.toUpperCase();
+            }
+          }
+
+          itemsArray.push({
+            name: `${h1Text}`,
+            imgPath: `${mainPicForPopUp.src}`,
+            size: `${idSize}`,
+            price: `${price.innerText}`,
+          });
+
+          localStorage.setItem("orderItems", JSON.stringify(itemsArray));
+        }
+
+        createItem();
+
+        let checked = document.querySelectorAll('input[type="radio"]:checked'),
+          wrapper = document.querySelector(".wrapper");
+
+        popUpShoppingCart.style.display = "flex";
+        wrapper.style.opacity = "0.3";
+
+        document.getElementById("popUpImage").src = mainPicForPopUp.src;
+
+        popUpGoodsTitle.innerText = h1.innerText;
+
+        for (check of checked) {
+          if (check.id == "small") {
+            popUpSize.innerText = check.id + " - " + smallLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "big") {
+            popUpSize.innerText = check.id + " - " + bigLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          }
+        }
+
+        closePopUp.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+
+        continueBtn.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+      });
+      // Pop Up Added Item To The Shopping Cart
+    </script>
+    <script src="js/change-language.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

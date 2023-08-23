@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
@@ -65,10 +61,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -184,11 +194,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -271,6 +276,10 @@
                     <input type="radio" id="xs" name="size" />
                     <label>XS</label>
                   </div>
+                  <div id="xs2Group" class="check-group">
+                    <input type="radio" id="xs2" name="size" />
+                    <label>XS2</label>
+                  </div>
                   <div id="sGroup" class="check-group">
                     <input type="radio" id="s" name="size" />
                     <label>S</label>
@@ -282,10 +291,6 @@
                   <div id="lGroup" class="check-group">
                     <input type="radio" id="l" name="size" />
                     <label>L</label>
-                  </div>
-                  <div id="xlGroup" class="check-group">
-                    <input type="radio" id="xl" name="size" />
-                    <label>XL</label>
                   </div>
                 </div>
                 <div class="table-sizes">
@@ -525,7 +530,7 @@
             <div class="below-block">
               <p class="description">ОПИС</p>
               <div class="characteristics">
-                <h3>Характеристики дощовика:</h3>
+                <p><strong>Характеристики дощовика:</strong></p>
                 <ul>
                   <li>модель із закритим животом;</li>
                   <li>блискуча плащова тканина надійно захищає від вологи;</li>
@@ -626,8 +631,150 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/items-clothes.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript">
+      // Click for full image view
+      function fullView(ImgLink) {
+        document.getElementById("FullImage").src = ImgLink;
+        document.getElementById("FullImageView").style.display = "block";
+      }
+      function closeFullView() {
+        document.getElementById("FullImageView").style.display = "none";
+      }
+      // Click for full image view
+
+      // Anchor adding
+      window.addEventListener("mousemove", (e) => {
+        if (e.pageY >= 1500) {
+          ancorImg.style.display = "block";
+        } else {
+          ancorImg.style.display = "none";
+        }
+      });
+      // Anchor adding
+
+      // Exact price depends on the size click
+      sizes.addEventListener("mousedown", (e) => {
+        xsGroup.style.background = "rgba(128, 180, 182, 0.1)";
+        xs2Group.style.background = "rgba(128, 180, 182, 0.1)";
+        sGroup.style.background = "rgba(128, 180, 182, 0.1)";
+        mGroup.style.background = "rgba(128, 180, 182, 0.1)";
+        lGroup.style.background = "rgba(128, 180, 182, 0.1)";
+
+        if (
+          e.target.id == "xs" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "829";
+        } else if (
+          e.target.id == "xs2" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "879";
+        } else if (
+          e.target.id == "s" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "929";
+        } else if (
+          e.target.id == "m" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "979";
+        } else if (
+          e.target.id == "l" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "1029";
+        }
+      });
+      // Exact price depends on the size click
+
+      // Pop Up Added Item To The Shopping Cart
+      const h1Text = document.getElementById("h1").innerText;
+
+      buy.addEventListener("click", () => {
+        const itemsArray = localStorage.getItem("orderItems")
+          ? JSON.parse(localStorage.getItem("orderItems"))
+          : [];
+
+        function createItem() {
+          let inputs = document.querySelectorAll("input");
+
+          for (input of inputs) {
+            if (input.checked) {
+              idSize = input.id.toUpperCase();
+            }
+          }
+
+          itemsArray.push({
+            name: `${h1Text}`,
+            imgPath: `${mainPicForPopUp.src}`,
+            size: `${idSize}`,
+            price: `${price.innerText}`,
+          });
+
+          localStorage.setItem("orderItems", JSON.stringify(itemsArray));
+        }
+
+        createItem();
+
+        let checked = document.querySelectorAll('input[type="radio"]:checked'),
+          wrapper = document.querySelector(".wrapper");
+
+        popUpShoppingCart.style.display = "flex";
+        wrapper.style.opacity = "0.3";
+
+        document.getElementById("popUpImage").src = mainPicForPopUp.src;
+
+        for (check of checked) {
+          if (check.id == "xs") {
+            popUpSize.innerText = check.id;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "xs2") {
+            popUpSize.innerText = check.id;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "s") {
+            popUpSize.innerText = check.id;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "m") {
+            popUpSize.innerText = check.id;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "l") {
+            popUpSize.innerText = check.id;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          }
+        }
+
+        closePopUp.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+
+        continueBtn.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+      });
+      // Pop Up Added Item To The Shopping Cart
+    </script>
+      <script src="js/change-language.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

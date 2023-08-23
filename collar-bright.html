@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -65,10 +65,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -184,11 +198,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -255,14 +264,17 @@
                 <p class="size">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="xsGroup" class="check-group">
-                    <input type="radio" id="xs-xs2" name="size" />
-                    <label>XS-XS2</label>
+                    <input type="radio" id="xsXs2" name="size" />
+                    <label id="smallLabel">XS-XS2</label>
                   </div>
                   <div id="sGroup" class="check-group">
-                    <input type="radio" id="s-m" name="size" />
-                    <label>S-M</label>
+                    <input type="radio" id="sM" name="size" />
+                    <label id="bigLabel">S-M</label>
                   </div>
                 </div>
+                <p class="before-discount">
+                  <span id="priceBefore">272</span> грн
+                </p>
                 <p class="item-price"><span id="price">204</span> грн</p>
                 <button id="buy" class="button">КУПИТЬ</button>
               </div>
@@ -277,13 +289,13 @@
               <p class="description">ОПИС</p>
               <div class="characteristics">
                 <p>
-                  Опис Стильний аксесуар для чотирилапих модників. Комірець з
+                  Стильний аксесуар для чотирилапих модників. Комірець з
                   темно-синьої джинсової тканини та яскраво-лимонної бавовни
                   надійно фіксується липучкою, яка міцно тримається. Прикрашає
                   комірець ґудзик-ромашка. Досить лише цього маленького
                   аксесуару, щоб створити досконалий літній образ.
                 </p>
-                <p><i>Матеріал: 95% котон, 5% еластан.</i></p>
+                <p><em>Матеріал: 95% котон, 5% еластан.</em></p>
               </div>
             </div>
           </div>
@@ -376,8 +388,116 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      // Click for full image view
+      function fullView(ImgLink) {
+        document.getElementById("FullImage").src = ImgLink;
+        document.getElementById("FullImageView").style.display = "block";
+      }
+      function closeFullView() {
+        document.getElementById("FullImageView").style.display = "none";
+      }
+      // Click for full image view
+
+      // Anchor adding
+      window.addEventListener("mousemove", (e) => {
+        if (e.pageY >= 1350) {
+          ancorImg.style.display = "block";
+        } else {
+          ancorImg.style.display = "none";
+        }
+      });
+      // Anchor adding
+
+      // Exact price depends on the size click
+      sizes.addEventListener("mousedown", (e) => {
+        xsXs2.style.background = "rgba(128, 180, 182, 0.1)";
+        sM.style.background = "rgba(128, 180, 182, 0.1)";
+
+        if (
+          e.target.id == "xsXs2" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          priceBefore.innerText = "272";
+          price.innerText = "204";
+        } else if (
+          e.target.id == "sM" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          priceBefore.innerText = "282";
+          price.innerText = "214";
+        }
+      });
+      // Exact price depends on the size click
+
+      // Pop Up Added Item To The Shopping Cart
+      const h1Text = document.getElementById("h1").innerText;
+
+      buy.addEventListener("click", () => {
+        const itemsArray = localStorage.getItem("orderItems")
+          ? JSON.parse(localStorage.getItem("orderItems"))
+          : [];
+
+        function createItem() {
+          let inputs = document.querySelectorAll("input");
+
+          for (input of inputs) {
+            if (input.checked) {
+              idSize = input.id.toUpperCase();
+            }
+          }
+
+          itemsArray.push({
+            name: `${h1Text}`,
+            imgPath: `${mainPicForPopUp.src}`,
+            size: `${idSize}`,
+            price: `${price.innerText}`,
+          });
+
+          localStorage.setItem("orderItems", JSON.stringify(itemsArray));
+        }
+
+        createItem();
+
+        let checked = document.querySelectorAll('input[type="radio"]:checked'),
+          wrapper = document.querySelector(".wrapper");
+
+        popUpShoppingCart.style.display = "flex";
+        wrapper.style.opacity = "0.3";
+
+        document.getElementById("popUpImage").src = mainPicForPopUp.src;
+
+        for (check of checked) {
+          if (check.id == "xsXs2") {
+            popUpSize.innerText = smallLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "sM") {
+            popUpSize.innerText = bigLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          }
+        }
+
+        closePopUp.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+
+        continueBtn.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+      });
+      // Pop Up Added Item To The Shopping Cart
+    </script>
+      <script src="js/change-language.js"></script>
     <script src="js/items-accessories.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

@@ -65,10 +65,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -151,11 +165,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -255,24 +264,39 @@
                   <h2 class="order-title">Доставка</h2>
                   <div class="order-delivery-block">
                     <div class="delivery-check">
-                      <input type="radio" name="delivery" id="novaPoshta" />
+                      <input
+                        type="radio"
+                        name="delivery"
+                        id="novaPoshta"
+                        value="НоваПошта"
+                      />
                       <label id="novaPoshtaLabel">НоваПошта </label>
                       <p>Доставка по Україні 1-3 дні</p>
                     </div>
 
                     <div class="delivery-check">
-                      <input type="radio" name="delivery" id="ukrPoshta" />
+                      <input
+                        type="radio"
+                        name="delivery"
+                        id="ukrPoshta"
+                        value="УкрПошта"
+                      />
                       <label id="ukrPoshtaLabel">УкрПошта</label>
                       <p>Доставка по Україні 3-5 днів</p>
                     </div>
 
                     <div class="delivery-check">
-                      <input type="radio" name="delivery" id="meest" />
+                      <input
+                        type="radio"
+                        name="delivery"
+                        id="meest"
+                        value="meest"
+                      />
                       <label id="meestLabel">Meest </label>
                       <p>Доставка по Україні до 7 днів</p>
                     </div>
 
-                    <select id="chooseCityDelivery">
+                    <select id="chooseCityDelivery" name="chooseCity">
                       <option value="Віниця">Віниця</option>
                       <option value="Волинь">Волинь</option>
                       <option value="Днепр">Днепр</option>
@@ -339,29 +363,15 @@
                     value="Оформити замовлення"
                   />
                 </div>
-                <div class="order-info-block-right-part">
+
+                <div>
                   <h3 class="order-title order-title_2">Ваше замовлення</h3>
-                  <div class="order-block-info">
-                    <div class="order-block-info-left-part">
-                      <img id="popUpImage" />
-                    </div>
-                    <div class="order-block-info-right-part">
-                      <p id="orderGoodsTitle">Дощовик ARIEL</p>
-                      <p>Розмір: <span id="orderSize">XS</span></p>
-                      <p>
-                        Ціна за одиницю:
-                        <span id="orderPrice1Piece">705</span> грн
-                      </p>
-                      <div class="quantity-block">
-                        <p>Кількість:</p>
-                        <span id="minus">-</span>
-                        <span id="orderQuantity">1</span>
-                        <span id="plus">+</span>
-                      </div>
-                      <p id="deliveryType" style="display: none"></p>
-                      <p>Разом: <span id="orderPrice">705</span> грн</p>
-                    </div>
-                  </div>
+                  <div
+                    id="orderInfoBlockRightPart"
+                    class="order-info-block-right-part"
+                  ></div>
+
+                  <p>Усього: <span id="totalSum"></span> грн</p>
                 </div>
               </div>
             </div>
@@ -454,8 +464,9 @@
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/order.js"></script>
+      <script src="js/change-language.js"></script>
+    <script type="module" src="js/order.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

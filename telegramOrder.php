@@ -7,10 +7,8 @@
 $name = $_POST['orderName'];
 $surname = $_POST['orderSurname'];
 $telephone = $_POST['orderTel'];
-$deliveryType = $_POST['deliveryType']; // cпосіб доставки і місто
-$orderGoodsTitle = $_POST['orderGoodsTitle'];
-$orderSize = $_POST['orderSize'];
-$orderQuantity = $_POST['orderQuantity'];
+$deliveryType = $_POST['delivery'];
+$city = $_POST['chooseCity'];
 
 
 // токен нашего бота из botFather
@@ -21,10 +19,8 @@ $arr = array(
   'Імя клієнта: ' => $name,
   'Прізвище: ' => $surname,
   'Телефон ' => $telephone,
-  'Інфо о доставці ' => $deliveryType,
-  'Назва товару ' => $orderGoodsTitle,
-  'Розмір ' => $orderSize,
-  'Кількість ' => $orderQuantity
+  'Спосіб доставки ' => $deliveryType,
+  'Місто доставки ' => $city
 );
 
 // forEach не змінюємо
@@ -35,7 +31,7 @@ foreach($arr as $key => $value) {
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
 if ($sendToTelegram) {
-  header('Location: thank-you.html');
+  header('Location: thank-you-order.html');
 } else {
   echo "Error";
 }

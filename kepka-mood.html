@@ -10,8 +10,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/delivery.css" />
-    <title>Доставка і оплата</title>
+    <link rel="stylesheet" href="css/items.css" />
+    <title>Кепка Mood</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -64,7 +64,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-     <!-- Changing Color Theme -->
+    <!-- Changing Color Theme -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -85,6 +85,37 @@
       </p>
     </div>
     <!-- Changing Color Theme -->
+
+    <!-- Pop Up Added Item To The Shopping Cart -->
+    <div id="popUpShoppingCart" class="pop-up-shopping-cart">
+      <div class="pop-up-shopping-cart-block">
+        <div class="pop-up-shopping-cart-title-info">
+          <p class="pop-up-shopping-cart-title">
+            ТОВАР УСПІШНО ДОДАНО <br />
+            ДО ВАШОГО КОШИКА
+          </p>
+          <span id="closePopUp">&times;</span>
+        </div>
+        <div class="image-and-goods-info">
+          <div class="image-and-goods-info-left-part">
+            <img id="popUpImage" />
+          </div>
+          <div class="image-and-goods-info-right-part">
+            <p id="popUpGoodsTitle">Кепка Mood</p>
+            <p>Розмір: <span id="popUpSize">XS</span></p>
+            <p>Кількість: <span id="popUpQuantity">1</span></p>
+            <p>Ітого: <span id="popUpPrice">173</span> грн</p>
+          </div>
+        </div>
+        <button id="continueBtn" class="pop-up-button">
+          Продовжити покупки
+        </button>
+        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+          Оформити замовлення
+        </a>
+      </div>
+    </div>
+    <!-- Pop Up Added Item To The Shopping Cart -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -128,13 +159,15 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link active__link"
+                  <a href="delivery.html" class="menu__link"
                     >Доставка і оплата</a
                   >
                 </li>
@@ -180,48 +213,88 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Доставка і оплата</span>
+            <a href="index.html">Головна > </a>
+            <a href="catalog.html">Каталог ></a>
+            <span> Кепка Mood</span>
           </div>
         </div>
 
-        <section class="page__delivery delivery">
-          <div class="delivery__container">
-            <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
-            />
-            <h2 class="page-title">Доставка</h2>
-            <div class="delivery-block">
-              <img
-                src="img/delivery/delivery-01.png"
-                alt="Інформація о доставці"
-              />
-              <img
-                src="img/delivery/delivery-02.svg"
-                class="box-pic"
-                alt="Декоративна картинка"
-              />
-            </div>
-            <h3>Варіанти доставки</h3>
-            <div class="delivery-types-block">
-              <img src="img/delivery/nova-poshta.png" alt="Нова Пошта" />
-              <img src="img/delivery/ukr-posht.svg" alt="Укр Пошта" />
-              <img src="img/delivery/meest.png" alt="Міст" />
-            </div>
-          </div>
-        </section>
+        <section class="page__item-info item-info">
+          <div class="item-info__container">
+            <div class="blocks">
+              <div class="item-info-left-photo-block">
+                <div
+                  class="item-info-left-photo-block-items"
+                  style="justify-content: center"
+                >
+                  <img
+                    src="img/info-item/kepka-mood/01.jpg"
+                    id="mainPicForPopUp"
+                    alt="Кепка Mood"
+                    onclick="fullView(this.src)"
+                  />
+                </div>
 
-        <section class="page__payment payment">
-          <div class="payment__container">
+                <div id="FullImageView">
+                  <img id="FullImage" />
+                  <span id="closeButton" onclick="closeFullView()"
+                    >&times;</span
+                  >
+                </div>
+              </div>
+              <div class="item-info-right-text-block">
+                <h1 id="h1">Кепка Mood</h1>
+                <p class="item-info-right-text-block-description">
+                  Поєднання темно-синьої джинсової тканини та яскраво-лимонного
+                  трикотажу, фіксатор у вигляді ромашки, стильна термоаплікація.
+                </p>
+                <div class="info-block-p">
+                  <p>Бренд: <span>Pet Fashion</span></p>
+                  <p>Сезон: <span>Літо</span></p>
+                  <p>Матеріал: <span>95% хлопок, 5% еластан</span></p>
+                  <p>Серія: <span>PF Trends</span></p>
+                  <p>Колір: <span>Джинс/салатовий</span></p>
+                  <p>Наявність: <span>В наявності</span></p>
+                </div>
+                <p class="size">Розмір:</p>
+                <div class="sizes" id="sizes">
+                  <div id="xsGroup" class="check-group">
+                    <input type="radio" id="xs" name="size" />
+                    <label id="xslLabel">XS</label>
+                  </div>
+                  <div id="sGroup" class="check-group">
+                    <input type="radio" id="s" name="size" />
+                    <label id="sLabel">S</label>
+                  </div>
+                  <div id="mGroup" class="check-group">
+                    <input type="radio" id="m" name="size" />
+                    <label id="mLabel">M</label>
+                  </div>
+                </div>
+                <p class="item-price"><span id="price">173</span> грн</p>
+                <button id="buy" class="button">КУПИТЬ</button>
+              </div>
+            </div>
+
             <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
+              src="img/info-item/paws.png "
+              class="paws-decor"
+              alt="Paws Decor"
             />
-            <h2 class="page-title">Оплата</h2>
-            <img src="img/delivery/payment.png" alt="Оплата" />
+            <div class="below-block">
+              <p class="description">ОПИС</p>
+              <div class="characteristics">
+                <p>
+                  Поєднання темно-синьої джинсової тканини та яскраво-лимонного
+                  трикотажу, фіксатор у вигляді ромашки, стильна термоаплікація
+                  – все це робить аксесуар не лише корисним у спекотний день,
+                  але й надзвичайно стильним. Кепка чудово сполучається з іншими
+                  моделями літньої колекції, зокрема, сукнею Band та костюмом
+                  Strip.
+                </p>
+                <p><em>Матеріал: 95% котон, 5% еластан.</em></p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -310,19 +383,127 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
+      // Click for full image view
+      function fullView(ImgLink) {
+        document.getElementById("FullImage").src = ImgLink;
+        document.getElementById("FullImageView").style.display = "block";
+      }
+      function closeFullView() {
+        document.getElementById("FullImageView").style.display = "none";
+      }
+      // Click for full image view
+
       // Anchor adding
       window.addEventListener("mousemove", (e) => {
-        if (e.pageY >= 1800) {
+        if (e.pageY >= 1350) {
           ancorImg.style.display = "block";
         } else {
           ancorImg.style.display = "none";
         }
       });
       // Anchor adding
+
+      // Exact price depends on the size click
+      sizes.addEventListener("mousedown", (e) => {
+        xsGroup.style.background = "rgba(128, 180, 182, 0.1)";
+        sGroup.style.background = "rgba(128, 180, 182, 0.1)";
+        mGroup.style.background = "rgba(128, 180, 182, 0.1)";
+
+        if (
+          e.target.id == "xs" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "173";
+        } else if (
+          e.target.id == "s" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "176";
+        } else if (
+          e.target.id == "m" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "179";
+        }
+      });
+      // Exact price depends on the size click
+
+      // Pop Up Added Item To The Shopping Cart
+      const h1Text = document.getElementById("h1").innerText;
+
+      buy.addEventListener("click", () => {
+        const itemsArray = localStorage.getItem("orderItems")
+          ? JSON.parse(localStorage.getItem("orderItems"))
+          : [];
+
+        function createItem() {
+          let inputs = document.querySelectorAll("input");
+
+          for (input of inputs) {
+            if (input.checked) {
+              idSize = input.id.toUpperCase();
+            }
+          }
+
+          itemsArray.push({
+            name: `${h1Text}`,
+            imgPath: `${mainPicForPopUp.src}`,
+            size: `${idSize}`,
+            price: `${price.innerText}`,
+          });
+
+          localStorage.setItem("orderItems", JSON.stringify(itemsArray));
+        }
+
+        createItem();
+
+        let checked = document.querySelectorAll('input[type="radio"]:checked'),
+          wrapper = document.querySelector(".wrapper");
+
+        popUpShoppingCart.style.display = "flex";
+        wrapper.style.opacity = "0.3";
+
+        document.getElementById("popUpImage").src = mainPicForPopUp.src;
+
+        for (check of checked) {
+          if (check.id == "xs") {
+            popUpSize.innerText = xsLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "s") {
+            popUpSize.innerText = sLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          } else if (check.id == "m") {
+            popUpSize.innerText = mLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          }
+        }
+
+        closePopUp.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+
+        continueBtn.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+      });
+      // Pop Up Added Item To The Shopping Cart
     </script>
       <script src="js/change-language.js"></script>
+    <script src="js/items-accessories.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>

@@ -4,14 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/about-us.css" />
-    <title data-lang="about-us_page-title">О нас</title>
+    <title data-lang="accessories_page-title">Аксесуари</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -138,6 +133,7 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
+
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -226,147 +222,96 @@
         <div class="page-back">
           <div class="page-back__container">
             <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
-            <span data-lang="about-us_page-1">О нас</span>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог</a>
+            <span data-lang="accessories_page-2">Аксесуари</span>
           </div>
         </div>
 
-        <section class="page__about-us about-us">
-          <div class="about-us__container">
-            <div class="about-us__main-block">
-              <img
-                src="img/main-page/ABOUT/heart-icon.svg"
-                class="heart-decoration"
-                alt="Heart Decoration"
-              />
-              <h2 class="page-title" data-lang="home_page-9">О нас</h2>
-              <div class="about-us-block">
-                <div class="about-us-block-left-block">
-                  <img src="img/main-page/ABOUT/01.png" alt="" />
-                </div>
-                <div class="about-us-block-right-block">
-                  <img src="img/logo.svg" class="about-us-logo" alt="" />
-                  <p
-                    class="about-us-block-right-block-text"
-                    data-lang="home_page-10"
-                  >
-                    Давним-давно група любителів собак відкрила інтернет-магазин
-                    модного одягу для собак у невеликому містечку біля моря.
-                    Урочисте відкриття магазину пройшло успішно, на ньому було
-                    представлено стильні варіанти для собак усіх розмірів та
-                    порід. _Команда використовувала маркетингові тактики, такі
-                    як соціальні мережі та співпраця з впливовими особами
-                    свійських тварин, щоб поширити інформацію. Вони спростили
-                    процес онлайн-покупок та забезпечили швидке обслуговування
-                    клієнтів. Магазин також пропонував практичні, але модні
-                    аксесуари. Цей інтернет-магазин одягу для собак ознаменував
-                    новий початок в індустрії моди для домашніх тварин, обіцяючи
-                    привнести інноваційні можливості у моду.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section class="page__catalogue-menu catalogue-menu">
+          <div class="catalogue-menu__container">
+            <aside>
+              <nav class="catalogue-menu-nav">
+                <ul id="catalogueMenuAside" class="catalogue-menu-aside">
+                  <li class="li-title li-list">
+                    <div id="priceItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        id="asideArrowPrice"
+                        alt="Arrow down icon"
+                      />
+                      <p id="price" data-lang="catalog_page-18">ЦІНА</p>
+                    </div>
+                    <ul
+                      id="priceMenuCategory"
+                      class="catalogue-menu-category"
+                      style="display: none"
+                    >
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFirstPrice"
+                        />
+                        <label data-lang="catalog_page-19"> до 499 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeSecondPrice"
+                        />
+                        <label data-lang="catalog_page-20">500-999 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeThirdPrice"
+                        />
+                        <label data-lang="catalog_page-21">1000-1499 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFourthPrice"
+                        />
+                        <label data-lang="catalog_page-22">1500-1999 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFifthPrice"
+                        />
+                        <label data-lang="catalog_page-23"> від 2000 грн</label>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <div class="catalogue-menu-block">
+              <div class="catalogue-menu-block-items"></div>
 
-        <section class="page__our-mission our-mission">
-          <div class="our-mission__container">
-            <div class="our-mission__main-block">
-              <img
-                src="img/main-page/ABOUT/heart-icon.svg"
-                class="heart-decoration"
-                alt="Heart Decoration"
-              />
-              <h2 class="page-title" data-lang="about-us_page-2">
-                Наша мета та місія
-              </h2>
-              <img
-                src="img/about-us/01.jpg"
-                class="our-mission-img"
-                alt="Фото наша місія і мета"
-              />
-              <div>
-                <p data-lang="about-us_page-3">
-                  <em>Мета та місія</em> продажу одягу для собак – надати модні
-                  та функціональні варіанти одягу для наших пухнастих друзів. У
-                  зв'язку з зростаючою тенденцією володіння домашніми тваринами
-                  та бажанням ставитися до наших вихованців як до членів сім'ї,
-                  на ринку зростає попит на одяг для собак. Наша місія полягає в
-                  тому, щоб задовольнити цю потребу, пропонуючи широкий
-                  асортимент стильного та добре продуманого одягу, який не
-                  тільки покращує зовнішній вигляд собак, але й забезпечує
-                  комфорт та захист. зовнішній вигляд собак, але й забезпечує
-                  комфорт та захист.
-                </p>
-                <p data-lang="about-us_page-4">
-                  Продаючи одяг для собак, ми прагнемо покращити загальне
-                  враження від володіння домашніми тваринами, дозволяючи
-                  власникам домашніх тварин висловлювати своє кохання та турботу
-                  за допомогою модних нарядів для своїх собачих компаньйонів. У
-                  нашій колекції ми прагнемо поєднувати моду та
-                  функціональність, гарантуючи, що наш одяг не тільки естетично
-                  привабливий, а й служить практичній меті. Будь то светри для
-                  холодних зимових днів або плащі для вологої погоди, наш одяг
-                  для собак призначений для задоволення різних потреб різних
-                  порід та розмірів.
-                </p>
-                <p data-lang="about-us_page-5">
-                  Ми вважаємо, що перевдягання наших собак не лише додає елемент
-                  веселощів, а й допомагає створити міцніший зв'язок між людьми
-                  та їх пухнастими друзями. Так що приєднуйтесь до нас у цій
-                  захоплюючій подорожі, щоб вбирати собак і робити їх життя
-                  трохи більш стильним і комфортним.
-                </p>
+              <div class="pagination">
+                <img
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
+                  alt="Arrow Left Icon"
+                />
+                <p class="active-page">1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>10</p>
+                <p>11</p>
+                <img
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
+                  alt="Arrow Right Icon"
+                />
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="page__advantages advantages">
-          <div class="advantages__container">
-            <div class="advantages-left-block">
-              <img src="img/about-us/02.jpg" alt="Фото переваги" />
-            </div>
-            <div class="advantages-right-block">
-              <img
-                src="img/main-page/ABOUT/heart-icon.svg"
-                class="heart-decoration"
-                alt="Heart Decoration"
-              />
-              <h2 class="page-title" data-lang="about-us_page-6">
-                Наші переваги
-              </h2>
-              <ul>
-                <li data-lang="about-us_page-7">
-                  Широкий вибір елегантних дизайнів.
-                </li>
-                <li data-lang="about-us_page-8">
-                  Виняткове обслуговування клієнтів для вирішення будь-яких
-                  питань.
-                </li>
-                <li data-lang="about-us_page-9">
-                  Високоякісні матеріали, що забезпечують довговічність.
-                </li>
-                <li data-lang="about-us_page-10">
-                  Ідеальні розміри для всіх порід собак.
-                </li>
-                <li data-lang="about-us_page-11">
-                  Доступні ціни на будь-який бюджет.
-                </li>
-                <li data-lang="about-us_page-12">
-                  Простий процес онлайн-замовлення.
-                </li>
-                <li data-lang="about-us_page-13">
-                  Оперативні та надійні служби доставки.
-                </li>
-                <li data-lang="about-us_page-14">
-                  Співпраця з відомими впливовими особами в галузі моди на своїх
-                  улюбленців.
-                </li>
-                <li data-lang="about-us_page-15">
-                  Регулярно оновлювані колекції відповідно до останніх
-                  тенденцій.
-                </li>
-              </ul>
             </div>
           </div>
         </section>
@@ -592,20 +537,10 @@
         </p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script type="text/javascript">
-      // Anchor adding
-      window.addEventListener("mousemove", (e) => {
-        if (e.pageY >= 2600) {
-          ancorImg.style.display = "block";
-        } else {
-          ancorImg.style.display = "none";
-        }
-      });
-      // Anchor adding
-    </script>
     <script src="js/change-language.js"></script>
+    <script type="module" src="js/accessories-page.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>

@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <title>Каталог</title>
+    <title data-lang="catalog_page-title">Каталог</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -64,10 +64,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -81,19 +95,41 @@
         <nav class="burger-header-menu menu">
           <ul class="burger-header-menu__list">
             <li class="menu__item">
-              <a href="catalog.html" class="menu__link">Каталог</a>
+              <a href="catalog.html" class="menu__link" data-lang="home_page-35"
+                >Каталог</a
+              >
             </li>
             <li class="menu__item">
-              <a href="about-us.html" class="menu__link">О нас</a>
+              <a
+                href="about-us.html"
+                class="menu__link"
+                data-lang="home_page-36"
+                >О нас</a
+              >
             </li>
             <li class="menu__item">
-              <a href="delivery.html" class="menu__link">Доставка і оплата</a>
+              <a
+                href="delivery.html"
+                class="menu__link"
+                data-lang="home_page-37"
+                >Доставка і оплата</a
+              >
             </li>
             <li class="menu__item">
-              <a href="contacts.html" class="menu__link">Контакти</a>
+              <a
+                href="contacts.html"
+                class="menu__link"
+                data-lang="home_page-38"
+                >Контакти</a
+              >
             </li>
             <li class="menu__item">
-              <a href="feedback.html" class="menu__link">Відгуки</a>
+              <a
+                href="feedback.html"
+                class="menu__link"
+                data-lang="home_page-39"
+                >Відгуки</a
+              >
             </li>
           </ul>
         </nav>
@@ -101,6 +137,7 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
+
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -113,23 +150,44 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link active__link"
+                  <a
+                    href="catalog.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-1"
                     >Каталог</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="about-us.html" class="menu__link">О нас</a>
+                  <a
+                    href="about-us.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-2"
+                    >О нас</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link"
+                  <a
+                    href="delivery.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-3"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="contacts.html" class="menu__link">Контакти</a>
+                  <a
+                    href="contacts.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-4"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link">Відгуки</a>
+                  <a
+                    href="feedback.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-5"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -152,11 +210,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -172,8 +225,8 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Каталог</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <span data-lang="catalog_page-2">Каталог</span>
           </div>
         </div>
 
@@ -190,7 +243,7 @@
                     class="main-pic"
                     alt="Slider Image"
                   />
-                  <p>Знижки до 10% на нову колекцію</p>
+                  <p data-lang="catalog_page-3">Нова колекція вже тут!</p>
                 </div>
                 <div class="swiper-slide">
                   <img
@@ -198,7 +251,7 @@
                     class="main-pic"
                     alt="Slider Image"
                   />
-                  <p>Знижки до 10% на нову колекцію</p>
+                  <p data-lang="catalog_page-4">Нова колекція вже тут!</p>
                 </div>
                 <div class="swiper-slide">
                   <img
@@ -206,7 +259,7 @@
                     class="main-pic"
                     alt="Slider Image"
                   />
-                  <p>Знижки до 10% на нову колекцію</p>
+                  <p data-lang="catalog_page-5">Нова колекція вже тут!</p>
                 </div>
               </div>
               <!-- If we need pagination -->
@@ -236,17 +289,23 @@
                 class="heart-decoration"
                 alt="Heart Decoration"
               />
-              <h2 class="page-title">КАТАЛОГ</h2>
+              <h2 class="page-title" data-lang="catalog_page-6">КАТАЛОГ</h2>
               <div class="catalogue-block">
                 <div>
                   <div class="wear">
-                    <a href="clothes.html">ОДЯГ</a>
+                    <a href="clothes-page.html" data-lang="catalog_page-7"
+                      >ОДЯГ</a
+                    >
                   </div>
                   <div class="beds">
-                    <a href="beds.html">ЛІЖАКИ</a>
+                    <a href="beds-page.html" data-lang="catalog_page-8"
+                      >ЛІЖАКИ</a
+                    >
                   </div>
                   <div class="accessories">
-                    <a href="accessories.html">АКСЕСУАРИ </a>
+                    <a href="accessories-page.html" data-lang="catalog_page-9"
+                      >АКСЕСУАРИ
+                    </a>
                   </div>
                 </div>
                 <div class="picture">
@@ -257,10 +316,15 @@
                 </div>
                 <div>
                   <div class="carrying">
-                    <a href="carrying.html">ПЕРЕНЕСЕННЯ</a>
+                    <a href="carrying-page.html" data-lang="catalog_page-10"
+                      >СУМКИ- <br />
+                      ПЕРЕНОСКИ</a
+                    >
                   </div>
                   <div class="sale">
-                    <a href="discount.html">ЗНИЖКИ</a>
+                    <a href="sale-page.html" data-lang="catalog_page-11"
+                      >ЗНИЖКИ</a
+                    >
                   </div>
                 </div>
               </div>
@@ -280,7 +344,7 @@
                         id="asideArrowCategory"
                         alt="Arrow down icon"
                       />
-                      <p id="category">КАТЕГОРІЯ</p>
+                      <p id="category" data-lang="catalog_page-12">КАТЕГОРІЯ</p>
                     </div>
                     <ul
                       id="catalogueMenuCategory"
@@ -289,11 +353,11 @@
                     >
                       <li>
                         <input type="radio" name="catalogMenRadio" id="wear" />
-                        <label>Одяг</label>
+                        <label data-lang="catalog_page-13">Одяг</label>
                       </li>
                       <li>
                         <input type="radio" name="catalogMenRadio" id="beds" />
-                        <label>Ліжаки</label>
+                        <label data-lang="catalog_page-14">Ліжаки</label>
                       </li>
                       <li>
                         <input
@@ -301,7 +365,7 @@
                           name="catalogMenRadio"
                           id="accessories"
                         />
-                        <label>Аксесуари</label>
+                        <label data-lang="catalog_page-15">Аксесуари</label>
                       </li>
                       <li>
                         <input
@@ -309,7 +373,9 @@
                           name="catalogMenRadio"
                           id="carrying"
                         />
-                        <label>Перенесення</label>
+                        <label data-lang="catalog_page-16"
+                          >Сумки-переноски</label
+                        >
                       </li>
                     </ul>
                   </li>
@@ -320,7 +386,7 @@
                         id="asideArrowBrand"
                         alt="Arrow down icon"
                       />
-                      <p id="brand">БРЕНД</p>
+                      <p id="brand" data-lang="catalog_page-17">БРЕНД</p>
                     </div>
                     <ul
                       id="brandMenuCategory"
@@ -360,7 +426,7 @@
                         id="asideArrowPrice"
                         alt="Arrow down icon"
                       />
-                      <p id="price">ЦІНА</p>
+                      <p id="price" data-lang="catalog_page-18">ЦІНА</p>
                     </div>
                     <ul
                       id="priceMenuCategory"
@@ -373,7 +439,7 @@
                           name="brandMenuRadio"
                           id="rangeFirstPrice"
                         />
-                        <label> до 499 грн</label>
+                        <label data-lang="catalog_page-19"> до 499 грн</label>
                       </li>
                       <li>
                         <input
@@ -381,7 +447,7 @@
                           name="brandMenuRadio"
                           id="rangeSecondPrice"
                         />
-                        <label>500-999 грн</label>
+                        <label data-lang="catalog_page-20">500-999 грн</label>
                       </li>
                       <li>
                         <input
@@ -389,7 +455,7 @@
                           name="brandMenuRadio"
                           id="rangeThirdPrice"
                         />
-                        <label>1000-1499 грн</label>
+                        <label data-lang="catalog_page-21">1000-1499 грн</label>
                       </li>
                       <li>
                         <input
@@ -397,7 +463,7 @@
                           name="brandMenuRadio"
                           id="rangeFourthPrice"
                         />
-                        <label>1500-1999 грн</label>
+                        <label data-lang="catalog_page-22">1500-1999 грн</label>
                       </li>
                       <li>
                         <input
@@ -405,369 +471,47 @@
                           name="brandMenuRadio"
                           id="rangeFifthPrice"
                         />
-                        <label> від 2000 грн</label>
+                        <label data-lang="catalog_page-23"> від 2000 грн</label>
                       </li>
                     </ul>
                   </li>
-                  <li class="li-title">
-                    <div id="sizeItem" class="li-list-title">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
-                        alt="Arrow down icon"
-                      />
-                      <p>РОЗМІРИ</p>
+                  <li class="li-title li-list">
+                    <div id="newAndDiscountItem" class="li-list-title">
+                      <ul>
+                        <li>
+                          <input
+                            type="radio"
+                            name="optionInput"
+                            id="newInput"
+                          />
+                          <label>New</label>
+                        </li>
+                        <li>
+                          <input
+                            type="radio"
+                            name="optionInput"
+                            id="discountInput"
+                          />
+                          <label data-lang="catalog_page-24">Знижки</label>
+                        </li>
+                      </ul>
                     </div>
                   </li>
                 </ul>
               </nav>
             </aside>
             <div class="catalogue-menu-block">
-              <div class="catalogue-menu-block-items">
-                <div
-                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="raincoat-ariel.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/01.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Дощовик Ariel"
-                    /></a>
-                    <a
-                      href="raincoat-ariel.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">PET FASHION</p>
-                  <h3>Дощовик Ariel</h3>
-                  <p class="sizes">XS XS2 S M L</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">829 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="raincoat-ariel.html"
-                      ><img
-                        src="img/catalog-page/CATALOGUE-MENU/02.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Футболка Maria"
-                    /></a>
-                    <a
-                      href="raincoat-ariel.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">PET FASHION</p>
-                  <h3>Футболка Maria</h3>
-                  <p class="sizes">XS XS2 S M L</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">719 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="raincoat-ariel.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/03.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Худі Sofia"
-                    /></a>
-                    <a
-                      href="raincoat-ariel.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">PET FASHION</p>
-                  <h3>Худі Sofia</h3>
-                  <p class="sizes">XS XS2 S M L</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">863 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item beds-category harleyCho range-third-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="bed-ascold.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/04.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Ліжак Ascold"
-                    /></a>
-                    <a href="bed-ascold.html" class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">Harley&Cho</p>
-                  <h3>Ліжак Ascold</h3>
-                  <p class="sizes">52*40*17, 62*50*19</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">1088 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item beds-category harleyCho range-fifth-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="bed-ascold.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/05.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Ліжак Prime"
-                    /></a>
-                    <a href="bed-ascold.html" class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">Harley&Cho</p>
-                  <h3>Ліжак Prime</h3>
-                  <p class="sizes">60х50х18, 78х60х20</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">2065 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item beds-category harleyCho range-third-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="bed-ascold.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/06.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Ліжак Denver"
-                    /></a>
-                    <a href="bed-ascold.html" class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">Harley&Cho</p>
-                  <h3>Ліжак Denver</h3>
-                  <p class="sizes">80*60*13, 102*76*14</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">1435 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item accessories-category trixie range-first-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="collar-bright.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/07.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Комірець Bright"
-                    /></a>
-                    <a
-                      href="collar-bright.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">Trixie</p>
-                  <h3>Комірець Bright</h3>
-                  <p class="sizes">XS-XS2 S-M</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">204 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item accessories-category trixie range-first-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="collar-bright.html"
-                      ><img
-                        src="img/catalog-page/CATALOGUE-MENU/08.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Комірець Mood"
-                    /></a>
-                    <a
-                      href="collar-bright.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">Trixie</p>
-                  <h3>Кепка Mood</h3>
-                  <p class="sizes">XS S M</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">173 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item carrying-category collar range-fourth-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="carrying-remy.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/09.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Сумка-переноска Remy"
-                    /></a>
-                    <a
-                      href="carrying-remy.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">COLLAR</p>
-                  <h3>Сумка-переноска Remy</h3>
-                  <p>40x28x21</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">1829 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="sweatshirt-delicate.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/10.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Толстовка Delicate"
-                    /></a>
-                    <a
-                      href="sweatshirt-delicate.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">PET FASHION</p>
-                  <h3>Толстовка Delicate</h3>
-                  <p class="sizes">XS XS2 S M L</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">652 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="sweatshirt-delicate.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/11.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Комбінезон Puzzle"
-                    /></a>
-                    <a
-                      href="sweatshirt-delicate.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">PET FASHION</p>
-                  <h3>Комбінезон Puzzle</h3>
-                  <p class="sizes">S2</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">939 грн</p>
-                </div>
-                <div
-                  class="catalogue-menu-block-item wear-category pet-fashion range-second-price"
-                >
-                  <div class="catalogue-menu-image">
-                    <a href="sweatshirt-delicate.html">
-                      <img
-                        src="img/catalog-page/CATALOGUE-MENU/12.jpg"
-                        class="catalogue-menu-main-pic"
-                        alt="Худі Snoodie"
-                    /></a>
-                    <a
-                      href="sweatshirt-delicate.html"
-                      class="catalogue-menu-search-icon"
-                      ><img
-                        src="img/main-page/HEADER/search-icon.svg"
-                        alt="Search Icon"
-                    /></a>
-                  </div>
-                  <p class="brand">PET FASHION</p>
-                  <h3>Худі Snoodie</h3>
-                  <p class="sizes">S SM M M2</p>
-                  <img
-                    src="img/catalog-page/CATALOGUE-MENU/dot-icon.svg"
-                    class="dot"
-                    alt="Dot icon"
-                  />
-                  <p class="catalogue-menu-block-item-price">613 грн</p>
-                </div>
-              </div>
+              <div class="catalogue-menu-block-items"></div>
 
-              <div class="pagination">
+              <div id="pagination" class="pagination">
                 <img
                   src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
                   alt="Arrow Left Icon"
                 />
-                <p class="active-page">1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>.</p>
-                <p>.</p>
-                <p>.</p>
-                <p>10</p>
-                <p>11</p>
+                <p class="active-page page">1</p>
+                <p class="page">2</p>
+                <p class="page">3</p>
+                <p class="page">4</p>
                 <img
                   src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
                   alt="Arrow Right Icon"
@@ -786,7 +530,7 @@
               class="footer-logo"
               alt="Trendy Tail Logo"
             />
-            <p>
+            <p data-lang="home_page-42">
               Тому що ми <br />
               піклуємося про собак
             </p>
@@ -794,21 +538,56 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Каталог</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-43">
+                  Каталог
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Домашній одяг</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-44"
+                    >Новинки</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">Дощевіки</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-45"
+                    >Аксесуари</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link">Верхній одяг</a>
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-46"
+                    >Одяг</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Ліжаки</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-47"
+                    >Сумки-переноски</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Іграшки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-48"
+                    >Ліжаки</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-49"
+                    >Знижки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -817,33 +596,131 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Меню</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-50">
+                  Меню
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Каталог</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-51"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">О нас</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-52"
+                    >О нас</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link"
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-53"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Контакти</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-54"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Відгуки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-55"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
           </div>
 
+          <div class="footer-form">
+            <h3 class="footer__form-title" data-lang="home_page-56">
+              Зв’язатися з нами
+            </h3>
+            <form
+              id="footerForm"
+              class="footer__form"
+              action="telegramMain.php"
+              method="POST"
+              onsubmit="return checkForm()"
+            >
+              <label data-lang="home_page-57">Ім'я</label>
+              <input
+                type="text"
+                name="footerInputUserName"
+                id="footerFormUserName"
+                placeholder="Trendy"
+                required
+              />
+              <div
+                class="error-not"
+                id="errorName"
+                style="display: none"
+                data-lang="home_page-58"
+              >
+                Ім'я повинно складатись лише з літер
+              </div>
+              <label data-lang="home_page-59">E-mail</label>
+              <input
+                type="email"
+                name="footerFormInputEmail"
+                id="footerFormEmail"
+                placeholder="trendy@ukr.net"
+                required
+              />
+              <div
+                class="error-not"
+                id="errorEmail"
+                style="display: none"
+                data-lang="home_page-60"
+              >
+                Імейл повинен бути у форматі user@ukr.net
+              </div>
+
+              <label data-lang="home_page-61">Текст повідомлення</label>
+              <textarea
+                name="footerTextarea"
+                id="footerFormTextarea"
+                placeholder="Your text.."
+                required
+              ></textarea>
+              <div
+                class="error-not"
+                id="errorQuestion"
+                style="display: none"
+                data-lang="home_page-62"
+              >
+                Питання повинно містити мінімум 10 символів
+              </div>
+              <button type="submit" id="sendFooterBtn" data-lang="home_page-63">
+                Надіслати
+              </button>
+            </form>
+          </div>
+
           <div class="footer-item">
-            <h3 class="footer__menu-title">Наші контакти</h3>
-            <a href="tel:+380974379424">Тел:+38 (097) 437 94 24</a>
-            <p class="footer__work-hours">Графік роботи: Пн - Нд 9.00-19.00</p>
-            <a href="mailto:trendytail@ukr.net">Пошта: trendytail@ukr.net</a>
+            <h3 class="footer__menu-title" data-lang="home_page-64">
+              Наші контакти
+            </h3>
+            <a href="tel:+380974379424" data-lang="home_page-65"
+              >Тел:+38 (097) 437 94 24</a
+            >
+            <p class="footer__work-hours" data-lang="home_page-66">
+              Графік роботи: Пн - Нд 9.00-19.00
+            </p>
+            <a href="mailto:trendytail@ukr.net" data-lang="home_page-67"
+              >Пошта: trendytail@ukr.net</a
+            >
             <div class="footer__socs">
               <a href="#"
                 ><img src="img/main-page/FOOTER/insta.svg" alt="Instagram Icon"
@@ -859,13 +736,18 @@
         </div>
       </footer>
       <footer class="footer-copy">
-        <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
+        <p>
+          TrendyTail © Copyright 2023 |
+          <span data-lang="home_page-68">Всі права захищені</span>
+        </p>
       </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/catalog.js"></script>
+    <script src="js/change-language.js"></script>
+    <script type="module" src="js/catalog.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

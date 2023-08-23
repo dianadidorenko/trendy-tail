@@ -4,14 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/delivery.css" />
-    <title>Доставка і оплата</title>
+    <link rel="stylesheet" href="css/items.css" />
+    <title>Сумка-переноска Vesta</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -64,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-     <!-- Changing Color Theme -->
+    <!-- Changing Color Theme -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -85,6 +81,37 @@
       </p>
     </div>
     <!-- Changing Color Theme -->
+
+    <!-- Pop Up Added Item To The Shopping Cart -->
+    <div id="popUpShoppingCart" class="pop-up-shopping-cart">
+      <div class="pop-up-shopping-cart-block">
+        <div class="pop-up-shopping-cart-title-info">
+          <p class="pop-up-shopping-cart-title">
+            ТОВАР УСПІШНО ДОДАНО <br />
+            ДО ВАШОГО КОШИКА
+          </p>
+          <span id="closePopUp">&times;</span>
+        </div>
+        <div class="image-and-goods-info">
+          <div class="image-and-goods-info-left-part">
+            <img id="popUpImage" />
+          </div>
+          <div class="image-and-goods-info-right-part">
+            <p id="popUpGoodsTitle">Сумка-переноска Vesta</p>
+            <p>Розмір: <span id="popUpSize">XS</span></p>
+            <p>Кількість: <span id="popUpQuantity">1</span></p>
+            <p>Ітого: <span id="popUpPrice">1509</span> грн</p>
+          </div>
+        </div>
+        <button id="continueBtn" class="pop-up-button">
+          Продовжити покупки
+        </button>
+        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+          Оформити замовлення
+        </a>
+      </div>
+    </div>
+    <!-- Pop Up Added Item To The Shopping Cart -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -128,13 +155,15 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link active__link"
+                  <a href="delivery.html" class="menu__link"
                     >Доставка і оплата</a
                   >
                 </li>
@@ -180,48 +209,78 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Доставка і оплата</span>
+            <a href="index.html">Головна > </a>
+            <a href="catalog.html">Каталог ></a>
+            <span> Сумка-переноска Vesta</span>
           </div>
         </div>
 
-        <section class="page__delivery delivery">
-          <div class="delivery__container">
-            <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
-            />
-            <h2 class="page-title">Доставка</h2>
-            <div class="delivery-block">
-              <img
-                src="img/delivery/delivery-01.png"
-                alt="Інформація о доставці"
-              />
-              <img
-                src="img/delivery/delivery-02.svg"
-                class="box-pic"
-                alt="Декоративна картинка"
-              />
-            </div>
-            <h3>Варіанти доставки</h3>
-            <div class="delivery-types-block">
-              <img src="img/delivery/nova-poshta.png" alt="Нова Пошта" />
-              <img src="img/delivery/ukr-posht.svg" alt="Укр Пошта" />
-              <img src="img/delivery/meest.png" alt="Міст" />
-            </div>
-          </div>
-        </section>
+        <section class="page__item-info item-info">
+          <div class="item-info__container">
+            <div class="blocks">
+              <div class="item-info-left-photo-block">
+                <div class="item-info-left-photo-block-items">
+                  <img
+                    src="img/info-item/carrying-vesta/01.jpg"
+                    alt="Сумка-переноска Vesta"
+                    onclick="fullView(this.src)"
+                  />
+                  <img
+                    src="img/info-item/carrying-vesta/02.jpg"
+                    alt="Сумка-переноска Vesta"
+                    onclick="fullView(this.src)"
+                  />
+                  <img
+                    src="img/info-item/carrying-vesta/03.jpg"
+                    alt="Сумка-переноска Vesta"
+                    onclick="fullView(this.src)"
+                  />
+                  <img
+                    src="img/info-item/carrying-vesta/04.jpg"
+                    id="mainPicForPopUp"
+                    alt="Сумка-переноска Vesta"
+                    onclick="fullView(this.src)"
+                  />
+                </div>
 
-        <section class="page__payment payment">
-          <div class="payment__container">
+                <div id="FullImageView">
+                  <img id="FullImage" />
+                  <span id="closeButton" onclick="closeFullView()"
+                    >&times;</span
+                  >
+                </div>
+              </div>
+              <div class="item-info-right-text-block">
+                <h1 id="h1">Сумка-переноска Vesta</h1>
+                <p class="item-info-right-text-block-description">
+                  Сумка-переноска має віконця, в які улюбленець може дивитися
+                  під час подорожі. М’яке дно і стіни роблять мандрівку
+                  комфортною. Господар може нести сумку в руці або на плечі — є
+                  зручні ручки і довгий ремінь з м’якою накладкою.
+                </p>
+                <div class="info-block-p">
+                  <p>Бренд: <span>PF Active</span></p>
+                  <p>Розмір: <span>38x22x22 см</span></p>
+                  <p>Матеріал: <span>100% поліестер</span></p>
+                  <p>Колір: <span>Синій</span></p>
+                  <p>Наявність: <span>В наявності</span></p>
+                </div>
+                <p class="size">Розмір:</p>
+                <div class="sizes" id="sizes">
+                  <div id="bigGroup" class="check-group">
+                    <input type="radio" id="big" name="size" />
+                    <label id="bigLabel">38x22x22 см</label>
+                  </div>
+                </div>
+                <p class="item-price"><span id="price">1299</span> грн</p>
+                <button id="buy" class="button">КУПИТЬ</button>
+              </div>
+            </div>
             <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
+              src="img/info-item/paws.png "
+              class="paws-decor"
+              alt="Paws Decor"
             />
-            <h2 class="page-title">Оплата</h2>
-            <img src="img/delivery/payment.png" alt="Оплата" />
           </div>
         </section>
       </main>
@@ -310,19 +369,103 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
+      // Click for full image view
+      function fullView(ImgLink) {
+        document.getElementById("FullImage").src = ImgLink;
+        document.getElementById("FullImageView").style.display = "block";
+      }
+      function closeFullView() {
+        document.getElementById("FullImageView").style.display = "none";
+      }
+      // Click for full image view
+
       // Anchor adding
       window.addEventListener("mousemove", (e) => {
-        if (e.pageY >= 1800) {
+        if (e.pageY >= 1350) {
           ancorImg.style.display = "block";
         } else {
           ancorImg.style.display = "none";
         }
       });
       // Anchor adding
+
+      // Exact price depends on the size click
+      sizes.addEventListener("mousedown", (e) => {
+        bigGroup.style.background = "rgba(128, 180, 182, 0.1)";
+
+        if (
+          e.target.id == "big" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "1299";
+        }
+      });
+      // Exact price depends on the size click
+
+      // Pop Up Added Item To The Shopping Cart
+      const h1Text = document.getElementById("h1").innerText;
+
+      buy.addEventListener("click", () => {
+        const itemsArray = localStorage.getItem("orderItems")
+          ? JSON.parse(localStorage.getItem("orderItems"))
+          : [];
+
+        function createItem() {
+          let inputs = document.querySelectorAll("input");
+
+          for (input of inputs) {
+            if (input.checked) {
+              idSize = input.id.toUpperCase();
+            }
+          }
+
+          itemsArray.push({
+            name: `${h1Text}`,
+            imgPath: `${mainPicForPopUp.src}`,
+            size: `${idSize}`,
+            price: `${price.innerText}`,
+          });
+
+          localStorage.setItem("orderItems", JSON.stringify(itemsArray));
+        }
+
+        createItem();
+
+        let checked = document.querySelectorAll('input[type="radio"]:checked'),
+          wrapper = document.querySelector(".wrapper");
+
+        popUpShoppingCart.style.display = "flex";
+        wrapper.style.opacity = "0.3";
+
+        document.getElementById("popUpImage").src = mainPicForPopUp.src;
+
+        for (check of checked) {
+          if (check.id == "big") {
+            popUpSize.innerText = check.id + " - " + bigLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          }
+        }
+
+        closePopUp.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+
+        continueBtn.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+      });
+      // Pop Up Added Item To The Shopping Cart
     </script>
       <script src="js/change-language.js"></script>
+    <script src="js/items-carrying.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>

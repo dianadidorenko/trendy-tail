@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Головна</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <title data-lang="home_page-title">Головна</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -63,10 +70,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -80,19 +101,41 @@
         <nav class="burger-header-menu menu">
           <ul class="burger-header-menu__list">
             <li class="menu__item">
-              <a href="catalog.html" class="menu__link">Каталог</a>
+              <a href="catalog.html" class="menu__link" data-lang="home_page-35"
+                >Каталог</a
+              >
             </li>
             <li class="menu__item">
-              <a href="about-us.html" class="menu__link">О нас</a>
+              <a
+                href="about-us.html"
+                class="menu__link"
+                data-lang="home_page-36"
+                >О нас</a
+              >
             </li>
             <li class="menu__item">
-              <a href="delivery.html" class="menu__link">Доставка і оплата</a>
+              <a
+                href="delivery.html"
+                class="menu__link"
+                data-lang="home_page-37"
+                >Доставка і оплата</a
+              >
             </li>
             <li class="menu__item">
-              <a href="contacts.html" class="menu__link">Контакти</a>
+              <a
+                href="contacts.html"
+                class="menu__link"
+                data-lang="home_page-38"
+                >Контакти</a
+              >
             </li>
             <li class="menu__item">
-              <a href="feedback.html" class="menu__link">Відгуки</a>
+              <a
+                href="feedback.html"
+                class="menu__link"
+                data-lang="home_page-39"
+                >Відгуки</a
+              >
             </li>
           </ul>
         </nav>
@@ -112,21 +155,44 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a
+                    href="catalog.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-1"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="about-us.html" class="menu__link">О нас</a>
+                  <a
+                    href="about-us.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-2"
+                    >О нас</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link"
+                  <a
+                    href="delivery.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-3"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="contacts.html" class="menu__link">Контакти</a>
+                  <a
+                    href="contacts.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-4"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link">Відгуки</a>
+                  <a
+                    href="feedback.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-5"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -149,11 +215,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -170,18 +231,31 @@
         <section class="page__welcome-title welcome-title">
           <div class="welcome-title__container">
             <div class="welcome-title-left-block">
-              <img src="img/main-page/MAIN TITLE BLOCK/01.png" alt="" />
+              <img
+                src="img/main-page/MAIN TITLE BLOCK/01.png"
+                alt="Welcome picture 1"
+              />
             </div>
             <div class="welcome-title-middle-block">
-              <h1>Якісні зоотовари від виробника для ваших улюбленців</h1>
-              <h2>
+              <h1 data-lang="home_page-6">
+                Якісні зоотовари від виробника для ваших улюбленців
+              </h1>
+              <h2 data-lang="home_page-7">
                 Онлайн магазин з продажу товарів для домашніх тварин з доставкою
                 по всій Україні
               </h2>
-              <a class="button" href="catalog.html">ПЕРЕЙТИ ДО КАТАЛОГУ</a>
+              <a
+                class="button mulli__text"
+                href="catalog.html"
+                data-lang="home_page-8"
+                >ПЕРЕЙТИ ДО КАТАЛОГУ</a
+              >
             </div>
             <div class="welcome-title-right-block">
-              <img src="img/main-page/MAIN TITLE BLOCK/02.png" alt="" />
+              <img
+                src="img/main-page/MAIN TITLE BLOCK/02.png"
+                alt="Welcome picture 1"
+              />
             </div>
           </div>
         </section>
@@ -242,25 +316,36 @@
                 class="heart-decoration"
                 alt="Heart Decoration"
               />
-              <h2 class="page-title">О нас</h2>
+              <h2 class="page-title" data-lang="home_page-9">О нас</h2>
               <div class="about-us-block">
                 <div class="about-us-block-left-block">
-                  <img src="img/main-page/ABOUT/01.png" alt="" />
+                  <img
+                    src="img/main-page/ABOUT/01.png"
+                    alt="About us picture"
+                  />
                 </div>
                 <div class="about-us-block-right-block">
-                  <img src="img/logo.svg" class="about-us-logo" alt="" />
-                  <p class="about-us-block-right-block-text">
-                    Gorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
-                    dignissim, metus nec fringilla accumsan, risus sem
-                    sollicitudin lacus, ut interdum tellus elit sed risus.
-                    Maecenas eget condimentum velit, sit amet feugiat lectus.
-                    Class aptent taciti sociosqu ad litora torquent per conubia
-                    nostra, per inceptos himenaeos. Praesent auctor purus luctus
-                    enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus
-                    ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
-                    vel bibendum lorem. Morbi convallis convallis diam sit amet
-                    lacinia. Aliquam in elementum tellus.
+                  <img
+                    src="img/logo.svg"
+                    class="about-us-logo"
+                    alt="TrendyTail logo"
+                  />
+                  <p
+                    class="about-us-block-right-block-text"
+                    data-lang="home_page-10"
+                  >
+                    Давним-давно група любителів собак відкрила інтернет-магазин
+                    модного одягу для собак у невеликому містечку біля моря.
+                    Урочисте відкриття магазину пройшло успішно, на ньому було
+                    представлено стильні варіанти для собак усіх розмірів та
+                    порід. Команда використовувала маркетингові тактики, такі як
+                    соціальні мережі та співпраця з впливовими особами свійських
+                    тварин, щоб поширити інформацію. Вони спростили процес
+                    онлайн-покупок та забезпечили швидке обслуговування
+                    клієнтів. Магазин також пропонував практичні, але модні
+                    аксесуари. Цей інтернет-магазин одягу для собак ознаменував
+                    новий початок в індустрії моди для домашніх тварин, обіцяючи
+                    привнести інноваційні можливості у моду.
                   </p>
                 </div>
               </div>
@@ -275,14 +360,23 @@
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">Каталог</h2>
+            <h2 class="page-title" data-lang="home_page-11">КАТАЛОГ</h2>
             <div class="catalogue-menu__items">
+              <div class="catalogue-menu__item">
+                <img
+                  src="img/main-page/CATALOG/06.png"
+                  alt="Фото Категорія Ліжаки"
+                />
+                <a href="new-page.html" data-lang="home_page-12">НОВИНКИ</a>
+              </div>
               <div class="catalogue-menu__item">
                 <img
                   src="img/main-page/CATALOG/01.png"
                   alt="Фото Категорія Ошійники"
                 />
-                <a href="discount.html">ОШІЙНИКИ</a>
+                <a href="accessories-page.html" data-lang="home_page-13"
+                  >АКСЕСУАРИ</a
+                >
               </div>
 
               <div class="catalogue-menu__item">
@@ -290,23 +384,7 @@
                   src="img/main-page/CATALOG/02.png"
                   alt="Фото Категорія Вуличний Одяг"
                 />
-                <a href="clothes.html">ВУЛИЧНИЙ ОДЯГ</a>
-              </div>
-
-              <div class="catalogue-menu__item">
-                <img
-                  src="img/main-page/CATALOG/03.png"
-                  alt="Фото Категорія Домашній Одяг"
-                />
-                <a href="clothes.html">ДОМАШНІЙ ОДЯГ</a>
-              </div>
-
-              <div class="catalogue-menu__item">
-                <img
-                  src="img/main-page/CATALOG/04.png"
-                  alt="Фото Категорія Дощевики"
-                />
-                <a href="discount.html">ДОЩЕВИКИ</a>
+                <a href="clothes-page.html" data-lang="home_page-14">ОДЯГ</a>
               </div>
 
               <div class="catalogue-menu__item">
@@ -314,7 +392,9 @@
                   src="img/main-page/CATALOG/05.png"
                   alt="Фото Категорія Іграшки"
                 />
-                <a href="discount.html">ІГРАШКИ</a>
+                <a href="carrying-page.html" data-lang="home_page-15"
+                  >СУМКИ-ПЕРЕНОСКИ</a
+                >
               </div>
 
               <div class="catalogue-menu__item">
@@ -322,11 +402,36 @@
                   src="img/main-page/CATALOG/06.png"
                   alt="Фото Категорія Ліжаки"
                 />
-                <a href="beds.html">ЛІЖАКИ</a>
+                <a href="beds-page.html" data-lang="home_page-16">ЛІЖАКИ</a>
+              </div>
+              <div class="catalogue-menu__item">
+                <img
+                  src="img/main-page/CATALOG/06.png"
+                  alt="Фото Категорія Ліжаки"
+                />
+                <a href="sale-page.html" data-lang="home_page-17">ЗНИЖКИ</a>
               </div>
             </div>
           </div>
         </section>
+
+        <!-- 
+        <section class="page__video video">
+          <div class="video__container">
+            <h2 data-lang="home_page-18">
+              Як зробити куртку для собаки? Відповідь в відео!
+            </h2>
+            <iframe
+              width="1000"
+              height="700"
+              src="https://www.youtube.com/embed/ZqGfKnbUJfc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section> -->
 
         <section class="page__vtrendy vtrendy">
           <div class="vtrendy-info-title">
@@ -335,7 +440,7 @@
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">В ТРЕНДІ</h2>
+            <h2 class="page-title" data-lang="home_page-19">В ТРЕНДІ</h2>
           </div>
           <div class="vtrendy__container">
             <!-- Slider main container -->
@@ -358,9 +463,10 @@
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ДОЩОВИК ARIEL</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-20">ДОЩОВИК ARIEL</h3>
+                    <p class="vtrendy-size">XS, XS2, S, M, L</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
                       <a href="raincoat-ariel.html"
@@ -369,48 +475,50 @@
                           class="vtrendy-main-pic"
                           alt="Футболка MARIA"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="futbolka-maria.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>СВЕТЕР GRACE</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-21">ФУТБОЛКА MARIA</h3>
+                    <p class="vtrendy-size">XS, XS2, S2, M, L</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="futbolka-maria.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-bim.jpg"
                           class="vtrendy-main-pic"
-                          alt="Толстовка BIM"
+                          alt="Худі Sofia"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="hoodie-sofia.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ДОЩОВИК ARIEL</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-22">ХУДІ SOFIA</h3>
+                    <p class="vtrendy-size">XS, XS2, S, M</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
                       <a href="raincoat-ariel.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-delicate-sira.jpg"
                           class="vtrendy-main-pic"
-                          alt="Толстовка BIM"
+                          alt="Толстовка Soft"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="tolstovka-soft.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ТОЛСТОВКА BIM</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-23">ТОЛСТОВКА SOFT</h3>
+                    <p class="vtrendy-size">XXS, XS, S</p>
                   </div>
                 </div>
 
@@ -429,9 +537,10 @@
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ДОЩОВИК ARIEL</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-25">ДОЩОВИК ARIEL</h3>
+                    <p class="vtrendy-size">XS, XS2, S, M, L</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
                       <a href="raincoat-ariel.html"
@@ -440,48 +549,50 @@
                           class="vtrendy-main-pic"
                           alt="Футболка MARIA"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="futbolka-maria.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>СВЕТЕР GRACE</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-26">ФУТБОЛКА MARIA</h3>
+                    <p class="vtrendy-size">XS, XS2, S2, M, L</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="futbolka-maria.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-bim.jpg"
                           class="vtrendy-main-pic"
-                          alt="Толстовка BIM"
+                          alt="Худі Sofia"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="hoodie-sofia.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ДОЩОВИК ARIEL</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-27">ХУДІ SOFIA</h3>
+                    <p class="vtrendy-size">XS, XS2, S, M</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
                       <a href="raincoat-ariel.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-delicate-sira.jpg"
                           class="vtrendy-main-pic"
-                          alt="Толстовка BIM"
+                          alt="Толстовка Soft"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="tolstovka-soft.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ТОЛСТОВКА BIM</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-28">ТОЛСТОВКА SOFT</h3>
+                    <p class="vtrendy-size">XXS, XS, S</p>
                   </div>
                 </div>
 
@@ -500,9 +611,10 @@
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ДОЩОВИК ARIEL</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-29">ДОЩОВИК ARIEL</h3>
+                    <p class="vtrendy-size">XS, XS2, S, M, L</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
                       <a href="raincoat-ariel.html"
@@ -511,48 +623,50 @@
                           class="vtrendy-main-pic"
                           alt="Футболка MARIA"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="futbolka-maria.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>СВЕТЕР GRACE</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-30">ФУТБОЛКА MARIA</h3>
+                    <p class="vtrendy-size">XS, XS2, S2, M, L</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="futbolka-maria.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-bim.jpg"
                           class="vtrendy-main-pic"
-                          alt="Толстовка BIM"
+                          alt="Худі Sofia"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="hoodie-sofia.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ДОЩОВИК ARIEL</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-31">ХУДІ SOFIA</h3>
+                    <p class="vtrendy-size">XS, XS2, S, M</p>
                   </div>
+
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
                       <a href="raincoat-ariel.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-delicate-sira.jpg"
                           class="vtrendy-main-pic"
-                          alt="Толстовка BIM"
+                          alt="Толстовка Soft"
                       /></a>
-                      <a href="raincoat-ariel.html" class="vtrendy-search-icon"
+                      <a href="tolstovka-soft.html" class="vtrendy-search-icon"
                         ><img
                           src="img/main-page/HEADER/search-icon.svg"
                           alt="Search Icon"
                       /></a>
                     </div>
-                    <h3>ТОЛСТОВКА BIM</h3>
-                    <p class="vtrendy-size">XS, S, M, L</p>
+                    <h3 data-lang="home_page-32">ТОЛСТОВКА SOFT</h3>
+                    <p class="vtrendy-size">XXS, XS, S</p>
                   </div>
                 </div>
               </div>
@@ -582,13 +696,19 @@
                 src="img/main-page/INFO-BLOCK/01.png"
                 alt="Зареєструватися на сайті та отримуйте масу привилеїв"
               />
-              <a href="user-profile.html" class="button">ЗАРЕЄСТРУВАТИСЯ</a>
-            </div>
-            <div class="info-block-bottom-block">
-              <img
-                src="img/main-page/INFO-BLOCK/02.png"
-                alt="Знижки до 10% на новую колекцію Перше замовлення -20%"
-              />
+              <div>
+                <h4 data-lang="home_page-33">СТАНЬ СВОЇМ</h4>
+                <p data-lang="home_page-34">
+                  Зареєструйся на сайті та <br />
+                  отримайте масу привилеїв
+                </p>
+                <a
+                  href="user-profile.html"
+                  class="button"
+                  data-lang="home_page-24"
+                  >ЗАРЕЄСТРУВАТИСЯ</a
+                >
+              </div>
             </div>
           </div>
         </section>
@@ -602,7 +722,7 @@
               class="footer-logo"
               alt="Trendy Tail Logo"
             />
-            <p>
+            <p data-lang="home_page-42">
               Тому що ми <br />
               піклуємося про собак
             </p>
@@ -610,21 +730,56 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Каталог</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-43">
+                  Каталог
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Домашній одяг</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-44"
+                    >Новинки</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">Дощевіки</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-45"
+                    >Аксесуари</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link">Верхній одяг</a>
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-46"
+                    >Одяг</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Ліжаки</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-47"
+                    >Сумки-переноски</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Іграшки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-48"
+                    >Ліжаки</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-49"
+                    >Знижки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -633,30 +788,57 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Меню</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-50">
+                  Меню
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Каталог</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-51"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">О нас</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-52"
+                    >О нас</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link"
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-53"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Контакти</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-54"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Відгуки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-55"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
           </div>
 
           <div class="footer-form">
-            <h3 class="footer__form-title">Зв’язатися з нами</h3>
+            <h3 class="footer__form-title" data-lang="home_page-56">
+              Зв’язатися з нами
+            </h3>
             <form
               id="footerForm"
               class="footer__form"
@@ -664,18 +846,23 @@
               method="POST"
               onsubmit="return checkForm()"
             >
-              <label>Ім'я</label>
+              <label data-lang="home_page-57">Ім'я</label>
               <input
                 type="text"
                 name="footerInputUserName"
                 id="footerFormUserName"
-                placeholder="Тренді"
+                placeholder="Trendy"
                 required
               />
-              <div class="error-not" id="errorName" style="display: none">
+              <div
+                class="error-not"
+                id="errorName"
+                style="display: none"
+                data-lang="home_page-58"
+              >
                 Ім'я повинно складатись лише з літер
               </div>
-              <label>E-mail</label>
+              <label data-lang="home_page-59">E-mail</label>
               <input
                 type="email"
                 name="footerFormInputEmail"
@@ -683,29 +870,49 @@
                 placeholder="trendy@ukr.net"
                 required
               />
-              <div class="error-not" id="errorEmail" style="display: none">
+              <div
+                class="error-not"
+                id="errorEmail"
+                style="display: none"
+                data-lang="home_page-60"
+              >
                 Імейл повинен бути у форматі user@ukr.net
               </div>
 
-              <label>Текст повідомлення</label>
+              <label data-lang="home_page-61">Текст повідомлення</label>
               <textarea
                 name="footerTextarea"
                 id="footerFormTextarea"
-                placeholder="Введіть повідомлення.."
+                placeholder="Your text.."
                 required
               ></textarea>
-              <div class="error-not" id="errorQuestion" style="display: none">
+              <div
+                class="error-not"
+                id="errorQuestion"
+                style="display: none"
+                data-lang="home_page-62"
+              >
                 Питання повинно містити мінімум 10 символів
               </div>
-              <button type="submit" id="sendFooterBtn">Надіслати</button>
+              <button type="submit" id="sendFooterBtn" data-lang="home_page-63">
+                Надіслати
+              </button>
             </form>
           </div>
 
           <div class="footer-item">
-            <h3 class="footer__menu-title">Наші контакти</h3>
-            <a href="tel:+380974379424">Тел:+38 (097) 437 94 24</a>
-            <p class="footer__work-hours">Графік роботи: Пн - Нд 9.00-19.00</p>
-            <a href="mailto:trendytail@ukr.net">Пошта: trendytail@ukr.net</a>
+            <h3 class="footer__menu-title" data-lang="home_page-64">
+              Наші контакти
+            </h3>
+            <a href="tel:+380974379424" data-lang="home_page-65"
+              >Тел:+38 (097) 437 94 24</a
+            >
+            <p class="footer__work-hours" data-lang="home_page-66">
+              Графік роботи: Пн - Нд 9.00-19.00
+            </p>
+            <a href="mailto:trendytail@ukr.net" data-lang="home_page-67"
+              >Пошта: trendytail@ukr.net</a
+            >
             <div class="footer__socs">
               <a href="#"
                 ><img src="img/main-page/FOOTER/insta.svg" alt="Instagram Icon"
@@ -721,13 +928,14 @@
         </div>
       </footer>
       <footer class="footer-copy">
-        <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
+        <p>TrendyTail © Copyright 2023 | <span data-lang="home_page-68">Всі права захищені</span></p>
       </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/change-language.js"></script>
   </body>
 </html>

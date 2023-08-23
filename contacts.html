@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -65,10 +65,24 @@
     <!-- Anchor To The Top -->
 
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -125,7 +139,9 @@
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="contacts.html" class="menu__link active__link">Контакти</a>
+                  <a href="contacts.html" class="menu__link active__link"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="feedback.html" class="menu__link">Відгуки</a>
@@ -134,7 +150,7 @@
             </nav>
           </div>
           <div class="header-links__block">
-           <div class="header__user-links user-links">
+            <div class="header__user-links user-links">
               <a href="#"
                 ><img
                   src="img/main-page/HEADER/search-icon.svg"
@@ -151,11 +167,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -422,7 +433,8 @@
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/change-language.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/contacts.js"></script>
     <script src="js/search.js"></script>
   </body>

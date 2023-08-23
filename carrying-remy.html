@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
@@ -63,12 +59,26 @@
       ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
     /></a>
     <!-- Anchor To The Top -->
-
+    
     <!-- Changing Color Theme -->
-    <div class="toggle">
-      <input type="checkbox" id="toggle" />
-      <label for="toggle"></label>
-      <p id="inputThemeText">Зробити темніше?</p>
+    <div>
+      <div id="panel">
+        <div class="lang-block container">
+          <button class="header__btn" data-btn="ua">UA</button>
+          <button class="header__btn" data-btn="en">EN</button>
+        </div>
+        <div class="toggle">
+          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <p class="slide">
+        <a href="#" class="btn-slide"
+          ><img src="img/settings-icon.svg" alt="Settings Icon"
+        /></a>
+      </p>
     </div>
     <!-- Changing Color Theme -->
 
@@ -87,10 +97,10 @@
             <img id="popUpImage" />
           </div>
           <div class="image-and-goods-info-right-part">
-            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <p id="popUpGoodsTitle">Сумка-переноска Remy</p>
             <p>Розмір: <span id="popUpSize">XS</span></p>
             <p>Кількість: <span id="popUpQuantity">1</span></p>
-            <p>Ітого: <span id="popUpPrice">705</span> грн</p>
+            <p>Ітого: <span id="popUpPrice">2031</span> грн</p>
           </div>
         </div>
         <button id="continueBtn" class="pop-up-button">
@@ -184,11 +194,6 @@
               ></a>
             </div>
             <div class="header__user-profile user-profile">
-              <img
-                src="img/main-page/HEADER/arrow-black-down.svg"
-                id="arrow"
-                alt="Arrow Down Icon"
-              />
               <span id="userName"></span>
               <a href="user-profile.html"
                 ><img
@@ -220,10 +225,9 @@
                     id="mainPicForPopUp"
                     alt="Сумка-переноска Remy"
                     onclick="fullView(this.src)"
-                    style="max-width: 400px"
                   />
                 </div>
-                
+
                 <div id="FullImageView">
                   <img id="FullImage" />
                   <span id="closeButton" onclick="closeFullView()"
@@ -247,12 +251,12 @@
                 </div>
                 <p class="size">Розмір:</p>
                 <div class="sizes" id="sizes">
-                  <div id="sGroup" class="check-group">
+                  <div id="bigGroup" class="check-group">
                     <input type="radio" id="big" name="size" />
                     <label id="bigLabel">40x28x21 см</label>
                   </div>
                 </div>
-                <p class="item-price"><span id="price">1829</span> грн</p>
+                <p class="item-price"><span id="price">2031</span> грн</p>
                 <button id="buy" class="button">КУПИТЬ</button>
               </div>
             </div>
@@ -269,7 +273,7 @@
                   подушці, зшитий з плюшу та меблевої тканини - її можна
                   перевертати більш м'якої або цупкою стороною під настрій.
                 </p>
-                <p>Переваги лежака:</p>
+                <p><strong>Переваги лежака:</strong></p>
                 <ul>
                   <li>вишуканий дизайн і модний колір;</li>
                   <li>
@@ -375,8 +379,96 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/items-carrying.js"></script>
+    <script type="text/javascript">
+      // Click for full image view
+      function fullView(ImgLink) {
+        document.getElementById("FullImage").src = ImgLink;
+        document.getElementById("FullImageView").style.display = "block";
+      }
+      function closeFullView() {
+        document.getElementById("FullImageView").style.display = "none";
+      }
+      // Click for full image view
+
+      // Anchor adding
+      window.addEventListener("mousemove", (e) => {
+        if (e.pageY >= 1350) {
+          ancorImg.style.display = "block";
+        } else {
+          ancorImg.style.display = "none";
+        }
+      });
+      // Anchor adding
+
+      // Exact price depends on the size click
+      sizes.addEventListener("mousedown", (e) => {
+        bigGroup.style.background = "rgba(128, 180, 182, 0.1)";
+
+        if (
+          e.target.id == "big" &&
+          e.srcElement.parentElement.className == "check-group"
+        ) {
+          e.srcElement.parentElement.style.background =
+            "rgba(128, 180, 182, 0.4)";
+          price.innerText = "2031";
+        }
+      });
+      // Exact price depends on the size click
+
+      // Pop Up Added Item To The Shopping Cart
+      buy.addEventListener("click", () => {
+        let checked = document.querySelectorAll('input[type="radio"]:checked'),
+          wrapper = document.querySelector(".wrapper");
+
+        popUpShoppingCart.style.display = "flex";
+        wrapper.style.opacity = "0.3";
+
+        document.getElementById("popUpImage").src = mainPicForPopUp.src;
+
+        mainPicForPopUp = localStorage.setItem(
+          "mainPicForPopUp",
+          mainPicForPopUp.src
+        );
+
+        popUpGoodsTitle.innerText = h1.innerText;
+
+        popUpGoodsTitleValue = localStorage.setItem(
+          "popUpGoodsTitleValue",
+          popUpGoodsTitle.innerText
+        );
+
+        for (check of checked) {
+          if (check.id == "big") {
+            popUpSize.innerText = check.id + " - " + bigLabel.innerText;
+            popUpQuantity.innerText = "1";
+            popUpPrice.innerText = price.innerText;
+          }
+        }
+
+        animalSizeProduct = localStorage.setItem(
+          "animalSizeProduct",
+          popUpSize.innerText
+        );
+        animalProductPrice = localStorage.setItem(
+          "animalProductPrice",
+          popUpPrice.innerText
+        );
+
+        closePopUp.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+
+        continueBtn.addEventListener("click", () => {
+          popUpShoppingCart.style.display = "none";
+          wrapper.style.opacity = "1";
+        });
+      });
+      // Pop Up Added Item To The Shopping Cart
+    </script>
+    <script src="js/items.js"></script>
+      <script src="js/change-language.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>
 </html>

@@ -4,14 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <link rel="stylesheet" href="css/delivery.css" />
-    <title>Доставка і оплата</title>
+    <title>Новинки</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -64,7 +59,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-     <!-- Changing Color Theme -->
+    <!-- Changing Color Theme -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -128,13 +123,15 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a href="catalog.html" class="menu__link active__link"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
                   <a href="about-us.html" class="menu__link">О нас</a>
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link active__link"
+                  <a href="delivery.html" class="menu__link"
                     >Доставка і оплата</a
                   >
                 </li>
@@ -180,48 +177,98 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Доставка і оплата</span>
+            <a href="index.html">Головна > </a>
+            <a href="catalog.html">Каталог ></a>
+            <span>Новинки</span>
           </div>
         </div>
 
-        <section class="page__delivery delivery">
-          <div class="delivery__container">
-            <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
-            />
-            <h2 class="page-title">Доставка</h2>
-            <div class="delivery-block">
-              <img
-                src="img/delivery/delivery-01.png"
-                alt="Інформація о доставці"
-              />
-              <img
-                src="img/delivery/delivery-02.svg"
-                class="box-pic"
-                alt="Декоративна картинка"
-              />
-            </div>
-            <h3>Варіанти доставки</h3>
-            <div class="delivery-types-block">
-              <img src="img/delivery/nova-poshta.png" alt="Нова Пошта" />
-              <img src="img/delivery/ukr-posht.svg" alt="Укр Пошта" />
-              <img src="img/delivery/meest.png" alt="Міст" />
-            </div>
-          </div>
-        </section>
+        <section class="page__catalogue-menu catalogue-menu">
+          <div class="catalogue-menu__container">
+            <aside>
+              <nav class="catalogue-menu-nav">
+                <ul id="catalogueMenuAside" class="catalogue-menu-aside">
+                  <li class="li-title li-list">
+                    <div id="priceItem" class="li-list-title">
+                      <img
+                        src="img/catalog-page/CATALOGUE-MENU/Arrow-down-icon.svg"
+                        id="asideArrowPrice"
+                        alt="Arrow down icon"
+                      />
+                      <p id="price">ЦІНА</p>
+                    </div>
+                    <ul
+                      id="priceMenuCategory"
+                      class="catalogue-menu-category"
+                      style="display: none"
+                    >
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFirstPrice"
+                        />
+                        <label> до 499 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeSecondPrice"
+                        />
+                        <label>500-999 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeThirdPrice"
+                        />
+                        <label>1000-1499 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFourthPrice"
+                        />
+                        <label>1500-1999 грн</label>
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="brandMenuRadio"
+                          id="rangeFifthPrice"
+                        />
+                        <label> від 2000 грн</label>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <div class="catalogue-menu-block">
+              <div class="catalogue-menu-block-items"></div>
 
-        <section class="page__payment payment">
-          <div class="payment__container">
-            <img
-              src="img/main-page/ABOUT/heart-icon.svg"
-              class="heart-decoration"
-              alt="Heart Decoration"
-            />
-            <h2 class="page-title">Оплата</h2>
-            <img src="img/delivery/payment.png" alt="Оплата" />
+              <div class="pagination">
+                <img
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
+                  alt="Arrow Left Icon"
+                />
+                <p class="active-page">1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>10</p>
+                <p>11</p>
+                <img
+                  src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
+                  alt="Arrow Right Icon"
+                />
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -310,19 +357,10 @@
         <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
       </footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript">
-      // Anchor adding
-      window.addEventListener("mousemove", (e) => {
-        if (e.pageY >= 1800) {
-          ancorImg.style.display = "block";
-        } else {
-          ancorImg.style.display = "none";
-        }
-      });
-      // Anchor adding
-    </script>
       <script src="js/change-language.js"></script>
+    <script type="module" src="js/new-page.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
   </body>
