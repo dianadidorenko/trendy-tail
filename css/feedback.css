@@ -170,7 +170,7 @@ textarea {
 }
 
 .date {
-  color: var(--background-color);
+  color: white;
   font-size: 18px;
   font-weight: 400;
   line-height: 108%; /* 32.4px */

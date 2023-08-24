@@ -6,20 +6,25 @@
   color: var(--light-blue-color);
 }
 
+.pagination__list {
+  display: flex;
+  list-style-type: none;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 37px;
   column-gap: 11px;
-  p {
+  .pagination-page {
     font-size: 25px;
     font-weight: normal;
     cursor: pointer;
   }
 }
 
-.active-page {
+#active-page {
   padding: 3px 10px;
   background: var(--orange-color);
   border-radius: 10px;
@@ -376,7 +381,7 @@
     padding: 25px 10px;
     top: -6px;
     left: -22px;
-        max-width: 75px;
+    max-width: 75px;
   }
   .sale a {
     padding: 25px 12px;

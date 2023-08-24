@@ -78,6 +78,7 @@
   font-size: 22px;
   font-weight: 600;
   line-height: 160.222%;
+  max-width: 250px;
 }
 .mail-block {
   position: absolute;
@@ -241,14 +242,19 @@
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
+  position: relative;
+}
+.form-control .button img {
+  width: 30px;
+  height: 30px;
 }
 .form-left-part {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
-#telephone::placeholder {
-  font-size: 18px;
+input::placeholder {
+  font-size: 16px;
 }
 .form-right-part {
   display: flex;

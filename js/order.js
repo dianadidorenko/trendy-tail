@@ -120,43 +120,30 @@ orderSurname.value = localStorage.getItem("userSurname");
 orderTel.value = localStorage.getItem("phoneNumber");
 orderEmail.value = localStorage.getItem("userMail");
 
-// let orderInfoBlockRightPart = document.querySelector(
-//     ".order-info-block-right-part"
-//   ),
-//   orderBlockInfo = document.createElement("div"),
-//   orderBlockInfoLeftPart = document.createElement("div"),
-//   popUpImage = document.createElement("img"),
-//   trashIcon = document.createElement("img");
-
 // Show Empty Block in Shopping Cart
-if (localStorage.getItem("orderItems")) {
-  orderBlock.style.display = "flex";
-  emptyOrderBlock.style.display = "none";
-} else if (localStorage.getItem("orderItems2")) {
-  orderBlock.style.display = "flex";
-  emptyOrderBlock.style.display = "none";
-} else {
+if (!localStorage.getItem("orderItems")) {
   orderBlock.style.display = "none";
   emptyOrderBlock.style.display = "flex";
+} else if (localStorage.getItem("orderItems").length <= 2) {
+  orderBlock.style.display = "none";
+  emptyOrderBlock.style.display = "flex";
+} else if (localStorage.getItem("orderItems")) {
+  orderBlock.style.display = "flex";
+  emptyOrderBlock.style.display = "none";
 }
-
 // Show Empty Block in Shopping Cart
-
-// Insert Chosen Values to the Order Confirm Form
-// const itemsArray = localStorage.getItem("orderItems")
-//   ? JSON.parse(localStorage.getItem("orderItems"))
-//   : [];
 
 let itemsOrder = JSON.parse(localStorage.getItem("orderItems"));
 
 window.addEventListener("DOMContentLoaded", () => {
   let items = "";
 
+  // 45
   for (var i = 0; i < itemsOrder.length; i++) {
     items += `<div class="order-block-info" data-id='${catalog[i].id}'>
                 <div class="order-block-info-left-part">
                   <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    45
+                    22
                   )}'/>
                 </div>
                 <div class="order-block-info-right-part">
@@ -183,32 +170,28 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Total price of all goods
-// let orderPrices = document.querySelectorAll(".orderPrice");
-// var total = [];
+let orderPrices = document.querySelectorAll(".orderPrice");
+var total = [];
 
-// orderPrices.forEach((price) => {
-//   total.push(parseInt(price.innerText));
+orderPrices.forEach((price) => {
+  total.push(parseInt(price.innerText));
 
-//   let totalValue = total.reduce((a, b) => a + b);
+  let totalValue = total.reduce((a, b) => a + b);
 
-//   totalSum.innerText = totalValue;
-// });
+  totalSum.innerText = totalValue;
+});
 // Total price of all goods
 
 // initial order quantity in the header
-// if (document.querySelectorAll(".order-block-info").length) {
-//   localStorage.setItem(
-//     "quantityOrderValue",
-//     document.querySelectorAll(".order-block-info").length
-//   );
-// }
+if (document.querySelectorAll(".order-block-info").length) {
+  localStorage.setItem(
+    "quantityOrderValue",
+    document.querySelectorAll(".order-block-info").length
+  );
+}
 // initial order quantity in the header
 
 // Calculate quantity
-// const btnMinus = document.querySelector('[data-action="minus"]');
-// const btnPlus = document.querySelector('[data-action="plus"]');
-// const counter = document.querySelector("[data-counter]");
-
 window.addEventListener("click", (e) => {
   let counter;
 
@@ -219,80 +202,37 @@ window.addEventListener("click", (e) => {
     const quantityBlock = e.target.closest(".quantity-block");
     counter = quantityBlock.querySelector("[data-counter]");
   }
+
   if (e.target.dataset.action === "plus") {
     counter.innerText = ++counter.innerText;
   }
 
   if (e.target.dataset.action === "minus") {
-    if (parseInt(counter.innerText) > 1) {
+    if (parseInt(counter.innerText) > 0) {
       counter.innerText = --counter.innerText;
     }
 
-    if (
-      e.target.closest(".order-block-info") &&
-      parseInt(counter.innerText) === 1
-    ) {
-      e.target.closest(".order-block-info").remove();
-    }
+    for (var i = 0; i < itemsOrder.length; i++) {
+      if (parseInt(counter.innerText) < 1) {
+        if (i == parseInt(e.target.closest(".order-block-info").dataset.id)) {
+          itemsOrder.splice(i, 1);
+          e.target.closest(".order-block-info").remove();
+          location.reload();
+        }
 
-    // click on trash icon
-    if (e.target.classList.value === "trash") {
-      e.target.closest(".order-block-info").remove();
+        // click on trash icon
+        if (e.target.classList.value === "trash") {
+          e.target.closest(".order-block-info").remove();
+          itemsOrder.splice(i, 1);
+        }
+        // click on trash icon
+
+        localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
+      }
     }
-    // click on trash icon
   }
-  // for (var i = 0; i < itemsOrder.length; i++) {
-  //   // console.log(i);
-  //   // console.log(catalog[i].id);
-  //   // console.log(parseInt(e.target.closest(".order-block-info").dataset.id));
-  //   if (i == parseInt(e.target.closest(".order-block-info").dataset.id)) {
-  //     delete itemsOrder[i];
-  //     // console.log(itemsOrder);
-
-  //     localStorage.setItem("orderItems2", JSON.stringify(itemsOrder));
-  //     localStorage.removeItem("orderItems");
-  //     let itemsOrder2 = JSON.parse(localStorage.getItem("orderItems2"));
-
-  //     let items2 = "";
-  //     for (var i = 0; i < itemsOrder2.length; i++) {
-  //       items2 += `<div class="order-block-info" data-id='${catalog[i].id}'>
-  //               <div class="order-block-info-left-part">
-  //                 <img class="popUpImage" src='${itemsOrder2[i].imgPath.slice(
-  //                   22
-  //                 )}'/>
-  //               </div>
-  //               <div class="order-block-info-right-part">
-  //                 <p class="orderGoodsTitle">${itemsOrder2[i].name}</p>
-  //                 <p>Розмір: <span class="orderSize">${
-  //                   itemsOrder2[i].size
-  //                 }</span></p>
-  //                 <p>Ціна за одиницю:
-  //                   <span class="orderPrice1Piece">${
-  //                     itemsOrder2[i].price
-  //                   }</span> грн
-  //                 </p>
-  //                 <div class="quantity-block">
-  //                   <p>Кількість:</p>
-  //                   <span data-action="minus"class="minus">-</span>
-  //                   <span class="orderQuantity" data-counter>1</span>
-  //                   <span data-action="plus" class="plus">+</span>
-  //                   <img class='trash' src='img/order/trash.svg'/>
-  //                 </div>
-  //                 <p>Разом: <span class="orderPrice">${
-  //                   itemsOrder2[i].price
-  //                 }</span> грн</p>
-  //                 </div>
-  //             </div>`;
-  //     }
-  //     document.querySelector(".order-info-block-right-part").innerHTML = items2;
-  //   }
-  // }
 });
 // Calculate quantity
-
-// window.addEventListener("DOMContentLoaded", () => {
-//   calcCartPrice();
-// });
 
 function calcCartPrice() {
   const cartItems = document.querySelectorAll(".order-block-info");
@@ -339,7 +279,6 @@ window.addEventListener("mousemove", (e) => {
 // Close Need To Agree Pop Up
 closeNeedAgreeBlock.addEventListener("click", () => {
   let needToAgreeBlock = document.querySelector(".need-to-agree-block");
-
   needToAgreeBlock.style.display = "none";
 });
 // Close Need To Agree Pop Up

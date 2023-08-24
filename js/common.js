@@ -120,9 +120,11 @@ if (
 userName.innerText = localStorage.getItem("userProfileName");
 // Insert profile name in the header
 
+// Aside slider language and theme change menu
 $(function () {
   $(".btn-slide").click(function () {
     $("#panel").slideToggle("fast");
     $("#panel").css("display", "flex");
   });
 });
+// Aside slider language and theme change menu

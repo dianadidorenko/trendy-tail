@@ -183,6 +183,21 @@ body {
   color: var(--light-blue-color);
 }
 
+@media (max-width: 500px) {
+  .btn-slide,
+#panel {
+    padding: 5px;
+  }
+  .btn-slide img {
+    max-width: 20px;
+  }
+  .slide {
+    right: 16px;
+  }
+  #panel button {
+    font-size: 12px;
+  }
+}
 .lang-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,6 +222,11 @@ body {
   text-decoration: underline;
 }
 
+@media (max-width: 500px) {
+  .lang-block {
+    padding: 5px;
+  }
+}
 .toggle {
   border-top: 1px solid #c0c0c0;
   padding: 10px;
@@ -250,6 +270,11 @@ body {
   transition: background 200ms linear, transform 200ms ease-in-out 100ms, -webkit-transform 200ms ease-in-out 100ms;
 }
 
+@media (max-width: 500px) {
+  .toggle {
+    padding: 5px;
+  }
+}
 #inputThemeText {
   font-size: 12px;
   text-align: center;
@@ -258,6 +283,11 @@ body {
   color: #000;
 }
 
+@media (max-width: 500px) {
+  #inputThemeText {
+    font-size: 11px;
+  }
+}
 .toggle input {
   display: none;
 }
@@ -2095,7 +2125,7 @@ h1 {
   position: absolute;
   bottom: 90px;
   left: 100px;
-  color: rgba(253, 253, 253, 0.9);
+  color: var(--search-text-color);
   font-size: 1.5em;
   font-weight: 700;
   line-height: 120%;
@@ -2249,6 +2279,7 @@ h1 {
     position: static;
     font-size: 0.6em;
     max-width: 130px;
+    color: var(--secondary-color);
   }
   .info-block .button {
     position: static;

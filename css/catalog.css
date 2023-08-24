@@ -5,6 +5,13 @@
   color: var(--light-blue-color);
 }
 
+.pagination__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,13 +27,13 @@
      -moz-column-gap: 11px;
           column-gap: 11px;
 }
-.pagination p {
+.pagination .pagination-page {
   font-size: 25px;
   font-weight: normal;
   cursor: pointer;
 }
 
-.active-page {
+#active-page {
   padding: 3px 10px;
   background: var(--orange-color);
   border-radius: 10px;

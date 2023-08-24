@@ -1,7 +1,5 @@
 @import url(css/style.css);
 
-.page__feedback {
-}
 .feedback {
   padding-bottom: 180px;
 }
@@ -50,7 +48,6 @@
   max-width: 400px;
   border-radius: 50%;
 }
-
 .feedback-img3 {
   position: absolute;
   right: -200px;
@@ -126,7 +123,7 @@ textarea {
 }
 
 .date {
-  color: var(--background-color);
+  color: white;
   font-size: 18px;
   font-weight: 400;
   line-height: 108%; /* 32.4px */

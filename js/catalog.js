@@ -73,14 +73,25 @@ price.addEventListener("click", () => {
 
 // Catalog items add
 import catalog from "./catalog.json" assert { type: "json" };
-// console.log(catalog);
 
-// pagination
-
-// pagination
+// leftArrow.style.display = "none";
 
 for (let i = 0; i < catalog.length; i++) {
-  // console.log(catalog[i]);
+  // pagination
+  // pagination.addEventListener("click", (e) => {
+  //   if (e.target.nodeName == "P") {
+  //     let pages = document.querySelectorAll(".pagination-page");
+
+  //     pages.forEach((page) => {
+  //       if (page.id == "active-page") {
+  //         page.removeAttribute("id");
+  //       } else if (page.id != "active-page") {
+  //         e.target.setAttribute("id", "active-page");
+  //       }
+  //     });
+  //   }
+  // });
+  // pagination
 
   let catalogueMenuBlockItems = document.querySelector(
     ".catalogue-menu-block-items"
@@ -464,6 +475,9 @@ inputs.forEach((input) => {
       brandMenuCategory.style.display = "none";
       catalogueMenuCategory.style.display = "none";
       priceMenuCategory.style.display = "none";
+      asideArrowCategory.style.transform = "rotate(0deg)";
+      asideArrowBrand.style.transform = "rotate(0deg)";
+      asideArrowPrice.style.transform = "rotate(0deg)";
       catalogueMenuBlockItem.forEach((item) => {
         if (!item.classList.contains("newItem")) {
           item.style.display = "none";
@@ -479,6 +493,9 @@ inputs.forEach((input) => {
       brandMenuCategory.style.display = "none";
       catalogueMenuCategory.style.display = "none";
       priceMenuCategory.style.display = "none";
+      asideArrowCategory.style.transform = "rotate(0deg)";
+      asideArrowBrand.style.transform = "rotate(0deg)";
+      asideArrowPrice.style.transform = "rotate(0deg)";
       catalogueMenuBlockItem.forEach((item) => {
         if (!item.classList.contains("discountItem")) {
           item.style.display = "none";

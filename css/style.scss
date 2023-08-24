@@ -161,6 +161,22 @@ body {
   color: var(--light-blue-color);
 }
 
+@media (max-width: 500px) {
+  .btn-slide,
+  #panel {
+    padding: 5px;
+  }
+  .btn-slide img {
+    max-width: 20px;
+  }
+  .slide {
+    right: 16px;
+  }
+  #panel button {
+    font-size: 12px;
+  }
+}
+
 .lang-block {
   display: flex;
   flex-direction: column;
@@ -175,6 +191,13 @@ body {
     text-decoration: underline;
   }
 }
+
+@media (max-width: 500px) {
+  .lang-block {
+    padding: 5px;
+  }
+}
+
 .toggle {
   border-top: 1px solid #c0c0c0;
   padding: 10px;
@@ -208,7 +231,10 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 500px) {
+  .toggle {
+    padding: 5px;
+  }
 }
 
 #inputThemeText {
@@ -217,6 +243,12 @@ body {
   padding-bottom: 10px;
   max-width: 60px;
   color: #000;
+}
+
+@media (max-width: 500px) {
+  #inputThemeText {
+    font-size: 11px;
+  }
 }
 
 .toggle input {
@@ -1749,7 +1781,7 @@ h1 {
   position: absolute;
   bottom: 90px;
   left: 100px;
-  color: rgba(253, 253, 253, 0.9);
+  color: var(--search-text-color);
   font-size: 1.5em;
   font-weight: 700;
   line-height: 120%;
@@ -1895,6 +1927,7 @@ h1 {
     position: static;
     font-size: 0.6em;
     max-width: 130px;
+    color: var(--secondary-color);
   }
   .info-block .button {
     position: static;

@@ -451,6 +451,150 @@ const homeTexts = {
     ua: "Регулярно оновлювані колекції відповідно до останніх тенденцій.",
     en: "Regularly updated collections according to the latest trends.",
   },
+  "delivery_page-title": {
+    ua: "Доставка і оплата",
+    en: "Delivery and payment",
+  },
+  "delivery_page-1": {
+    ua: "Доставка і оплата",
+    en: "Delivery and payment",
+  },
+  "delivery_page-2": {
+    ua: "ДОСТАВКА",
+    en: "DELIVERY",
+  },
+  "delivery_page-3": {
+    ua: "Варіанти доставки",
+    en: "Delivery options",
+  },
+  "delivery_page-4": {
+    ua: "Оплата",
+    en: "Payment",
+  },
+  "contacts_page-title": {
+    ua: "Контакти",
+    en: "Contacts",
+  },
+  "contacts_page-1": {
+    ua: "Контакти",
+    en: "Contacts",
+  },
+  "contacts_page-2": {
+    ua: "Контакти",
+    en: "Contacts",
+  },
+  "contacts_page-3": {
+    ua: "Для швидкого зв'язку з нами",
+    en: "For quick communication with us",
+  },
+  "contacts_page-4": {
+    ua: "Графік роботи: Понеділок - Неділя 09:00-19:00",
+    en: "Working hours: Monday - Sunday 09:00-19:00",
+  },
+  "contacts_page-5": {
+    ua: "Написати на пошту",
+    en: "Mail us",
+  },
+  "contacts_page-6": {
+    ua: "Заповнити форму",
+    en: "Fill out the form",
+  },
+  "contacts_page-7": {
+    ua: "Ім'я",
+    en: "Name",
+  },
+  "contacts_page-8": {
+    ua: "Введіть лише літери",
+    en: "Enter only letters",
+  },
+  "contacts_page-9": {
+    ua: "Телефон:",
+    en: "Phone:",
+  },
+  "contacts_page-10": {
+    ua: "Мінімум 9 символів",
+    en: "Minimum 9 characters",
+  },
+  "contacts_page-11": {
+    ua: "Імейл",
+    en: "Mail",
+  },
+  "contacts_page-12": {
+    ua: "Приклад ukr@.net",
+    en: "Example of ukr@.net",
+  },
+  "contacts_page-13": {
+    ua: "Країна",
+    en: "Country",
+  },
+  "contacts_page-14": {
+    ua: "Введіть лише літери",
+    en: "Enter only letters",
+  },
+  "contacts_page-15": {
+    ua: "Місто",
+    en: "CIty",
+  },
+  "contacts_page-16": {
+    ua: "Введіть лише літери",
+    en: "Enter only letters",
+  },
+  "contacts_page-17": {
+    ua: "Перевірка",
+    en: "Check",
+  },
+  "contacts_page-18": {
+    ua: "Неправильна сума",
+    en: "Incorrect amount",
+  },
+  "contacts_page-19": {
+    ua: "Введіть текст..",
+    en: "Enter text..",
+  },
+  "contacts_page-20": {
+    ua: "Мінімум 10 символів тексту",
+    en: "Minimum of 10 text characters",
+  },
+  "contacts_page-21": {
+    ua: "Мінімум 10 символів тексту",
+    en: "Minimum of 10 text characters",
+  },
+  "contacts_page-22": {
+    ua: "Надіслати",
+    en: "Send",
+  },
+  "feedback_page-title": {
+    ua: "Відгуки",
+    en: "Reviews",
+  },
+  "feedback_page-1": {
+    ua: "Відгуки",
+    en: "Reviews",
+  },
+  "feedback_page-2": {
+    ua: "Відгуки",
+    en: "Reviews",
+  },
+  "feedback_page-3": {
+    ua: "Залиште коментар",
+    en: "Leave a comment",
+  },
+  "feedback_page-4": {
+    ua: "Ім'я і фамілія:",
+    en: "Name and surname:",
+  },
+  "feedback_page-5": {
+    ua: "Коментар: ",
+    en: "Comment:",
+  },
+  "feedback_page-6": {
+    ua: "Ваша оцінка:",
+    en: "Your rating:",
+  },
+  "feedback_page-7": {
+    ua: " Додати коментар",
+    en: "Add a comment",
+  },
   "accessories_page-title": {
     ua: "Аксесуари",
     en: "Accessories",
@@ -534,6 +678,46 @@ const homeTexts = {
   "bed-ascold_page-15": {
     ua: "62x50x19 см",
     en: "62x50x19 cm",
+  },
+  "bed-ascold_page-16": {
+    ua: "КУПИТЬ",
+    en: "BUY",
+  },
+  "bed-ascold_page-17": {
+    ua: "ОПИС",
+    en: "DESCRIPTION",
+  },
+  "bed-ascold_page-18": {
+    ua: "Витончений лежак сподобається улюбленцям і завдяки м'якій подушці, зшитий з плюшу та меблевої тканини - її можна перевертати більш м'якої або цупкою стороною під настрій.",
+    en: "Lovers will like the elegant lounger thanks to the soft pillow, sewn from plush and furniture fabric - it can be turned over to a softer or firmer side to suit the mood.",
+  },
+  "bed-ascold_page-19": {
+    ua: "Переваги лежака:",
+    en: "Advantages of a bed:",
+  },
+  "bed-ascold_page-20": {
+    ua: "вишуканий дизайн і модний колір;",
+    en: "exquisite design and fashionable color;",
+  },
+  "bed-ascold_page-21": {
+    ua: "якісні матеріали: щільна меблева тканина, холлофайбер;",
+    en: "high-quality materials: dense furniture fabric, holofiber;",
+  },
+  "bed-ascold_page-22": {
+    ua: "прикраса - декоративна нашивка з логотипом.",
+    en: "decoration - a decorative patch with a logo.",
+  },
+  "bed-ascold_page-23": {
+    ua: "Подушка: знімна.",
+    en: "Pillow: removable.",
+  },
+  "bed-ascold_page-24": {
+    ua: "Наповнювач: гіпоалергенний холофайбер.",
+    en: "Filling: hypoallergenic holofiber.",
+  },
+  "bed-ascold_page-25": {
+    ua: "Правила догляду: ручне прання при температурі не вище 40 градусів.",
+    en: "Care instructions: hand wash at a temperature not higher than 40 degrees.",
   },
 };
 
