@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="js/catalog.js"></script>
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -138,7 +137,6 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
-
       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
@@ -502,22 +500,24 @@
               </nav>
             </aside>
             <div class="catalogue-menu-block">
-              <div class="catalogue-menu-block-items"></div>
+              <div id="items" class="catalogue-menu-block-items"></div>
 
-              <div id="pagination" class="pagination">
+              <!-- <div id="pagination" class="pagination">
                 <img
+                  id="leftArrow"
                   src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
                   alt="Arrow Left Icon"
                 />
-                <p class="active-page page">1</p>
-                <p class="page">2</p>
-                <p class="page">3</p>
-                <p class="page">4</p>
+                <p id="active-page" class="pagination-page">1</p>
+                <p class="pagination-page">2</p>
+                <p class="pagination-page">3</p>
+                <p class="pagination-page">4</p>
                 <img
+                  id="rightArrow"
                   src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
                   alt="Arrow Right Icon"
                 />
-              </div>
+              </div> -->
             </div>
           </div>
         </section>
@@ -644,71 +644,6 @@
             </nav>
           </div>
 
-          <div class="footer-form">
-            <h3 class="footer__form-title" data-lang="home_page-56">
-              Зв’язатися з нами
-            </h3>
-            <form
-              id="footerForm"
-              class="footer__form"
-              action="telegramMain.php"
-              method="POST"
-              onsubmit="return checkForm()"
-            >
-              <label data-lang="home_page-57">Ім'я</label>
-              <input
-                type="text"
-                name="footerInputUserName"
-                id="footerFormUserName"
-                placeholder="Trendy"
-                required
-              />
-              <div
-                class="error-not"
-                id="errorName"
-                style="display: none"
-                data-lang="home_page-58"
-              >
-                Ім'я повинно складатись лише з літер
-              </div>
-              <label data-lang="home_page-59">E-mail</label>
-              <input
-                type="email"
-                name="footerFormInputEmail"
-                id="footerFormEmail"
-                placeholder="trendy@ukr.net"
-                required
-              />
-              <div
-                class="error-not"
-                id="errorEmail"
-                style="display: none"
-                data-lang="home_page-60"
-              >
-                Імейл повинен бути у форматі user@ukr.net
-              </div>
-
-              <label data-lang="home_page-61">Текст повідомлення</label>
-              <textarea
-                name="footerTextarea"
-                id="footerFormTextarea"
-                placeholder="Your text.."
-                required
-              ></textarea>
-              <div
-                class="error-not"
-                id="errorQuestion"
-                style="display: none"
-                data-lang="home_page-62"
-              >
-                Питання повинно містити мінімум 10 символів
-              </div>
-              <button type="submit" id="sendFooterBtn" data-lang="home_page-63">
-                Надіслати
-              </button>
-            </form>
-          </div>
-
           <div class="footer-item">
             <h3 class="footer__menu-title" data-lang="home_page-64">
               Наші контакти
@@ -749,5 +684,6 @@
     <script src="js/change-language.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script type="module" src="js/catalog.js"></script>
   </body>
 </html>

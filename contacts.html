@@ -4,14 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/contacts.css" />
-    <title>Наші контакти</title>
+    <title data-lang="contacts_page-title">Наші контакти</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -96,19 +92,41 @@
         <nav class="burger-header-menu menu">
           <ul class="burger-header-menu__list">
             <li class="menu__item">
-              <a href="catalog.html" class="menu__link">Каталог</a>
+              <a href="catalog.html" class="menu__link" data-lang="home_page-35"
+                >Каталог</a
+              >
             </li>
             <li class="menu__item">
-              <a href="about-us.html" class="menu__link">О нас</a>
+              <a
+                href="about-us.html"
+                class="menu__link"
+                data-lang="home_page-36"
+                >О нас</a
+              >
             </li>
             <li class="menu__item">
-              <a href="delivery.html" class="menu__link">Доставка і оплата</a>
+              <a
+                href="delivery.html"
+                class="menu__link"
+                data-lang="home_page-37"
+                >Доставка і оплата</a
+              >
             </li>
             <li class="menu__item">
-              <a href="contacts.html" class="menu__link">Контакти</a>
+              <a
+                href="contacts.html"
+                class="menu__link"
+                data-lang="home_page-38"
+                >Контакти</a
+              >
             </li>
             <li class="menu__item">
-              <a href="feedback.html" class="menu__link">Відгуки</a>
+              <a
+                href="feedback.html"
+                class="menu__link"
+                data-lang="home_page-39"
+                >Відгуки</a
+              >
             </li>
           </ul>
         </nav>
@@ -128,23 +146,44 @@
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="catalog.html" class="menu__link">Каталог</a>
+                  <a
+                    href="catalog.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-1"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="about-us.html" class="menu__link">О нас</a>
+                  <a
+                    href="about-us.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-2"
+                    >О нас</a
+                  >
                 </li>
                 <li class="menu__item">
-                  <a href="delivery.html" class="menu__link"
+                  <a
+                    href="delivery.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-3"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="contacts.html" class="menu__link active__link"
+                  <a
+                    href="contacts.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-4"
                     >Контакти</a
                   >
                 </li>
                 <li class="menu__item">
-                  <a href="feedback.html" class="menu__link">Відгуки</a>
+                  <a
+                    href="feedback.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-5"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -182,8 +221,8 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <span>Контакти</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <span data-lang="contacts_page-1">Контакти</span>
           </div>
         </div>
 
@@ -194,22 +233,20 @@
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">Контакти</h2>
+            <h2 class="page-title" data-lang="contacts_page-2">Контакти</h2>
             <div class="contacts-block">
               <div class="phone-block">
-                <p>Зателефонуйте нам і ми допоможемо вирішити Ваше питання</p>
+                <p data-lang="contacts_page-3">Для швидкого зв'язку з нами</p>
                 <img src="img/contacts/01.svg" alt="Phone Icon" />
                 <a href="tel:+380974379424">+380974379424</a>
               </div>
               <div class="opening-hours-block">
-                <p>
-                  Графік роботи <br />
-                  Понеділок - Неділя <br />
-                  09:00-19:00
+                <p data-lang="contacts_page-4">
+                  Графік роботи Понеділок - Неділя 09:00-19:00
                 </p>
               </div>
               <div class="mail-block">
-                <p>Чи написати нам на пошту</p>
+                <p data-lang="contacts_page-5">Написати на пошту</p>
                 <img src="img/contacts/02.svg" alt="Mail Icon" />
                 <a href="mailto:trendytail@ukr.net">trendytail@ukr.net</a>
               </div>
@@ -224,7 +261,9 @@
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">Заповнити форму</h2>
+            <h2 class="page-title" data-lang="contacts_page-6">
+              Заповнити форму
+            </h2>
             <form
               action="telegramContacts.php"
               method="POST"
@@ -236,10 +275,14 @@
                 <div class="input-group">
                   <input type="text" required="" id="clientName" required="" />
                   <label>
-                    <span style="transition-delay: 0ms">Ім'я</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-7"
+                      >Ім'я</span
+                    >
                   </label>
                   <div id="errorName" class="error">
-                    <p>Введіть лише літери</p>
+                    <p data-lang="contacts_page-8">Введіть лише літери</p>
                   </div>
                 </div>
 
@@ -252,40 +295,62 @@
                     required=""
                   />
                   <label>
-                    <span style="transition-delay: 0ms">Телефон:</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-9"
+                      >Телефон:</span
+                    >
                   </label>
                   <div id="errorNumber" class="error">
-                    <p>Мінімум 9 символів</p>
+                    <p data-lang="contacts_page-10">Мінімум 9 символів</p>
                   </div>
                 </div>
 
                 <div class="input-group">
-                  <input type="email" id="email" name="email" required="" />
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="ukr@.net"
+                    name="email"
+                    required=""
+                  />
                   <label>
-                    <span style="transition-delay: 0ms">Імейл</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-11"
+                      >Імейл</span
+                    >
                   </label>
                   <div id="errorMail" class="error">
-                    <p>Приклад ukr@.net</p>
+                    <p data-lang="contacts_page-12">Приклад ukr@.net</p>
                   </div>
                 </div>
 
                 <div class="input-group">
                   <input type="text" id="country" name="country" required="" />
                   <label>
-                    <span style="transition-delay: 0ms">Країна</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-13"
+                      >Країна</span
+                    >
                   </label>
                   <div id="errorCountry" class="error">
-                    <p>Введіть лише літери</p>
+                    <p data-lang="contacts_page-14">Введіть лише літери</p>
                   </div>
                 </div>
 
                 <div class="input-group">
                   <input type="text" id="city" name="city" required="" />
                   <label>
-                    <span style="transition-delay: 0ms">Місто</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-15"
+                      >Місто</span
+                    >
                   </label>
                   <div id="errorCity" class="error">
-                    <p>Введіть лише літери</p>
+                    <p data-lang="contacts_page-16">Введіть лише літери</p>
                   </div>
                 </div>
 
@@ -298,7 +363,11 @@
                     required=""
                   />
                   <label>
-                    <span style="transition-delay: 0ms">Перевірка</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-17"
+                      >Перевірка</span
+                    >
                     <span
                       class="red-star"
                       style="transition-delay: 0ms; color: red"
@@ -315,7 +384,7 @@
                     ></span>
                   </label>
                   <div id="errorSum" class="error">
-                    <p>Неправильна сума</p>
+                    <p data-lang="contacts_page-18">Неправильна сума</p>
                   </div>
                 </div>
               </div>
@@ -329,19 +398,24 @@
                     required=""
                   ></textarea>
                   <label>
-                    <span style="transition-delay: 0ms">Введіть текст..</span>
+                    <span
+                      style="transition-delay: 0ms"
+                      data-lang="contacts_page-19"
+                      >Введіть текст..</span
+                    >
                   </label>
                   <div id="errorTextArea" class="error">
-                    <p>Мінімум 10 символів тексту</p>
+                    <p data-lang="contacts_page-20">
+                      Мінімум 10 символів тексту
+                    </p>
                   </div>
                 </div>
 
-                <input
-                  id="btn"
-                  class="button"
-                  type="submit"
-                  value="Надіслати"
-                />
+                <div>
+                  <button id="btn" class="button" type="submit">
+                    <img src="img/contacts/send-icon.svg" alt="" />
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -356,7 +430,7 @@
               class="footer-logo"
               alt="Trendy Tail Logo"
             />
-            <p>
+            <p data-lang="home_page-42">
               Тому що ми <br />
               піклуємося про собак
             </p>
@@ -364,21 +438,56 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Каталог</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-43">
+                  Каталог
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Домашній одяг</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-44"
+                    >Новинки</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">Дощевіки</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-45"
+                    >Аксесуари</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link">Верхній одяг</a>
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-46"
+                    >Одяг</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Ліжаки</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-47"
+                    >Сумки-переноски</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Іграшки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-48"
+                    >Ліжаки</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-49"
+                    >Знижки</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -387,33 +496,66 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title">Меню</h3>
+                <h3 class="footer__menu-title" data-lang="home_page-50">
+                  Меню
+                </h3>
                 <li class="footer__item">
-                  <a href="catalog.html" class="footer__link">Каталог</a>
+                  <a
+                    href="catalog.html"
+                    class="footer__link"
+                    data-lang="home_page-51"
+                    >Каталог</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="news.html" class="footer__link">О нас</a>
+                  <a
+                    href="news.html"
+                    class="footer__link"
+                    data-lang="home_page-52"
+                    >О нас</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="delivery.html" class="footer__link"
+                  <a
+                    href="delivery.html"
+                    class="footer__link"
+                    data-lang="home_page-53"
                     >Доставка і оплата</a
                   >
                 </li>
                 <li class="footer__item">
-                  <a href="about-us.html" class="footer__link">Контакти</a>
+                  <a
+                    href="about-us.html"
+                    class="footer__link"
+                    data-lang="home_page-54"
+                    >Контакти</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="contacts.html" class="footer__link">Відгуки</a>
+                  <a
+                    href="contacts.html"
+                    class="footer__link"
+                    data-lang="home_page-55"
+                    >Відгуки</a
+                  >
                 </li>
               </ul>
             </nav>
           </div>
 
           <div class="footer-item">
-            <h3 class="footer__menu-title">Наші контакти</h3>
-            <a href="tel:+380974379424">Тел:+38 (097) 437 94 24</a>
-            <p class="footer__work-hours">Графік роботи: Пн - Нд 9.00-19.00</p>
-            <a href="mailto:trendytail@ukr.net">Пошта: trendytail@ukr.net</a>
+            <h3 class="footer__menu-title" data-lang="home_page-64">
+              Наші контакти
+            </h3>
+            <a href="tel:+380974379424" data-lang="home_page-65"
+              >Тел:+38 (097) 437 94 24</a
+            >
+            <p class="footer__work-hours" data-lang="home_page-66">
+              Графік роботи: Пн - Нд 9.00-19.00
+            </p>
+            <a href="mailto:trendytail@ukr.net" data-lang="home_page-67"
+              >Пошта: trendytail@ukr.net</a
+            >
             <div class="footer__socs">
               <a href="#"
                 ><img src="img/main-page/FOOTER/insta.svg" alt="Instagram Icon"
@@ -429,7 +571,10 @@
         </div>
       </footer>
       <footer class="footer-copy">
-        <p>TrendyTail © Copyright 2023 | Всі права захищені</p>
+        <p>
+          TrendyTail © Copyright 2023 |
+          <span data-lang="home_page-68">Всі права захищені</span>
+        </p>
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
