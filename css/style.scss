@@ -269,7 +269,37 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+.chat-gpt {
+  border-top: 1px solid #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 10px;
+  img {
+    max-width: 35px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+.location-block {
+  border-top: 1px solid #c0c0c0;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 5px;
+  padding: 10px;
+  img {
+    margin: 0 auto;
+    display: block;
+    max-width: 40px;
+  }
+  p {
+    font-size: 14px;
+  }
 }
 
 // ========================================================================================

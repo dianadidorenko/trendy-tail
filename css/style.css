@@ -306,6 +306,55 @@ body {
   opacity: 1;
 }
 
+.chat-gpt {
+  border-top: 1px solid #c0c0c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 5px;
+  padding: 10px;
+}
+.chat-gpt img {
+  max-width: 35px;
+}
+.chat-gpt p {
+  font-size: 14px;
+}
+
+.location-block {
+  border-top: 1px solid #c0c0c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 5px;
+  padding: 10px;
+}
+.location-block img {
+  margin: 0 auto;
+  display: block;
+  max-width: 40px;
+}
+.location-block p {
+  font-size: 14px;
+}
+
 [class*=__container] {
   max-width: 1955px;
   margin: 0 auto;
