@@ -128,16 +128,3 @@ $(function () {
   });
 });
 // Aside slider language and theme change menu
-
-// Show Empty Block in Shopping Cart
-if (!localStorage.getItem("orderItems")) {
-  orderBlock.style.display = "none";
-  emptyOrderBlock.style.display = "flex";
-} else if (localStorage.getItem("orderItems").length <= 2) {
-  orderBlock.style.display = "none";
-  emptyOrderBlock.style.display = "flex";
-} else if (localStorage.getItem("orderItems")) {
-  orderBlock.style.display = "flex";
-  emptyOrderBlock.style.display = "none";
-}
-// Show Empty Block in Shopping Cart
