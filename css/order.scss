@@ -5,6 +5,12 @@ body {
 }
 
 // ========================================================================================
+
+.empty-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .empty-order h2 {
   font-size: 25px;
   padding: 50px;
@@ -12,6 +18,7 @@ body {
   border-radius: 20px;
   background-color: lightblue;
   border: 7px double white;
+  max-width: 500px;
 }
 .h1-block {
   display: flex;

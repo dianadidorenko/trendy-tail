@@ -3,6 +3,18 @@ body {
   position: relative;
 }
 
+.empty-order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .empty-order h2 {
   font-size: 25px;
   padding: 50px;
@@ -10,6 +22,7 @@ body {
   border-radius: 20px;
   background-color: lightblue;
   border: 7px double white;
+  max-width: 500px;
 }
 
 .h1-block {
