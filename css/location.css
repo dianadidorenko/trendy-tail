@@ -7,10 +7,18 @@
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -18,8 +26,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #252930), color-stop(50%, #5372f0));
-  background: linear-gradient(#252930 50%, #5372f0 50%);
+  background: #218287;
 }
 
 ::-moz-selection {
@@ -35,8 +42,8 @@ body {
 button {
   border: none;
   outline: none;
-  font-size: 50px;
-  color: #5372f0;
+  font-size: 35px;
+  color: #218287;
   padding: 23px 44px;
   border-radius: 10px;
   cursor: pointer;
@@ -44,4 +51,36 @@ button {
   background: #fff;
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  -webkit-box-shadow: 0px 0px 15px 3px white;
+          box-shadow: 0px 0px 15px 3px white;
+}
+
+.page-back {
+  margin: 20px 0 30px 0;
+  padding: 20px;
+}
+.page-back__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 7px;
+     -moz-column-gap: 7px;
+          column-gap: 7px;
+}
+.page-back a {
+  display: block;
+  color: white;
+  opacity: 0.8;
+}
+.page-back span {
+  color: white;
+  font-weight: bold;
 }

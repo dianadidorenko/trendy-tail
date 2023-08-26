@@ -25,8 +25,9 @@ function onSuccess(position) {
     .then((response) => {
       let allDetails = response.results[0].components; //passing components object to allDetails variable
       console.table(allDetails);
-      let { city, postcode, country } = allDetails; //getting country, postcode, country properties value from allDetails obj
-      button.innerText = `${city} ${postcode}, ${country}`; //passing these value to the button innerText
+      let { shop, road, borough, city, district, country, continent } =
+        allDetails; //getting country, postcode, country properties value from allDetails obj
+      button.innerHTML = `${shop}, ${road}, ${borough}, </br> ${city}, ${district}, ${country}, ${continent}`; //passing these value to the button innerText
     })
     .catch(() => {
       //if error any error occured

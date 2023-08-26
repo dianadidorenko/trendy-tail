@@ -3,12 +3,12 @@ const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 const deleteButton = document.querySelector("#delete-btn");
 
-const API_KEY = "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"; // Paste your API key here
+const API_KEY = "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"; // Paste your API key here
 
 const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text">
-                            <h1>ChatGPT Clone</h1>
-                            <p>Start a conversation and explore the power of AI.<br> Your chat history will be displayed here.</p>
+                            <h1>Підтримка за допомогою ChatGPT (в тестовому режимі)</h1>
+                            <p>Почніть розмову та досліджуйте силу ШІ. <br> Тут відображатиметься ваша історія чату.</p>
                         </div>`;
 
   chatContainer.innerHTML = localStorage.getItem("all-chats") || defaultText;
@@ -37,7 +37,7 @@ const getChatResponse = async (incomingChatDiv) => {
     body: JSON.stringify({
       model: "text-davinci-003",
       prompt:
-        "Тебя зовут Дмитрий. Ты консультант в интернет магазине по продаже одежды собак. Представься и спроси чем помочь.",
+        "Тебя зовут Дмитрий. Ты консультант в интернет магазине по продаже одежды собак. Представься и спроси чем помочь. А когда тебе зададут вопрос, попытайся, пожалуйста, дать ответ клиенту.",
       max_tokens: 2048,
       temperature: 0.5,
       n: 1,
@@ -54,7 +54,7 @@ const getChatResponse = async (incomingChatDiv) => {
     // Add error class to the paragraph element and set error text
     pElement.classList.add("error");
     pElement.textContent =
-      "Oops! Something went wrong while retrieving the response. Please try again.";
+      "Ой! Під час отримання відповіді сталася помилка. Будь ласка спробуйте ще раз.";
   }
 
   // Remove the typing animation, append the paragraph element and save the chats to local storage
@@ -117,7 +117,7 @@ const handleOutgoingChat = () => {
 
 deleteButton.addEventListener("click", () => {
   // Remove the chats from local storage and call loadDataFromLocalstorage function
-  if (confirm("Are you sure you want to delete all the chats?")) {
+  if (confirm("Ви впевнені, що хочете видалити всі чати?")) {
     localStorage.removeItem("all-chats");
     loadDataFromLocalstorage();
   }

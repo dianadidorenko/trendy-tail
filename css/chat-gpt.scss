@@ -1,10 +1,13 @@
-/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
 }
 :root {
   --text-color: #ffffff;
@@ -16,18 +19,28 @@
   --outgoing-chat-border: #343541;
   --incoming-chat-border: #444654;
 }
-.light-mode {
-  --text-color: #343541;
-  --icon-color: #a9a9bc;
-  --icon-hover-bg: #f1f1f3;
-  --placeholder-color: #6c6c6c;
-  --outgoing-chat-bg: #ffffff;
-  --incoming-chat-bg: #f7f7f8;
-  --outgoing-chat-border: #ffffff;
-  --incoming-chat-border: #d9d9e3;
-}
+
 body {
   background: var(--outgoing-chat-bg);
+}
+
+.page-back {
+  margin: 20px 0 30px 0;
+  padding: 20px;
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+  }
+  a {
+    display: block;
+    color: white;
+    opacity: 0.8;
+  }
+  span {
+    color: white;
+    font-weight: bold;
+  }
 }
 
 /* Chats container styling */
@@ -58,7 +71,8 @@ body {
   color: var(--text-color);
 }
 .default-text h1 {
-  font-size: 3.3rem;
+  font-size: 3em;
+  max-width: 850px;
 }
 .default-text p {
   margin-top: 10px;
@@ -220,8 +234,7 @@ span.material-symbols-rounded {
   background: var(--icon-hover-bg);
 }
 
-/* Reponsive Media Query */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .default-text h1 {
     font-size: 2.3rem;
   }
