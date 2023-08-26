@@ -205,9 +205,11 @@ window.addEventListener("click", (e) => {
 
   if (e.target.dataset.action === "plus") {
     counter.innerText = ++counter.innerText;
+    // location.reload();
   }
 
   if (e.target.dataset.action === "minus") {
+    // location.reload();
     if (parseInt(counter.innerText) > 0) {
       counter.innerText = --counter.innerText;
     }
@@ -217,44 +219,72 @@ window.addEventListener("click", (e) => {
         if (i == parseInt(e.target.closest(".order-block-info").dataset.id)) {
           itemsOrder.splice(i, 1);
           e.target.closest(".order-block-info").remove();
+          totalSum.innerText = 0;
+          localStorage.setItem("quantityOrderValue", 0);
           location.reload();
         }
-
-        // click on trash icon
-        if (e.target.classList.value === "trash") {
-          e.target.closest(".order-block-info").remove();
-          itemsOrder.splice(i, 1);
-        }
-        // click on trash icon
-
-        localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
       }
     }
   }
+
+  // click on trash icon
+  if (e.target.classList.value === "trash") {
+    e.target.closest(".order-block-info").remove();
+    itemsOrder.splice(i, 1);
+    localStorage.setItem("quantityOrderValue", 0);
+    location.reload();
+  }
+  // click on trash icon
+
+  localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
+
+  function calcCartPrice() {
+    const cartItems = document.querySelectorAll(".order-block-info");
+
+    let totalPrice = 0;
+
+    cartItems.forEach((item) => {
+      const amountEl = item.querySelector("[data-counter]");
+      const priceEl = item.querySelector(".orderPrice1Piece");
+      const currentPrice =
+        parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
+
+      totalPrice += currentPrice;
+      totalSum.innerText = totalPrice;
+    });
+  }
+
+  calcCartPrice();
 });
 // Calculate quantity
 
-function calcCartPrice() {
+// Insert total price before quantity increasing
+window.addEventListener("load", () => {
+  let totalPrice = 0;
   const cartItems = document.querySelectorAll(".order-block-info");
 
   cartItems.forEach((item) => {
     const amountEl = item.querySelector("[data-counter]");
     const priceEl = item.querySelector(".orderPrice1Piece");
-    console.log(priceEl);
-
     const currentPrice =
       parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
-    console.log(currentPrice);
+
+    totalPrice += currentPrice;
+    totalSum.innerText = totalPrice;
   });
-}
 
-calcCartPrice();
+  // initial order quantity in the header
+  const orderQuantity = document.querySelectorAll(".orderQuantity");
+  orderQuantity.forEach((item) => {
+    let amount = 0;
+    amount += parseInt(item.innerText);
+    totalQun.innerText = parseInt(totalQun.innerText) + amount;
+    localStorage.setItem("quantityOrderValue", totalQun.innerText);
+  });
 
-// // Quantity
-if (parseInt(localStorage.getItem("quantityOrderValue")) == 1) {
-  headerOrderQuantity.style.display = "flex";
-}
-// // Quantity
+  // initial order quantity in the header
+});
+// Insert total price before quantity increasing
 
 // // Save Chosen City to Deliver
 chooseCityDelivery.addEventListener("change", () => {

@@ -13,10 +13,6 @@ body {
   background-color: lightblue;
   border: 7px double white;
 }
-.page__order {
-}
-.order {
-}
 .h1-block {
   display: flex;
   align-items: center;
@@ -127,13 +123,19 @@ body {
 #chooseCityDelivery {
   margin-top: 20px;
 }
-.order-block {
-}
-.order-block-info {
-}
-.order-block-info-left-part {
-}
-.order-block-info-right-part {
+.total-sum-block {
+  background-color: var(--dark-blue-color);
+  padding: 15px 20px;
+  color: white;
+  font-size: 20px;
+  border: 8px double white;
+  text-align: center;
+  column-gap: 20px;
+  box-shadow: 0px 0px 5px 0px var(--primary-color);
+  span {
+    font-size: 22px;
+    font-weight: 700;
+  }
 }
 
 .need-to-agree-block {
