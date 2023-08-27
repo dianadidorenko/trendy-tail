@@ -1,4 +1,3 @@
-// Aside Menu
 price.addEventListener("click", () => {
   if (priceMenuCategory.style.display == "none") {
     priceMenuCategory.style.display = "flex";
