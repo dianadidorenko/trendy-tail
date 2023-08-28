@@ -137,7 +137,7 @@
   font-size: 12px;
 }
 
-h3 {
+.user-title-image h3 {
   font-size: 22px;
   font-weight: 800;
 }
@@ -213,9 +213,17 @@ h3 {
           box-shadow: 1px 1px 12px 3px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 767.98px) {
+  label {
+    font-size: 15px;
+  }
+}
 @media (max-width: 550px) {
   .input-block input {
     max-width: 200px;
+  }
+  label {
+    font-size: 14px;
   }
   #profileForm {
     padding-top: 20px;

@@ -5,7 +5,6 @@ body {
 }
 
 // ========================================================================================
-
 .empty-order {
   display: flex;
   align-items: center;
@@ -60,8 +59,14 @@ body {
   flex-direction: column;
   row-gap: 20px;
 }
+.nova-poshta {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
 .info-user-block input,
-#chooseCityDelivery {
+.nova-poshta select {
   border: 2px solid grey;
   max-width: 300px;
   width: 100%;
@@ -70,17 +75,14 @@ body {
   outline: none;
 }
 .info-user-block input:focus,
-#chooseCityDelivery:focus {
+.nova-poshta select:focus {
   border-color: var(--dark-blue-color);
-}
-.order-delivery-block {
-  padding-bottom: 20px;
 }
 .delivery-check,
 .pay-block {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 15px;
   padding-top: 10px;
   p {
     font-size: 13px;
@@ -130,21 +132,23 @@ body {
 #chooseCityDelivery {
   margin-top: 20px;
 }
-.total-sum-block {
+.total-block {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
   background-color: var(--dark-blue-color);
   padding: 15px 20px;
   color: white;
   font-size: 20px;
   border: 8px double white;
   text-align: center;
-  column-gap: 20px;
+  column-gap: 7px;
   box-shadow: 0px 0px 5px 0px var(--primary-color);
-  span {
-    font-size: 22px;
-    font-weight: 700;
-  }
 }
-
+.number {
+  font-size: 22px;
+  font-weight: 700;
+}
 .need-to-agree-block {
   position: fixed;
   top: 50%;
@@ -183,15 +187,12 @@ body {
 #closeNeedAgreeBlock:hover {
   background-color: var(--light-blue-color);
 }
-
-.order-info-block-right-part {
+#noNeedToPhoneLabel {
+  max-width: 320px;
+  line-height: 130%;
 }
 .popUpImage {
   max-width: 170px;
-}
-.order-title {
-}
-.order-title_2 {
 }
 .order-block-info {
   display: flex;
@@ -201,8 +202,6 @@ body {
   border: 5px double #b2b2b2;
   padding: 20px 40px;
   margin: 30px 0;
-}
-.order-block-info-left-part {
 }
 .order-block-info-right-part {
   display: flex;
@@ -248,6 +247,12 @@ body {
     font-size: 20px;
     padding: 40px 50px;
   }
+  .total-block {
+    font-size: 18px;
+  }
+  .number {
+    font-size: 20px;
+  }
 }
 @media (max-width: 1000px) {
   .popUpImage {
@@ -261,6 +266,12 @@ body {
   .order-block-info-right-part {
     row-gap: 15px;
     font-size: 15px;
+  }
+  .total-block {
+    font-size: 16px;
+  }
+  .number {
+    font-size: 18px;
   }
 }
 @media (max-width: 800px) {
@@ -282,6 +293,12 @@ body {
     max-width: 250px;
     margin: 0 auto;
     padding-bottom: 30px;
+  }
+  .total-block {
+    font-size: 14px;
+  }
+  .number {
+    font-size: 16px;
   }
 }
 @media (max-width: 600px) {
@@ -312,6 +329,12 @@ body {
   .quantity-block span:nth-child(3) {
     padding: 5px 10px;
     font-size: 10px;
+  }
+  .total-block {
+    font-size: 12px;
+  }
+  .number {
+    font-size: 14px;
   }
 }
 @media (max-width: 400px) {

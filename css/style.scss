@@ -59,7 +59,6 @@ body {
   --dark-blue-color: #218287;
   --red-color: #d45a57;
   --button-color: #fff;
-  --footer-text-color: #333;
   --footer-bg: #d2e5dc;
   --search-background-color: #fff;
   --search-text-color: #5c5757;
@@ -150,6 +149,8 @@ body {
   border-top: solid 4px var(--secondary-color);
 }
 #panel button {
+  font-size: 18px;
+  font-weight: 700;
   background-color: transparent;
 }
 .header__btn_active,
@@ -454,13 +455,13 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: 3;
   width: 30px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1650px) {
   .search-form {
     padding: 20px 40px 20px 40px;
     height: 75px;
   }
   .search-form__input {
-    font-size: 23px;
+    font-size: 17px;
   }
   .search-close-button {
     width: 35px;
@@ -469,6 +470,7 @@ input[type="search"]::-webkit-search-results-decoration {
     top: -10px;
   }
   .search-form a {
+    bottom: 28px;
     right: 75px;
     width: 25px;
   }
@@ -489,6 +491,7 @@ input[type="search"]::-webkit-search-results-decoration {
     top: -10px;
   }
   .search-form a {
+    bottom: 18px;
     right: 45px;
     width: 20px;
   }
@@ -574,7 +577,7 @@ input[type="search"]::-webkit-search-results-decoration {
   right: 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1600px) {
   .search-not-found {
     height: 250px;
   }
@@ -1981,10 +1984,10 @@ h1 {
   background-color: var(--footer-bg);
   padding: 44px 0 42px 0;
   border-bottom: 1px solid rgba(85, 85, 85, 0.3);
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
 }
 .footer a {
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
 }
 .footer__container {
   display: flex;
@@ -2003,7 +2006,7 @@ h1 {
   row-gap: 41px;
 }
 .footer-item-first p {
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
   max-width: 150px;
   line-height: 120%;
 }
@@ -2014,7 +2017,7 @@ h1 {
 }
 .footer__menu-title {
   font-size: 22px;
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
 }
 .footer__link:hover {
   text-decoration: underline;
@@ -2022,13 +2025,13 @@ h1 {
 .footer__form-title {
   font-size: 22px;
   padding-bottom: 36px;
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
 }
 .footer__form {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
 }
 .footer__form input {
   padding: 11px 0 11px 14px;
@@ -2060,7 +2063,7 @@ h1 {
 .footer__work-hours {
   max-width: 200px;
   line-height: 130%;
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
 }
 .footer__socs {
   display: flex;
@@ -2077,7 +2080,7 @@ h1 {
   transform: scale(1.1);
 }
 .footer-copy {
-  color: var(--footer-text-color);
+  color: var(--secondary-color);
   background-color: var(--footer-bg);
   padding: 33px 0;
   text-align: center;
@@ -2150,11 +2153,14 @@ h1 {
   }
 }
 @media (max-width: 555px) {
+  .footer-logo {
+    max-width: 60px;
+  }
   .footer__container {
     row-gap: 30px;
   }
   .footer-item-first p {
-    font-size: 14px;
+    font-size: 12px;
   }
   .footer a,
   .footer__work-hours {
