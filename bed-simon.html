@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
-    <title>Ліжко Simon</title>
+    <title data-lang="bed-simon_page-title">Ліжко Simon</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -36,8 +36,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -60,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -72,6 +72,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -80,13 +92,13 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <!-- Pop Up Added Item To The Shopping Cart -->
     <div id="popUpShoppingCart" class="pop-up-shopping-cart">
       <div class="pop-up-shopping-cart-block">
         <div class="pop-up-shopping-cart-title-info">
-          <p class="pop-up-shopping-cart-title">
+          <p class="pop-up-shopping-cart-title" data-lang="pop-up-cart_page-1">
             ТОВАР УСПІШНО ДОДАНО <br />
             ДО ВАШОГО КОШИКА
           </p>
@@ -97,16 +109,35 @@
             <img id="popUpImage" />
           </div>
           <div class="image-and-goods-info-right-part">
-            <p id="popUpGoodsTitle">Ліжко Simon</p>
-            <p>Розмір: <span id="popUpSize">XS</span></p>
-            <p>Кількість: <span id="popUpQuantity">1</span></p>
-            <p>Ітого: <span id="popUpPrice">1250</span> грн</p>
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <div>
+              <p data-lang="pop-up-cart_page-4">Розмір:</p>
+              <p id="popUpSize">XS</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-5">Кількість:</p>
+              <p id="popUpQuantity">1</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-6">Ітого:</p>
+              <p id="popUpPrice">>705</p>
+              <p>₴</p>
+            </div>
           </div>
         </div>
-        <button id="continueBtn" class="pop-up-button">
+        <button
+          id="continueBtn"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-2"
+        >
           Продовжити покупки
         </button>
-        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+        <a
+          href="order.html"
+          id="toTheShoppingCart"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-3"
+        >
           Оформити замовлення
         </a>
       </div>
@@ -252,9 +283,9 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html">Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span> Ліжко Simon</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог</a>
+            <span data-lang="bed-simon_page-1"> Ліжко Simon</span>
           </div>
         </div>
 
@@ -294,32 +325,61 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1 id="h1">Ліжко Simon</h1>
-                <p class="item-info-right-text-block-description">
+                <h1 id="h1" data-lang="bed-simon_page-2">Ліжко Simon</h1>
+                <p
+                  class="item-info-right-text-block-description"
+                  data-lang="bed-simon_page-2-5"
+                >
                   Лежак з бортиками на кнопках, за допомогою яких можна легко
                   трансформувати лежак в матрац або диван.
                 </p>
                 <div class="info-block-p">
-                  <p>Бренд: <span>Pet Fashion</span></p>
-                  <p>Розмір: <span>52х42х18 см, 66х54х20 см</span></p>
-                  <p>Матеріал: <span>100% поліестер, Холофайбер</span></p>
-                  <p>Серія: <span>PF Active</span></p>
-                  <p>Колір: <span>Сірий/чорний</span></p>
-                  <p>Наявність: <span>В наявності</span></p>
+                  <div>
+                    <p data-lang="bed-ascold_page-3">Бренд:</p>
+                    <p>Harley & Cho</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-4">Розмір:</p>
+                    <p data-lang="bed-simon_page-5">52х42х18 см, 66х54х20 см</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-6">Матеріал:</p>
+                    <p data-lang="bed-simon_page-7">
+                      100% поліестер, Холофайбер
+                    </p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-8">Серія:</p>
+                    <p>PF Active</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-9">Колір:</p>
+                    <p data-lang="bed-simon_page-10">Сірий/чорний</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-11">Наявність:</p>
+                    <p data-lang="bed-ascold_page-12">В наявності</p>
+                  </div>
                 </div>
-                <p class="size">Розмір:</p>
+                <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="smallGroup" class="check-group">
                     <input type="radio" id="small" name="size" />
-                    <label id="smallLabel">52х42х18 см</label>
+                    <label id="smallLabel" data-lang="bed-simon_page-15"
+                      >52х42х18 см</label
+                    >
                   </div>
                   <div id="bigGroup" class="check-group">
                     <input type="radio" id="big" name="size" />
-                    <label id="bigLabel">66х54х20 см</label>
+                    <label id="bigLabel" data-lang="bed-simon_page-16"
+                      >66х54х20 см</label
+                    >
                   </div>
                 </div>
-                <p class="item-price"><span id="price">1250</span> грн</p>
-                <button id="buy" class="button">КУПИТЬ</button>
+                <p class="item-price"><span id="price">1250</span> ₴</p>
+                <button id="buy" class="button" data-lang="bed-ascold_page-16">
+                  КУПИТЬ
+                </button>
               </div>
             </div>
             <img
@@ -328,9 +388,9 @@
               alt="Paws Decor"
             />
             <div class="below-block">
-              <p class="description">ОПИС</p>
+              <p class="description" data-lang="bed-ascold_page-17">ОПИС</p>
               <div class="characteristics">
-                <p>
+                <p data-lang="bed-simon_page-18">
                   Лежак з бортиками на кнопках, за допомогою яких можна легко
                   трансформувати лежак в матрац або диван. Виготовлений з двох
                   видів тканини: зовнішня сторона - щільна, зносостійка,
@@ -338,27 +398,50 @@
                   периметру вшита змійка, яка дозволяє виймати наповнювач
                   (холофайбер), що дуже зручно для чищення лежака.
                 </p>
-                <p><strong>Розміри:</strong></p>
+                <p><strong data-lang="bed-simon_page-19">Розміри:</strong></p>
                 <ul>
-                  <li>
+                  <li data-lang="bed-simon_page-20">
                     y згорнутому вигляді 52х42х18 см (внутрішне місце 32х23 см
                     ). У розгорнутому вигляді 77х66х10 см;
                   </li>
-                  <li>
+                  <li data-lang="bed-simon_page-21">
                     y згорнутому вигляді 54х66х20 см (внутрішне місце 45х30 см
                     ). У розгорнутому вигляді 90х72х13 см.
                   </li>
                 </ul>
-                <p><strong>Переваги:</strong></p>
+                <p>
+                  <strong data-lang="bed-ascold_page-19"
+                    >Переваги лежака:</strong
+                  >
+                </p>
                 <ul>
-                  <li>спальне місце-трансформер: лежак, матрас, диван;</li>
-                  <li>зручність чищення і прання;</li>
-                  <li>гіпоалергнний наповнювач.</li>
+                  <li data-lang="bed-simon_page-22">
+                    спальне місце-трансформер: лежак, матрас, диван;
+                  </li>
+                  <li data-lang="bed-simon_page-23">
+                    зручність чищення і прання;
+                  </li>
+                  <li data-lang="bed-simon_page-24">
+                    гіпоалергенний наповнювач.
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
+
+        <div class="wiki-block">
+          <p data-lang="wiki-title">
+            Введіть те, що вас цікавить і отримуйте інформацію з Вікіпедія
+          </p>
+          <input
+            id="inp"
+            type="text"
+            placeholder="Наполнитель.."
+            onchange="getRandomLinks()"
+          />
+          <ul id="result"></ul>
+        </div>
       </main>
 
       <footer class="footer">
@@ -628,5 +711,6 @@
     <script src="js/change-language.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/wiki-api.js"></script>
   </body>
 </html>

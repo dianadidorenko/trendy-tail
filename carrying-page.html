@@ -6,7 +6,7 @@
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
-    <title>Сумки-переноски</title>
+    <title data-lang="carrying_page-title">Сумки-переноски</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -35,8 +35,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -59,7 +59,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-     <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -71,6 +71,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -79,10 +91,10 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <div class="wrapper">
-     <!-- Burger Menu  -->
+      <!-- Burger Menu  -->
       <div class="burger-menu">
         <a href="#" class="burger-menu__button">
           <span class="burger-menu__dots"></span
@@ -217,13 +229,12 @@
         </div>
       </header>
 
-
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html">Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span>Сумки-переноски</span>
+            <a href="index.html" data-lang="catalog_page-1">Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог ></a>
+            <span data-lang="carrying_page-1">Сумки-переноски</span>
           </div>
         </div>
 
@@ -239,7 +250,7 @@
                         id="asideArrowPrice"
                         alt="Arrow down icon"
                       />
-                      <p id="price">ЦІНА</p>
+                      <p id="price" data-lang="catalog_page-18">ЦІНА</p>
                     </div>
                     <ul
                       id="priceMenuCategory"
@@ -252,7 +263,7 @@
                           name="brandMenuRadio"
                           id="rangeFirstPrice"
                         />
-                        <label> до 499 грн</label>
+                        <label data-lang="catalog_page-19"> до 499 грн</label>
                       </li>
                       <li>
                         <input
@@ -260,7 +271,7 @@
                           name="brandMenuRadio"
                           id="rangeSecondPrice"
                         />
-                        <label>500-999 грн</label>
+                        <label data-lang="catalog_page-20">500-999 грн</label>
                       </li>
                       <li>
                         <input
@@ -268,7 +279,7 @@
                           name="brandMenuRadio"
                           id="rangeThirdPrice"
                         />
-                        <label>1000-1499 грн</label>
+                        <label data-lang="catalog_page-21">1000-1499 грн</label>
                       </li>
                       <li>
                         <input
@@ -276,7 +287,7 @@
                           name="brandMenuRadio"
                           id="rangeFourthPrice"
                         />
-                        <label>1500-1999 грн</label>
+                        <label data-lang="catalog_page-22">1500-1999 грн</label>
                       </li>
                       <li>
                         <input
@@ -284,7 +295,7 @@
                           name="brandMenuRadio"
                           id="rangeFifthPrice"
                         />
-                        <label> від 2000 грн</label>
+                        <label data-lang="catalog_page-23"> від 2000 грн</label>
                       </li>
                     </ul>
                   </li>
@@ -293,25 +304,6 @@
             </aside>
             <div class="catalogue-menu-block">
               <div class="catalogue-menu-block-items"></div>
-
-              <div class="pagination">
-                <img
-                  src="img/catalog-page/CATALOGUE-MENU/arrow-left-icon.svg"
-                  alt="Arrow Left Icon"
-                />
-                <p class="active-page">1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>.</p>
-                <p>.</p>
-                <p>.</p>
-                <p>10</p>
-                <p>11</p>
-                <img
-                  src="img/catalog-page/CATALOGUE-MENU/arrow-right-icon.svg"
-                  alt="Arrow Right Icon"
-                />
-              </div>
             </div>
           </div>
         </section>
@@ -474,9 +466,10 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-      <script src="js/change-language.js"></script>
+    <script src="js/change-language.js"></script>
     <script type="module" src="js/carrying-page.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/wiki-api.js"></script>
   </body>
 </html>

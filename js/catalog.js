@@ -18,6 +18,16 @@ const swiperCategoryMain = new Swiper(".main-swiper", {
 });
 // Main Slider
 
+// Anchor adding
+window.addEventListener("mousemove", (e) => {
+  if (e.pageY >= 3500) {
+    ancorImg.style.display = "block";
+  } else {
+    ancorImg.style.display = "none";
+  }
+});
+// Anchor adding
+
 // Aside Menu
 category.addEventListener("click", () => {
   if (catalogueMenuCategory.style.display == "none") {
@@ -74,25 +84,7 @@ price.addEventListener("click", () => {
 // Catalog items add
 import catalog from "./catalog.json" assert { type: "json" };
 
-// leftArrow.style.display = "none";
-
 for (let i = 0; i < catalog.length; i++) {
-  // pagination
-  // pagination.addEventListener("click", (e) => {
-  //   if (e.target.nodeName == "P") {
-  //     let pages = document.querySelectorAll(".pagination-page");
-
-  //     pages.forEach((page) => {
-  //       if (page.id == "active-page") {
-  //         page.removeAttribute("id");
-  //       } else if (page.id != "active-page") {
-  //         e.target.setAttribute("id", "active-page");
-  //       }
-  //     });
-  //   }
-  // });
-  // pagination
-
   let catalogueMenuBlockItems = document.querySelector(
     ".catalogue-menu-block-items"
   );
@@ -145,7 +137,6 @@ for (let i = 0; i < catalog.length; i++) {
     catalogueMenuBlockItem.className += " discountItem";
   }
   // with New and Discount sign
-
   // addind classes depends on inner features
   catalogueMenuBlockItems.appendChild(catalogueMenuBlockItem);
 

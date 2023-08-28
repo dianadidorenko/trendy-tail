@@ -36,8 +36,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -60,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -72,6 +72,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -80,7 +92,7 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -235,21 +247,79 @@
             />
             <h2 class="page-title" data-lang="delivery_page-2">Доставка</h2>
             <div class="delivery-block">
-              <img
-                src="img/delivery/delivery-01.png"
-                alt="Інформація о доставці"
-              />
+              <div class="delivery-block-main">
+                <p
+                  style="
+                    text-align: center;
+                    border-bottom: 1px solid rgba(211, 211, 211, 0.31);
+                  "
+                  data-lang="delivery_page-6"
+                >
+                  П’ятниця після 12.00
+                </p>
+                <p
+                  style="border-bottom: 3px solid #ffa95c"
+                  data-lang="delivery_page-7"
+                >
+                  Ваше замовлення, оформлене у понеділок- п’ятницю відправиться
+                  в той же день до Вас
+                </p>
+                <p
+                  style="
+                    text-align: center;
+                    border-bottom: 1px solid rgba(211, 211, 211, 0.31);
+                  "
+                  data-lang="delivery_page-8"
+                >
+                  До 12.00
+                </p>
+                <p
+                  style="border-bottom: 3px solid #ffa95c"
+                  data-lang="delivery_page-9"
+                >
+                  Ваше замовлення, оформлене у понеділок- п’ятницю відправиться
+                  наступного дня до Вас
+                </p>
+                <p
+                  style="
+                    text-align: center;
+                    border-bottom: 1px solid rgba(211, 211, 211, 0.31);
+                  "
+                  data-lang="delivery_page-10"
+                >
+                  П’ятниця після 12.00
+                </p>
+                <p
+                  style="border-bottom: 3px solid #ffa95c"
+                  data-lang="delivery_page-11"
+                >
+                  Ваше замовлення, оформлене у п’ятницю, субботу та неділю після
+                  12 відправиться до Вас в понеділок
+                </p>
+                <p
+                  style="
+                    text-align: center;
+                    border-bottom: 1px solid rgba(211, 211, 211, 0.31);
+                  "
+                  data-lang="delivery_page-12"
+                >
+                  1-2 дні
+                </p>
+                <p data-lang="delivery_page-13">
+                  Час доставки по Україні, в залежності від віддаленості
+                  населеного пункту, як правило, становить 1-2 дні з моменту
+                  відправлення
+                </p>
+              </div>
               <img
                 src="img/delivery/delivery-02.svg"
                 class="box-pic"
                 alt="Декоративна картинка"
               />
             </div>
-            <h3 data-lang="delivery_page-3">Варіанти доставки</h3>
+            <h3 data-lang="delivery_page-3">Наш партнер по доставці</h3>
             <div class="delivery-types-block">
               <img src="img/delivery/nova-poshta.png" alt="Нова Пошта" />
-              <img src="img/delivery/ukr-posht.svg" alt="Укр Пошта" />
-              <img src="img/delivery/meest.png" alt="Міст" />
             </div>
           </div>
         </section>
@@ -262,7 +332,36 @@
               alt="Heart Decoration"
             />
             <h2 class="page-title" data-lang="delivery_page-4">Оплата</h2>
-            <img src="img/delivery/payment.png" alt="Оплата" />
+            <div class="payment-block">
+              <p
+                style="
+                  border-top: 3px solid #ffa95c;
+                  border-bottom: 3px solid #ffa95c;
+                "
+                data-lang="delivery_page-14"
+              >
+                Накладний платіж
+              </p>
+              <p
+                style="border-bottom: 3px solid #ffa95c"
+                data-lang="delivery_page-15"
+              >
+                100% оплата з безкоштовною доставкою
+              </p>
+              <p
+                style="border-bottom: 3px solid #ffa95c"
+                data-lang="delivery_page-16"
+              >
+                Банківська карта
+              </p>
+              <p
+                style="border-bottom: 3px solid #ffa95c"
+                data-lang="delivery_page-17"
+              >
+                Звертаємо вашу увагу, що при використанні купонів/сертифікатів,
+                підсумкова сума може відрізнятися.
+              </p>
+            </div>
           </div>
         </section>
       </main>

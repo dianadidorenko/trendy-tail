@@ -141,12 +141,12 @@ let itemsOrder = JSON.parse(localStorage.getItem("orderItems"));
 window.addEventListener("DOMContentLoaded", () => {
   let items = "";
 
-  // 22
+  // 45
   for (var i = 0; i < itemsOrder.length; i++) {
     items += `<div class="order-block-info" data-id='${catalog[i].id}'>
                 <div class="order-block-info-left-part">
                   <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    45
+                    22
                   )}'/>
                 </div>
                 <div class="order-block-info-right-part">
@@ -290,13 +290,13 @@ window.addEventListener("load", () => {
 // Insert total price before quantity increasing
 
 // // Save Chosen City to Deliver
-chooseCityDelivery.addEventListener("change", () => {
-  chooseCityDeliveryValue = localStorage.setItem(
-    "CityDeliveryValue",
-    chooseCityDelivery.value
-  );
-  chooseCityDeliveryValueToSend = localStorage.getItem("CityDeliveryValue");
-});
+// citySelect.addEventListener("change", () => {
+//   chooseCityDeliveryValue = localStorage.setItem(
+//     "CityDeliveryValue",
+//     chooseCityDelivery.value
+//   );
+//   chooseCityDeliveryValueToSend = localStorage.getItem("CityDeliveryValue");
+// });
 // // Save Chosen City to Deliver
 
 // Anchor adding
@@ -315,3 +315,90 @@ closeNeedAgreeBlock.addEventListener("click", () => {
   needToAgreeBlock.style.display = "none";
 });
 // Close Need To Agree Pop Up
+
+let api_key = "8863d60a1da94b91f4790f40aa724999";
+let api_url = "https://api.novaposhta.ua/v2.0/json/";
+
+let areaSelect = document.getElementById("areaSelect");
+let citySelect = document.getElementById("citySelect");
+let warehouseSelect = document.getElementById("warehouseSelect");
+
+function makePostRequest(method, params, callback) {
+  let requestData = {
+    apiKey: api_key,
+    modelName: "Address",
+    calledMethod: method,
+    methodProperties: params,
+  };
+
+  let request = new XMLHttpRequest();
+  request.open("POST", api_url, true);
+  request.setRequestHeader("Content-Type", "application/json");
+
+  request.onload = function () {
+    if (request.status === 200) {
+      let response = JSON.parse(request.responseText);
+      callback(response.data);
+    } else {
+      console.error("Ошибка при выполнении запроса:", request.statusText);
+    }
+  };
+
+  request.send(JSON.stringify(requestData));
+}
+
+function createOption(element, value, text) {
+  let option = document.createElement("option");
+  option.value = value;
+  option.text = text;
+  element.appendChild(option);
+}
+
+function loadAreas() {
+  makePostRequest("getAreas", {}, (areas) => {
+    areas.forEach((area) => {
+      createOption(areaSelect, area.Ref, area.Description);
+    });
+
+    areaSelect.addEventListener("change", () => {
+      loadCities(areaSelect.value);
+    });
+  });
+}
+
+function loadCities(areaRef) {
+  citySelect.innerHTML = '<option value="">Выберите город</option>';
+  warehouseSelect.innerHTML =
+    '<option value="">Выберите відділення або поштомат</option>';
+
+  let cityParams = {
+    AreaRef: areaRef,
+  };
+
+  makePostRequest("getCities", cityParams, (cities) => {
+    cities.forEach((city) => {
+      createOption(citySelect, city.Ref, city.Description);
+    });
+
+    citySelect.addEventListener("change", () => {
+      loadWarehouses(citySelect.value);
+    });
+  });
+}
+
+function loadWarehouses(cityRef) {
+  warehouseSelect.innerHTML =
+    '<option value="">Выберите відділення або поштомат</option>';
+
+  let warehouseParams = {
+    CityRef: cityRef,
+  };
+
+  makePostRequest("getWarehouses", warehouseParams, (warehouses) => {
+    warehouses.forEach((warehouse) => {
+      createOption(warehouseSelect, warehouse.Ref, warehouse.Description);
+    });
+  });
+}
+
+loadAreas();

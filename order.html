@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/order.css" />
-    <title>Замовлення</title>
+    <!-- Google Fonts Link For Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title data-lang="order_page-title">Замовлення</title>
   </head>
   <body id="top">
     <!-- Search Pop Up Form -->
@@ -36,8 +41,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -60,7 +65,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -72,6 +77,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -80,7 +97,7 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -221,15 +238,15 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html"> Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span>Замовлення</span>
+            <a href="index.html" data-lang="catalog_page-1">Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог ></a>
+            <span data-lang="order_page-1">Замовлення</span>
           </div>
         </div>
 
         <section id="emptyOrderBlock" class="page__empty-order empty-order">
           <div class="empty-order__container">
-            <h2>Ваш кошик порожній :(</h2>
+            <h2 data-lang="order_page-2">Ваш кошик порожній :(</h2>
           </div>
         </section>
 
@@ -246,39 +263,41 @@
               class="heart-decoration"
               alt="Heart Decoration"
             />
-            <h2 class="page-title">ЗАМОВЛЕННЯ</h2>
+            <h2 class="page-title" data-lang="order_page-3">ЗАМОВЛЕННЯ</h2>
             <div class="order-info-block">
               <div class="h1-block">
                 <img src="img/order/paw-icon.svg" alt="Paw Icon" />
-                <h1>Оформлення замовлення</h1>
+                <h1 data-lang="order_page-4">Оформлення замовлення</h1>
                 <img src="img/order/paw-icon.svg" alt="Paw Icon" />
               </div>
-              <p class="under-h1-text">
+              <p class="under-h1-text" data-lang="order_page-5">
                 Заповніть наступні поля для оформлення вашого замовлення.
               </p>
               <div class="order-main-block">
                 <div class="order-info-block-left-part">
-                  <h2 class="order-title">Ваші дані</h2>
+                  <h2 class="order-title" data-lang="order_page-6">
+                    Ваші дані
+                  </h2>
                   <div class="info-user-block">
                     <input
                       type="text"
                       id="orderName"
                       name="orderName"
-                      placeholder="Ім'я"
+                      placeholder="Ім'я / Name"
                       required
                     />
                     <div id="errorName" class="error">
-                      <p>Введіть лише літери</p>
+                      <p data-lang="order_page-7">Введіть лише літери</p>
                     </div>
                     <input
                       type="text"
                       id="orderSurname"
                       name="orderSurname"
-                      placeholder="Прізвище"
+                      placeholder="Прізвище / Surname"
                       required
                     />
                     <div id="errorSurname" class="error">
-                      <p>Введіть лише літери</p>
+                      <p data-lang="order_page-8">Введіть лише літери</p>
                     </div>
                     <input
                       type="tel"
@@ -288,7 +307,7 @@
                       required
                     />
                     <div id="errorNumber" class="error">
-                      <p>Мінімум 13 символів</p>
+                      <p data-lang="order_page-9">Мінімум 13 символів</p>
                     </div>
                     <input
                       type="email"
@@ -298,11 +317,13 @@
                       required
                     />
                     <div id="errorMail" class="error">
-                      <p>Приклад ukr@.net</p>
+                      <p data-lang="order_page-10">Приклад ukr@.net</p>
                     </div>
                   </div>
 
-                  <h2 class="order-title">Доставка</h2>
+                  <h2 class="order-title" data-lang="order_page-11">
+                    Доставка
+                  </h2>
                   <div class="order-delivery-block">
                     <div class="delivery-check">
                       <input
@@ -310,88 +331,63 @@
                         name="delivery"
                         id="novaPoshta"
                         value="НоваПошта"
+                        checked
                       />
-                      <label id="novaPoshtaLabel">НоваПошта </label>
-                      <p>Доставка по Україні 1-3 дні</p>
+                      <label id="novaPoshtaLabel" data-lang="order_page-12"
+                        >НоваПошта
+                      </label>
+                      <p data-lang="order_page-13">
+                        Доставка по Україні 1-3 дні
+                      </p>
                     </div>
 
-                    <div class="delivery-check">
-                      <input
-                        type="radio"
-                        name="delivery"
-                        id="ukrPoshta"
-                        value="УкрПошта"
-                      />
-                      <label id="ukrPoshtaLabel">УкрПошта</label>
-                      <p>Доставка по Україні 3-5 днів</p>
+                    <div class="nova-poshta">
+                      <select id="areaSelect">
+                        <option value="">Оберіть область</option>
+                      </select>
+                      <select id="citySelect">
+                        <option value="">Оберіть місто</option>
+                      </select>
+                      <select id="warehouseSelect">
+                        <option value="">
+                          Оберіть відділення або поштомат
+                        </option>
+                      </select>
                     </div>
-
-                    <div class="delivery-check">
-                      <input
-                        type="radio"
-                        name="delivery"
-                        id="meest"
-                        value="meest"
-                      />
-                      <label id="meestLabel">Meest </label>
-                      <p>Доставка по Україні до 7 днів</p>
-                    </div>
-
-                    <select id="chooseCityDelivery" name="chooseCity">
-                      <option value="Віниця">Віниця</option>
-                      <option value="Волинь">Волинь</option>
-                      <option value="Днепр">Днепр</option>
-                      <option value="Житомир">Житомир</option>
-                      <option value="Закарпаття">Закарпаття</option>
-                      <option value="Запоріжжя">Запоріжжя</option>
-                      <option value="Івано-Франківськ">Івано-Франківськ</option>
-                      <option value="Київ">Київ</option>
-                      <option value="Кіровоград">Кіровоград</option>
-                      <option value="Львів">Львів</option>
-                      <option value="Миколаїв">Миколаїв</option>
-                      <option value="Одеса">Одеса</option>
-                      <option value="Полтава">Полтава</option>
-                      <option value="Рівне">Рівне</option>
-                      <option value="Суми">Суми</option>
-                      <option value="Тернопіль">Тернопіль</option>
-                      <option value="Харків">Харків</option>
-                      <option value="Херсон">Херсон</option>
-                      <option value="Хмельніцьк">Хмельніцьк</option>
-                      <option value="Черкаси">Черкаси</option>
-                      <option value="Чернівці">Чернівці</option>
-                      <option value="Чернігів">Чернігів</option>
-                    </select>
                   </div>
 
-                  <h2 class="order-title order-title_1">Оплата</h2>
+                  <h2
+                    class="order-title order-title_1"
+                    data-lang="order_page-39"
+                  >
+                    Оплата
+                  </h2>
                   <div class="pay-block">
                     <input type="radio" name="afterpay" id="afterpay" checked />
-                    <label
-                      >Післяплата <br />
-                      <span>Оплата при отримуванні</span></label
-                    >
-                    <br />
+                    <label data-lang="order_page-40">Післяплата</label>
+                    <p data-lang="order_page-41">Оплата при отримуванні</p>
                   </div>
 
                   <div class="agree-block">
                     <div id="agreeConditionsBlock" class="agree-block-input">
                       <input type="checkbox" checked id="agreeConditions" />
-                      <label>Я згоден з умовами угоди користувача.</label>
+                      <label data-lang="order_page-42"
+                        >Я згоден з умовами угоди користувача.</label
+                      >
                     </div>
                     <div class="need-to-agree-block">
                       <img
                         src="img/order/question-sign-icon.svg"
                         alt="Question Sign Icon"
                       />
-                      <p>
-                        Ви повинні погодитись з умовами сервісу перед тим, як
-                        продовжити.
+                      <p data-lang="order_page-43">
+                        Я погоджуюсь з умовами сервісу.
                       </p>
                       <p id="closeNeedAgreeBlock">&times</p>
                     </div>
                     <div class="agree-block-input">
                       <input type="checkbox" id="noNeedToPhone" />
-                      <label id="noNeedToPhoneLabel"
+                      <label id="noNeedToPhoneLabel" data-lang="order_page-44"
                         >Мені не потрібно телефонувати <br />
                         для підтвердження замовлення.</label
                       >
@@ -399,20 +395,31 @@
                   </div>
                   <input
                     id="orderBtn"
-                    class="order-button"
+                    class="order-button material-symbols-rounded"
                     type="submit"
-                    value="Оформити замовлення"
+                    value="send"
                   />
                 </div>
 
                 <div>
-                  <h3 class="order-title order-title_2">Ваше замовлення</h3>
+                  <h3
+                    class="order-title order-title_2"
+                    data-lang="order_page-45"
+                  >
+                    Ваше замовлення
+                  </h3>
                   <div
                     id="orderInfoBlockRightPart"
                     class="order-info-block-right-part"
                   ></div>
 
-                  <p class="total-sum-block">Усього: <span id="totalSum"></span> грн</p>
+                  <div class="total-block">
+                    <p class="total-sum-block" data-lang="order_page-46">
+                      Усього:
+                    </p>
+                    <p id="totalSum" class="number"></p>
+                    <p data-lang="order_page-47">грн</p>
+                  </div>
                   <p style="display: none">
                     Усього:
                     <span id="totalQun">0</span> шт.

@@ -4,14 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
-    <title>Кепка Mood</title>
+    <title data-lang="cap-mood_page-title">Кепка Mood</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -40,8 +36,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -64,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -76,6 +72,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -84,13 +92,13 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <!-- Pop Up Added Item To The Shopping Cart -->
     <div id="popUpShoppingCart" class="pop-up-shopping-cart">
       <div class="pop-up-shopping-cart-block">
         <div class="pop-up-shopping-cart-title-info">
-          <p class="pop-up-shopping-cart-title">
+          <p class="pop-up-shopping-cart-title" data-lang="pop-up-cart_page-1">
             ТОВАР УСПІШНО ДОДАНО <br />
             ДО ВАШОГО КОШИКА
           </p>
@@ -101,16 +109,35 @@
             <img id="popUpImage" />
           </div>
           <div class="image-and-goods-info-right-part">
-            <p id="popUpGoodsTitle">Кепка Mood</p>
-            <p>Розмір: <span id="popUpSize">XS</span></p>
-            <p>Кількість: <span id="popUpQuantity">1</span></p>
-            <p>Ітого: <span id="popUpPrice">173</span> грн</p>
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <div>
+              <p data-lang="pop-up-cart_page-4">Розмір:</p>
+              <p id="popUpSize">XS</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-5">Кількість:</p>
+              <p id="popUpQuantity">1</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-6">Ітого:</p>
+              <p id="popUpPrice">>705</p>
+              <p>₴</p>
+            </div>
           </div>
         </div>
-        <button id="continueBtn" class="pop-up-button">
+        <button
+          id="continueBtn"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-2"
+        >
           Продовжити покупки
         </button>
-        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+        <a
+          href="order.html"
+          id="toTheShoppingCart"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-3"
+        >
           Оформити замовлення
         </a>
       </div>
@@ -256,9 +283,9 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html">Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span> Кепка Mood</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог</a>
+            <span data-lang="cap-mood_page-1"> Кепка Mood</span>
           </div>
         </div>
 
@@ -286,20 +313,43 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1 id="h1">Кепка Mood</h1>
-                <p class="item-info-right-text-block-description">
+                <h1 id="h1" data-lang="cap-mood_page-2">Кепка Mood</h1>
+                <p
+                  class="item-info-right-text-block-description"
+                  data-lang="cap-mood_page-3"
+                >
                   Поєднання темно-синьої джинсової тканини та яскраво-лимонного
                   трикотажу, фіксатор у вигляді ромашки, стильна термоаплікація.
                 </p>
                 <div class="info-block-p">
-                  <p>Бренд: <span>Pet Fashion</span></p>
-                  <p>Сезон: <span>Літо</span></p>
-                  <p>Матеріал: <span>95% хлопок, 5% еластан</span></p>
-                  <p>Серія: <span>PF Trends</span></p>
-                  <p>Колір: <span>Джинс/салатовий</span></p>
-                  <p>Наявність: <span>В наявності</span></p>
+                  <div>
+                    <p data-lang="bed-ascold_page-3">Бренд:</p>
+                    <p>Pet Fashion</p>
+                  </div>
+                  <div>
+                    <p data-lang="collar-bright_page-4">Сезон:</p>
+                    <p data-lang="collar-bright_page-5">Літо</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-6">Матеріал:</p>
+                    <p data-lang="collar-bright_page-8">
+                      95% хлопок, 5% еластан
+                    </p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-8">Серія:</p>
+                    <p>PF Trends</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-9">Колір:</p>
+                    <p data-lang="cap-mood_page-5">Джинс/салатовий</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-11">Наявність:</p>
+                    <p data-lang="bed-ascold_page-12">В наявності</p>
+                  </div>
                 </div>
-                <p class="size">Розмір:</p>
+                <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="xsGroup" class="check-group">
                     <input type="radio" id="xs" name="size" />
@@ -314,8 +364,10 @@
                     <label id="mLabel">M</label>
                   </div>
                 </div>
-                <p class="item-price"><span id="price">173</span> грн</p>
-                <button id="buy" class="button">КУПИТЬ</button>
+                <p class="item-price"><span id="price">173</span> ₴</p>
+                <button id="buy" class="button" data-lang="bed-ascold_page-16">
+                  КУПИТЬ
+                </button>
               </div>
             </div>
 
@@ -325,21 +377,36 @@
               alt="Paws Decor"
             />
             <div class="below-block">
-              <p class="description">ОПИС</p>
+              <p class="description" data-lang="bed-ascold_page-17">ОПИС</p>
               <div class="characteristics">
-                <p>
+                <p data-lang="cap-mood_page-6">
                   Поєднання темно-синьої джинсової тканини та яскраво-лимонного
                   трикотажу, фіксатор у вигляді ромашки, стильна термоаплікація
                   – все це робить аксесуар не лише корисним у спекотний день,
-                  але й надзвичайно стильним. Кепка чудово сполучається з іншими
-                  моделями літньої колекції, зокрема, сукнею Band та костюмом
-                  Strip.
+                  але й надзвичайно стильним.
                 </p>
-                <p><em>Матеріал: 95% котон, 5% еластан.</em></p>
+                <p>
+                  <em data-lang="collar-bright_page-9"
+                    >Матеріал: 95% котон, 5% еластан.</em
+                  >
+                </p>
               </div>
             </div>
           </div>
         </section>
+
+        <div class="wiki-block">
+          <p data-lang="wiki-title">
+            Введіть те, що вас цікавить і отримуйте інформацію з Вікіпедія
+          </p>
+          <input
+            id="inp"
+            type="text"
+            placeholder="Трикотаж.."
+            onchange="getRandomLinks()"
+          />
+          <ul id="result"></ul>
+        </div>
       </main>
 
       <footer class="footer">
@@ -620,5 +687,6 @@
     <script src="js/items-accessories.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/wiki-api.js"></script>
   </body>
 </html>

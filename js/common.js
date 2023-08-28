@@ -43,7 +43,6 @@ if (checked == true) {
   root.style.setProperty("--primary-color", "white");
   root.style.setProperty("--secondary-color", "white");
   root.style.setProperty("--footer-bg", "#218287");
-  root.style.setProperty("--footer-text-color", "white");
   root.style.setProperty("--thirdly-color", "white");
   root.style.setProperty("--search-background-color", "#cacaca");
   root.style.setProperty("--search-text-color", "#333");
@@ -57,9 +56,7 @@ if (checked == true) {
   root.style.setProperty("--background-color", "white");
   root.style.setProperty("--primary-color", "#5c5757");
   root.style.setProperty("--secondary-color", "#000");
-  root.style.setProperty("--button-color", "white");
   root.style.setProperty("--footer-bg", "#d2e5dc");
-  root.style.setProperty("--footer-text-color", "#333");
   root.style.setProperty("--search-background-color", "white");
   root.style.setProperty("--search-text-color", "white");
   root.style.setProperty("--not-active-link", "#757575");
@@ -76,9 +73,7 @@ toggle.addEventListener("change", (e) => {
     root.style.setProperty("--background", localStorage.getItem("background"));
     root.style.setProperty("--primary-color", "white");
     root.style.setProperty("--secondary-color", "white");
-    root.style.setProperty("--button-color", "white");
     root.style.setProperty("--footer-bg", "#218287");
-    root.style.setProperty("--footer-text-color", "white");
     root.style.setProperty("--search-background-color", "#cacaca");
     root.style.setProperty("--search-text-color", "#333");
     root.style.setProperty("--not-active-link", "#e9e9e9");
@@ -91,9 +86,7 @@ toggle.addEventListener("change", (e) => {
     root.style.setProperty("--background-color", "white");
     root.style.setProperty("--primary-color", "#5c5757");
     root.style.setProperty("--secondary-color", "#000");
-    root.style.setProperty("--button-color", "white");
     root.style.setProperty("--footer-bg", "#d2e5dc");
-    root.style.setProperty("--footer-text-color", "#333");
     root.style.setProperty("--search-background-color", "white");
     root.style.setProperty("--search-text-color", "white");
     root.style.setProperty("--not-active-link", "#757575");

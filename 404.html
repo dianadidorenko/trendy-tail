@@ -336,12 +336,14 @@
       </div>
 
       <div id="main-content">
-        <h1>Ми не змогли знайти те, що ви шукали.</h1>
-        <p>
+        <h1 data-lang="not-found_page-1">
+          Ми не змогли знайти те, що ви шукали.
+        </h1>
+        <p data-lang="not-found_page-2">
           На жаль, сторінку, яку ви шукали, не вдалося знайти. Це може бути
           тимчасово недоступними, переміщеними або більше не існувати.
         </p>
-        <p>
+        <p data-lang="not-found_page-3">
           Перевірте введену URL-адресу на наявність помилок і повторіть спробу.
           Крім того, знайдіть те, чого не вистачає, або подивіться навколо решта
           нашого сайту.
@@ -358,25 +360,27 @@
         </div>
 
         <div id="navigation">
-          <a class="navigation" href="index.html">Головна</a
-          ><a class="navigation" href="catalog.html">Каталог</a>
-          <a class="navigation" href="about-us.html">О нас</a>
-          <a class="navigation" href="contacts.html">Наши контакти</a>
+          <a class="navigation" href="index.html" data-lang="home_page-title"
+            >Головна</a
+          ><a class="navigation" href="catalog.html" data-lang="home_page-1"
+            >Каталог</a
+          >
+          <a class="navigation" href="about-us.html" data-lang="home_page-2"
+            >О нас</a
+          >
+          <a class="navigation" href="contacts.html" data-lang="home_page-4"
+            >Контакти</a
+          >
         </div>
       </div>
     </div>
 
+    <script src="js/change-language.js"></script>
     <script type="text/javascript">
       searchIcon.addEventListener("click", () => {
         getSearchResult();
         input.value = "";
       });
-
-      //   input.addEventListener("keypress", (e) => {
-      //     if (e.keyCode == 13) {
-      //       getSearchResult();
-      //     }
-      //   });
 
       function getSearchResult() {
         input.value = input.value.toLowerCase();

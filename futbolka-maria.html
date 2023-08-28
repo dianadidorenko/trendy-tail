@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
-    <title>Футболка Maria</title>
+    <title data-lang="futbolka-maria_page-title">Футболка Maria</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -36,8 +36,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -60,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -72,6 +72,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -80,13 +92,13 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <!-- Pop Up Added Item To The Shopping Cart -->
     <div id="popUpShoppingCart" class="pop-up-shopping-cart">
       <div class="pop-up-shopping-cart-block">
         <div class="pop-up-shopping-cart-title-info">
-          <p class="pop-up-shopping-cart-title">
+          <p class="pop-up-shopping-cart-title" data-lang="pop-up-cart_page-1">
             ТОВАР УСПІШНО ДОДАНО <br />
             ДО ВАШОГО КОШИКА
           </p>
@@ -97,16 +109,35 @@
             <img id="popUpImage" />
           </div>
           <div class="image-and-goods-info-right-part">
-            <p id="popUpGoodsTitle">Футболка Maria</p>
-            <p>Розмір: <span id="popUpSize">XS</span></p>
-            <p>Кількість: <span id="popUpQuantity">1</span></p>
-            <p>Ітого: <span id="popUpPrice">705</span> грн</p>
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <div>
+              <p data-lang="pop-up-cart_page-4">Розмір:</p>
+              <p id="popUpSize">XS</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-5">Кількість:</p>
+              <p id="popUpQuantity">1</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-6">Ітого:</p>
+              <p id="popUpPrice">>705</p>
+              <p>₴</p>
+            </div>
           </div>
         </div>
-        <button id="continueBtn" class="pop-up-button">
+        <button
+          id="continueBtn"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-2"
+        >
           Продовжити покупки
         </button>
-        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+        <a
+          href="order.html"
+          id="toTheShoppingCart"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-3"
+        >
           Оформити замовлення
         </a>
       </div>
@@ -252,9 +283,9 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html">Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span>Футболка Maria</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог</a>
+            <span data-lang="futbolka-maria_page-1">Футболка Maria</span>
           </div>
         </div>
 
@@ -294,8 +325,17 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1 id="h1" class="raincoatAriel">Футболка Maria</h1>
-                <p class="item-info-right-text-block-description">
+                <h1
+                  id="h1"
+                  class="raincoatAriel"
+                  data-lang="futbolka-maria_page-2"
+                >
+                  Футболка Maria
+                </h1>
+                <p
+                  class="item-info-right-text-block-description"
+                  data-lang="futbolka-maria_page-3"
+                >
                   Українські улюбленці – найгарніші в світі. А якщо ваша
                   чотирилапа красуні вдягне яскраву футболку з
                   термоаплікацією-вишивкою, від неї просто неможливо буде
@@ -304,14 +344,30 @@
                   орнаментом перетворює її на святкове вбрання.
                 </p>
                 <div class="info-block-p">
-                  <p>Бренд: <span>Pet Fashion</span></p>
-                  <p>Матеріал: <span>80% котон, 20% поліестер</span></p>
-                  <p>Сезон: <span>Літо</span></p>
-                  <p>Серія: <span>PF Trends</span></p>
-                  <p>Колір: <span>Жовтий</span></p>
-                  <p>Наявність: <span>В наявності</span></p>
+                  <div>
+                    <p data-lang="bed-ascold_page-3">Бренд:</p>
+                    <p>Pet Fashion</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-6">Матеріал:</p>
+                    <p data-lang="futbolka-maria_page-4">
+                      80% котон, 20% поліестер
+                    </p>
+                  </div>
+                  <div>
+                    <p data-lang="collar-bright_page-4">Сезон:</p>
+                    <p data-lang="collar-bright_page-5">Літо</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-9">Колір:</p>
+                    <p data-lang="futbolka-maria_page-5">Жовтий</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-11">Наявність:</p>
+                    <p data-lang="bed-ascold_page-12">В наявності</p>
+                  </div>
                 </div>
-                <p class="size">Розмір:</p>
+                <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="xsGroup" class="check-group">
                     <input type="radio" id="xs" name="size" />
@@ -336,45 +392,51 @@
                 </div>
                 <div class="table-sizes">
                   <div class="table-sizes-title-block">
-                    <a id="sizesTable">Таблиця розмірів</a>
+                    <a id="sizesTable" data-lang="futbolka-maria_page-6"
+                      >Таблиця розмірів</a
+                    >
                     <img src="img/info-item/sizes.svg" alt="Sizes icon" />
                   </div>
                 </div>
                 <p class="before-discount">
-                  <span id="priceBefore">396</span> грн
+                  <span id="priceBefore">396</span> ₴
                 </p>
-                <p class="item-price"><span id="price">296</span> грн</p>
-                <button id="buy" class="button">КУПИТЬ</button>
+                <p class="item-price"><span id="price">296</span> ₴</p>
+                <button id="buy" class="button" data-lang="bed-ascold_page-16">
+                  КУПИТЬ
+                </button>
               </div>
             </div>
 
             <!-- Sizes table -->
             <div class="sizes-table">
               <span id="closeSizesTable">&times</span>
-              <h2 class="sizes-table-title">Розмірна сітка</h2>
+              <h2 class="sizes-table-title" data-lang="size-table_page-1">
+                Розмірна сітка
+              </h2>
               <div class="size-table-block">
                 <div class="sizes-table-left-part">
                   <div class="item-block">
-                    <h3>Довжина тіла "A"</h3>
+                    <h3 data-lang="size-table_page-2">Довжина тіла "A"</h3>
                     <img
                       src="img/info-item/back-length.jpeg"
                       alt="Заміри спини"
                     />
                     <p>&Xi;</p>
-                    <p>
+                    <p data-lang="size-table_page-3">
                       Переконайтесь, що ваш собака стоїть прямо. Виміряйте
                       довжину тіла від шиї до хвоста. Якщо довжина тіла між
                       розмірами, то краще вибрати більшу.
                     </p>
                   </div>
                   <div class="item-block">
-                    <h3>Об'єм грудей "B"</h3>
+                    <h3 data-lang="size-table_page-4">Об'єм грудей "B"</h3>
                     <img
                       src="img/info-item/chest-meisure.jpeg"
                       alt="Заміри грудної клітки"
                     />
                     <p>&Xi;</p>
-                    <p>
+                    <p data-lang="size-table_page-5">
                       Відміряйте найширшу частину грудей вашого вихованця.
                       Зверніть увагу, що модель одягу може бути тонкою або
                       вільною відповідно до дизайну, тканини або за власним
@@ -387,42 +449,55 @@
                   <table>
                     <tbody>
                       <tr style="background-color: #f3f3f3">
-                        <th style="font-weight: bold">Розмір</th>
-                        <th>"A" довжина спини (см)</th>
-                        <th>“В” об’єм грудей (см)</th>
-                        <th>Вага (кг)</th>
-                        <th>Рекомендовані породи</th>
+                        <th
+                          style="font-weight: bold"
+                          data-lang="size-table_page-6"
+                        >
+                          Розмір
+                        </th>
+                        <th data-lang="size-table_page-7">
+                          "A" довжина спини (см)
+                        </th>
+                        <th data-lang="size-table_page-8">
+                          “В” об’єм грудей (см)
+                        </th>
+                        <th data-lang="size-table_page-9">Вага (кг)</th>
+                        <th data-lang="size-table_page-10">
+                          Рекомендовані породи
+                        </th>
                       </tr>
                       <tr>
                         <td>XXS</td>
                         <td>20-22</td>
                         <td>25-29</td>
-                        <td>до 1.5</td>
-                        <td>Цуценята дрібних порід</td>
+                        <td data-lang="size-table_page-11">до 1.5</td>
+                        <td data-lang="size-table_page-12">
+                          Цуценята дрібних порід
+                        </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>XS</td>
                         <td>23-25</td>
                         <td>28-32</td>
                         <td>1.5-2.5</td>
-                        <td>
+                        <td data-lang="size-table_page-13">
                           Мініатюрний йоркширський тер'єр, чихуахуа, мініатюрний
                           пінчер, той-тер'єр
                         </td>
                       </tr>
                       <tr>
-                        <td>XS такса</td>
+                        <td data-lang="size-table_page-14">XS такса</td>
                         <td>33-35</td>
                         <td>42-52</td>
                         <td>6.0-8.0</td>
-                        <td>Такса</td>
+                        <td data-lang="size-table_page-15">Такса</td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>XS2</td>
                         <td>26-28</td>
                         <td>32-39</td>
                         <td>2.0-3.0</td>
-                        <td>
+                        <td data-lang="size-table_page-16">
                           Йоркширський тер'єр, чихуахуа, мініатюрний пінчер,
                           той-тер'єр, померанський шпіц, мальтезе, мальтіпу
                         </td>
@@ -432,77 +507,87 @@
                         <td>27-29</td>
                         <td>37-44</td>
                         <td>2.5-3.5</td>
-                        <td>
+                        <td data-lang="size-table_page-17">
                           Йоркширський тер'єр, чихуахуа, мініатюрний пінчер,
                           той-тер'єр, померанський шпіц, мальтезе, мальтіпу
                         </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
-                        <td>S такса</td>
+                        <td data-lang="size-table_page-18">S такса</td>
                         <td>38-40</td>
                         <td>44-54</td>
                         <td>8.0-10.0</td>
-                        <td>Такса</td>
+                        <td data-lang="size-table_page-19">Такса</td>
                       </tr>
                       <tr>
                         <td>S2</td>
                         <td>28-30</td>
                         <td>50-57</td>
                         <td>7.0-9.0</td>
-                        <td>Мопс, французький бульдог</td>
+                        <td data-lang="size-table_page-20">
+                          Мопс, французький бульдог
+                        </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
-                        <td>S2 такса</td>
+                        <td data-lang="size-table_page-21">S2 такса</td>
                         <td>38-40</td>
                         <td>50-62</td>
                         <td>12.0-15.0</td>
-                        <td>Такса, пекінес, невеликі коргі</td>
+                        <td data-lang="size-table_page-22">
+                          Такса, пекінес, невеликі коргі
+                        </td>
                       </tr>
                       <tr>
                         <td>SM</td>
                         <td>28-30</td>
                         <td>44-52</td>
                         <td>4.0-6.0</td>
-                        <td>Пінчер, бішон фризе, джек-рассел-тер'єр</td>
+                        <td data-lang="size-table_page-23">
+                          Пінчер, бішон фризе, джек-рассел-тер'єр
+                        </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>M</td>
                         <td>34-36</td>
                         <td>40-48</td>
                         <td>3.0-6.0</td>
-                        <td>
+                        <td data-lang="size-table_page-24">
                           Мальтезе, ши-тцу, той- пудель, карликовий пудель
                           (собаки середніх порід), бішон фризе,
                           кавалер-кінг-чарльз-спанієль
                         </td>
                       </tr>
                       <tr>
-                        <td>M такса</td>
+                        <td data-lang="size-table_page-25">M такса</td>
                         <td>43-45</td>
                         <td>50-62</td>
                         <td>10.0-13.0</td>
-                        <td>Такса</td>
+                        <td data-lang="size-table_page-26">Такса</td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>M2</td>
                         <td>32-34</td>
                         <td>55-65</td>
                         <td>10.0-14.0</td>
-                        <td>Мопс, французький бульдог</td>
+                        <td data-lang="size-table_page-27">
+                          Мопс, французький бульдог
+                        </td>
                       </tr>
                       <tr>
                         <td>ML</td>
                         <td>33-35</td>
                         <td>44-55</td>
                         <td>4.0-7.0</td>
-                        <td>Джек-рассел-тер'єр</td>
+                        <td data-lang="size-table_page-28">
+                          Джек-рассел-тер'єр
+                        </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>L</td>
                         <td>38-40</td>
                         <td>47-56</td>
                         <td>6.0-13.0</td>
-                        <td>
+                        <td data-lang="size-table_page-29">
                           Китайська чубата, ши-тцу, той- пудель, пудель,
                           шнауцер, японський хін, кокер-спанієль
                         </td>
@@ -512,7 +597,7 @@
                         <td>41-43</td>
                         <td>55-65</td>
                         <td>10.0-15.0</td>
-                        <td>
+                        <td data-lang="size-table_page-30">
                           Шнауцер, кокер-спаніель, фокстер'єр, скотчтер'єр,
                           цвергшнауцер, англійський спанієль, міні бультер'єр
                         </td>
@@ -522,42 +607,50 @@
                         <td>44-46</td>
                         <td>60-72</td>
                         <td>20.0-25.0</td>
-                        <td>Самоїд, бультер'єр</td>
+                        <td data-lang="size-table_page-31">
+                          Самоїд, бультер'єр
+                        </td>
                       </tr>
                       <tr>
                         <td>3XL</td>
                         <td>47-49</td>
                         <td>68-80</td>
                         <td>25.0-30.0</td>
-                        <td>Самоїд великий, стаффорд, бультер'єр</td>
+                        <td data-lang="size-table_page-32">
+                          Самоїд великий, стаффорд, бультер'єр
+                        </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>4XL</td>
                         <td>49-51</td>
                         <td>72-85</td>
                         <td>30.0-35.0</td>
-                        <td>Стаффорд, хаскі</td>
+                        <td data-lang="size-table_page-33">Стаффорд, хаскі</td>
                       </tr>
                       <tr>
                         <td>5XL</td>
                         <td>55-57</td>
                         <td>78-91</td>
                         <td>35.0-45.0</td>
-                        <td>Ретрівер, лабрадор, боксер</td>
+                        <td data-lang="size-table_page-34">
+                          Ретрівер, лабрадор, боксер
+                        </td>
                       </tr>
                       <tr style="background-color: #f3f3f3">
                         <td>6XL</td>
                         <td>61-63</td>
                         <td>82-95</td>
                         <td>45.0-50.0</td>
-                        <td>Вівчарка, ротвейлер, доберман</td>
+                        <td data-lang="size-table_page-35">
+                          Вівчарка, ротвейлер, доберман
+                        </td>
                       </tr>
                       <tr>
                         <td>7XL</td>
                         <td>70-72</td>
                         <td>86-99</td>
                         <td>60.0-66.0</td>
-                        <td>Кане-корсо</td>
+                        <td data-lang="size-table_page-36">Кане-корсо</td>
                       </tr>
                     </tbody>
                   </table>
@@ -572,21 +665,50 @@
               alt="Paws Decor"
             />
             <div class="below-block">
-              <p class="description">ОПИС</p>
+              <p class="description" data-lang="bed-ascold_page-17">ОПИС</p>
               <div class="characteristics">
-                <p><strong>Переваги футболки:</strong></p>
+                <p>
+                  <strong data-lang="futbolka-maria_page-7"
+                    >Переваги футболки:</strong
+                  >
+                </p>
                 <ul>
-                  <li>крій для чотирилапих красунь – із закритим животом;</li>
-                  <li>м’який та еластичний бавовняний трикотаж;</li>
-                  <li>вишуканий візерунок на спинці;</li>
-                  <li>зручність вдягання.</li>
+                  <li data-lang="futbolka-maria_page-8">
+                    крій для чотирилапих красунь – із закритим животом;
+                  </li>
+                  <li data-lang="futbolka-maria_page-9">
+                    м’який та еластичний бавовняний трикотаж;
+                  </li>
+                  <li data-lang="futbolka-maria_page-10">
+                    вишуканий візерунок на спинці;
+                  </li>
+                  <li data-lang="futbolka-maria_page-11">
+                    зручність вдягання.
+                  </li>
                 </ul>
-                <p>Матеріал: бавовняний трикотаж.</p>
-                <p>Рекомендується ручне прання при температурі не вище 40 ℃.</p>
+                <p data-lang="futbolka-maria_page-12">
+                  Матеріал: бавовняний трикотаж.
+                </p>
+                <p data-lang="futbolka-maria_page-13">
+                  Рекомендується ручне прання при температурі не вище 40 ℃.
+                </p>
               </div>
             </div>
           </div>
         </section>
+
+        <div class="wiki-block">
+          <p data-lang="wiki-title">
+            Введіть те, що вас цікавить і отримуйте інформацію з Вікіпедія
+          </p>
+          <input
+            id="inp"
+            type="text"
+            placeholder="Наполнитель.."
+            onchange="getRandomLinks()"
+          />
+          <ul id="result"></ul>
+        </div>
       </main>
 
       <footer class="footer">
@@ -746,6 +868,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/items.js"></script>
     <script type="text/javascript">
       // Click for full image view
       function fullView(ImgLink) {
@@ -766,9 +889,7 @@
         }
       });
       // Anchor adding
-    </script>
-    <script src="js/items.js"></script>
-    <script type="text/javascript">
+
       // Exact price depends on the size click
       sizes.addEventListener("mousedown", (e) => {
         xsGroup.style.background = "rgba(128, 180, 182, 0.1)";
@@ -897,5 +1018,6 @@
     <script src="js/change-language.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/wiki-api.js"></script>
   </body>
 </html>

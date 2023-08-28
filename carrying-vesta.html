@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/catalog.css" />
     <link rel="stylesheet" href="css/items.css" />
-    <title>Сумка-переноска Vesta</title>
+    <title data-lang="carrying-vesta_page-title">Сумка-переноска Vesta</title>
   </head>
   <body>
     <!-- Search Pop Up Form -->
@@ -36,8 +36,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -60,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -72,6 +72,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -80,13 +92,13 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <!-- Pop Up Added Item To The Shopping Cart -->
     <div id="popUpShoppingCart" class="pop-up-shopping-cart">
       <div class="pop-up-shopping-cart-block">
         <div class="pop-up-shopping-cart-title-info">
-          <p class="pop-up-shopping-cart-title">
+          <p class="pop-up-shopping-cart-title" data-lang="pop-up-cart_page-1">
             ТОВАР УСПІШНО ДОДАНО <br />
             ДО ВАШОГО КОШИКА
           </p>
@@ -97,16 +109,35 @@
             <img id="popUpImage" />
           </div>
           <div class="image-and-goods-info-right-part">
-            <p id="popUpGoodsTitle">Сумка-переноска Vesta</p>
-            <p>Розмір: <span id="popUpSize">XS</span></p>
-            <p>Кількість: <span id="popUpQuantity">1</span></p>
-            <p>Ітого: <span id="popUpPrice">1509</span> грн</p>
+            <p id="popUpGoodsTitle">Дощовик ARIEL</p>
+            <div>
+              <p data-lang="pop-up-cart_page-4">Розмір:</p>
+              <p id="popUpSize">XS</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-5">Кількість:</p>
+              <p id="popUpQuantity">1</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-6">Ітого:</p>
+              <p id="popUpPrice">>705</p>
+              <p>₴</p>
+            </div>
           </div>
         </div>
-        <button id="continueBtn" class="pop-up-button">
+        <button
+          id="continueBtn"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-2"
+        >
           Продовжити покупки
         </button>
-        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+        <a
+          href="order.html"
+          id="toTheShoppingCart"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-3"
+        >
           Оформити замовлення
         </a>
       </div>
@@ -252,9 +283,11 @@
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
-            <a href="index.html">Головна > </a>
-            <a href="catalog.html">Каталог ></a>
-            <span> Сумка-переноска Vesta</span>
+            <a href="index.html" data-lang="catalog_page-1"> Головна > </a>
+            <a href="catalog.html" data-lang="accessories_page-1">Каталог</a>
+            <span data-lang="carrying-vesta_page-1">
+              Сумка-переноска Vesta</span
+            >
           </div>
         </div>
 
@@ -294,29 +327,53 @@
                 </div>
               </div>
               <div class="item-info-right-text-block">
-                <h1 id="h1">Сумка-переноска Vesta</h1>
-                <p class="item-info-right-text-block-description">
+                <h1 id="h1" data-lang="carrying-vesta_page-2">
+                  Сумка-переноска Vesta
+                </h1>
+                <p
+                  class="item-info-right-text-block-description"
+                  data-lang="carrying-vesta_page-3"
+                >
                   Сумка-переноска має віконця, в які улюбленець може дивитися
                   під час подорожі. М’яке дно і стіни роблять мандрівку
                   комфортною. Господар може нести сумку в руці або на плечі — є
                   зручні ручки і довгий ремінь з м’якою накладкою.
                 </p>
                 <div class="info-block-p">
-                  <p>Бренд: <span>PF Active</span></p>
-                  <p>Розмір: <span>38x22x22 см</span></p>
-                  <p>Матеріал: <span>100% поліестер</span></p>
-                  <p>Колір: <span>Синій</span></p>
-                  <p>Наявність: <span>В наявності</span></p>
+                  <div>
+                    <p data-lang="bed-ascold_page-3">Бренд:</p>
+                    <p>Collar</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-4">Розмір</p>
+                    <p data-lang="carrying-vesta_page-4">38x22x22 см</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-6">Матеріал:</p>
+                    <p data-lang="bed-ascold_page-7">100% поліестер</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-9">Колір:</p>
+                    <p data-lang="carrying-vesta_page-5">Синій</p>
+                  </div>
+                  <div>
+                    <p data-lang="bed-ascold_page-11">Наявність:</p>
+                    <p data-lang="bed-ascold_page-12">В наявності</p>
+                  </div>
                 </div>
-                <p class="size">Розмір:</p>
+                <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="bigGroup" class="check-group">
                     <input type="radio" id="big" name="size" />
-                    <label id="bigLabel">38x22x22 см</label>
+                    <label id="bigLabel" data-lang="carrying-vesta_page-6"
+                      >38x22x22 см</label
+                    >
                   </div>
                 </div>
-                <p class="item-price"><span id="price">1299</span> грн</p>
-                <button id="buy" class="button">КУПИТЬ</button>
+                <p class="item-price"><span id="price">1299</span> ₴</p>
+                <button id="buy" class="button" data-lang="bed-ascold_page-16">
+                  КУПИТЬ
+                </button>
               </div>
             </div>
             <img
@@ -326,6 +383,19 @@
             />
           </div>
         </section>
+
+        <div class="wiki-block">
+          <p data-lang="wiki-title">
+            Введіть те, що вас цікавить і отримуйте інформацію з Вікіпедія
+          </p>
+          <input
+            id="inp"
+            type="text"
+            placeholder="Полиэстер.."
+            onchange="getRandomLinks()"
+          />
+          <ul id="result"></ul>
+        </div>
       </main>
 
       <footer class="footer">
@@ -582,5 +652,6 @@
     <script src="js/items-carrying.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/wiki-api.js"></script>
   </body>
 </html>

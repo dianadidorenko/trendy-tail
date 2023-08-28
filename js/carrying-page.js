@@ -10,6 +10,16 @@ price.addEventListener("click", () => {
 });
 // Aside Menu
 
+// Anchor adding
+window.addEventListener("mousemove", (e) => {
+  if (e.pageY >= 1000) {
+    ancorImg.style.display = "block";
+  } else {
+    ancorImg.style.display = "none";
+  }
+});
+// Anchor adding
+
 // Catalog items add
 import catalog from "./catalog.json" assert { type: "json" };
 // console.log(catalog);

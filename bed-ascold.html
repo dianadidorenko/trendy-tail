@@ -36,8 +36,8 @@
     <!-- Nothing Found Search Page Form -->
     <div class="search-not-found">
       <div class="search-not-found-input__block">
-        <h1 class="search-not-found__body-h1">Упс!</h1>
-        <p class="search-not-found__body-text">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
           Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
         <input
@@ -60,7 +60,7 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
     <div>
       <div id="panel">
         <div class="lang-block container">
@@ -72,6 +72,18 @@
           <input type="checkbox" id="toggle" />
           <label for="toggle"></label>
         </div>
+        <div class="chat-gpt">
+          <a href="chat-gpt.html"
+            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
+          /></a>
+          <p>Chat-Gpt</p>
+        </div>
+        <div class="location-block">
+          <a href="location.html"
+            ><img src="img/location-icon.svg" alt="Location Icon"
+          /></a>
+          <p>Моя локація</p>
+        </div>
       </div>
 
       <p class="slide">
@@ -80,13 +92,13 @@
         /></a>
       </p>
     </div>
-    <!-- Changing Color Theme -->
+    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <!-- Pop Up Added Item To The Shopping Cart -->
     <div id="popUpShoppingCart" class="pop-up-shopping-cart">
       <div class="pop-up-shopping-cart-block">
         <div class="pop-up-shopping-cart-title-info">
-          <p class="pop-up-shopping-cart-title">
+          <p class="pop-up-shopping-cart-title" data-lang="pop-up-cart_page-1">
             ТОВАР УСПІШНО ДОДАНО <br />
             ДО ВАШОГО КОШИКА
           </p>
@@ -98,15 +110,34 @@
           </div>
           <div class="image-and-goods-info-right-part">
             <p id="popUpGoodsTitle">Дощовик ARIEL</p>
-            <p>Розмір: <span id="popUpSize">XS</span></p>
-            <p>Кількість: <span id="popUpQuantity">1</span></p>
-            <p>Ітого: <span id="popUpPrice">705</span> грн</p>
+            <div>
+              <p data-lang="pop-up-cart_page-4">Розмір:</p>
+              <p id="popUpSize">XS</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-5">Кількість:</p>
+              <p id="popUpQuantity">1</p>
+            </div>
+            <div>
+              <p data-lang="pop-up-cart_page-6">Ітого:</p>
+              <p id="popUpPrice">>705</p>
+              <p>₴</p>
+            </div>
           </div>
         </div>
-        <button id="continueBtn" class="pop-up-button">
+        <button
+          id="continueBtn"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-2"
+        >
           Продовжити покупки
         </button>
-        <a href="order.html" id="toTheShoppingCart" class="pop-up-button">
+        <a
+          href="order.html"
+          id="toTheShoppingCart"
+          class="pop-up-button"
+          data-lang="pop-up-cart_page-3"
+        >
           Оформити замовлення
         </a>
       </div>
@@ -394,6 +425,19 @@
             </div>
           </div>
         </section>
+
+        <div class="wiki-block">
+          <p data-lang="wiki-title">
+            Введіть те, що вас цікавить і отримуйте інформацію з Вікіпедія
+          </p>
+          <input
+            id="inp"
+            type="text"
+            placeholder="Полиэстер.."
+            onchange="getRandomLinks()"
+          />
+          <ul id="result"></ul>
+        </div>
       </main>
 
       <footer class="footer">
@@ -663,5 +707,6 @@
     <script src="js/change-language.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/wiki-api.js"></script>
   </body>
 </html>

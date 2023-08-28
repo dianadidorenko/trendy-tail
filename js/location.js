@@ -3,18 +3,18 @@ const button = document.querySelector("button");
 button.addEventListener("click", () => {
   if (navigator.geolocation) {
     //if browser support geolocation api
-    button.innerText = "Allow to detect location";
+    button.innerText = "Дозвольте знайти місцезнаходження";
     // geolocation.getCurrentPosition method is used to get current position of the device
     // it takes three paramaters success, error, options. If everything is right then success
     // callback function will call else error callback function will call. We don't need third paramater for this project
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   } else {
-    button.innerText = "Your browser not support";
+    button.innerText = "Ваш браузер не підтримує";
   }
 });
 
 function onSuccess(position) {
-  button.innerText = "Detecting your location...";
+  button.innerText = "Визначення вашого місцезнаходження...";
   let { latitude, longitude } = position.coords; //getting latitude and longitude properties value from coords obj
   //sending get request to the api with passing latitude and longitude coordinates of the user position
   fetch(
@@ -31,20 +31,20 @@ function onSuccess(position) {
     })
     .catch(() => {
       //if error any error occured
-      button.innerText = "Something went wrong";
+      button.innerText = "Щось пішло не так";
     });
 }
 
 function onError(error) {
   if (error.code == 1) {
     //if user denied the request
-    button.innerText = "You denied the request";
+    button.innerText = "Ви відхилили запит";
   } else if (error.code == 2) {
     //if location in not available
-    button.innerText = "Location is unavailable";
+    button.innerText = "Місцезнаходження недоступне";
   } else {
     //if other error occured
-    button.innerText = "Something went wrong";
+    button.innerText = "Щось пішло не так";
   }
   button.setAttribute("disabled", "true"); //disbaled the button if error occured
 }
