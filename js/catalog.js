@@ -82,424 +82,458 @@ price.addEventListener("click", () => {
 // Aside Menu
 
 // Catalog items add
-import catalog from "./catalog.json" assert { type: "json" };
+// import catalog from "./catalog.json" assert { type: "json" };
 
-for (let i = 0; i < catalog.length; i++) {
-  let catalogueMenuBlockItems = document.querySelector(
-    ".catalogue-menu-block-items"
-  );
+// import catalog from "../catalog.json" assert { type: "json" };
 
-  let catalogueMenuBlockItem = document.createElement("div");
+// if (typeof catalog === "object" && Array.isArray(catalog)) {
+//   console.log("Данные соответствуют ожидаемой структуре");
+// } else {
+//   console.log("Данные имеют неправильный формат");
+// }
 
-  // addind classes depends on inner features
-  // without price range
-  if (catalog[i].type == "clothes") {
-    catalogueMenuBlockItem.className =
-      "catalogue-menu-block-item clothesCategory petFashion";
-  }
-  if (catalog[i].type == "beds") {
-    catalogueMenuBlockItem.className =
-      "catalogue-menu-block-item bedsCategory harleyCho";
-  }
-  if (catalog[i].type == "accessories") {
-    catalogueMenuBlockItem.className =
-      "catalogue-menu-block-item accessoriesCategory trixie";
-  }
-  if (catalog[i].type == "carrying") {
-    catalogueMenuBlockItem.className =
-      "catalogue-menu-block-item carryingCategory collar";
-  }
-  // without price range
+// Создаем новый объект XMLHttpRequest
+var xhr = new XMLHttpRequest();
 
-  // with price range
-  if (catalog[i].priceRange == "first") {
-    catalogueMenuBlockItem.className += " first";
-  }
-  if (catalog[i].priceRange == "second") {
-    catalogueMenuBlockItem.className += " second";
-  }
-  if (catalog[i].priceRange == "third") {
-    catalogueMenuBlockItem.className += " third";
-  }
-  if (catalog[i].priceRange == "fourth") {
-    catalogueMenuBlockItem.className += " fourth";
-  }
-  if (catalog[i].priceRange == "fifth") {
-    catalogueMenuBlockItem.className += " fifth";
-  }
-  // with price range
+// Устанавливаем метод запроса (GET), URL и асинхронный флаг (true)
+xhr.open("GET", "../catalog.json", true);
 
-  // with New and Discount sign
-  if (catalog[i].new == "NEW") {
-    catalogueMenuBlockItem.className += " newItem";
-  }
-  if (catalog[i].discount == "%") {
-    catalogueMenuBlockItem.className += " discountItem";
-  }
-  // with New and Discount sign
-  // addind classes depends on inner features
-  catalogueMenuBlockItems.appendChild(catalogueMenuBlockItem);
+// Устанавливаем заголовок Content-Type (для обработки JSON)
+xhr.setRequestHeader("Content-Type", "application/json");
 
-  let catalogueMenuImage = document.createElement("div");
-  catalogueMenuImage.className = "catalogue-menu-image";
+// Назначаем обработчик события для успешной загрузки данных
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    var jsonData = JSON.parse(xhr.responseText);
+    console.log(jsonData);
 
-  let link1 = document.createElement("a"),
-    link2 = document.createElement("a"),
-    catalogueMenuMainPic = document.createElement("img"),
-    imgSearchIcon = document.createElement("img"),
-    brandCatalog = document.createElement("p"),
-    h3 = document.createElement("h3"),
-    sizes = document.createElement("p"),
-    dotImg = document.createElement("img"),
-    priceCatalog = document.createElement("p"),
-    newTitle = document.createElement("h4"),
-    discountTitle = document.createElement("h4");
+    for (let i = 0; i < jsonData.length; i++) {
+      let catalogueMenuBlockItems = document.querySelector(
+        ".catalogue-menu-block-items"
+      );
 
-  catalogueMenuBlockItem.appendChild(catalogueMenuImage);
-  catalogueMenuImage.appendChild(link1);
-  catalogueMenuImage.appendChild(link2);
+      let catalogueMenuBlockItem = document.createElement("div");
 
-  link1.setAttribute("href", catalog[i].linkOnModel);
-  link2.setAttribute("href", catalog[i].linkOnModel);
-  link1.appendChild(catalogueMenuMainPic);
-  link2.appendChild(dotImg);
-  link2.appendChild(imgSearchIcon).className = "catalogue-menu-search-icon";
+      // addind classes depends on inner features
+      // without price range
+      if (jsonData[i].type == "clothes") {
+        catalogueMenuBlockItem.className =
+          "catalogue-menu-block-item clothesCategory petFashion";
+      }
+      if (jsonData[i].type == "beds") {
+        catalogueMenuBlockItem.className =
+          "catalogue-menu-block-item bedsCategory harleyCho";
+      }
+      if (jsonData[i].type == "accessories") {
+        catalogueMenuBlockItem.className =
+          "catalogue-menu-block-item accessoriesCategory trixie";
+      }
+      if (jsonData[i].type == "carrying") {
+        catalogueMenuBlockItem.className =
+          "catalogue-menu-block-item carryingCategory collar";
+      }
+      // without price range
 
-  catalogueMenuMainPic.className = "catalogue-menu-main-pic";
-  catalogueMenuMainPic.setAttribute("src", "");
-  catalogueMenuMainPic.src = catalog[i].imgPath1;
-  imgSearchIcon.setAttribute("src", "/");
-  imgSearchIcon.src = catalog[i].searchIcon;
+      // with price range
+      if (jsonData[i].priceRange == "first") {
+        catalogueMenuBlockItem.className += " first";
+      }
+      if (jsonData[i].priceRange == "second") {
+        catalogueMenuBlockItem.className += " second";
+      }
+      if (jsonData[i].priceRange == "third") {
+        catalogueMenuBlockItem.className += " third";
+      }
+      if (jsonData[i].priceRange == "fourth") {
+        catalogueMenuBlockItem.className += " fourth";
+      }
+      if (jsonData[i].priceRange == "fifth") {
+        catalogueMenuBlockItem.className += " fifth";
+      }
+      // with price range
 
-  brandCatalog.innerText = catalog[i].brand;
-  catalogueMenuBlockItem.appendChild(brandCatalog).className = "brand";
+      // with New and Discount sign
+      if (jsonData[i].new == "NEW") {
+        catalogueMenuBlockItem.className += " newItem";
+      }
+      if (jsonData[i].discount == "%") {
+        catalogueMenuBlockItem.className += " discountItem";
+      }
+      // with New and Discount sign
+      // addind classes depends on inner features
+      catalogueMenuBlockItems.appendChild(catalogueMenuBlockItem);
 
-  catalogueMenuBlockItem.appendChild(h3);
-  h3.innerText = catalog[i].model;
+      let catalogueMenuImage = document.createElement("div");
+      catalogueMenuImage.className = "catalogue-menu-image";
 
-  catalogueMenuBlockItem.appendChild(sizes).className = "sizes";
-  sizes.innerText = catalog[i].sizes;
+      let link1 = document.createElement("a"),
+        link2 = document.createElement("a"),
+        catalogueMenuMainPic = document.createElement("img"),
+        imgSearchIcon = document.createElement("img"),
+        brandCatalog = document.createElement("p"),
+        h3 = document.createElement("h3"),
+        sizes = document.createElement("p"),
+        dotImg = document.createElement("img"),
+        priceCatalog = document.createElement("p"),
+        newTitle = document.createElement("h4"),
+        discountTitle = document.createElement("h4");
 
-  dotImg.setAttribute("src", "");
-  dotImg.src = catalog[i].dotIcon;
-  catalogueMenuBlockItem.appendChild(dotImg).className = "dot";
+      catalogueMenuBlockItem.appendChild(catalogueMenuImage);
+      catalogueMenuImage.appendChild(link1);
+      catalogueMenuImage.appendChild(link2);
 
-  catalogueMenuBlockItem.appendChild(priceCatalog).className =
-    "catalogue-menu-block-item-price";
-  priceCatalog.innerText = catalog[i].price;
+      link1.setAttribute("href", jsonData[i].linkOnModel);
+      link2.setAttribute("href", jsonData[i].linkOnModel);
+      link1.appendChild(catalogueMenuMainPic);
+      link2.appendChild(dotImg);
+      link2.appendChild(imgSearchIcon).className = "catalogue-menu-search-icon";
 
-  catalogueMenuImage.appendChild(newTitle).className = "new";
-  newTitle.innerText = catalog[i].new;
+      catalogueMenuMainPic.className = "catalogue-menu-main-pic";
+      catalogueMenuMainPic.setAttribute("src", "");
+      catalogueMenuMainPic.src = jsonData[i].imgPath1;
+      imgSearchIcon.setAttribute("src", "/");
+      imgSearchIcon.src = jsonData[i].searchIcon;
 
-  catalogueMenuImage.appendChild(discountTitle).className = "discount";
-  discountTitle.innerText = catalog[i].discount;
-}
-// addind classes depends on inner features
+      brandCatalog.innerText = jsonData[i].brand;
+      catalogueMenuBlockItem.appendChild(brandCatalog).className = "brand";
 
-// Filter
-let bedsCategory = document.querySelectorAll(".bedsCategory"),
-  wearCategory = document.querySelectorAll(".clothesCategory"),
-  accessoriesCategory = document.querySelectorAll(".accessoriesCategory"),
-  carryingCategory = document.querySelectorAll(".carryingCategory"),
-  petFashions = document.querySelectorAll(".petFashion"),
-  harleyChos = document.querySelectorAll(".harleyCho"),
-  collars = document.querySelectorAll(".collar"),
-  trixies = document.querySelectorAll(".trixie"),
-  rangeFirstPriceBlock = document.querySelectorAll(".first"),
-  rangeSecondPriceBlock = document.querySelectorAll(".second"),
-  rangeThirdPriceBlock = document.querySelectorAll(".third"),
-  rangeFourthPriceBlock = document.querySelectorAll(".fourth"),
-  rangeFifthPriceBlock = document.querySelectorAll(".fifth"),
-  newItems = document.querySelectorAll(".newItem"),
-  discountItems = document.querySelectorAll(".discountItem");
+      catalogueMenuBlockItem.appendChild(h3);
+      h3.innerText = jsonData[i].model;
 
-let sizesCatalog = document.querySelectorAll(
-  ".catalogue-menu-block-item-price"
-);
+      catalogueMenuBlockItem.appendChild(sizes).className = "sizes";
+      sizes.innerText = jsonData[i].sizes;
 
-wearCategory.forEach((wear) => {
-  wear.style.display = "flex";
-});
-// Catalog items add
+      dotImg.setAttribute("src", "");
+      dotImg.src = jsonData[i].dotIcon;
+      catalogueMenuBlockItem.appendChild(dotImg).className = "dot";
 
-// New Sign Show
-let newSigns = document.querySelectorAll("h4");
+      catalogueMenuBlockItem.appendChild(priceCatalog).className =
+        "catalogue-menu-block-item-price";
+      priceCatalog.innerText = jsonData[i].price;
 
-newSigns.forEach((newSign) => {
-  if (newSign.innerText != "NEW" && newSign.innerText != "%") {
-    newSign.style.display = "none";
-  }
-});
-// New Sign Show
+      catalogueMenuImage.appendChild(newTitle).className = "new";
+      newTitle.innerText = jsonData[i].new;
 
-// Filter
-// // Filter by price
-rangeFirstPrice.addEventListener("click", () => {
-  sizesCatalog.forEach((price) => {
-    if (parseInt(price.innerText.split(" ")[0]) < 499) {
-      rangeFirstPriceBlock.forEach((first) => {
-        first.style.display = "flex";
-      });
-      rangeSecondPriceBlock.forEach((second) => {
-        second.style.display = "none";
-      });
-      rangeThirdPriceBlock.forEach((third) => {
-        third.style.display = "none";
-      });
-      rangeFourthPriceBlock.forEach((fourth) => {
-        fourth.style.display = "none";
-      });
-      rangeFifthPriceBlock.forEach((fifth) => {
-        fifth.style.display = "none";
-      });
+      catalogueMenuImage.appendChild(discountTitle).className = "discount";
+      discountTitle.innerText = jsonData[i].discount;
     }
-  });
-});
-rangeSecondPrice.addEventListener("click", () => {
-  sizesCatalog.forEach((price) => {
-    if (
-      parseInt(price.innerText.split(" ")[0]) >= 500 &&
-      parseInt(price.innerText.split(" ")[0]) <= 999
-    ) {
-      rangeFirstPriceBlock.forEach((first) => {
-        first.style.display = "none";
-      });
-      rangeSecondPriceBlock.forEach((second) => {
-        second.style.display = "flex";
-      });
-      rangeThirdPriceBlock.forEach((third) => {
-        third.style.display = "none";
-      });
-      rangeFourthPriceBlock.forEach((fourth) => {
-        fourth.style.display = "none";
-      });
-      rangeFifthPriceBlock.forEach((fifth) => {
-        fifth.style.display = "none";
-      });
-    }
-  });
-});
-rangeThirdPrice.addEventListener("click", () => {
-  sizesCatalog.forEach((price) => {
-    if (
-      parseInt(price.innerText.split(" ")[0]) >= 1000 &&
-      parseInt(price.innerText.split(" ")[0]) <= 1499
-    ) {
-      rangeFirstPriceBlock.forEach((first) => {
-        first.style.display = "none";
-      });
-      rangeSecondPriceBlock.forEach((second) => {
-        second.style.display = "none";
-      });
-      rangeThirdPriceBlock.forEach((third) => {
-        third.style.display = "flex";
-      });
-      rangeFourthPriceBlock.forEach((fourth) => {
-        fourth.style.display = "none";
-      });
-      rangeFifthPriceBlock.forEach((fifth) => {
-        fifth.style.display = "none";
-      });
-    }
-  });
-});
-rangeFourthPrice.addEventListener("click", () => {
-  sizesCatalog.forEach((price) => {
-    if (
-      parseInt(price.innerText.split(" ")[0]) >= 1500 &&
-      parseInt(price.innerText.split(" ")[0]) <= 1999
-    ) {
-      rangeFirstPriceBlock.forEach((first) => {
-        first.style.display = "none";
-      });
-      rangeSecondPriceBlock.forEach((second) => {
-        second.style.display = "none";
-      });
-      rangeThirdPriceBlock.forEach((third) => {
-        third.style.display = "none";
-      });
-      rangeFourthPriceBlock.forEach((fourth) => {
-        fourth.style.display = "flex";
-      });
-      rangeFifthPriceBlock.forEach((fifth) => {
-        fifth.style.display = "none";
-      });
-    }
-  });
-});
-rangeFifthPrice.addEventListener("click", () => {
-  sizesCatalog.forEach((price) => {
-    if (parseInt(price.innerText.split(" ")[0]) >= 1999) {
-      rangeFirstPriceBlock.forEach((first) => {
-        first.style.display = "none";
-      });
-      rangeSecondPriceBlock.forEach((second) => {
-        second.style.display = "none";
-      });
-      rangeThirdPriceBlock.forEach((third) => {
-        third.style.display = "none";
-      });
-      rangeFourthPriceBlock.forEach((fourth) => {
-        fourth.style.display = "none";
-      });
-      rangeFifthPriceBlock.forEach((fifth) => {
-        fifth.style.display = "flex";
-      });
-    }
-  });
-});
-// Filter by price
 
-// Filter by category, brand
-let inputs = document.querySelectorAll("input");
+    // Filter
+    let bedsCategory = document.querySelectorAll(".bedsCategory"),
+      wearCategory = document.querySelectorAll(".clothesCategory"),
+      accessoriesCategory = document.querySelectorAll(".accessoriesCategory"),
+      carryingCategory = document.querySelectorAll(".carryingCategory"),
+      petFashions = document.querySelectorAll(".petFashion"),
+      harleyChos = document.querySelectorAll(".harleyCho"),
+      collars = document.querySelectorAll(".collar"),
+      trixies = document.querySelectorAll(".trixie"),
+      rangeFirstPriceBlock = document.querySelectorAll(".first"),
+      rangeSecondPriceBlock = document.querySelectorAll(".second"),
+      rangeThirdPriceBlock = document.querySelectorAll(".third"),
+      rangeFourthPriceBlock = document.querySelectorAll(".fourth"),
+      rangeFifthPriceBlock = document.querySelectorAll(".fifth"),
+      newItems = document.querySelectorAll(".newItem"),
+      discountItems = document.querySelectorAll(".discountItem");
 
-inputs.forEach((input) => {
-  input.addEventListener("click", (e) => {
-    let catalogueMenuBlockItem = document.querySelectorAll(
-      ".catalogue-menu-block-item"
+    let sizesCatalog = document.querySelectorAll(
+      ".catalogue-menu-block-item-price"
     );
-    if (e.target.id == "wear") {
-      wearCategory.forEach((wear) => {
-        wear.style.display = "flex";
-      });
-      bedsCategory.forEach((beds) => {
-        beds.style.display = "none";
-      });
-      accessoriesCategory.forEach((accessories) => {
-        accessories.style.display = "none";
-      });
-      carryingCategory.forEach((carrying) => {
-        carrying.style.display = "none";
-      });
-    } else if (e.target.id == "beds") {
-      wearCategory.forEach((wear) => {
-        wear.style.display = "none";
-      });
-      bedsCategory.forEach((beds) => {
-        beds.style.display = "flex";
-      });
-      accessoriesCategory.forEach((accessories) => {
-        accessories.style.display = "none";
-      });
-      carryingCategory.forEach((carrying) => {
-        carrying.style.display = "none";
-      });
-    } else if (e.target.id == "accessories") {
-      wearCategory.forEach((wear) => {
-        wear.style.display = "none";
-      });
-      bedsCategory.forEach((beds) => {
-        beds.style.display = "none";
-      });
-      accessoriesCategory.forEach((accessories) => {
-        accessories.style.display = "flex";
-      });
-      carryingCategory.forEach((carrying) => {
-        carrying.style.display = "none";
-      });
-    } else if (e.target.id == "carrying") {
-      wearCategory.forEach((wear) => {
-        wear.style.display = "none";
-      });
-      bedsCategory.forEach((beds) => {
-        beds.style.display = "none";
-      });
-      accessoriesCategory.forEach((accessories) => {
-        accessories.style.display = "none";
-      });
-      carryingCategory.forEach((carrying) => {
-        carrying.style.display = "flex";
-      });
-    } else if (e.target.id == "petFashion") {
-      petFashions.forEach((pf) => {
-        pf.style.display = "flex";
-      });
-      harleyChos.forEach((hc) => {
-        hc.style.display = "none";
-      });
-      collars.forEach((c) => {
-        c.style.display = "none";
-      });
-      trixies.forEach((t) => {
-        t.style.display = "none";
-      });
-    } else if (e.target.id == "harleyCho") {
-      petFashions.forEach((pf) => {
-        pf.style.display = "none";
-      });
-      harleyChos.forEach((hc) => {
-        hc.style.display = "flex";
-      });
-      collars.forEach((c) => {
-        c.style.display = "none";
-      });
-      trixies.forEach((t) => {
-        t.style.display = "none";
-      });
-    } else if (e.target.id == "trixie") {
-      petFashions.forEach((pf) => {
-        pf.style.display = "none";
-      });
-      harleyChos.forEach((hc) => {
-        hc.style.display = "none";
-      });
-      collars.forEach((c) => {
-        c.style.display = "none";
-      });
-      trixies.forEach((t) => {
-        t.style.display = "flex";
-      });
-    } else if (e.target.id == "collar") {
-      petFashions.forEach((pf) => {
-        pf.style.display = "none";
-      });
-      harleyChos.forEach((hc) => {
-        hc.style.display = "none";
-      });
-      collars.forEach((c) => {
-        c.style.display = "flex";
-      });
-      trixies.forEach((t) => {
-        t.style.display = "none";
-      });
-    } else if (e.target.id == "newInput") {
-      brandMenuCategory.style.display = "none";
-      catalogueMenuCategory.style.display = "none";
-      priceMenuCategory.style.display = "none";
-      asideArrowCategory.style.transform = "rotate(0deg)";
-      asideArrowBrand.style.transform = "rotate(0deg)";
-      asideArrowPrice.style.transform = "rotate(0deg)";
-      catalogueMenuBlockItem.forEach((item) => {
-        if (!item.classList.contains("newItem")) {
-          item.style.display = "none";
+
+    wearCategory.forEach((wear) => {
+      wear.style.display = "flex";
+    });
+    // Catalog items add
+
+    // New Sign Show
+    let newSigns = document.querySelectorAll("h4");
+
+    newSigns.forEach((newSign) => {
+      if (newSign.innerText != "NEW" && newSign.innerText != "%") {
+        newSign.style.display = "none";
+      }
+    });
+    // New Sign Show
+
+    // Filter
+    // // Filter by price
+    rangeFirstPrice.addEventListener("click", () => {
+      sizesCatalog.forEach((price) => {
+        if (parseInt(price.innerText.split(" ")[0]) < 499) {
+          rangeFirstPriceBlock.forEach((first) => {
+            first.style.display = "flex";
+          });
+          rangeSecondPriceBlock.forEach((second) => {
+            second.style.display = "none";
+          });
+          rangeThirdPriceBlock.forEach((third) => {
+            third.style.display = "none";
+          });
+          rangeFourthPriceBlock.forEach((fourth) => {
+            fourth.style.display = "none";
+          });
+          rangeFifthPriceBlock.forEach((fifth) => {
+            fifth.style.display = "none";
+          });
         }
       });
-      newItems.forEach((ni) => {
-        ni.style.display = "flex";
-      });
-      discountItems.forEach((di) => {
-        di.style.display = "none";
-      });
-    } else if (e.target.id == "discountInput") {
-      brandMenuCategory.style.display = "none";
-      catalogueMenuCategory.style.display = "none";
-      priceMenuCategory.style.display = "none";
-      asideArrowCategory.style.transform = "rotate(0deg)";
-      asideArrowBrand.style.transform = "rotate(0deg)";
-      asideArrowPrice.style.transform = "rotate(0deg)";
-      catalogueMenuBlockItem.forEach((item) => {
-        if (!item.classList.contains("discountItem")) {
-          item.style.display = "none";
+    });
+    rangeSecondPrice.addEventListener("click", () => {
+      sizesCatalog.forEach((price) => {
+        if (
+          parseInt(price.innerText.split(" ")[0]) >= 500 &&
+          parseInt(price.innerText.split(" ")[0]) <= 999
+        ) {
+          rangeFirstPriceBlock.forEach((first) => {
+            first.style.display = "none";
+          });
+          rangeSecondPriceBlock.forEach((second) => {
+            second.style.display = "flex";
+          });
+          rangeThirdPriceBlock.forEach((third) => {
+            third.style.display = "none";
+          });
+          rangeFourthPriceBlock.forEach((fourth) => {
+            fourth.style.display = "none";
+          });
+          rangeFifthPriceBlock.forEach((fifth) => {
+            fifth.style.display = "none";
+          });
         }
       });
-      newItems.forEach((ni) => {
-        ni.style.display = "none";
+    });
+    rangeThirdPrice.addEventListener("click", () => {
+      sizesCatalog.forEach((price) => {
+        if (
+          parseInt(price.innerText.split(" ")[0]) >= 1000 &&
+          parseInt(price.innerText.split(" ")[0]) <= 1499
+        ) {
+          rangeFirstPriceBlock.forEach((first) => {
+            first.style.display = "none";
+          });
+          rangeSecondPriceBlock.forEach((second) => {
+            second.style.display = "none";
+          });
+          rangeThirdPriceBlock.forEach((third) => {
+            third.style.display = "flex";
+          });
+          rangeFourthPriceBlock.forEach((fourth) => {
+            fourth.style.display = "none";
+          });
+          rangeFifthPriceBlock.forEach((fifth) => {
+            fifth.style.display = "none";
+          });
+        }
       });
-      discountItems.forEach((di) => {
-        di.style.display = "flex";
+    });
+    rangeFourthPrice.addEventListener("click", () => {
+      sizesCatalog.forEach((price) => {
+        if (
+          parseInt(price.innerText.split(" ")[0]) >= 1500 &&
+          parseInt(price.innerText.split(" ")[0]) <= 1999
+        ) {
+          rangeFirstPriceBlock.forEach((first) => {
+            first.style.display = "none";
+          });
+          rangeSecondPriceBlock.forEach((second) => {
+            second.style.display = "none";
+          });
+          rangeThirdPriceBlock.forEach((third) => {
+            third.style.display = "none";
+          });
+          rangeFourthPriceBlock.forEach((fourth) => {
+            fourth.style.display = "flex";
+          });
+          rangeFifthPriceBlock.forEach((fifth) => {
+            fifth.style.display = "none";
+          });
+        }
       });
-    }
-  });
-});
-// Filter by category, brand
-// Filter
+    });
+    rangeFifthPrice.addEventListener("click", () => {
+      sizesCatalog.forEach((price) => {
+        if (parseInt(price.innerText.split(" ")[0]) >= 1999) {
+          rangeFirstPriceBlock.forEach((first) => {
+            first.style.display = "none";
+          });
+          rangeSecondPriceBlock.forEach((second) => {
+            second.style.display = "none";
+          });
+          rangeThirdPriceBlock.forEach((third) => {
+            third.style.display = "none";
+          });
+          rangeFourthPriceBlock.forEach((fourth) => {
+            fourth.style.display = "none";
+          });
+          rangeFifthPriceBlock.forEach((fifth) => {
+            fifth.style.display = "flex";
+          });
+        }
+      });
+    });
+    // Filter by price
+
+    // Filter by category, brand
+    let inputs = document.querySelectorAll("input");
+
+    inputs.forEach((input) => {
+      input.addEventListener("click", (e) => {
+        let catalogueMenuBlockItem = document.querySelectorAll(
+          ".catalogue-menu-block-item"
+        );
+        if (e.target.id == "wear") {
+          wearCategory.forEach((wear) => {
+            wear.style.display = "flex";
+          });
+          bedsCategory.forEach((beds) => {
+            beds.style.display = "none";
+          });
+          accessoriesCategory.forEach((accessories) => {
+            accessories.style.display = "none";
+          });
+          carryingCategory.forEach((carrying) => {
+            carrying.style.display = "none";
+          });
+        } else if (e.target.id == "beds") {
+          wearCategory.forEach((wear) => {
+            wear.style.display = "none";
+          });
+          bedsCategory.forEach((beds) => {
+            beds.style.display = "flex";
+          });
+          accessoriesCategory.forEach((accessories) => {
+            accessories.style.display = "none";
+          });
+          carryingCategory.forEach((carrying) => {
+            carrying.style.display = "none";
+          });
+        } else if (e.target.id == "accessories") {
+          wearCategory.forEach((wear) => {
+            wear.style.display = "none";
+          });
+          bedsCategory.forEach((beds) => {
+            beds.style.display = "none";
+          });
+          accessoriesCategory.forEach((accessories) => {
+            accessories.style.display = "flex";
+          });
+          carryingCategory.forEach((carrying) => {
+            carrying.style.display = "none";
+          });
+        } else if (e.target.id == "carrying") {
+          wearCategory.forEach((wear) => {
+            wear.style.display = "none";
+          });
+          bedsCategory.forEach((beds) => {
+            beds.style.display = "none";
+          });
+          accessoriesCategory.forEach((accessories) => {
+            accessories.style.display = "none";
+          });
+          carryingCategory.forEach((carrying) => {
+            carrying.style.display = "flex";
+          });
+        } else if (e.target.id == "petFashion") {
+          petFashions.forEach((pf) => {
+            pf.style.display = "flex";
+          });
+          harleyChos.forEach((hc) => {
+            hc.style.display = "none";
+          });
+          collars.forEach((c) => {
+            c.style.display = "none";
+          });
+          trixies.forEach((t) => {
+            t.style.display = "none";
+          });
+        } else if (e.target.id == "harleyCho") {
+          petFashions.forEach((pf) => {
+            pf.style.display = "none";
+          });
+          harleyChos.forEach((hc) => {
+            hc.style.display = "flex";
+          });
+          collars.forEach((c) => {
+            c.style.display = "none";
+          });
+          trixies.forEach((t) => {
+            t.style.display = "none";
+          });
+        } else if (e.target.id == "trixie") {
+          petFashions.forEach((pf) => {
+            pf.style.display = "none";
+          });
+          harleyChos.forEach((hc) => {
+            hc.style.display = "none";
+          });
+          collars.forEach((c) => {
+            c.style.display = "none";
+          });
+          trixies.forEach((t) => {
+            t.style.display = "flex";
+          });
+        } else if (e.target.id == "collar") {
+          petFashions.forEach((pf) => {
+            pf.style.display = "none";
+          });
+          harleyChos.forEach((hc) => {
+            hc.style.display = "none";
+          });
+          collars.forEach((c) => {
+            c.style.display = "flex";
+          });
+          trixies.forEach((t) => {
+            t.style.display = "none";
+          });
+        } else if (e.target.id == "newInput") {
+          brandMenuCategory.style.display = "none";
+          catalogueMenuCategory.style.display = "none";
+          priceMenuCategory.style.display = "none";
+          asideArrowCategory.style.transform = "rotate(0deg)";
+          asideArrowBrand.style.transform = "rotate(0deg)";
+          asideArrowPrice.style.transform = "rotate(0deg)";
+          catalogueMenuBlockItem.forEach((item) => {
+            if (!item.classList.contains("newItem")) {
+              item.style.display = "none";
+            }
+          });
+          newItems.forEach((ni) => {
+            ni.style.display = "flex";
+          });
+          discountItems.forEach((di) => {
+            di.style.display = "none";
+          });
+        } else if (e.target.id == "discountInput") {
+          brandMenuCategory.style.display = "none";
+          catalogueMenuCategory.style.display = "none";
+          priceMenuCategory.style.display = "none";
+          asideArrowCategory.style.transform = "rotate(0deg)";
+          asideArrowBrand.style.transform = "rotate(0deg)";
+          asideArrowPrice.style.transform = "rotate(0deg)";
+          catalogueMenuBlockItem.forEach((item) => {
+            if (!item.classList.contains("discountItem")) {
+              item.style.display = "none";
+            }
+          });
+          newItems.forEach((ni) => {
+            ni.style.display = "none";
+          });
+          discountItems.forEach((di) => {
+            di.style.display = "flex";
+          });
+        }
+      });
+    });
+    // Filter by category, brand
+    // Filter
+  }
+};
+
+// Назначаем обработчик события для ошибки
+xhr.onerror = function () {
+  console.error("Ошибка при загрузке данных.");
+};
+
+// Отправляем запрос
+xhr.send();
+
+// addind classes depends on inner features
