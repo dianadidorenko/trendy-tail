@@ -44,6 +44,8 @@ function getUserInfo() {
 
 getUserInfo();
 
+let name = localStorage.getItem("userFirstAndLastName");
+
 function displayItems() {
   let items = "";
 
@@ -51,9 +53,7 @@ function displayItems() {
   items = `<div class="comment">
               <p class='date'>10.08.2023</p>
               <div class='items'>
-                <p class='username'>${localStorage.getItem(
-                  "userFirstAndLastName"
-                )}</p>
+                <p class='username'>${name}</p>
                 <p class='comment-text'>Все було супер, я задоволена якістю.</p>
                 <div class="example-star-block">
                       <img src="img/feedback/star.svg" />
