@@ -39,12 +39,12 @@ xhr.onload = function () {
 
     console.log(jsonData);
 
-    // 45
+    // 22
     for (var i = 0; i < itemsOrder.length; i++) {
       items += `<div class="order-block-info" data-id='${jsonData[i].id}'>
                 <div class="order-block-info-left-part">
                   <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    22
+                    45
                   )}'/>
                 </div>
                 <div class="order-block-info-right-part">
