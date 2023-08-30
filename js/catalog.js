@@ -81,22 +81,11 @@ price.addEventListener("click", () => {
 });
 // Aside Menu
 
-// Catalog items add
-// import catalog from "./catalog.json" assert { type: "json" };
-
-// import catalog from "../catalog.json" assert { type: "json" };
-
-// if (typeof catalog === "object" && Array.isArray(catalog)) {
-//   console.log("Данные соответствуют ожидаемой структуре");
-// } else {
-//   console.log("Данные имеют неправильный формат");
-// }
-
 // Создаем новый объект XMLHttpRequest
 var xhr = new XMLHttpRequest();
 
 // Устанавливаем метод запроса (GET), URL и асинхронный флаг (true)
-xhr.open("GET", "../catalog.json", true);
+xhr.open("GET", "./catalog.json", true);
 
 // Устанавливаем заголовок Content-Type (для обработки JSON)
 xhr.setRequestHeader("Content-Type", "application/json");

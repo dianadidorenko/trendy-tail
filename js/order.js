@@ -23,7 +23,7 @@ if (!localStorage.getItem("orderItems")) {
 var xhr = new XMLHttpRequest();
 
 // Устанавливаем метод запроса (GET), URL и асинхронный флаг (true)
-xhr.open("GET", "../catalog.json", true);
+xhr.open("GET", "./catalog.json", true);
 
 // Устанавливаем заголовок Content-Type (для обработки JSON)
 xhr.setRequestHeader("Content-Type", "application/json");
