@@ -16,36 +16,6 @@ if (localStorage.getItem("items")) {
   feedback.style.paddingBottom = "70px";
 }
 
-function getUserInfo() {
-  let request;
-  if (window.XMLHttpRequest) {
-    request = new XMLHttpRequest();
-  } else {
-    request = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  request.open("GET", "https://randomuser.me/api/");
-  request.onload = function () {
-    if (request.status === 200) {
-      let weatherObject = JSON.parse(request.response);
-      // console.log(weatherObject.results[0]);
-
-      var userFirstAndLastName =
-        weatherObject.results[0].name.first +
-        " " +
-        weatherObject.results[0].name.last;
-
-      localStorage.setItem("userFirstAndLastName", userFirstAndLastName);
-    } else if (request.status == 404) {
-      alret("Щось пішло не так");
-    }
-  };
-  request.send();
-}
-
-getUserInfo();
-
-let name = localStorage.getItem("userFirstAndLastName");
-
 function displayItems() {
   let items = "";
 
@@ -53,7 +23,7 @@ function displayItems() {
   items = `<div class="comment">
               <p class='date'>10.08.2023</p>
               <div class='items'>
-                <p class='username'>${name}</p>
+                <p class='username'>${localStorage.getItem("username")}</p>
                 <p class='comment-text'>Все було супер, я задоволена якістю.</p>
                 <div class="example-star-block">
                       <img src="img/feedback/star.svg" />

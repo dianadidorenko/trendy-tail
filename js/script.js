@@ -115,3 +115,32 @@ window.addEventListener("mousemove", (e) => {
   }
 });
 // Anchor adding
+
+// Addind name to the Feedback page
+function getUserInfo() {
+  let request;
+  if (window.XMLHttpRequest) {
+    request = new XMLHttpRequest();
+  } else {
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  request.open("GET", "https://randomuser.me/api/");
+  request.onload = function () {
+    if (request.status === 200) {
+      let usernameObject = JSON.parse(request.response);
+
+      let userFirstAndLastName =
+        usernameObject.results[0].name.first +
+        " " +
+        usernameObject.results[0].name.last;
+
+      localStorage.setItem("username", userFirstAndLastName);
+    } else if (request.status == 404) {
+      alret("Щось пішло не так");
+    }
+  };
+  request.send();
+}
+
+getUserInfo();
+// Addind name to the Feedback page
