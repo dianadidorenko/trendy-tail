@@ -33,6 +33,13 @@
   stroke: rgba(142, 142, 142, 0.49);
   filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 10px 10px 70px 70px;
+  transform: translate(0px, 100%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+.phone-block.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .phone-block a {
   color: var(--contact-page-color);
@@ -73,6 +80,13 @@
   stroke: rgba(142, 142, 142, 0.49);
   filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 20px;
+  transform: translate(0px, 100%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+.opening-hours-block.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .opening-hours-block p {
   font-size: 22px;
@@ -96,6 +110,13 @@
   stroke: rgba(142, 142, 142, 0.49);
   filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 70px 70px 10px 10px;
+  transform: translate(0px, 60%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+.mail-block.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .mail-block a {
   color: var(--contact-page-color);

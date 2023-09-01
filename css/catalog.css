@@ -135,6 +135,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
 }
 
 .catalog-new-block {
@@ -142,6 +147,12 @@
   max-width: 1000px;
   padding: 0 50px;
   position: relative;
+}
+
+.new-page.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .bg-img {
@@ -847,6 +858,17 @@ input[type=checkbox]:disabled::after {
   border-radius: 10px;
   gap: 50px 56px;
   padding: 50px;
+  -webkit-transform: translate(0px, 5%);
+          transform: translate(0px, 5%);
+  opacity: 0;
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
+}
+
+.catalogue-menu-block-items.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .catalogue-menu-block-item {

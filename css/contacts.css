@@ -56,6 +56,17 @@
   -webkit-filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
           filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 10px 10px 70px 70px;
+  -webkit-transform: translate(0px, 100%);
+          transform: translate(0px, 100%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.phone-block.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .phone-block a {
@@ -113,6 +124,17 @@
   -webkit-filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
           filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 20px;
+  -webkit-transform: translate(0px, 100%);
+          transform: translate(0px, 100%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.opening-hours-block.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .opening-hours-block p {
@@ -148,6 +170,17 @@
   -webkit-filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
           filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 70px 70px 10px 10px;
+  -webkit-transform: translate(0px, 60%);
+          transform: translate(0px, 60%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.mail-block.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .mail-block a {

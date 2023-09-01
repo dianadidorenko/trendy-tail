@@ -116,7 +116,7 @@ window.addEventListener("mousemove", (e) => {
 });
 // Anchor adding
 
-// Addind name to the Feedback page
+// Adding name to the Feedback page
 function getUserInfo() {
   let request;
   if (window.XMLHttpRequest) {
@@ -143,4 +143,4 @@ function getUserInfo() {
 }
 
 getUserInfo();
-// Addind name to the Feedback page
+// Adding name to the Feedback page

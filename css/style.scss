@@ -1034,6 +1034,9 @@ h1 {
   max-width: 795px;
   text-align: center;
   padding-bottom: 11px;
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
 }
 .welcome-title h2 {
   font-size: 21px;
@@ -1041,6 +1044,14 @@ h1 {
   max-width: 514px;
   padding-bottom: 51px;
   line-height: 130%; /* 50/55 */
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+h1.active,
+.welcome-title h2.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .welcome-title-middle-block {
   display: flex;
@@ -1275,7 +1286,6 @@ h1 {
     bottom: 10px !important;
   }
 }
-
 @media (max-width: 450px) {
   .main-swiper-button-next,
   .main-swiper-button-prev {
@@ -1326,6 +1336,13 @@ h1 {
   line-height: 160.5%;
   text-align: center;
   max-width: 650px;
+  transform: translate(0px, 100%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+.about-us-block-right-block-text.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 @media (max-width: 1600px) {
@@ -1404,6 +1421,28 @@ h1 {
 .catalogue-menu__item {
   position: relative;
 }
+.catalogue-menu__item_1,
+.catalogue-menu__item_4 {
+  transform: translate(0px, 20%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.catalogue-menu__item_2,
+.catalogue-menu__item_5 {
+  transform: translate(0px, 40%);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
+}
+.catalogue-menu__item_3,
+.catalogue-menu__item_6 {
+  transform: translate(0px, 60%);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
+}
+.catalogue-menu__item.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
 .catalogue-menu__item img {
   width: 400px;
   height: 300px;
@@ -1413,7 +1452,6 @@ h1 {
   border-radius: 30px;
   border: 5px solid #f8f8f8, rgba(248, 248, 248, 0.7);
 }
-
 .catalogue-menu__item img:hover {
   filter: blur(0);
   transition: all 0.3s ease 0s;

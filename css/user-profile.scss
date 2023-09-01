@@ -15,16 +15,6 @@
   padding-bottom: 40px;
   position: relative;
 }
-#img1 {
-  position: absolute;
-  right: 0;
-  top: 0px;
-  border-radius: 10px;
-  max-width: 130px;
-  max-height: 90px;
-  object-fit: cover;
-  box-shadow: 0px 0px 20px 0px white;
-}
 .user-profile__container {
   display: flex;
   flex-direction: column;
@@ -37,10 +27,16 @@
   border-radius: 20px;
   border: 8px double var(--dark-blue-color);
   box-shadow: 0px 0px 20px 0px white;
+  transform: translate(0px, 50%);
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+.user-profile-info-block.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 #profileForm {
   padding-top: 50px;
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px 10px;
@@ -94,19 +90,19 @@
   position: absolute;
   max-width: 600px;
   border-radius: 10%;
-  left: -500px;
-  top: 40px;
+  left: 20px;
+  top: 600px;
   z-index: -1;
   border: 3px solid rgba(208, 208, 208, 0.086);
   box-shadow: 0px 0px 20px 0px rgb(196, 196, 196);
 }
 .profile-form-image2 {
   position: absolute;
-  max-width: 600px;
-  height: 600px;
+  width: 550px;
+  height: 700px;
   border-radius: 10%;
-  right: -400px;
-  top: -250px;
+  right: 50px;
+  top: 200px;
   z-index: -1;
   object-fit: cover;
   transform: scaleX(-1);
@@ -114,6 +110,16 @@
   -ms-filter: "FlipV";
   border: 3px solid rgba(208, 208, 208, 0.086);
   box-shadow: 0px 0px 20px 0px rgb(196, 196, 196);
+}
+#img1 {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  border-radius: 10px;
+  max-width: 130px;
+  max-height: 90px;
+  object-fit: cover;
+  box-shadow: 0px 0px 20px 0px white;
 }
 #profileBtn {
   max-width: 200px;
@@ -149,13 +155,36 @@
   box-shadow: 1px 1px 12px 3px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 1300px) {
+  .profile-form-image2 {
+    width: 450px;
+    height: 550px;
+  }
+}
+@media (max-width: 1000px) {
+  .profile-form-image2 {
+    width: 350px;
+    height: 450px;
+  }
+  .profile-form-image1 {
+    max-width: 400px;
+    left: 20px;
+    top: 800px;
+  }
+}
+@media (max-width: 850px) {
+  .profile-form-image2,
+  .profile-form-image1 {
+    display: none;
+  }
+}
 @media (max-width: 767.98px) {
   label {
     font-size: 15px;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   .input-block input {
     max-width: 200px;
   }
@@ -174,8 +203,17 @@
   .user-title-image {
     padding-bottom: 20px;
   }
+  #img1 {
+    max-height: 75px;
+  }
 }
 @media (max-width: 390px) {
+  .user-title-image h3 {
+    font-size: 16px;
+  }
+  .user-profile-info-block {
+    padding: 20px 20px 30px 20px;
+  }
   .input-block input {
     max-width: 160px;
     font-size: 12px;
@@ -193,5 +231,11 @@
   }
   .input-label {
     column-gap: 5px;
+  }
+  .error {
+    font-size: 12px;
+  }
+  #img1 {
+    max-height: 70px;
   }
 }

@@ -16,6 +16,24 @@
     padding-top: 30px;
   }
 }
+.about-us-block-right-block-text {
+  font-size: 18px;
+  line-height: 160.5%;
+  text-align: center;
+  max-width: 650px;
+  -webkit-transform: translate(0px, 100%);
+          transform: translate(0px, 100%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.about-us-block-right-block-text.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+}
+
 .page__our-mission {
   padding-bottom: 100px;
 }
@@ -38,6 +56,20 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.our-mission__main-block p {
+  -webkit-transform: translate(0px, 100%);
+          transform: translate(0px, 100%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.our-mission__main-block p.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .our-mission__main-block div {

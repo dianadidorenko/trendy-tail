@@ -1244,6 +1244,11 @@ h1 {
   max-width: 795px;
   text-align: center;
   padding-bottom: 11px;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
 }
 
 .welcome-title h2 {
@@ -1252,6 +1257,18 @@ h1 {
   max-width: 514px;
   padding-bottom: 51px;
   line-height: 130%; /* 50/55 */
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+h1.active,
+.welcome-title h2.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .welcome-title-middle-block {
@@ -1586,6 +1603,17 @@ h1 {
   line-height: 160.5%;
   text-align: center;
   max-width: 650px;
+  -webkit-transform: translate(0px, 100%);
+          transform: translate(0px, 100%);
+  opacity: 0;
+  -webkit-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+.about-us-block-right-block-text.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 @media (max-width: 1600px) {
@@ -1683,6 +1711,39 @@ h1 {
 
 .catalogue-menu__item {
   position: relative;
+}
+
+.catalogue-menu__item_1,
+.catalogue-menu__item_4 {
+  -webkit-transform: translate(0px, 20%);
+          transform: translate(0px, 20%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.catalogue-menu__item_2,
+.catalogue-menu__item_5 {
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
+}
+
+.catalogue-menu__item_3,
+.catalogue-menu__item_6 {
+  -webkit-transform: translate(0px, 60%);
+          transform: translate(0px, 60%);
+  opacity: 0;
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
+}
+
+.catalogue-menu__item.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .catalogue-menu__item img {

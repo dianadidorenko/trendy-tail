@@ -112,12 +112,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: translate(0px, 40%);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
 }
 .catalog-new-block {
   margin: 100px auto;
   max-width: 1000px;
   padding: 0 50px;
   position: relative;
+}
+.new-page.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .bg-img {
   max-width: 1000px;
@@ -624,6 +631,13 @@ input[type="checkbox"]:disabled::after {
   border-radius: 10px;
   gap: 50px 56px;
   padding: 50px;
+  transform: translate(0px, 5%);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
+}
+.catalogue-menu-block-items.active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .catalogue-menu-block-item {
   display: flex;

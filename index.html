@@ -249,10 +249,10 @@
               />
             </div>
             <div class="welcome-title-middle-block">
-              <h1 data-lang="home_page-6">
+              <h1 class="anim-items anim-no-hide" data-lang="home_page-6">
                 Якісні зоотовари від виробника для ваших улюбленців
               </h1>
-              <h2 data-lang="home_page-7">
+              <h2 class="anim-items anim-no-hide" data-lang="home_page-7">
                 Онлайн магазин з продажу товарів для домашніх тварин з доставкою
                 по всій Україні
               </h2>
@@ -343,7 +343,7 @@
                     alt="TrendyTail logo"
                   />
                   <p
-                    class="about-us-block-right-block-text"
+                    class="about-us-block-right-block-text anim-items anim-no-hide"
                     data-lang="home_page-10"
                   >
                     Давним-давно група любителів собак відкрила інтернет-магазин
@@ -374,14 +374,18 @@
             />
             <h2 class="page-title" data-lang="home_page-11">КАТАЛОГ</h2>
             <div class="catalogue-menu__items">
-              <div class="catalogue-menu__item">
+              <div
+                class="catalogue-menu__item catalogue-menu__item_1 anim-items anim-no-hide"
+              >
                 <img
                   src="img/main-page/CATALOG/new.jpg"
                   alt="Фото Категорія Ліжаки"
                 />
                 <a href="new-page.html" data-lang="home_page-12">НОВИНКИ</a>
               </div>
-              <div class="catalogue-menu__item">
+              <div
+                class="catalogue-menu__item catalogue-menu__item_2 anim-items anim-no-hide"
+              >
                 <img
                   src="img/main-page/CATALOG/accessories.jpg"
                   alt="Фото Категорія Аксесуари"
@@ -391,7 +395,9 @@
                 >
               </div>
 
-              <div class="catalogue-menu__item">
+              <div
+                class="catalogue-menu__item catalogue-menu__item_3 anim-items anim-no-hide"
+              >
                 <img
                   src="img/main-page/CATALOG/clothes.jpg"
                   alt="Фото Категорія Одяг"
@@ -399,7 +405,9 @@
                 <a href="clothes-page.html" data-lang="home_page-14">ОДЯГ</a>
               </div>
 
-              <div class="catalogue-menu__item">
+              <div
+                class="catalogue-menu__item catalogue-menu__item_4 anim-items anim-no-hide"
+              >
                 <img
                   src="img/main-page/CATALOG/carrying-bag.jpeg"
                   alt="Фото Категорія Сумки-переноски"
@@ -409,14 +417,18 @@
                 >
               </div>
 
-              <div class="catalogue-menu__item">
+              <div
+                class="catalogue-menu__item catalogue-menu__item_5 anim-items anim-no-hide"
+              >
                 <img
                   src="img/main-page/CATALOG/beds.jpg"
                   alt="Фото Категорія Ліжаки"
                 />
                 <a href="beds-page.html" data-lang="home_page-16">ЛІЖАКИ</a>
               </div>
-              <div class="catalogue-menu__item">
+              <div
+                class="catalogue-menu__item catalogue-menu__item_6 anim-items anim-no-hide"
+              >
                 <img
                   src="img/main-page/CATALOG/sale.jpg"
                   alt="Фото Категорія Знижки"
@@ -427,8 +439,7 @@
           </div>
         </section>
 
-        <!-- 
-        <section class="page__video video">
+        <!-- <section class="page__video video">
           <div class="video__container">
             <h2 data-lang="home_page-18">
               Як зробити куртку для собаки? Відповідь в відео!
@@ -952,5 +963,54 @@
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
     <script src="js/change-language.js"></script>
+    <script type="text/javascript">
+      // Плавна анімація елементів
+      const animItems = document.querySelectorAll(".anim-items");
+      console.log(animItems);
+
+      if (animItems.length > 0) {
+        window.addEventListener("scroll", animOnScroll);
+
+        function animOnScroll(params) {
+          for (let index = 0; index < animItems.length; index++) {
+            const animItem = animItems[index];
+            const animItemHeight = animItem.offsetHeight;
+            const animItemOffset = offset(animItem).top;
+            const animStart = 4;
+
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+            if (animItemHeight > window.innerHeight) {
+              animItemPoint =
+                window.innerHeight - window.innerHeight / animStart;
+            }
+
+            if (
+              pageYOffset > animItemOffset - animItemPoint &&
+              pageYOffset < animItemOffset + animItemHeight
+            ) {
+              animItem.classList.add("active");
+            } else {
+              if (!animItem.classList.contains("anim-no-hide")) {
+                animItem.classList.remove("active");
+              }
+            }
+          }
+        }
+
+        function offset(el) {
+          const rect = el.getBoundingClientRect(),
+            scrollLeft =
+              window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop =
+              window.pageYOffset || document.documentElement.scrollTop;
+          return { top: rect.top + scrollTop, left: rect.left + screenLeft };
+        }
+        setTimeout(() => {
+          animOnScroll();
+        }, 300);
+      }
+      // Плавна анімація елементів
+    </script>
   </body>
 </html>
