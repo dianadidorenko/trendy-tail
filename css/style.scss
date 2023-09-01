@@ -1336,13 +1336,6 @@ h1.active,
   line-height: 160.5%;
   text-align: center;
   max-width: 650px;
-  transform: translate(0px, 100%);
-  opacity: 0;
-  transition: all 2s ease 0s;
-}
-.about-us-block-right-block-text.active {
-  transform: translate(0px, 0px);
-  opacity: 1;
 }
 
 @media (max-width: 1600px) {
