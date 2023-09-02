@@ -37,14 +37,14 @@ xhr.onload = function () {
 
     let items = "";
 
-    console.log(jsonData);
+    // console.log(jsonData);
 
-    // 22
+    // 45
     for (var i = 0; i < itemsOrder.length; i++) {
       items += `<div class="order-block-info" data-id='${jsonData[i].id}'>
                 <div class="order-block-info-left-part">
                   <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    45
+                    22
                   )}'/>
                 </div>
                 <div class="order-block-info-right-part">
@@ -227,7 +227,7 @@ xhr.onload = function () {
           // console.log(response.data);
           callback(response.data);
         } else {
-          console.error("Ошибка при выполнении запроса:", request.statusText);
+          console.error("Помилка при виведенні запиту:", request.statusText);
         }
       };
 
@@ -248,15 +248,15 @@ xhr.onload = function () {
         });
 
         areaSelect.addEventListener("change", () => {
-          loadCities(areaSelect.text);
+          loadCities(areaSelect.value);
         });
       });
     }
 
     function loadCities(areaRef) {
-      citySelect.innerHTML = '<option value="">Выберите город</option>';
+      citySelect.innerHTML = '<option value="">Оберіть місце</option>';
       warehouseSelect.innerHTML =
-        '<option value="">Выберите відділення або поштомат</option>';
+        '<option value="">Оберіть відділення або поштомат</option>';
 
       let cityParams = {
         AreaRef: areaRef,
@@ -268,14 +268,14 @@ xhr.onload = function () {
         });
 
         citySelect.addEventListener("change", () => {
-          loadWarehouses(citySelect.text);
+          loadWarehouses(citySelect.value);
         });
       });
     }
 
     function loadWarehouses(cityRef) {
       warehouseSelect.innerHTML =
-        '<option value="">Выберите відділення або поштомат</option>';
+        '<option value="">Оберіть відділення або поштомат</option>';
 
       let warehouseParams = {
         CityRef: cityRef,
@@ -289,19 +289,12 @@ xhr.onload = function () {
     }
 
     loadAreas();
-
-    areaSelect.addEventListener("change", () => {
-      console.log(areaSelect.value);
-    });
-    citySelect.addEventListener("change", () => {
-      console.log(citySelect.value);
-    });
   }
 };
 
 // Назначаем обработчик события для ошибки
 xhr.onerror = function () {
-  console.error("Ошибка при загрузке данных.");
+  console.error("Помилка при завантаженні даних.");
 };
 
 // Отправляем запрос

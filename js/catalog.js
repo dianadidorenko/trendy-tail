@@ -94,7 +94,7 @@ xhr.setRequestHeader("Content-Type", "application/json");
 xhr.onload = function () {
   if (xhr.status === 200) {
     var jsonData = JSON.parse(xhr.responseText);
-    console.log(jsonData);
+    // console.log(jsonData);
 
     for (let i = 0; i < jsonData.length; i++) {
       let catalogueMenuBlockItems = document.querySelector(
@@ -529,7 +529,7 @@ xhr.send();
 
 // Плавна анімація елементів
 const animItems = document.querySelectorAll(".anim-items");
-console.log(animItems);
+// console.log(animItems);
 
 if (animItems.length > 0) {
   window.addEventListener("scroll", animOnScroll);
