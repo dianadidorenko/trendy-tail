@@ -4,9 +4,12 @@
 где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
 // поля из формы
-$name = $_POST['footerInputUserName'];
-$email = $_POST['footerFormInputEmail'];
-$text = $_POST['footerTextarea'];
+$name = $_POST['clientName'];
+$city = $_POST['city'];
+$telephone = $_POST['telephone'];
+$email = $_POST['email'];
+$text = $_POST['text'];
+
 
 // токен нашего бота из botFather
 $token = "6243609387:AAFNe3dh6zzyqUhggZl9_GJh0AwUkzqCEto"; // змінюємо
@@ -14,8 +17,10 @@ $token = "6243609387:AAFNe3dh6zzyqUhggZl9_GJh0AwUkzqCEto"; // змінюємо
 $chat_id = "-874906697"; // змінюємо
 $arr = array(
   'Имя пользователя: ' => $name,
+  'Місто: ' => $city,
+  'Телефон: ' => $telephone,
   'Email: ' => $email,
-  'Текст повідомлення: ' => $text 
+  'Текст повідомлення: ' => $text,
 );
 
 // forEach не змінюємо
