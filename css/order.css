@@ -187,12 +187,12 @@ body {
   font-size: 20px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--secondary-color);
-  max-width: 115px;
+  max-width: 111px;
   margin: 20px 0;
 }
 
 .order-title_2 {
-  max-width: 90px;
+  max-width: 118px;
 }
 
 .order-title_3 {
@@ -200,7 +200,7 @@ body {
 }
 
 .order-title_4 {
-  max-width: 130px;
+  max-width: 215px;
 }
 
 #chooseCityDelivery {

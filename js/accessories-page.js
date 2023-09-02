@@ -103,7 +103,7 @@ xhr.onload = function () {
         imgSearchIcon.setAttribute("src", "/");
         imgSearchIcon.src = jsonData[i].searchIcon;
 
-        brandCatalog.innerText = catalog[i].brand;
+        brandCatalog.innerText = jsonData[i].brand;
         catalogueMenuBlockItem.appendChild(brandCatalog).className = "brand";
 
         catalogueMenuBlockItem.appendChild(h3);

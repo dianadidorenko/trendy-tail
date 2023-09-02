@@ -267,7 +267,9 @@
             <div class="order-info-block">
               <div class="h1-block">
                 <img src="img/order/paw-icon.svg" alt="Paw Icon" />
-                <h1 data-lang="order_page-4">Оформлення замовлення</h1>
+                <h1 class="anim-items anim-no-hide" data-lang="order_page-4">
+                  Оформлення замовлення
+                </h1>
                 <img src="img/order/paw-icon.svg" alt="Paw Icon" />
               </div>
               <p class="under-h1-text" data-lang="order_page-5">
@@ -348,10 +350,10 @@
                       <select id="areaSelect">
                         <option value="">Оберіть область</option>
                       </select>
-                      <select id="citySelect">
+                      <select id="citySelect" name="cityNV">
                         <option value="">Оберіть місто</option>
                       </select>
-                      <select id="warehouseSelect">
+                      <select id="warehouseSelect" name="warehouseNV">
                         <option value="">
                           Оберіть відділення або поштомат
                         </option>
@@ -434,7 +436,7 @@
         </section>
       </main>
 
-    <footer class="footer">
+      <footer class="footer">
         <div class="footer__container">
           <div class="footer-item-first">
             <img
@@ -594,5 +596,6 @@
     <script type="module" src="js/order.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/animation.js"></script>
   </body>
 </html>

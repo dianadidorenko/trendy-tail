@@ -7,8 +7,8 @@
 $name = $_POST['orderName'];
 $surname = $_POST['orderSurname'];
 $telephone = $_POST['orderTel'];
-$deliveryType = $_POST['delivery'];
-$city = $_POST['chooseCity'];
+$deliveryType = $_POST['warehouseNV'];
+$city = $_POST['cityNV'];
 
 
 // токен нашего бота из botFather
