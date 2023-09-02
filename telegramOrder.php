@@ -4,11 +4,14 @@
 где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
 // поля из формы
-$name = $_POST['orderName'];
-$surname = $_POST['orderSurname'];
-$telephone = $_POST['orderTel'];
-$deliveryType = $_POST['warehouseNV'];
-$city = $_POST['cityNV'];
+$name = $_POST['username'];
+$surname = $_POST['surname'];
+$telephone = $_POST['tel'];
+$email = $_POST['email'];
+$oblast = $_POST['oblast'];
+$city = $_POST['cityNP'];
+$warehouse = $_POST['warehouseSelect'];
+$inputOrder = $_POST['inputOfOrderName'];
 
 
 // токен нашего бота из botFather
@@ -18,9 +21,12 @@ $chat_id = "-874906697"; // змінюємо
 $arr = array(
   'Імя клієнта: ' => $name,
   'Прізвище: ' => $surname,
-  'Телефон ' => $telephone,
-  'Спосіб доставки ' => $deliveryType,
-  'Місто доставки ' => $city
+  'Телефон: ' => $telephone,
+  'E-mail: ' => $email,
+  'Область: ' => $oblast,
+  'Місто: ' => $city,
+  'Відділення: ' => $warehouse,
+  'Cписок: ' => $inputOrder,
 );
 
 // forEach не змінюємо

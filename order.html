@@ -284,7 +284,7 @@
                     <input
                       type="text"
                       id="orderName"
-                      name="orderName"
+                      name="username"
                       placeholder="Ім'я / Name"
                       required
                     />
@@ -294,7 +294,7 @@
                     <input
                       type="text"
                       id="orderSurname"
-                      name="orderSurname"
+                      name="surname"
                       placeholder="Прізвище / Surname"
                       required
                     />
@@ -304,7 +304,7 @@
                     <input
                       type="tel"
                       id="orderTel"
-                      name="orderTel"
+                      name="tel"
                       placeholder="+38 (___) -___-__-__"
                       required
                     />
@@ -314,7 +314,7 @@
                     <input
                       type="email"
                       id="orderEmail"
-                      name="orderEmail"
+                      name="email"
                       placeholder="E-mail"
                       required
                     />
@@ -347,14 +347,18 @@
                     </div>
 
                     <div class="nova-poshta">
-                      <select id="areaSelect">
-                        <option value="">Оберіть область</option>
+                      <select id="areaSelect" name="oblast" required>
+                        <option value="" name="oblast1">Оберіть область</option>
                       </select>
-                      <select id="citySelect" name="cityNV">
-                        <option value="">Оберіть місто</option>
+                      <select id="citySelect" name="cityNP" required>
+                        <option value="" name="cityNP1">Оберіть місто</option>
                       </select>
-                      <select id="warehouseSelect" name="warehouseNV">
-                        <option value="">
+                      <select
+                        id="warehouseSelect"
+                        name="warehouseSelect"
+                        required
+                      >
+                        <option value="" name="warehouseSelect1">
                           Оберіть відділення або поштомат
                         </option>
                       </select>
@@ -368,7 +372,7 @@
                     Оплата
                   </h2>
                   <div class="pay-block">
-                    <input type="radio" name="afterpay" id="afterpay" checked />
+                    <input type="radio" id="afterpay" checked />
                     <label data-lang="order_page-40">Післяплата</label>
                     <p data-lang="order_page-41">Оплата при отримуванні</p>
                   </div>
@@ -429,6 +433,12 @@
                     Усього:
                     <span id="totalQun">0</span> шт.
                   </p>
+                  <input
+                    type="text"
+                    name="inputOfOrderName"
+                    id="inputOfOrder"
+                    hidden
+                  />
                 </div>
               </div>
             </div>
@@ -593,7 +603,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/change-language.js"></script>
-    <script type="module" src="js/order.js"></script>
+    <script src="js/order.js"></script>
     <script src="js/common.js"></script>
     <script src="js/search.js"></script>
     <script src="js/animation.js"></script>

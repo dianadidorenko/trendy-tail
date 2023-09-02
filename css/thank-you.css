@@ -3,6 +3,7 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #2a8085;
+  margin: 0;
 }
 
 h1 {
@@ -19,4 +20,32 @@ h1 {
   padding: 20px;
   text-align: center;
   border: 18px double rgb(240, 240, 240);
+}
+
+@media (max-width: 1250px) {
+  h1 {
+    max-width: 800px;
+    font-size: 50px;
+  }
+}
+@media (max-width: 950px) {
+  h1 {
+    max-width: 500px;
+    font-size: 30px;
+    border: 8px double rgb(240, 240, 240);
+  }
+}
+@media (max-width: 650px) {
+  h1 {
+    max-width: 300px;
+    font-size: 20px;
+    border: 6px double rgb(240, 240, 240);
+  }
+}
+@media (max-width: 380px) {
+  h1 {
+    max-width: 220px;
+    font-size: 16px;
+    border: 6px double rgb(240, 240, 240);
+  }
 }

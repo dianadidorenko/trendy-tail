@@ -28,6 +28,12 @@ xhr.open("GET", "./catalog.json", true);
 // Устанавливаем заголовок Content-Type (для обработки JSON)
 xhr.setRequestHeader("Content-Type", "application/json");
 
+// Взяти з інпута значення про товар в корзині
+let qwe = "";
+qwe = localStorage.getItem("orderItems");
+inputOfOrder.value = qwe;
+// Взяти з інпута значення про товар в корзині
+
 // Назначаем обработчик события для успешной загрузки данных
 xhr.onload = function () {
   if (xhr.status === 200) {
@@ -36,8 +42,6 @@ xhr.onload = function () {
     let itemsOrder = JSON.parse(localStorage.getItem("orderItems"));
 
     let items = "";
-
-    // console.log(jsonData);
 
     // 22
     for (var i = 0; i < itemsOrder.length; i++) {
@@ -289,6 +293,13 @@ xhr.onload = function () {
     }
 
     loadAreas();
+
+    // areaSelect.addEventListener("change", () => {
+    //   console.log(areaSelect.value);
+    // });
+    // citySelect.addEventListener("change", () => {
+    //   console.log(citySelect.value);
+    // });
   }
 };
 
@@ -372,10 +383,6 @@ function checkForm() {
   }
   // Show Need to Agree Block
 
-  // Show City Value to Delivery
-  chooseCityDeliveryValue = chooseCityDelivery.value;
-  // Show City Value to Delivery
-
   // Show if need to phone client back
   if (!noNeedToPhone.checked) {
     noNeedToPhoneLabelValue = noNeedToPhoneLabel.innerText;
@@ -383,24 +390,6 @@ function checkForm() {
     noNeedToPhoneLabelValue = "Треба передзвонити";
   }
   // Show if need to phone client back
-
-  if (novaPoshta.checked) {
-    // Save Chosen Delivery Type
-    novaPoshtaValue = novaPoshtaLabel.innerText.split(" ")[0];
-    ukrPoshta.value = "";
-    meest.value = "";
-  } else if (ukrPoshta.checked) {
-    ukrPoshtaValue = ukrPoshtaLabel.innerText.split(" ")[0];
-    novaPoshta.value = "";
-    meest.value = "";
-  } else if (meest.checked) {
-    meestaValue = meestLabel.innerText.split(" ")[0];
-    novaPoshta.value = "";
-    ukrPoshta.value = "";
-  } else if (!novaPoshta.checked && !ukrPoshta.checked && !meest.checked) {
-    alert("Треба обрати спосіб доставки");
-  }
-  // Save Chosen Delivery Type
 
   // Check form to send
   if (
