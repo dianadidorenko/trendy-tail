@@ -158,6 +158,10 @@
 }
 
 @media (max-width: 1200px) {
+  .phone-block {
+    transform: translate(0px, 100%);
+    opacity: 0;
+  }
   .contacts-block {
     padding-top: 330px;
     padding-bottom: 300px;
@@ -169,12 +173,24 @@
     padding: 40px 115px;
     row-gap: 15px;
   }
+  .phone-block.active {
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
   .mail-block {
     left: 50%;
     bottom: -20px;
     transform: translate(-50%, -50%);
     padding: 40px;
     row-gap: 15px;
+  }
+  .mail-block.active {
+    left: 50%;
+    bottom: -47px;
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
   .phone-block p,
   .mail-block p {
@@ -223,6 +239,9 @@
   .opening-hours-block p {
     font-size: 16px;
   }
+  .mail-block.active {
+    bottom: 10px;
+  }
 }
 @media (max-width: 360px) {
   .opening-hours-block {
@@ -234,6 +253,9 @@
   }
   .mail-block {
     bottom: -30px;
+  }
+  .mail-block.active {
+    bottom: -5px;
   }
 }
 
