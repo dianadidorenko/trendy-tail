@@ -42,13 +42,14 @@ xhr.onload = function () {
     let itemsOrder = JSON.parse(localStorage.getItem("orderItems"));
 
     let items = "";
+    // console.log(orderName.value);
 
-    // 22
+    // 45
     for (var i = 0; i < itemsOrder.length; i++) {
       items += `<div class="order-block-info" data-id='${jsonData[i].id}'>
                 <div class="order-block-info-left-part">
                   <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    45
+                    22
                   )}'/>
                 </div>
                 <div class="order-block-info-right-part">
@@ -72,19 +73,6 @@ xhr.onload = function () {
               </div>`;
     }
     document.querySelector(".order-info-block-right-part").innerHTML = items;
-
-    // Total price of all goods
-    let orderPrices = document.querySelectorAll(".orderPrice");
-    var total = [];
-
-    orderPrices.forEach((price) => {
-      total.push(parseInt(price.innerText));
-
-      let totalValue = total.reduce((a, b) => a + b);
-
-      totalSum.innerText = totalValue;
-    });
-    // Total price of all goods
 
     // initial order quantity in the header
     if (document.querySelectorAll(".order-block-info").length) {
@@ -126,7 +114,6 @@ xhr.onload = function () {
               itemsOrder.splice(i, 1);
               e.target.closest(".order-block-info").remove();
               totalSum.innerText = 0;
-              localStorage.setItem("quantityOrderValue", 0);
               localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
               location.reload();
             }
@@ -138,7 +125,6 @@ xhr.onload = function () {
       if (e.target.classList.value === "trash") {
         e.target.closest(".order-block-info").remove();
         itemsOrder.splice(i, 1);
-        localStorage.setItem("quantityOrderValue", 0);
         location.reload();
         localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
       }
@@ -148,6 +134,7 @@ xhr.onload = function () {
         const cartItems = document.querySelectorAll(".order-block-info");
 
         let totalPrice = 0;
+        let totalQuan = 0;
 
         cartItems.forEach((item) => {
           const amountEl = item.querySelector("[data-counter]");
@@ -157,6 +144,11 @@ xhr.onload = function () {
 
           totalPrice += currentPrice;
           totalSum.innerText = totalPrice;
+
+          totalQuan += parseInt(amountEl.innerText);
+          totalQun.value = totalQuan;
+
+          totalSumInput.value = totalPrice;
         });
       }
 
@@ -184,7 +176,6 @@ xhr.onload = function () {
       let amount = 0;
       amount += parseInt(item.innerText);
       totalQun.innerText = parseInt(totalQun.innerText) + amount;
-      localStorage.setItem("quantityOrderValue", totalQun.innerText);
       // initial order quantity in the header
     });
     // Insert total price before quantity increasing
