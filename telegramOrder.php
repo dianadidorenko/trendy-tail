@@ -12,6 +12,9 @@ $oblast = $_POST['oblast'];
 $city = $_POST['cityNP'];
 $warehouse = $_POST['warehouseSelect'];
 $inputOrder = $_POST['inputOfOrderName'];
+$totalQun = $_POST['quantityInput'];
+$sumInput = $_POST['sumInput'];
+
 
 
 // токен нашего бота из botFather
@@ -27,6 +30,8 @@ $arr = array(
   'Місто: ' => $city,
   'Відділення: ' => $warehouse,
   'Cписок: ' => $inputOrder,
+  'Кількість: ' => $totalQun,
+  'Загальна ціна: ' => $sumInput,
 );
 
 // forEach не змінюємо
