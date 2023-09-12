@@ -1,17 +1,378 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
-    <title>Дякуємо за Ваш запит!</title>
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/thank-you.css" />
+    <title data-lang="thank-you-order-title">Дякуємо за Ваше замовлення!</title>
   </head>
 
   <body>
-    <div class="container">
-      <h1>Дякуємо за Ваше замовлення! <br> Ми його вже оборобляємо</h1>
+    <!-- Search Pop Up Form -->
+    <div class="search-form">
+      <div class="search-input__block">
+        <input
+          type="text"
+          id="searchValue"
+          class="search-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" id="leadToSearchPage"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+        <img
+          src="img/search-pop-up/close-icon.svg"
+          id="closePopUpSearch"
+          class="search-close-button"
+          alt="Close Icon"
+        />
+      </div>
+      <div class="search-close-overlay"></div>
     </div>
+    <!-- Search Pop Up Form -->
+
+    <!-- Nothing Found Search Page Form -->
+    <div class="search-not-found">
+      <div class="search-not-found-input__block">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
+          Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
+        </p>
+        <input
+          type="search"
+          id="notFoundInput"
+          class="search-not-found-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" class="search-page-button" id="leadToSearchPageFromNotFound"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+      </div>
+      <div class="search-page-close-not-found-overlay"></div>
+    </div>
+    <!-- Nothing Found Search Page Form -->
+
+    <!-- Burger Menu  -->
+    <div class="burger-menu">
+      <a href="#" class="burger-menu__button">
+        <span class="burger-menu__dots"></span
+        ><span class="burger-menu__lines"></span
+      ></a>
+      <nav class="burger-header-menu menu">
+        <ul class="burger-header-menu__list">
+          <li class="menu__item">
+            <a href="catalog.html" class="menu__link" data-lang="home_page-35"
+              >Каталог</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="about-us.html" class="menu__link" data-lang="home_page-36"
+              >О нас</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="delivery.html" class="menu__link" data-lang="home_page-37"
+              >Доставка і оплата</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="contacts.html" class="menu__link" data-lang="home_page-38"
+              >Контакти</a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="feedback.html" class="menu__link" data-lang="home_page-39"
+              >Відгуки</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="burger-menu__overlay"></div>
+    </div>
+    <!-- Burger Menu  -->
+    <header class="header">
+        <div class="header__container">
+          <div class="header-logo-nav-block">
+            <a href="index.html"
+              ><img
+                src="img/logo.svg"
+                class="header-logo"
+                alt="Trendy Tail Logo"
+            /></a>
+            <nav class="header__menu menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a
+                    href="catalog.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-1"
+                    >Каталог</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="about-us.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-2"
+                    >О нас</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="delivery.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-3"
+                    >Доставка і оплата</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="contacts.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-4"
+                    >Контакти</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="feedback.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-5"
+                    >Відгуки</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-links__block">
+            <div class="header__user-links user-links">
+              <a href="#"
+                ><img
+                  src="img/main-page/HEADER/search-icon.svg"
+                  id="searchButton"
+                  class="user-links-image"
+                  alt="Search Icon"
+              /></a>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <div class="settings">
+                <div id="panel">
+                  <div class="lang-block container">
+                    <button class="header__btn" data-btn="ua">UA</button>
+                    <button class="header__btn" data-btn="en">EN</button>
+                  </div>
+                  <div class="toggle">
+                    <p id="inputThemeText" data-lang="home_page-40">
+                      Зробити темніше?
+                    </p>
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                  </div>
+                  <div class="chat-gpt">
+                    <a href="chat-gpt.html"
+                      ><img
+                        src="img/chat-gpt/chat-gpt-icon.png"
+                        alt="Chat GPT Icon"
+                    /></a>
+                    <p>Chat-Gpt</p>
+                  </div>
+                  <div class="location-block">
+                    <a href="location.html"
+                      ><img src="img/location-icon.svg" alt="Location Icon"
+                    /></a>
+                    <p>Моя локація</p>
+                  </div>
+                </div>
+
+                <p class="slide">
+                  <a href="#" class="btn-slide"
+                    ><img src="img/settings-icon.svg" alt="Settings Icon"
+                  /></a>
+                </p>
+              </div>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <a href="order.html"
+                ><img
+                  src="img/main-page/HEADER/shopping-icon.svg"
+                  class="user-links-image"
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
+            </div>
+            <div class="header__user-profile user-profile">
+              <span id="userName"></span>
+              <a href="user-profile.html"
+                ><img
+                  src="img/main-page/HEADER/profile-icon.svg"
+                  class="user-profile-image"
+                  alt="Profile Icon"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="wrapper">
+      <section class="thank-you-container">
+        <p data-lang="thank-you-order-1">Дякуємо за Ваше замовлення!</p>
+        <p data-lang="thank-you-2">Ми його вже оборобляємо</p>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer-item-first">
+          <img src="img/logo.svg" class="footer-logo" alt="Trendy Tail Logo" />
+          <p data-lang="home_page-42">
+            Тому що ми <br />
+            піклуємося про собак
+          </p>
+        </div>
+        <div class="footer-item">
+          <nav class="footer__menu">
+            <ul class="footer__list">
+              <li class="footer__menu-title" data-lang="home_page-43">
+                Каталог
+              </li>
+              <li class="footer__item">
+                <a
+                  href="new-page.html"
+                  class="footer__link"
+                  data-lang="home_page-44"
+                  >Новинки</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="accessories-page.html"
+                  class="footer__link"
+                  data-lang="home_page-45"
+                  >Аксесуари</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="clothes-page.html"
+                  class="footer__link"
+                  data-lang="home_page-46"
+                  >Одяг</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="carrying-page.html"
+                  class="footer__link"
+                  data-lang="home_page-47"
+                  >Сумки-переноски</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="beds-page.html"
+                  class="footer__link"
+                  data-lang="home_page-48"
+                  >Ліжаки</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="delivery.html"
+                  class="footer__link"
+                  data-lang="home_page-49"
+                  >Знижки</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-item">
+          <nav class="footer__menu">
+            <ul class="footer__list">
+              <li class="footer__menu-title" data-lang="home_page-50">Меню</li>
+              <li class="footer__item">
+                <a
+                  href="catalog.html"
+                  class="footer__link"
+                  data-lang="home_page-51"
+                  >Каталог</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="about-us.html"
+                  class="footer__link"
+                  data-lang="home_page-52"
+                  >О нас</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="delivery.html"
+                  class="footer__link"
+                  data-lang="home_page-53"
+                  >Доставка і оплата</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="contacts.html"
+                  class="footer__link"
+                  data-lang="home_page-54"
+                  >Контакти</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="feedback.html"
+                  class="footer__link"
+                  data-lang="home_page-55"
+                  >Відгуки</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-item">
+          <h3 class="footer__menu-title" data-lang="home_page-64">
+            Наші контакти
+          </h3>
+          <a href="tel:+380974379424" data-lang="home_page-65"
+            >Тел:+38 (097) 437 94 24</a
+          >
+          <p class="footer__work-hours" data-lang="home_page-66">
+            Графік роботи: Пн - Нд 9.00-19.00
+          </p>
+          <a href="mailto:trendytail@ukr.net" data-lang="home_page-67"
+            >Пошта: trendytail@ukr.net</a
+          >
+          <div class="footer__socs">
+            <a href="#"
+              ><img src="img/main-page/FOOTER/insta.svg" alt="Instagram Icon"
+            /></a>
+            <a href="#"
+              ><img src="img/main-page/FOOTER/fb.svg" alt="Facebook Icon"
+            /></a>
+            <a href="#"
+              ><img src="img/main-page/FOOTER/youtube.svg" alt="Youtube Icon"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer-copy">
+      <p>
+        TrendyTail © Copyright 2023 |
+        <span data-lang="home_page-68">Всі права захищені</span>
+      </p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/change-language.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

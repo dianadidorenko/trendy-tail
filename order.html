@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,0,-25"
+    />
     <title data-lang="order_page-title">Замовлення</title>
   </head>
   <body id="top">
@@ -64,40 +68,6 @@
       ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
     /></a>
     <!-- Anchor To The Top -->
-
-    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-    <div>
-      <div id="panel">
-        <div class="lang-block container">
-          <button class="header__btn" data-btn="ua">UA</button>
-          <button class="header__btn" data-btn="en">EN</button>
-        </div>
-        <div class="toggle">
-          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
-          <input type="checkbox" id="toggle" />
-          <label for="toggle"></label>
-        </div>
-        <div class="chat-gpt">
-          <a href="chat-gpt.html"
-            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
-          /></a>
-          <p>Chat-Gpt</p>
-        </div>
-        <div class="location-block">
-          <a href="location.html"
-            ><img src="img/location-icon.svg" alt="Location Icon"
-          /></a>
-          <p>Моя локація</p>
-        </div>
-      </div>
-
-      <p class="slide">
-        <a href="#" class="btn-slide"
-          ><img src="img/settings-icon.svg" alt="Settings Icon"
-        /></a>
-      </p>
-    </div>
-    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -214,6 +184,43 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <div class="settings">
+                <div id="panel">
+                  <div class="lang-block container">
+                    <button class="header__btn" data-btn="ua">UA</button>
+                    <button class="header__btn" data-btn="en">EN</button>
+                  </div>
+                  <div class="toggle">
+                    <p id="inputThemeText" data-lang="home_page-40">
+                      Зробити темніше?
+                    </p>
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                  </div>
+                  <div class="chat-gpt">
+                    <a href="chat-gpt.html"
+                      ><img
+                        src="img/chat-gpt/chat-gpt-icon.png"
+                        alt="Chat GPT Icon"
+                    /></a>
+                    <p>Chat-Gpt</p>
+                  </div>
+                  <div class="location-block">
+                    <a href="location.html"
+                      ><img src="img/location-icon.svg" alt="Location Icon"
+                    /></a>
+                    <p>Моя локація</p>
+                  </div>
+                </div>
+
+                <p class="slide">
+                  <a href="#" class="btn-slide"
+                    ><img src="img/settings-icon.svg" alt="Settings Icon"
+                  /></a>
+                </p>
+              </div>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
               <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
@@ -267,7 +274,10 @@
             <div class="order-info-block">
               <div class="h1-block">
                 <img src="img/order/paw-icon.svg" alt="Paw Icon" />
-                <h1 class="anim-items anim-no-hide" data-lang="order_page-4">
+                <h1
+                  class="order-h1 anim-items anim-no-hide"
+                  data-lang="order_page-4"
+                >
                   Оформлення замовлення
                 </h1>
                 <img src="img/order/paw-icon.svg" alt="Paw Icon" />
@@ -347,19 +357,22 @@
                     </div>
 
                     <div class="nova-poshta">
-                      <select id="areaSelect" name="oblast" required>
-                        <option value="" name="oblast1">Оберіть область</option>
+                      <select id="areaSelect" required>
+                        <option value="">
+                          Оберіть область | Choose region
+                        </option>
                       </select>
-                      <select id="citySelect" name="cityNP" required>
-                        <option value="" name="cityNP1">Оберіть місто</option>
+                      <select id="citySelect" required>
+                        <option value="">Оберіть місто | Choose city</option>
                       </select>
                       <select
                         id="warehouseSelect"
                         name="warehouseSelect"
                         required
                       >
-                        <option value="" name="warehouseSelect1">
-                          Оберіть відділення або поштомат
+                        <option value="">
+                          Оберіть відділення або поштомат | Choose a branch or a
+                          post office
                         </option>
                       </select>
                     </div>
@@ -384,16 +397,20 @@
                         >Я згоден з умовами угоди користувача.</label
                       >
                     </div>
-                    <div class="need-to-agree-block">
-                      <img
-                        src="img/order/question-sign-icon.svg"
-                        alt="Question Sign Icon"
-                      />
-                      <p data-lang="order_page-43">
-                        Я погоджуюсь з умовами сервісу.
-                      </p>
-                      <p id="closeNeedAgreeBlock">&times</p>
+
+                    <div class="agree-block-overlay">
+                      <div id="agreeBlock" class="need-to-agree-block">
+                        <img
+                          src="img/order/question-sign-icon.svg"
+                          alt="Question Sign Icon"
+                        />
+                        <p data-lang="order_page-43">
+                          Треба погодитись з умовами сервісу.
+                        </p>
+                        <p id="closeNeedAgreeBlock">&times</p>
+                      </div>
                     </div>
+
                     <div class="agree-block-input">
                       <input type="checkbox" id="noNeedToPhone" />
                       <label id="noNeedToPhoneLabel" data-lang="order_page-44"
@@ -420,6 +437,7 @@
                   <div
                     id="orderInfoBlockRightPart"
                     class="order-info-block-right-part"
+                    onclick=""
                   ></div>
 
                   <div class="total-block">
@@ -430,8 +448,18 @@
                     <p data-lang="order_page-47">грн</p>
                   </div>
 
-                  <input id="totalQun" type="text" name="quantityInput" hidden/>
-                  <input id="totalSumInput" type="text" name="sumInput" hidden/>
+                  <input
+                    id="totalQun"
+                    type="text"
+                    name="quantityInput"
+                    hidden
+                  />
+                  <input
+                    id="totalSumInput"
+                    type="text"
+                    name="sumInput"
+                    hidden
+                  />
 
                   <input
                     type="text"
@@ -439,6 +467,26 @@
                     id="inputOfOrder"
                     hidden
                   />
+
+                  <input
+                    type="hidden"
+                    name="areaDescription"
+                    id="areaDescription"
+                  />
+
+                  <input
+                    type="hidden"
+                    name="cityDescription"
+                    id="cityDescription"
+                  />
+
+                  <input
+                    type="hidden"
+                    name="warehouseDescription"
+                    id="warehouseDescription"
+                  />
+
+                  <input type="hidden" name="callBackInput" id="callBackInp" />
                 </div>
               </div>
             </div>

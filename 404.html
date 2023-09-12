@@ -4,416 +4,502 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Poppins:regular,300,400,&display=swap);
-
-      body {
-        background: radial-gradient(ellipse at center, #218287 0%, #083b3e 100%)
-          fixed no-repeat;
-        font-family: "Poppins", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        margin: 0px;
-      }
-      ::selection {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-      ::-moz-selection {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-      a {
-        color: white;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -webkit-transition: all 0.5s ease;
-        margin-right: 10px;
-      }
-      a:last-child {
-        margin-right: 0px;
-      }
-      a:hover {
-        text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
-        border-bottom: 1px solid rgba(255, 255, 255, 1);
-      }
-      #noscript-warning {
-        width: 100%;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.2);
-        font-weight: 300;
-        color: white;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-
-      /* === WRAP === */
-
-      #wrap {
-        width: 80%;
-        max-width: 1400px;
-        margin: 0 auto;
-        height: auto;
-        position: relative;
-        margin-top: 8%;
-      }
-
-      /* === MAIN TEXT CONTENT === */
-
-      #main-content {
-        float: right;
-        max-width: 45%;
-        color: white;
-        font-weight: 300;
-        font-size: 18px;
-        padding-bottom: 40px;
-        line-height: 28px;
-      }
-      #main-content h1 {
-        margin: 0px;
-        font-weight: 400;
-        font-size: 42px;
-        margin-bottom: 40px;
-        line-height: normal;
-      }
-
-      /* === NAVIGATION BUTTONS === */
-
-      #navigation {
-        margin-top: 2%;
-      }
-      #navigation a.navigation {
-        display: block;
-        float: left;
-        background-color: rgba(0, 0, 0, 0.2);
-        padding-left: 15px;
-        padding-right: 15px;
-        color: white;
-        height: 41px;
-        line-height: 41px;
-        text-decoration: none;
-        font-size: 16px;
-        transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -webkit-transition: all 0.5s ease;
-        margin-right: 2%;
-        margin-bottom: 2%;
-        border-bottom: none;
-      }
-      #navigation a.navigation i {
-        line-height: 41px;
-      }
-      #navigation a.navigation:hover {
-        background-color: rgba(26, 188, 156, 0.7);
-        border-bottom: none;
-      }
-
-      /* === WORDSEARCH === */
-
-      #wordsearch {
-        width: 45%;
-        float: left;
-      }
-      #wordsearch ul {
-        margin: 0px;
-        padding: 0px;
-      }
-      #wordsearch ul li {
-        float: left;
-        width: 12%;
-        background-color: rgba(0, 0, 0, 0.2);
-        list-style: none;
-        margin-right: 0.5%;
-        margin-bottom: 0.5%;
-        padding: 0;
-        display: block;
-        text-align: center;
-        color: rgba(255, 255, 255, 0.7);
-        text-transform: uppercase;
-        overflow: hidden;
-        font-size: 24px;
-        font-size: 1.6vw;
-        font-weight: 300;
-        transition: background-color 0.75s ease;
-        -moz-transition: background-color 0.75s ease;
-        -webkit-transition: background-color 0.75s ease;
-        -o-transition: background-color 0.75s ease;
-      }
-      #wordsearch ul li.selected {
-        background-color: rgba(26, 188, 156, 0.7);
-        color: rgba(255, 255, 255, 1);
-        font-weight: 400;
-      }
-
-      /* === SEARCH FORM === */
-      form {
-        display: flex;
-        align-items: center;
-        column-gap: 20px;
-      }
-      form img {
-        opacity: 0.7;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-      }
-      form img:hover {
-        opacity: 1;
-      }
-      #search {
-        margin-top: 30px;
-      }
-      #search input[type="text"] {
-        width: 88%;
-        height: 41px;
-        padding-left: 15px;
-        padding-right: 15px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        background-color: rgba(0, 0, 0, 0.2);
-        border: none;
-        outline: none;
-        -webkit-appearance: none;
-        font-size: 16px;
-        font-weight: 300;
-        color: white;
-        font-family: "Poppins", sans-serif;
-        transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -webkit-transition: all 0.5s ease;
-        border-radius: 0px;
-      }
-      #search input[type="text"]::placeholder {
-        color: rgba(255, 255, 255, 0.664);
-      }
-      #search .input-search {
-        width: 10%;
-        float: right;
-        height: 41px;
-        background-color: rgba(0, 0, 0, 0.2);
-        outline: none;
-        border: none;
-        -webkit-appearance: none;
-        font-family: "Poppins", sans-serif;
-        color: white;
-        font-weight: 300;
-        font-size: 16px;
-        cursor: pointer;
-        transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -webkit-transition: all 0.5s ease;
-        text-align: center;
-      }
-      #search .input-search:hover {
-        background-color: rgba(26, 188, 156, 0.7);
-      }
-
-      @media (max-width: 899px) {
-        #wrap {
-          width: 90%;
-        }
-      }
-      @media (max-width: 799px) {
-        #wrap {
-          width: 90%;
-          height: auto;
-          margin-top: 40px;
-          top: 0%;
-        }
-        #wordsearch {
-          width: 90%;
-          float: none;
-          margin: 0 auto;
-        }
-        #wordsearch ul li {
-          font-size: 4vw;
-        }
-        #main-content {
-          float: none;
-          width: 90%;
-          max-width: 90%;
-          margin: 0 auto;
-          margin-top: 30px;
-          text-align: justify;
-        }
-        #main-content h1 {
-          text-align: left;
-        }
-        #search input[type="text"] {
-          width: 84%;
-        }
-        #search .input-search {
-          width: 15%;
-        }
-      }
-      @media (max-width: 499px) {
-        #main-content h1 {
-          font-size: 28px;
-        }
-      }
-    </style>
+    <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/404.css" />
     <title>404 Not Found</title>
   </head>
   <body>
-    <div id="wrap">
-      <div id="wordsearch">
-        <ul>
-          <li>k</li>
-          <li>v</li>
-          <li>n</li>
-          <li>z</li>
-          <li>i</li>
-          <li>x</li>
-          <li>m</li>
-          <li>e</li>
-          <li>t</li>
-          <li>a</li>
-          <li>x</li>
-          <li>l</li>
-
-          <li class="one">4</li>
-          <li class="two">0</li>
-          <li class="three">4</li>
-
-          <li>y</li>
-          <li>y</li>
-          <li>w</li>
-          <li>v</li>
-          <li>b</li>
-          <li>o</li>
-          <li>q</li>
-          <li>d</li>
-          <li>y</li>
-          <li>p</li>
-          <li>a</li>
-
-          <li class="four">p</li>
-          <li class="five">a</li>
-          <li class="six">g</li>
-          <li class="seven">e</li>
-
-          <li>v</li>
-          <li>j</li>
-          <li>a</li>
-
-          <li class="eight">n</li>
-          <li class="nine">o</li>
-          <li class="ten">t</li>
-
-          <li>s</li>
-          <li>c</li>
-          <li>e</li>
-          <li>w</li>
-          <li>v</li>
-          <li>x</li>
-          <li>e</li>
-          <li>p</li>
-          <li>c</li>
-          <li>f</li>
-          <li>h</li>
-          <li>q</li>
-          <li>e</li>
-
-          <li class="eleven">f</li>
-          <li class="twelve">o</li>
-          <li class="thirteen">u</li>
-          <li class="fourteen">n</li>
-          <li class="fifteen">d</li>
-
-          <li>s</li>
-          <li>w</li>
-          <li>q</li>
-          <li>v</li>
-          <li>o</li>
-          <li>s</li>
-          <li>m</li>
-          <li>v</li>
-          <li>f</li>
-          <li>u</li>
-        </ul>
+    <!-- Search Pop Up Form -->
+    <div class="search-form">
+      <div class="search-input__block">
+        <input
+          type="text"
+          id="searchValue"
+          class="search-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" id="leadToSearchPage"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+        <img
+          src="img/search-pop-up/close-icon.svg"
+          id="closePopUpSearch"
+          class="search-close-button"
+          alt="Close Icon"
+        />
       </div>
+      <div class="search-close-overlay"></div>
+    </div>
+    <!-- Search Pop Up Form -->
 
-      <div id="main-content">
-        <h1 data-lang="not-found_page-1">
-          Ми не змогли знайти те, що ви шукали.
-        </h1>
-        <p data-lang="not-found_page-2">
-          На жаль, сторінку, яку ви шукали, не вдалося знайти. Це може бути
-          тимчасово недоступними, переміщеними або більше не існувати.
+    <!-- Nothing Found Search Page Form -->
+    <div class="search-not-found">
+      <div class="search-not-found-input__block">
+        <h1 class="search-not-found__body-h1" data-lang="not-found-1">Упс!</h1>
+        <p class="search-not-found__body-text" data-lang="not-found-2">
+          Нічого не було знайдено по Вашому запиту. Спробуйте ще раз :)
         </p>
-        <p data-lang="not-found_page-3">
-          Перевірте введену URL-адресу на наявність помилок і повторіть спробу.
-          Крім того, знайдіть те, чого не вистачає, або подивіться навколо решта
-          нашого сайту.
-        </p>
-        <div id="search">
-          <form>
-            <input type="text" id="input" placeholder="Шукати.." />
-            <img
-              id="searchIcon"
-              src="img/main-page/HEADER/search-icon.svg"
-              alt="Search Icon"
-            />
-          </form>
+        <input
+          type="search"
+          id="notFoundInput"
+          class="search-not-found-form__input"
+          placeholder="Шукати.."
+        />
+        <a href="#" class="search-page-button" id="leadToSearchPageFromNotFound"
+          ><img src="img/search-pop-up/search-icon.svg" alt="Search Icon"
+        /></a>
+      </div>
+      <div class="search-page-close-not-found-overlay"></div>
+    </div>
+    <!-- Nothing Found Search Page Form -->
+
+    <div class="wrapper">
+      <!-- Burger Menu  -->
+      <div class="burger-menu">
+        <a href="#" class="burger-menu__button">
+          <span class="burger-menu__dots"></span
+          ><span class="burger-menu__lines"></span
+        ></a>
+        <nav class="burger-header-menu menu">
+          <ul class="burger-header-menu__list">
+            <li class="menu__item">
+              <a href="catalog.html" class="menu__link" data-lang="home_page-35"
+                >Каталог</a
+              >
+            </li>
+            <li class="menu__item">
+              <a
+                href="about-us.html"
+                class="menu__link"
+                data-lang="home_page-36"
+                >О нас</a
+              >
+            </li>
+            <li class="menu__item">
+              <a
+                href="delivery.html"
+                class="menu__link"
+                data-lang="home_page-37"
+                >Доставка і оплата</a
+              >
+            </li>
+            <li class="menu__item">
+              <a
+                href="contacts.html"
+                class="menu__link"
+                data-lang="home_page-38"
+                >Контакти</a
+              >
+            </li>
+            <li class="menu__item">
+              <a
+                href="feedback.html"
+                class="menu__link"
+                data-lang="home_page-39"
+                >Відгуки</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="burger-menu__overlay"></div>
+      </div>
+      <!-- Burger Menu  -->
+
+      <header class="header">
+        <div class="header__container">
+          <div class="header-logo-nav-block">
+            <a href="index.html"
+              ><img
+                src="img/logo.svg"
+                class="header-logo"
+                alt="Trendy Tail Logo"
+            /></a>
+            <nav class="header__menu menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a
+                    href="catalog.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-1"
+                    >Каталог</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="about-us.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-2"
+                    >О нас</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="delivery.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-3"
+                    >Доставка і оплата</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="contacts.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-4"
+                    >Контакти</a
+                  >
+                </li>
+                <li class="menu__item">
+                  <a
+                    href="feedback.html"
+                    class="menu__link multi__text"
+                    data-lang="home_page-5"
+                    >Відгуки</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+           <div class="header-links__block">
+            <div class="header__user-links user-links">
+              <a href="#"
+                ><img
+                  src="img/main-page/HEADER/search-icon.svg"
+                  id="searchButton"
+                  class="user-links-image"
+                  alt="Search Icon"
+              /></a>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <div class="settings">
+                <div id="panel">
+                  <div class="lang-block container">
+                    <button class="header__btn" data-btn="ua">UA</button>
+                    <button class="header__btn" data-btn="en">EN</button>
+                  </div>
+                  <div class="toggle">
+                    <p id="inputThemeText" data-lang="home_page-40">
+                      Зробити темніше?
+                    </p>
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                  </div>
+                  <div class="chat-gpt">
+                    <a href="chat-gpt.html"
+                      ><img
+                        src="img/chat-gpt/chat-gpt-icon.png"
+                        alt="Chat GPT Icon"
+                    /></a>
+                    <p>Chat-Gpt</p>
+                  </div>
+                  <div class="location-block">
+                    <a href="location.html"
+                      ><img src="img/location-icon.svg" alt="Location Icon"
+                    /></a>
+                    <p>Моя локація</p>
+                  </div>
+                </div>
+
+                <p class="slide">
+                  <a href="#" class="btn-slide"
+                    ><img src="img/settings-icon.svg" alt="Settings Icon"
+                  /></a>
+                </p>
+              </div>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <a href="order.html"
+                ><img
+                  src="img/main-page/HEADER/shopping-icon.svg"
+                  class="user-links-image"
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
+            </div>
+            <div class="header__user-profile user-profile">
+              <span id="userName"></span>
+              <a href="user-profile.html"
+                ><img
+                  src="img/main-page/HEADER/profile-icon.svg"
+                  class="user-profile-image"
+                  alt="Profile Icon"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="wrap">
+        <div id="wordsearch">
+          <ul>
+            <li>k</li>
+            <li>v</li>
+            <li>n</li>
+            <li>z</li>
+            <li>i</li>
+            <li>x</li>
+            <li>m</li>
+            <li>e</li>
+            <li>t</li>
+            <li>a</li>
+            <li>x</li>
+            <li>l</li>
+
+            <li class="one">4</li>
+            <li class="two">0</li>
+            <li class="three">4</li>
+
+            <li>y</li>
+            <li>y</li>
+            <li>w</li>
+            <li>v</li>
+            <li>b</li>
+            <li>o</li>
+            <li>q</li>
+            <li>d</li>
+            <li>y</li>
+            <li>p</li>
+            <li>a</li>
+
+            <li class="four">p</li>
+            <li class="five">a</li>
+            <li class="six">g</li>
+            <li class="seven">e</li>
+
+            <li>v</li>
+            <li>j</li>
+            <li>a</li>
+
+            <li class="eight">n</li>
+            <li class="nine">o</li>
+            <li class="ten">t</li>
+
+            <li>s</li>
+            <li>c</li>
+            <li>e</li>
+            <li>w</li>
+            <li>v</li>
+            <li>x</li>
+            <li>e</li>
+            <li>p</li>
+            <li>c</li>
+            <li>f</li>
+            <li>h</li>
+            <li>q</li>
+            <li>e</li>
+
+            <li class="eleven">f</li>
+            <li class="twelve">o</li>
+            <li class="thirteen">u</li>
+            <li class="fourteen">n</li>
+            <li class="fifteen">d</li>
+
+            <li>s</li>
+            <li>w</li>
+            <li>q</li>
+            <li>v</li>
+            <li>o</li>
+            <li>s</li>
+            <li>m</li>
+            <li>v</li>
+            <li>f</li>
+            <li>u</li>
+          </ul>
         </div>
 
-        <div id="navigation">
-          <a class="navigation" href="index.html" data-lang="home_page-title"
-            >Головна</a
-          ><a class="navigation" href="catalog.html" data-lang="home_page-1"
-            >Каталог</a
-          >
-          <a class="navigation" href="about-us.html" data-lang="home_page-2"
-            >О нас</a
-          >
-          <a class="navigation" href="contacts.html" data-lang="home_page-4"
-            >Контакти</a
-          >
+        <div id="main-content">
+          <h1 data-lang="not-found_page-1">
+            Ми не змогли знайти те, що ви шукали.
+          </h1>
+          <p data-lang="not-found_page-2">
+            На жаль, сторінку, яку ви шукали, не вдалося знайти. Це може бути
+            тимчасово недоступними, переміщеними або більше не існувати.
+          </p>
+          <p data-lang="not-found_page-3">
+            Перевірте введену URL-адресу на наявність помилок і повторіть
+            спробу. Крім того, знайдіть те, чого не вистачає, або подивіться
+            навколо решта нашого сайту.
+          </p>
+
+          <div id="navigation">
+            <a class="navigation" href="index.html" data-lang="home_page-title"
+              >Головна</a
+            ><a
+              class="navigation"
+              href="catalog.html"
+              data-lang="not-found-page-1"
+              >Каталог</a
+            >
+            <a
+              class="navigation"
+              href="about-us.html"
+              data-lang="not-found-page-2"
+              >О нас</a
+            >
+            <a
+              class="navigation"
+              href="contacts.html"
+              data-lang="not-found-page-4"
+              >Контакти</a
+            >
+          </div>
         </div>
       </div>
     </div>
 
-    <script src="js/change-language.js"></script>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer-item-first">
+          <img src="img/logo.svg" class="footer-logo" alt="Trendy Tail Logo" />
+          <p data-lang="home_page-42">
+            Тому що ми <br />
+            піклуємося про собак
+          </p>
+        </div>
+        <div class="footer-item">
+          <nav class="footer__menu">
+            <ul class="footer__list">
+              <li class="footer__menu-title" data-lang="home_page-43">
+                Каталог
+              </li>
+              <li class="footer__item">
+                <a
+                  href="new-page.html"
+                  class="footer__link"
+                  data-lang="home_page-44"
+                  >Новинки</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="accessories-page.html"
+                  class="footer__link"
+                  data-lang="home_page-45"
+                  >Аксесуари</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="clothes-page.html"
+                  class="footer__link"
+                  data-lang="home_page-46"
+                  >Одяг</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="carrying-page.html"
+                  class="footer__link"
+                  data-lang="home_page-47"
+                  >Сумки-переноски</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="beds-page.html"
+                  class="footer__link"
+                  data-lang="home_page-48"
+                  >Ліжаки</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="delivery.html"
+                  class="footer__link"
+                  data-lang="home_page-49"
+                  >Знижки</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-item">
+          <nav class="footer__menu">
+            <ul class="footer__list">
+              <li class="footer__menu-title" data-lang="home_page-50">Меню</li>
+              <li class="footer__item">
+                <a
+                  href="catalog.html"
+                  class="footer__link"
+                  data-lang="home_page-51"
+                  >Каталог</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="about-us.html"
+                  class="footer__link"
+                  data-lang="home_page-52"
+                  >О нас</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="delivery.html"
+                  class="footer__link"
+                  data-lang="home_page-53"
+                  >Доставка і оплата</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="contacts.html"
+                  class="footer__link"
+                  data-lang="home_page-54"
+                  >Контакти</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="feedback.html"
+                  class="footer__link"
+                  data-lang="home_page-55"
+                  >Відгуки</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-item">
+          <h3 class="footer__menu-title" data-lang="home_page-64">
+            Наші контакти
+          </h3>
+          <a href="tel:+380974379424" data-lang="home_page-65"
+            >Тел:+38 (097) 437 94 24</a
+          >
+          <p class="footer__work-hours" data-lang="home_page-66">
+            Графік роботи: Пн - Нд 9.00-19.00
+          </p>
+          <a href="mailto:trendytail@ukr.net" data-lang="home_page-67"
+            >Пошта: trendytail@ukr.net</a
+          >
+          <div class="footer__socs">
+            <a href="#"
+              ><img src="img/main-page/FOOTER/insta.svg" alt="Instagram Icon"
+            /></a>
+            <a href="#"
+              ><img src="img/main-page/FOOTER/fb.svg" alt="Facebook Icon"
+            /></a>
+            <a href="#"
+              ><img src="img/main-page/FOOTER/youtube.svg" alt="Youtube Icon"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer-copy">
+      <p>
+        TrendyTail © Copyright 2023 |
+        <span data-lang="home_page-68">Всі права захищені</span>
+      </p>
+    </footer>
+
     <script type="text/javascript">
-      searchIcon.addEventListener("click", () => {
-        getSearchResult();
-        input.value = "";
-      });
-
-      function getSearchResult() {
-        input.value = input.value.toLowerCase();
-
-        if (input.value == "") {
-          alert("Введіть запит");
-        } else if (input.value == "одяг") {
-          window.location.href = "clothes-page.html";
-        } else if (
-          input.value == "ліжко" ||
-          input.value == "ліжка" ||
-          input.value == "ліжаки"
-        ) {
-          window.location.href = "beds-page.html";
-        } else if (input.value == "аксесуари" || input.value == "аксессуари") {
-          window.location.href = "accessories-page.html";
-        } else if (
-          input.value == "перенесення" ||
-          input.value == "сумки" ||
-          input.value == "сумки-переноски"
-        ) {
-          window.location.href = "carrying-page.html";
-        } else if (input.value == "знижки" || input.value == "знижка") {
-          window.location.href = "sale-page.html";
-        } else {
-          alert("Не знайдено. Спробуйте ще");
-        }
-      }
-
       $(function () {
-        var liWidth = $("li").css("width");
-        $("li").css("height", liWidth);
-        $("li").css("lineHeight", liWidth);
+        var liWidth = $("#wordsearch li").css("width");
+        $("#wordsearch li").css("height", liWidth);
+        $("#wordsearch li").css("lineHeight", liWidth);
         var totalHeight = $("#wordsearch").css("width");
         $("#wordsearch").css("height", totalHeight);
       });
@@ -423,8 +509,8 @@
       });
       $(window).on("resize", function () {
         var liWidth = $(".one").css("width");
-        $("li").css("height", liWidth);
-        $("li").css("lineHeight", liWidth);
+        $("#wordsearch li").css("height", liWidth);
+        $("#wordsearch li").css("lineHeight", liWidth);
         var totalHeight = $("#wordsearch").css("width");
         $("#wordsearch").css("height", totalHeight);
       });
@@ -523,5 +609,8 @@
           });
       });
     </script>
+    <script src="js/change-language.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

@@ -60,40 +60,6 @@
     /></a>
     <!-- Anchor To The Top -->
 
-    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-    <div>
-      <div id="panel">
-        <div class="lang-block container">
-          <button class="header__btn" data-btn="ua">UA</button>
-          <button class="header__btn" data-btn="en">EN</button>
-        </div>
-        <div class="toggle">
-          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
-          <input type="checkbox" id="toggle" />
-          <label for="toggle"></label>
-        </div>
-        <div class="chat-gpt">
-          <a href="chat-gpt.html"
-            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
-          /></a>
-          <p>Chat-Gpt</p>
-        </div>
-        <div class="location-block">
-          <a href="location.html"
-            ><img src="img/location-icon.svg" alt="Location Icon"
-          /></a>
-          <p>Моя локація</p>
-        </div>
-      </div>
-
-      <p class="slide">
-        <a href="#" class="btn-slide"
-          ><img src="img/settings-icon.svg" alt="Settings Icon"
-        /></a>
-      </p>
-    </div>
-    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-
     <!-- Pop Up Added Item To The Shopping Cart -->
     <div id="popUpShoppingCart" class="pop-up-shopping-cart">
       <div class="pop-up-shopping-cart-block">
@@ -125,13 +91,13 @@
             </div>
           </div>
         </div>
-        <button
+          <a
           id="continueBtn"
           class="pop-up-button"
           data-lang="pop-up-cart_page-2"
         >
           Продовжити покупки
-        </button>
+        </a>
         <a
           href="order.html"
           id="toTheShoppingCart"
@@ -259,6 +225,43 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <div class="settings">
+                <div id="panel">
+                  <div class="lang-block container">
+                    <button class="header__btn" data-btn="ua">UA</button>
+                    <button class="header__btn" data-btn="en">EN</button>
+                  </div>
+                  <div class="toggle">
+                    <p id="inputThemeText" data-lang="home_page-40">
+                      Зробити темніше?
+                    </p>
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                  </div>
+                  <div class="chat-gpt">
+                    <a href="chat-gpt.html"
+                      ><img
+                        src="img/chat-gpt/chat-gpt-icon.png"
+                        alt="Chat GPT Icon"
+                    /></a>
+                    <p>Chat-Gpt</p>
+                  </div>
+                  <div class="location-block">
+                    <a href="location.html"
+                      ><img src="img/location-icon.svg" alt="Location Icon"
+                    /></a>
+                    <p>Моя локація</p>
+                  </div>
+                </div>
+
+                <p class="slide">
+                  <a href="#" class="btn-slide"
+                    ><img src="img/settings-icon.svg" alt="Settings Icon"
+                  /></a>
+                </p>
+              </div>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
               <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
@@ -295,11 +298,6 @@
               <div class="item-info-left-photo-block">
                 <div class="item-info-left-photo-block-items">
                   <img
-                    src="img/info-item/bed-denver/01.jpg"
-                    alt="Ліжко Denver"
-                    onclick="fullView(this.src)"
-                  />
-                  <img
                     src="img/info-item/bed-denver/02.jpg"
                     alt="Ліжко Denver"
                     onclick="fullView(this.src)"
@@ -311,6 +309,11 @@
                   />
                   <img
                     src="img/info-item/bed-denver/04.jpg"
+                    alt="Ліжко Denver"
+                    onclick="fullView(this.src)"
+                  />
+                  <img
+                    src="img/info-item/bed-denver/01.jpg"
                     alt="Ліжко Denver"
                     id="mainPicForPopUp"
                     onclick="fullView(this.src)"
@@ -365,7 +368,7 @@
                 <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="smallGroup" class="check-group">
-                    <input type="radio" id="small" name="size" />
+                    <input type="radio" id="small" name="size" checked/>
                     <label id="smallLabel" data-lang="bed-denver_page-15"
                       >80x60x13 см</label
                     >
@@ -647,9 +650,14 @@
       });
       // Exact price depends on the size click
 
-      // Pop Up Added Item To The Shopping Cart
-      const h1Text = document.getElementById("h1").innerText;
+    // Get inner text for english title
+      window.addEventListener("load", () => {
+        let h1texth1 = document.getElementById("h1").innerText;
+        h1text = localStorage.setItem("bed-denver", h1texth1);
+      });
+      // Get inner text for english title
 
+      // Pop Up Added Item To The Shopping Cart
       buy.addEventListener("click", () => {
         const itemsArray = localStorage.getItem("orderItems")
           ? JSON.parse(localStorage.getItem("orderItems"))
@@ -664,9 +672,12 @@
             }
           }
 
+          var from = mainPicForPopUp.src.search("img");
+          var to = mainPicForPopUp.src.length;
+
           itemsArray.push({
-            name: `${h1Text}`,
-            imgPath: `${mainPicForPopUp.src}`,
+             name: `${localStorage.getItem("bed-denver")}`,
+            imgPath: `${mainPicForPopUp.src.substring(from, to)}`,
             size: `${idSize}`,
             price: `${price.innerText}`,
           });

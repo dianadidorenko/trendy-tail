@@ -5,19 +5,24 @@
 
 // поля из формы
 $name = $_POST['clientName'];
+$city = $_POST['city'];
 $telephone = $_POST['telephone'];
 $email = $_POST['email'];
 $text = $_POST['text'];
+$html = 'Прийшов запит з contacts.html';
+
 
 // токен нашего бота из botFather
 $token = "6243609387:AAFNe3dh6zzyqUhggZl9_GJh0AwUkzqCEto"; // змінюємо
 // $chat_id = "https://api.telegram.org/bot6243609387:AAFNe3dh6zzyqUhggZl9_GJh0AwUkzqCEto/getUpdates";  // змінюємо тільки цифри після слову bot
 $chat_id = "-874906697"; // змінюємо
 $arr = array(
-  'Имя пользователя: ' => $name,
+  "Запит" => $html,
+  "Ім'я пользователя: " => $name,
+  'Місто: ' => $city,
   'Телефон: ' => $telephone,
   'Email: ' => $email,
-  'Текст повідомлення: ' => $text 
+  'Текст повідомлення: ' => $text,
 );
 
 // forEach не змінюємо

@@ -7,13 +7,14 @@
 $name = $_POST['footerInputUserName'];
 $email = $_POST['footerFormInputEmail'];
 $text = $_POST['footerTextarea'];
+$html = 'Прийшов запит з index.html';
 
 // токен нашего бота из botFather
 $token = "6243609387:AAFNe3dh6zzyqUhggZl9_GJh0AwUkzqCEto"; // змінюємо
 // $chat_id = "https://api.telegram.org/bot6243609387:AAFNe3dh6zzyqUhggZl9_GJh0AwUkzqCEto/getUpdates";  // змінюємо тільки цифри після слову bot
 $chat_id = "-874906697"; // змінюємо
 $arr = array(
-  "Прийшов запит з index.html",
+  "Запит" => $html,
   "Ім'я користувача: " => $name,
   'Email: ' => $email,
   'Текст повідомлення: ' => $text 

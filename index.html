@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,19 @@
     <title data-lang="home_page-title">Головна</title>
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader_image"></div>
+      <div class="preloader-div">
+        <p>Loading</p>
+        <div class="typing-dot" style="--delay: 1.2s"></div>
+        <div class="typing-dot" style="--delay: 1.3s"></div>
+        <div class="typing-dot" style="--delay: 1.4s"></div>
+        <img id="preloader-pic" src="img/preloader-heart.svg" alt="Preloader laoding pic" />
+      </div>
+    </div>
+    <!-- Preloader -->
+    
     <!-- Search Pop Up Form -->
     <div class="search-form">
       <div class="search-input__block">
@@ -68,40 +81,6 @@
       ><img src="img/arrow-up-black-icon.svg" id="ancorImg" alt="Arrow Up Icon"
     /></a>
     <!-- Anchor To The Top -->
-
-    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-    <div>
-      <div id="panel">
-        <div class="lang-block container">
-          <button class="header__btn" data-btn="ua">UA</button>
-          <button class="header__btn" data-btn="en">EN</button>
-        </div>
-        <div class="toggle">
-          <p id="inputThemeText" data-lang="home_page-40">Зробити темніше?</p>
-          <input type="checkbox" id="toggle" />
-          <label for="toggle"></label>
-        </div>
-        <div class="chat-gpt">
-          <a href="chat-gpt.html"
-            ><img src="img/chat-gpt/chat-gpt-icon.png" alt="Chat GPT Icon"
-          /></a>
-          <p>Chat-Gpt</p>
-        </div>
-        <div class="location-block">
-          <a href="location.html"
-            ><img src="img/location-icon.svg" alt="Location Icon"
-          /></a>
-          <p>Моя локація</p>
-        </div>
-      </div>
-
-      <p class="slide">
-        <a href="#" class="btn-slide"
-          ><img src="img/settings-icon.svg" alt="Settings Icon"
-        /></a>
-      </p>
-    </div>
-    <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
 
     <div class="wrapper">
       <!-- Burger Menu  -->
@@ -209,7 +188,7 @@
               </ul>
             </nav>
           </div>
-          <div class="header-links__block">
+           <div class="header-links__block">
             <div class="header__user-links user-links">
               <a href="#"
                 ><img
@@ -218,6 +197,43 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
+              <div class="settings">
+                <div id="panel">
+                  <div class="lang-block container">
+                    <button class="header__btn" data-btn="ua">UA</button>
+                    <button class="header__btn" data-btn="en">EN</button>
+                  </div>
+                  <div class="toggle">
+                    <p id="inputThemeText" data-lang="home_page-40">
+                      Зробити темніше?
+                    </p>
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                  </div>
+                  <div class="chat-gpt">
+                    <a href="chat-gpt.html"
+                      ><img
+                        src="img/chat-gpt/chat-gpt-icon.png"
+                        alt="Chat GPT Icon"
+                    /></a>
+                    <p>Chat-Gpt</p>
+                  </div>
+                  <div class="location-block">
+                    <a href="location.html"
+                      ><img src="img/location-icon.svg" alt="Location Icon"
+                    /></a>
+                    <p>Моя локація</p>
+                  </div>
+                </div>
+
+                <p class="slide">
+                  <a href="#" class="btn-slide"
+                    ><img src="img/settings-icon.svg" alt="Settings Icon"
+                  /></a>
+                </p>
+              </div>
+              <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
               <a href="order.html"
                 ><img
                   src="img/main-page/HEADER/shopping-icon.svg"
@@ -249,7 +265,7 @@
               />
             </div>
             <div class="welcome-title-middle-block">
-              <h1 class="anim-items anim-no-hide" data-lang="home_page-6">
+            <h1 class="welcome-title-h1 anim-items anim-no-hide" data-lang="home_page-6">
                 Якісні зоотовари від виробника для ваших улюбленців
               </h1>
               <h2 class="anim-items anim-no-hide" data-lang="home_page-7">
@@ -439,22 +455,22 @@
           </div>
         </section>
 
-        <!-- <section class="page__video video">
+       <section class="page__video video">
           <div class="video__container">
             <h2 data-lang="home_page-18">
               Як зробити куртку для собаки? Відповідь в відео!
             </h2>
             <iframe
-              width="1000"
-              height="700"
               src="https://www.youtube.com/embed/ZqGfKnbUJfc"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
+              --
+            >
+              allowfullscreen ></iframe
+            >
           </div>
-        </section> -->
+        </section>
 
         <section class="page__vtrendy vtrendy">
           <div class="vtrendy-info-title">
@@ -492,7 +508,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="futbolka-maria.html"
                         ><img
                           src="img/main-page/VTRENDY/futbolka-maria.jpg"
                           class="vtrendy-main-pic"
@@ -510,7 +526,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="futbolka-maria.html"
+                      <a href="hoodie-sofia.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-bim.jpg"
                           class="vtrendy-main-pic"
@@ -528,7 +544,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="tolstovka-soft.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-delicate-sira.jpg"
                           class="vtrendy-main-pic"
@@ -566,7 +582,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="futbolka-maria.html"
                         ><img
                           src="img/main-page/VTRENDY/futbolka-maria.jpg"
                           class="vtrendy-main-pic"
@@ -584,7 +600,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="futbolka-maria.html"
+                      <a href="hoodie-sofia.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-bim.jpg"
                           class="vtrendy-main-pic"
@@ -602,7 +618,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="tolstovka-soft.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-delicate-sira.jpg"
                           class="vtrendy-main-pic"
@@ -640,7 +656,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="futbolka-maria.html"
                         ><img
                           src="img/main-page/VTRENDY/futbolka-maria.jpg"
                           class="vtrendy-main-pic"
@@ -658,7 +674,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="futbolka-maria.html"
+                      <a href="hoodie-sofia.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-bim.jpg"
                           class="vtrendy-main-pic"
@@ -676,7 +692,7 @@
 
                   <div class="vtrendy-item">
                     <div class="vtrendy-item-image">
-                      <a href="raincoat-ariel.html"
+                      <a href="tolstovka-soft.html"
                         ><img
                           src="img/main-page/VTRENDY/tolstovka-delicate-sira.jpg"
                           class="vtrendy-main-pic"
@@ -753,9 +769,9 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title" data-lang="home_page-43">
+                <li class="footer__menu-title" data-lang="home_page-43">
                   Каталог
-                </h3>
+                </li>
                 <li class="footer__item">
                   <a
                     href="new-page.html"
@@ -811,9 +827,9 @@
           <div class="footer-item">
             <nav class="footer__menu">
               <ul class="footer__list">
-                <h3 class="footer__menu-title" data-lang="home_page-50">
+                <li class="footer__menu-title" data-lang="home_page-50">
                   Меню
-                </h3>
+                </li>
                 <li class="footer__item">
                   <a
                     href="catalog.html"
