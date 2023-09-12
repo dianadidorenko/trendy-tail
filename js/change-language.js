@@ -895,8 +895,8 @@ const homeTexts = {
     en: "I agree to the terms of the user agreement.",
   },
   "order_page-43": {
-    ua: "Я погоджуюсь з умовами сервісу.",
-    en: "I agree to the terms of service.",
+    ua: "Треба погодитись з умовами сервісу.",
+    en: "Need to agree to the terms of service.",
   },
   "order_page-44": {
     ua: "Мені не потрібно телефонувати для підтвердження замовлення.",
@@ -1018,6 +1018,10 @@ const homeTexts = {
     ua: "Худі Sofia",
     en: "Hoodie Sofia",
   },
+  "hoodie-snoodie_page-title": {
+    ua: "Худі Snoodie",
+    en: "Hoodie Snoodie",
+  },
   "kombinezon-puzzle_page-title": {
     ua: "Комбінезон Puzzle",
     en: "Puzzle overalls",
@@ -1129,6 +1133,14 @@ const homeTexts = {
   "hoodie-sofia_page-2": {
     ua: "Худі Sofia",
     en: "Hoodie Sofia",
+  },
+  "hoodie-snoodie_page-1": {
+    ua: "Худі Snoodie",
+    en: "Hoodie Snoodie",
+  },
+  "hoodie-snoodie_page-2": {
+    ua: "Худі Snoodie",
+    en: "Hoodie Snoodie",
   },
   "futbolka-maria_page-1": {
     ua: "Футболка Maria",
@@ -1342,6 +1354,10 @@ const homeTexts = {
     ua: "Створено з турботою про комфорт господаря і улюбленця!Переваги моделі: оптимальна форма, зйомний «дах», віконечко з сіткою, довгі м’які ручки, кишеня для дрібниць.",
     en: "Created with care for the comfort of the owner and pet! Advantages of the model: optimal shape, removable 'roof', window with a net, long soft handles, pocket for small things.",
   },
+  "hoodie-snoodie_page-3": {
+    ua: "Це базова річ у гардеробі кожного чотирилапого друга, яка буде незамінна в будь-який сезон. Худі можна вдягати в прохолодну погоду навесні, влітку і восени.",
+    en: "This is a basic thing in the wardrobe of every four-legged friend, which will be indispensable in any season. Hoodies can be worn in cool weather in spring, summer and autumn.",
+  },
   "kombinezon-puzzle_page-7": {
     ua: "Що може бути приємнішим за неквапливу прогулянку в морозний день у зручному тепленькому комбінезоні PUZZLE? Він створений спеціально для улюбленців, яким не сидиться вдома. Комбінезон зручний, не сковує рухи, відмінно прилягає до тіла і дуже теплий. Плащова тканина, з якої виготовлено комбінезон, не пропускає вологу, а силіконовий наповнювач та хутряна підкладка гарно зберігають тепло. Високий комір забезпечує додатковий комфорт, а резинки на рукавах щільно прилягають до лап та запобігають потраплянню снігу.",
     en: "What could be nicer than a leisurely walk on a frosty day in a comfortable warm PUZZLE overall? It was created especially for pets who are not at home. The overalls are comfortable, do not constrain movements, fit perfectly to the body and are very warm. The raincoat fabric from which the overalls are made does not allow moisture to pass through, and the silicone filler and fur lining retain heat well. The high collar provides additional comfort, and the elastic bands on the sleeves fit tightly to the paws and prevent snow from entering.",
@@ -1426,6 +1442,10 @@ const homeTexts = {
     ua: "Стильний аксесуар для чотирилапих модників. Комірець з темно-синьої джинсової тканини та яскраво-лимонної бавовни надійно фіксується липучкою, яка міцно тримається. Прикрашає комірець ґудзик-ромашка. Досить лише цього маленького аксесуару, щоб створити досконалий літній образ.",
     en: "A stylish accessory for four-legged fashionistas. Crafted from navy blue denim and bright lemon cotton, the collar is secured with Velcro for a strong hold. A daisy button decorates the collar. Just this little accessory is enough to create a perfect summer look.",
   },
+  "hoodie-snoodie_page-5": {
+    ua: "Стиль і свобода рухів, зручність і комфорт - все це вашому улюбленцю забезпечить худі SNOODIE. Це базова річ у гардеробі кожного чотирилапого друга, яка буде незамінна в будь-який сезон. Худі можна вдягати в прохолодну погоду навесні, влітку і восени. Високий комір-снуд чудово захистить улюбленця від вітру і туману. Худі можна вдягати під верхній одяг (дощовик, жилет) для додаткового тепла і комфорту.",
+    en: "Style and freedom of movement, convenience and comfort - all this will provide your pet with a SNOODIE hoodie. This is a basic thing in the wardrobe of every four-legged friend, which will be indispensable in any season. Hoodies can be worn in cool weather in spring, summer and autumn. A high snood collar will perfectly protect your pet from wind and fog. Hoodies can be worn under outerwear (raincoat, vest) for additional warmth and comfort.",
+  },
   "collar-bright_page-8": {
     ua: "Матеріал: 95% котон, 5% еластан.",
     en: "Material: 95% cotton, 5% elastane.",
@@ -1475,8 +1495,8 @@ const homeTexts = {
     en: "77х60 cm",
   },
   "pled-bliss_page-7": {
-    ua: "77х60 см",
-    en: "77х60 cm",
+    ua: "77х100 см",
+    en: "77х100 cm",
   },
   "carrying-vesta_page-7": {
     ua: "77х100 см",
@@ -1535,7 +1555,7 @@ const homeTexts = {
     en: "Availability:",
   },
   "bed-ascold_page-12": {
-    ua: "В наявністі",
+    ua: "В наявності",
     en: "In stock",
   },
   "bed-ascold_page-13": {
@@ -1738,6 +1758,10 @@ const homeTexts = {
     ua: "Правила догляду: ручне прання при температурі не вище 40 градусів.",
     en: "Care instructions: hand wash at a temperature not higher than 40 degrees.",
   },
+  "hoodie-snoodie_page-11": {
+    ua: "Матеріал: бавовняний трикотаж трьохнитка.",
+    en: "Material: three-thread cotton jersey.",
+  },
   "wiki-title": {
     ua: "Введіть те, що вас цікавить і отримуйте інформацію з Вікіпедія",
     en: "Enter what interests you and get information from Wikipedia",
@@ -1767,8 +1791,8 @@ const homeTexts = {
     en: "Chat GPT for Trendy Tail",
   },
   "not-found_page-1": {
-    ua: "Ми не знайдемо те, що ви шукали.",
-    en: "We can't find what you're looking for.",
+    ua: "Ми не знайшли те, що ви шукали.",
+    en: "We couldn't find what you're looking for.",
   },
   "not-found_page-2": {
     ua: "На жаль, сторінку, яку ви шукали, не вдалося знайти. Це може бути тимчасово недоступними, переміщеними або більше не існувати.",
@@ -1945,6 +1969,38 @@ const homeTexts = {
   "pop-up-cart_page-6": {
     ua: "Ітого:",
     en: "Total:",
+  },
+  "thank-you-title": {
+    ua: "Дякуємо за Ваш запит!",
+    en: "Thank you for your request!",
+  },
+  "thank-you-1": {
+    ua: "Дякуємо за Ваш запит!",
+    en: "Thank you for your request!",
+  },
+  "thank-you-2": {
+    ua: "Ми його вже оборобляємо",
+    en: "We are already processing it",
+  },
+  "thank-you-order-title": {
+    ua: "Дякуємо за Ваше замовлення!",
+    en: "Thank you for your order!",
+  },
+  "thank-you-order-1": {
+    ua: "Дякуємо за Ваше замовлення!",
+    en: "Thank you for your order!",
+  },
+  "not-found-page-1": {
+    ua: "Каталог",
+    en: "Catalog",
+  },
+  "not-found-page-2": {
+    ua: "О нас",
+    en: "About us",
+  },
+  "not-found-page-4": {
+    ua: "Контакти",
+    en: "Contacts",
   },
 };
 

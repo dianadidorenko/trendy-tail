@@ -44,15 +44,33 @@ body {
   display: block;
   max-width: 35px;
 }
-.h1-block h1 {
+
+.order-h1 {
   position: relative;
   padding-bottom: 0;
+  font-size: 45px;
+  font-family: "Orelega One", sans-serif;
+  line-height: 90%; /* 50/55 */
+  color: var(--light-blue-color);
+  max-width: 795px;
+  text-align: center;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
+}
+
+.order-h1.active {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .under-h1-text {
   font-size: 14px;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 50px;
 }
 
@@ -84,9 +102,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-column-gap: 100px;
-     -moz-column-gap: 100px;
-          column-gap: 100px;
+  -webkit-column-gap: 70px;
+     -moz-column-gap: 70px;
+          column-gap: 70px;
 }
 
 .info-user-block {
@@ -187,7 +205,7 @@ body {
   font-size: 20px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--secondary-color);
-  max-width: 111px;
+  max-width: 115px;
   margin: 20px 0;
 }
 
@@ -236,13 +254,15 @@ body {
 }
 
 .need-to-agree-block {
+  width: 600px;
+  font-size: 22px;
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: #fff;
-  z-index: 3;
+  z-index: 9;
   border: 1px solid #999;
   color: #333;
   display: -webkit-box;
@@ -251,6 +271,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 30px 40px 30px 30px;
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
@@ -258,6 +281,16 @@ body {
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 10px 1px grey;
           box-shadow: 0px 0px 10px 1px grey;
+}
+
+.agree-block-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2000px;
+  width: 100vw;
+  background-color: rgba(144, 144, 144, 0.353);
+  z-index: 8;
   display: none;
 }
 
@@ -271,7 +304,7 @@ body {
 
 #closeNeedAgreeBlock {
   position: absolute;
-  top: 7px;
+  top: 10px;
   right: 10px;
   font-size: 22px;
   background-color: var(--red-color);
@@ -335,17 +368,29 @@ body {
           column-gap: 10px;
 }
 
-.quantity-block span {
+.minus,
+.plus {
   text-align: center;
   background-color: lightgray;
   padding: 9px 12px;
   border-radius: 50%;
   cursor: pointer;
   color: #000;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
-.quantity-block span:nth-child(3) {
+.minus:hover,
+.plus:hover {
+  background-color: rgb(179, 179, 179);
+}
+
+.orderQuantity {
   padding: 9px 15px;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 50%;
+  color: #000;
 }
 
 #orderSize {
@@ -373,20 +418,12 @@ body {
     font-size: 20px;
     padding: 40px 50px;
   }
-  .total-block {
-    font-size: 18px;
-  }
-  .number {
-    font-size: 20px;
-  }
-}
-@media (max-width: 1000px) {
   .popUpImage {
     max-width: 100px;
   }
   .order-block-info {
     padding-top: 20px;
-    padding: 15px 35px;
+    padding: 15px 35px 15px 10px;
     margin: 25px 0;
   }
   .order-block-info-right-part {
@@ -399,8 +436,12 @@ body {
   .number {
     font-size: 18px;
   }
+  .need-to-agree-block {
+    font-size: 20px;
+    width: 500px;
+  }
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .order-main-block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -419,10 +460,13 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .order-h1 {
+    max-width: 190px;
+  }
   .order-button {
     margin-bottom: 20px;
   }
-  h1 {
+  .order-h1 {
     font-size: 30px;
   }
   .under-h1-text {
@@ -436,35 +480,70 @@ body {
   .number {
     font-size: 16px;
   }
+  .need-to-agree-block {
+    font-size: 18px;
+  }
+  #closeNeedAgreeBlock {
+    right: 15px;
+  }
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .empty-order h2 {
     font-size: 16px;
     padding: 30px 40px;
   }
+  .order-block-info {
+    -webkit-column-gap: 15px;
+       -moz-column-gap: 15px;
+            column-gap: 15px;
+    padding: 15px 35px 15px 15px;
+  }
+  .order-block-info p {
+    font-size: 13px;
+  }
+  .material-symbols-outlined {
+    font-size: 15px !important;
+  }
+  .need-to-agree-block {
+    font-size: 14px;
+    width: 380px;
+    padding: 20px 40px 20px 10px;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+  }
 }
-@media (max-width: 475px) {
+@media (max-width: 500px) {
   .agree-block {
     margin: 10px 0 20px 0;
   }
   .order-block-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
             column-gap: 10px;
     padding-top: 20px;
-    padding: 15px 25px 15px 15px;
+    padding: 10px 10px 10px 0;
   }
   .quantity-block {
     font-size: 14px;
+    -webkit-column-gap: 7px;
+       -moz-column-gap: 7px;
+            column-gap: 7px;
   }
   .trash {
     max-width: 15px;
   }
-  .quantity-block span {
+  .orderQuantity,
+.minus,
+.plus {
     padding: 5px 8px;
     font-size: 10px;
   }
-  .quantity-block span:nth-child(3) {
+  .orderQuantity {
     padding: 5px 10px;
     font-size: 10px;
   }
@@ -474,10 +553,14 @@ body {
   .number {
     font-size: 14px;
   }
+  .material-symbols-outlined {
+    font-size: 10px !important;
+  }
 }
 @media (max-width: 400px) {
-  h1 {
+  .order-h1 {
     font-size: 25px;
+    max-width: 145px;
   }
   .under-h1-text {
     font-size: 12px;
@@ -494,7 +577,20 @@ body {
 .quantity-block {
     font-size: 12px;
   }
-  .order-block-info {
-    padding: 10px 20px 10px 10px;
+  .need-to-agree-block {
+    font-size: 12px;
+    width: 300px;
+    padding: 20px 30px 20px 10px;
+    -webkit-column-gap: 5px;
+       -moz-column-gap: 5px;
+            column-gap: 5px;
+  }
+  .need-to-agree-block img {
+    max-width: 20px;
+  }
+  #closeNeedAgreeBlock {
+    font-size: 16px;
+    padding: 1px 4px;
+    right: 10px;
   }
 }

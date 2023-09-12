@@ -15,6 +15,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: #218287;
+  padding: 0 50px;
 }
 ::selection {
   color: #fff;
@@ -53,5 +54,12 @@ button:hover {
   span {
     color: white;
     font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  button {
+    font-size: 18px;
+    padding: 13px 24px;
   }
 }

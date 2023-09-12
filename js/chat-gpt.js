@@ -3,7 +3,7 @@ const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 const deleteButton = document.querySelector("#delete-btn");
 
-const API_KEY = "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"; // Paste your API key here
+const API_KEY = "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"; // Paste your API key here
 
 const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text">

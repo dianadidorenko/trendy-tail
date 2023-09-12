@@ -271,6 +271,7 @@ input[type="radio"]:checked::after {
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.3s ease 0s;
+  color: var(--primary-color);
 }
 #sizesTable:hover {
   opacity: 1;
@@ -523,7 +524,7 @@ input[type="radio"]:checked::after {
   background-color: var(--light-blue-color);
   transition: all 0.3s ease 0s;
 }
-#continue:hover {
+#continueBtn:hover {
   background-color: var(--dark-blue-color);
 }
 #popUpSize,

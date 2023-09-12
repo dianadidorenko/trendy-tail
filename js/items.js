@@ -10,9 +10,9 @@ closeSizesTable.addEventListener("click", () => {
 // Show sizes table
 
 // Smooth  scrolling behavior
-const anchors = document.querySelectorAll('a[href*="#"]');
+const anchorsClothesSize = document.querySelectorAll('a[href*="#"]');
 
-for (let anchor of anchors) {
+anchorsClothesSize.forEach((anchor) => {
   if (anchor.id == "sizesTable") {
     anchor.addEventListener("click", (e) => {
       e.preventDefault();
@@ -22,5 +22,5 @@ for (let anchor of anchors) {
         .scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
-}
+});
 // Smooth  scrolling behavior

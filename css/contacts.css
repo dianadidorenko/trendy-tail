@@ -170,8 +170,8 @@
   -webkit-filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
           filter: drop-shadow(4px 4px 20px rgba(84, 84, 84, 0.6));
   border-radius: 70px 70px 10px 10px;
-  -webkit-transform: translate(0px, 60%);
-          transform: translate(0px, 60%);
+  -webkit-transform: translate(0px, 50%);
+          transform: translate(0px, 50%);
   opacity: 0;
   -webkit-transition: all 2s ease 0s;
   transition: all 2s ease 0s;
@@ -246,11 +246,10 @@
   }
 }
 @media (max-width: 1200px) {
-  .phone-block {
-    -webkit-transform: translate(0px, 100%);
-            transform: translate(0px, 100%);
-    opacity: 0;
-  }
+  /*.phone-block {*/
+  /*  -webkit-transform: translate(0px, 100%);*/
+  /*          transform: translate(0px, 100%);*/
+  /*}*/
   .contacts-block {
     padding-top: 330px;
     padding-bottom: 300px;
@@ -262,9 +261,10 @@
             transform: translate(-50%, -50%);
     padding: 40px 115px;
     row-gap: 15px;
+     opacity: 0;
   }
   .phone-block.active {
-    top: 28%;
+    top: 27%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -280,7 +280,7 @@
   }
   .mail-block.active {
     left: 50%;
-    bottom: -47px;
+    bottom: -46px;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     opacity: 1;

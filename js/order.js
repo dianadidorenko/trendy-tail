@@ -29,9 +29,9 @@ xhr.open("GET", "./catalog.json", true);
 xhr.setRequestHeader("Content-Type", "application/json");
 
 // Взяти з інпута значення про товар в корзині
-let qwe = "";
-qwe = localStorage.getItem("orderItems");
-inputOfOrder.value = qwe;
+let totalOrder = "";
+totalOrder = localStorage.getItem("orderItems");
+inputOfOrder.value = totalOrder;
 // Взяти з інпута значення про товар в корзині
 
 // Назначаем обработчик события для успешной загрузки данных
@@ -42,28 +42,20 @@ xhr.onload = function () {
     let itemsOrder = JSON.parse(localStorage.getItem("orderItems"));
 
     let items = "";
-    // console.log(orderName.value);
 
-    // 22
     for (var i = 0; i < itemsOrder.length; i++) {
       items += `<div class="order-block-info" data-id='${jsonData[i].id}'>
                 <div class="order-block-info-left-part">
-                  <img class="popUpImage" src='${itemsOrder[i].imgPath.slice(
-                    45
-                  )}'/>
+                  <img class="popUpImage" src='${itemsOrder[i].imgPath}'/>
                 </div>
                 <div class="order-block-info-right-part">
                   <p class="orderGoodsTitle">${itemsOrder[i].name}</p>
-                  <p>Розмір: <span class="orderSize">${
-                    itemsOrder[i].size
-                  }</span></p>
-                  <p>Ціна за одиницю:
-                    <span class="orderPrice1Piece">${
-                      itemsOrder[i].price
-                    }</span> грн
+                  <p style='display:flex; align-items:center; column-gap: 2px;'>Розмір <span class='material-symbols-outlined'>fiber_manual_record</span> Size: <span class="orderSize" style='padding-left: 5px; font-weight: bold'>${itemsOrder[i].size}</span></p>
+                  <p style='display:flex; align-items:center; column-gap: 2px;'>Ціна за од. <span class='material-symbols-outlined'>fiber_manual_record</span> Item price:
+                    <span class="orderPrice1Piece" style='padding-left: 5px; font-weight: bold'>${itemsOrder[i].price}</span> грн
                   </p>
                   <div class="quantity-block">
-                    <p>Кількість:</p>
+                    <p style='display:flex; align-items:center; column-gap: 2px;'>Кількість <span class='material-symbols-outlined'>fiber_manual_record</span> Quantity:</p>
                     <span data-action="minus"class="minus">-</span>
                     <span class="orderQuantity" data-counter>1</span>
                     <span data-action="plus" class="plus">+</span>
@@ -73,15 +65,6 @@ xhr.onload = function () {
               </div>`;
     }
     document.querySelector(".order-info-block-right-part").innerHTML = items;
-
-    // initial order quantity in the header
-    if (document.querySelectorAll(".order-block-info").length) {
-      localStorage.setItem(
-        "quantityOrderValue",
-        document.querySelectorAll(".order-block-info").length
-      );
-    }
-    // initial order quantity in the header
 
     // Calculate quantity
     window.addEventListener("click", (e) => {
@@ -111,11 +94,17 @@ xhr.onload = function () {
             if (
               i == parseInt(e.target.closest(".order-block-info").dataset.id)
             ) {
-              itemsOrder.splice(i, 1);
-              e.target.closest(".order-block-info").remove();
-              totalSum.innerText = 0;
-              localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
-              location.reload();
+              let answer = confirm("Видалити товар?");
+              if (answer === true) {
+                itemsOrder.splice(i, 1);
+                e.target.closest(".order-block-info").remove();
+                totalSum.innerText = 0;
+                localStorage.setItem("orderItems", JSON.stringify(itemsOrder));
+                location.reload();
+              } else {
+                counter.innerText = 1;
+                return false;
+              }
             }
           }
         }
@@ -160,6 +149,14 @@ xhr.onload = function () {
     let totalPrice = 0;
     const cartItems = document.querySelectorAll(".order-block-info");
 
+    if (cartItems.length >= 1) {
+      headerOrderQuantity.innerText = cartItems.length;
+      headerOrderQuantity.style.display = "flex";
+      localStorage.setItem("quantityItems", cartItems.length);
+    } else {
+      headerOrderQuantity.style.display = "none";
+    }
+
     cartItems.forEach((item) => {
       const amountEl = item.querySelector("[data-counter]");
       const priceEl = item.querySelector(".orderPrice1Piece");
@@ -171,13 +168,22 @@ xhr.onload = function () {
     });
 
     // initial order quantity in the header
+    headerOrderQuantity.style.display = "none";
+
     const orderQuantity = document.querySelectorAll(".orderQuantity");
-    orderQuantity.forEach((item) => {
-      let amount = 0;
-      amount += parseInt(item.innerText);
-      totalQun.innerText = parseInt(totalQun.innerText) + amount;
-      // initial order quantity in the header
-    });
+
+    if (orderQuantity.length >= 1) {
+      orderQuantity.forEach((item) => {
+        let amount = 0;
+        amount += parseInt(item.innerText);
+        totalQun.innerText = parseInt(totalQun.innerText) + amount;
+        headerOrderQuantity.style.display = "flex";
+      });
+    } else {
+      localStorage.removeItem("quantityItems");
+      headerOrderQuantity.style.display = "none";
+    }
+    // initial order quantity in the header
     // Insert total price before quantity increasing
 
     // Anchor adding
@@ -192,8 +198,10 @@ xhr.onload = function () {
 
     // Close Need To Agree Pop Up
     closeNeedAgreeBlock.addEventListener("click", () => {
-      let needToAgreeBlock = document.querySelector(".need-to-agree-block");
+      let needToAgreeBlock = document.querySelector(".need-to-agree-block"),
+        agreeBlockOverlay = document.querySelector(".agree-block-overlay");
       needToAgreeBlock.style.display = "none";
+      agreeBlockOverlay.style.display = "none";
     });
     // Close Need To Agree Pop Up
 
@@ -203,6 +211,10 @@ xhr.onload = function () {
     let areaSelect = document.getElementById("areaSelect");
     let citySelect = document.getElementById("citySelect");
     let warehouseSelect = document.getElementById("warehouseSelect");
+
+    let area = {};
+    let city = {};
+    let warehouse = {};
 
     function makePostRequest(method, params, callback) {
       let requestData = {
@@ -243,15 +255,18 @@ xhr.onload = function () {
         });
 
         areaSelect.addEventListener("change", () => {
+          areaDescriptionInput.value =
+            areaSelect.options[areaSelect.selectedIndex].text;
           loadCities(areaSelect.value);
         });
       });
     }
 
     function loadCities(areaRef) {
-      citySelect.innerHTML = '<option value="">Оберіть місце</option>';
+      citySelect.innerHTML =
+        '<option value="">Оберіть місце | Choose city</option>';
       warehouseSelect.innerHTML =
-        '<option value="">Оберіть відділення або поштомат</option>';
+        '<option value="">Оберіть відділення або поштомат | Choose a branch or a post office</option>';
 
       let cityParams = {
         AreaRef: areaRef,
@@ -262,7 +277,11 @@ xhr.onload = function () {
           createOption(citySelect, city.Ref, city.Description);
         });
 
+        city = cities[0];
+
         citySelect.addEventListener("change", () => {
+          cityDescriptionInput.value =
+            citySelect.options[citySelect.selectedIndex].text;
           loadWarehouses(citySelect.value);
         });
       });
@@ -270,7 +289,7 @@ xhr.onload = function () {
 
     function loadWarehouses(cityRef) {
       warehouseSelect.innerHTML =
-        '<option value="">Оберіть відділення або поштомат</option>';
+        '<option value="">Оберіть відділення або поштомат | Choose a branch or a post office </option>';
 
       let warehouseParams = {
         CityRef: cityRef,
@@ -280,10 +299,31 @@ xhr.onload = function () {
         warehouses.forEach((warehouse) => {
           createOption(warehouseSelect, warehouse.Ref, warehouse.Description);
         });
+
+        warehouseSelect.addEventListener("change", () => {
+          warehouse = warehouses.find(
+            (item) => item.Ref === warehouseSelect.value
+          );
+          if (warehouse) {
+            warehouseDescriptionInput.value = warehouse.Description;
+          } else {
+            warehouseDescriptionInput.value = "";
+          }
+        });
       });
     }
 
     loadAreas();
+
+    let areaDescriptionInput = document.getElementById("areaDescription");
+    let cityDescriptionInput = document.getElementById("cityDescription");
+    let warehouseDescriptionInput = document.getElementById(
+      "warehouseDescription"
+    );
+
+    areaDescriptionInput.value = area.Description;
+    cityDescriptionInput.value = city.Description;
+    warehouseDescriptionInput.value = warehouse.Description;
   }
 };
 
@@ -318,7 +358,7 @@ function checkForm() {
 
   // Check Name and Surname
 
-  patternLatters = /^[а-яА-Яa-zA-Z]+$/;
+  patternLatters = /^[А-ЯЁІЇЄа-яёіїєA-Za-z]+$/;
 
   if (!patternLatters.test(orderNameInput.value)) {
     errorName.style.display = "block";
@@ -356,14 +396,16 @@ function checkForm() {
   // =================================================================
 
   // Show Need to Agree Block
-  let needToAgreeBlock = document.querySelector(".need-to-agree-block");
+  let needToAgreeBlock = document.querySelector(".need-to-agree-block"),
+    agreeBlockOverlay = document.querySelector(".agree-block-overlay");
 
   if (agreeConditions.checked) {
     needToAgreeBlock.style.display = "none";
+    agreeBlockOverlay.style.display = "none";
     agreeConditions.checked;
   } else {
-    let needToAgreeBlock = document.querySelector(".need-to-agree-block");
     needToAgreeBlock.style.display = "flex";
+    agreeBlockOverlay.style.display = "flex";
   }
   // Show Need to Agree Block
 
@@ -375,13 +417,21 @@ function checkForm() {
   }
   // Show if need to phone client back
 
+  if (!noNeedToPhone.checked) {
+    callBackInp.value = "Не треба передзвонювати";
+  } else if (noNeedToPhone.checked) {
+    callBackInp.value = "Треба передзвонювати";
+  }
+
   // Check form to send
   if (
     checkName == true &&
     checkSurname == true &&
     checkNumber == true &&
-    checkEmail == true
+    checkEmail == true &&
+    agreeConditions.checked
   ) {
+    localStorage.clear();
     return true;
   } else {
     return false;

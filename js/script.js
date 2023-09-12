@@ -70,7 +70,7 @@ function checkForm() {
 
   // Check Name
 
-  patternName = /^[а-яА-Яa-zA-Z]+$/; // щоб були лише букви від і до
+  patternName = /^[А-ЯЁІЇЄа-яёіїєA-Za-z]+$/;
 
   if (!patternName.test(footerFormUserNameValue)) {
     errorName.style.display = "block";

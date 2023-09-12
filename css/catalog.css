@@ -658,12 +658,17 @@
 }
 
 aside {
+  min-width: 200px;
   border-radius: 10px;
   border: 4px double rgba(33, 130, 135, 0.24);
   background: rgba(208, 208, 208, 0);
   -webkit-box-shadow: 2px 2px 15px 7px rgba(209, 209, 209, 0.25);
           box-shadow: 2px 2px 15px 7px rgba(209, 209, 209, 0.25);
-  padding: 34px 100px 34px 29px;
+  padding: 40px 30px;
+}
+
+.clothes-pagt-aside {
+  min-width: 220px;
 }
 
 .catalogue-menu__container {
@@ -749,9 +754,6 @@ aside {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 20px;
-}
-.li-list label {
-  min-width: 120px;
 }
 
 .li-list-title {
@@ -935,9 +937,9 @@ input[type=checkbox]:disabled::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
 }
 
 .new {
@@ -1022,7 +1024,7 @@ input[type=checkbox]:disabled::after {
 
 @media (max-width: 1400px) {
   aside {
-    padding: 34px 70px 34px 29px;
+    min-width: 240px;
   }
   .catalogue-menu-block-items {
     gap: 30px 40px;
@@ -1048,8 +1050,11 @@ input[type=checkbox]:disabled::after {
   }
 }
 @media (max-width: 768px) {
+  aside {
+    min-width: 160px;
+  }
   .catalogue-menu-aside {
-    font-size: 14px;
+    font-size: 12px;
   }
   .page__catalogue-menu {
     padding-top: 50px;
@@ -1065,6 +1070,16 @@ input[type=checkbox]:disabled::after {
   }
 }
 @media (max-width: 767.98px) {
+  aside {
+    min-width: 160px;
+    padding: 30px 15px;
+  }
+  #newAndDiscountItem ul {
+    row-gap: 20px;
+  }
+  .catalogue-menu-aside {
+    row-gap: 25px;
+  }
   .catalogue-menu__container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1110,7 +1125,7 @@ input[type=checkbox]:disabled::after {
 }
 @media (max-width: 550px) {
   aside {
-    padding: 34px 29px 34px 29px;
+    min-width: 175px;
   }
   .catalogue-menu-aside {
     row-gap: 25px;

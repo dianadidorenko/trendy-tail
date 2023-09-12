@@ -32,9 +32,20 @@ burgerMenu(".burger-menu");
 // Changing theme
 const toggle = document.querySelector(".toggle");
 let root = document.documentElement;
+const imgLogoPath = document.querySelector(".header-logo");
 
 var checked = JSON.parse(localStorage.getItem("toggle")),
   checkbox = document.querySelector("#toggle");
+
+// Change logo depending on web site theme
+if (checked) {
+  imgPathLogo = localStorage.setItem("imgPathLogo", "img/logo-white.svg");
+  imgLogoPath.src = localStorage.getItem("imgPathLogo");
+} else {
+  imgPathLogo = localStorage.setItem("imgPathLogo", "img/logo.svg");
+  imgLogoPath.src = localStorage.getItem("imgPathLogo");
+}
+// Change logo depending on web site theme
 
 if (checked == true) {
   checkbox.checked = true;
@@ -67,6 +78,9 @@ if (checked == true) {
 
 toggle.addEventListener("change", (e) => {
   if (e.target.checked) {
+    imgPathLogo = localStorage.setItem("imgPathLogo", "img/logo-white.svg");
+    imgLogoPath.src = localStorage.getItem("imgPathLogo");
+
     localStorage.setItem("toggle", checkbox.checked);
 
     localStorage.setItem("background", "#1e595c");
@@ -81,6 +95,9 @@ toggle.addEventListener("change", (e) => {
     inputThemeText.innerText = "Зробити світліше?";
     inputThemeText.setAttribute("data-lang", "home_page-41");
   } else {
+    imgPathLogo = localStorage.setItem("imgPathLogo", "img/logo.svg");
+    imgLogoPath.src = localStorage.getItem("imgPathLogo");
+
     localStorage.removeItem("toggle");
     root.style.setProperty("--background", "white");
     root.style.setProperty("--background-color", "white");
@@ -97,17 +114,18 @@ toggle.addEventListener("change", (e) => {
 });
 // Changing theme
 
-// Insert Product Quantity to the Header Shopping Cart
-if (
-  parseInt(localStorage.getItem("quantityOrderValue")) == 0 ||
-  !localStorage.getItem("quantityOrderValue")
-) {
+// initial order quantity in the header
+headerOrderQuantity.style.display = "none";
+
+if (parseInt(localStorage.getItem("quantityItems") == 0)) {
   headerOrderQuantity.style.display = "none";
 } else {
-  headerOrderQuantity.style.display = "flex";
-  headerOrderQuantity.innerText = localStorage.getItem("quantityOrderValue");
+  if (localStorage.getItem("quantityItems")) {
+    headerOrderQuantity.innerText = localStorage.getItem("quantityItems");
+    headerOrderQuantity.style.display = "flex";
+  }
 }
-// Insert Product Quantity to the Header Shopping Cart
+// initial order quantity in the header
 
 // Insert profile name in the header
 userName.innerText = localStorage.getItem("userProfileName");
@@ -125,11 +143,11 @@ $(function () {
 // Smooth  scrolling behavior
 const anchors = document.querySelectorAll('a[href*="#"]');
 
-for (let anchor of anchors) {
-  if (anchor.id == "top") {
-    anchor.addEventListener("click", (e) => {
+for (let anchorItem of anchors) {
+  if (anchorItem.id == "top") {
+    anchorItem.addEventListener("click", (e) => {
       e.preventDefault();
-      const blockID = anchor.getAttribute("href");
+      const blockID = anchorItem.getAttribute("href");
       document
         .querySelector("" + blockID)
         .scrollIntoView({ behavior: "smooth", block: "start" });
@@ -137,3 +155,11 @@ for (let anchor of anchors) {
   }
 }
 // Smooth  scrolling behavior
+
+// Preloader
+$(function () {
+  setTimeout(function () {
+    $(`body`).addClass("loaded");
+  }, 3000);
+});
+// Preloader
