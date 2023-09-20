@@ -91,7 +91,7 @@
             </div>
           </div>
         </div>
-           <a
+        <a
           id="continueBtn"
           class="pop-up-button"
           data-lang="pop-up-cart_page-2"
@@ -163,7 +163,7 @@
       </div>
       <!-- Burger Menu  -->
 
-      <header class="header">
+       <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
             <a href="index.html"
@@ -217,7 +217,7 @@
               </ul>
             </nav>
           </div>
-           <div class="header-links__block">
+          <div class="header-links__block">
             <div class="header__user-links user-links">
               <a href="#"
                 ><img
@@ -226,6 +226,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
+              <a href="order.html"
+                ><img
+                  src="img/main-page/HEADER/shopping-icon.svg"
+                  class="user-links-image"
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
               <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
               <div class="settings">
                 <div id="panel">
@@ -263,13 +270,6 @@
                 </p>
               </div>
               <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-              <a href="order.html"
-                ><img
-                  src="img/main-page/HEADER/shopping-icon.svg"
-                  class="user-links-image"
-                  alt="Shopping Cart Icon" />
-                <span id="headerOrderQuantity"></span
-              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <span id="userName"></span>
@@ -283,7 +283,6 @@
           </div>
         </div>
       </header>
-
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
@@ -374,7 +373,7 @@
                 <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="xxsGroup" class="check-group">
-                    <input type="radio" id="xxs" name="size" checked/>
+                    <input type="radio" id="xxs" name="size" checked />
                     <label>XXS</label>
                   </div>
                   <div id="xsGroup" class="check-group">
@@ -914,15 +913,17 @@
         }
       });
       // Exact price depends on the size click
-      
-            // Get inner text for english title
+
+      // Get inner text for english title
       window.addEventListener("load", () => {
         let h1texth1 = document.getElementById("h1").innerText;
-        h1text = localStorage.setItem("tolstovka-soft", h1texth1);
+        h1text = localStorage.setItem("h1text", h1texth1);
       });
       // Get inner text for english title
 
       // Pop Up Added Item To The Shopping Cart
+      const h1Text = document.getElementById("h1").innerText;
+
       buy.addEventListener("click", () => {
         const itemsArray = localStorage.getItem("orderItems")
           ? JSON.parse(localStorage.getItem("orderItems"))
@@ -941,7 +942,7 @@
           var to = mainPicForPopUp.src.length;
 
           itemsArray.push({
-            name: `${localStorage.getItem("tolstovka-soft")}`,
+            name: `${localStorage.getItem("h1text")}`,
             imgPath: `${mainPicForPopUp.src.substring(from, to)}`,
             size: `${idSize}`,
             price: `${price.innerText}`,
@@ -959,7 +960,7 @@
         wrapper.style.opacity = "0.3";
 
         document.getElementById("popUpImage").src = mainPicForPopUp.src;
-        
+
         popUpGoodsTitle.innerText = h1.innerText;
 
         for (check of checked) {

@@ -21,11 +21,15 @@
         <div class="typing-dot" style="--delay: 1.2s"></div>
         <div class="typing-dot" style="--delay: 1.3s"></div>
         <div class="typing-dot" style="--delay: 1.4s"></div>
-        <img id="preloader-pic" src="img/preloader-heart.svg" alt="Preloader laoding pic" />
+        <img
+          id="preloader-pic"
+          src="img/preloader-heart.svg"
+          alt="Preloader laoding pic"
+        />
       </div>
     </div>
     <!-- Preloader -->
-    
+
     <!-- Search Pop Up Form -->
     <div class="search-form">
       <div class="search-input__block">
@@ -86,7 +90,10 @@
         <nav class="burger-header-menu menu">
           <ul class="burger-header-menu__list">
             <li class="menu__item">
-              <a href="catalog.html" class="menu__link active__link" data-lang="home_page-35"
+              <a
+                href="catalog.html"
+                class="menu__link active__link"
+                data-lang="home_page-35"
                 >Каталог</a
               >
             </li>
@@ -142,7 +149,7 @@
                 <li class="menu__item">
                   <a
                     href="catalog.html"
-                    class="menu__link multi__text active__link"
+                    class="menu__link multi__text"
                     data-lang="home_page-1"
                     >Каталог</a
                   >
@@ -182,7 +189,7 @@
               </ul>
             </nav>
           </div>
-           <div class="header-links__block">
+          <div class="header-links__block">
             <div class="header__user-links user-links">
               <a href="#"
                 ><img
@@ -191,6 +198,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
+              <a href="order.html"
+                ><img
+                  src="img/main-page/HEADER/shopping-icon.svg"
+                  class="user-links-image"
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
               <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
               <div class="settings">
                 <div id="panel">
@@ -228,13 +242,6 @@
                 </p>
               </div>
               <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-              <a href="order.html"
-                ><img
-                  src="img/main-page/HEADER/shopping-icon.svg"
-                  class="user-links-image"
-                  alt="Shopping Cart Icon" />
-                <span id="headerOrderQuantity"></span
-              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <span id="userName"></span>
@@ -248,7 +255,6 @@
           </div>
         </div>
       </header>
-
       <main class="page">
         <div class="page-back">
           <div class="page-back__container">
@@ -408,28 +414,42 @@
                       style="display: none"
                     >
                       <li>
-                        <input type="radio" name="catalogMenRadio" id="wear" />
-                        <label data-lang="catalog_page-13">Одяг</label>
-                      </li>
-                      <li>
-                        <input type="radio" name="catalogMenRadio" id="beds" />
-                        <label data-lang="catalog_page-14">Ліжаки</label>
+                        <input
+                          type="radio"
+                          name="catalogMenRadio"
+                          id="wearInput"
+                        />
+                        <label id="wearLi" data-lang="catalog_page-13"
+                          >Одяг</label
+                        >
                       </li>
                       <li>
                         <input
                           type="radio"
                           name="catalogMenRadio"
-                          id="accessories"
+                          id="bedsInput"
                         />
-                        <label data-lang="catalog_page-15">Аксесуари</label>
+                        <label id="bedsLi" data-lang="catalog_page-14"
+                          >Ліжаки</label
+                        >
                       </li>
                       <li>
                         <input
                           type="radio"
                           name="catalogMenRadio"
-                          id="carrying"
+                          id="accessoriesInput"
                         />
-                        <label data-lang="catalog_page-16"
+                        <label id="accessoriesLi" data-lang="catalog_page-15"
+                          >Аксесуари</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          type="radio"
+                          name="catalogMenRadio"
+                          id="carryingInput"
+                        />
+                        <label id="carryingLi" data-lang="catalog_page-16"
                           >Сумки-переноски</label
                         >
                       </li>
@@ -455,7 +475,7 @@
                           name="brandMenuRadio"
                           id="petFashion"
                         />
-                        <label>Pet Fashion</label>
+                        <label id="petFashionLi">Pet Fashion</label>
                       </li>
                       <li>
                         <input
@@ -463,15 +483,15 @@
                           name="brandMenuRadio"
                           id="harleyCho"
                         />
-                        <label>Harley&Cho</label>
+                        <label id="harleyChoLi">Harley&Cho</label>
                       </li>
                       <li>
                         <input type="radio" name="brandMenuRadio" id="collar" />
-                        <label>Collar</label>
+                        <label id="collarLi">Collar</label>
                       </li>
                       <li>
                         <input type="radio" name="brandMenuRadio" id="trixie" />
-                        <label>Trixie</label>
+                        <label id="trixieLi">Trixie</label>
                       </li>
                     </ul>
                   </li>
@@ -495,7 +515,12 @@
                           name="brandMenuRadio"
                           id="rangeFirstPrice"
                         />
-                        <label data-lang="catalog_page-19"> до 499 грн</label>
+                        <label
+                          id="rangeFirstPriceLi"
+                          data-lang="catalog_page-19"
+                        >
+                          до 499 грн</label
+                        >
                       </li>
                       <li>
                         <input
@@ -503,7 +528,11 @@
                           name="brandMenuRadio"
                           id="rangeSecondPrice"
                         />
-                        <label data-lang="catalog_page-20">500-999 грн</label>
+                        <label
+                          id="rangeSecondPriceLi"
+                          data-lang="catalog_page-20"
+                          >500-999 грн</label
+                        >
                       </li>
                       <li>
                         <input
@@ -511,7 +540,11 @@
                           name="brandMenuRadio"
                           id="rangeThirdPrice"
                         />
-                        <label data-lang="catalog_page-21">1000-1499 грн</label>
+                        <label
+                          id="rangeThirdPriceLi"
+                          data-lang="catalog_page-21"
+                          >1000-1499 грн</label
+                        >
                       </li>
                       <li>
                         <input
@@ -519,7 +552,11 @@
                           name="brandMenuRadio"
                           id="rangeFourthPrice"
                         />
-                        <label data-lang="catalog_page-22">1500-1999 грн</label>
+                        <label
+                          id="rangeFourthPriceLi"
+                          data-lang="catalog_page-22"
+                          >1500-1999 грн</label
+                        >
                       </li>
                       <li>
                         <input
@@ -527,7 +564,12 @@
                           name="brandMenuRadio"
                           id="rangeFifthPrice"
                         />
-                        <label data-lang="catalog_page-23"> від 2000 грн</label>
+                        <label
+                          id="rangeFifthPriceLi"
+                          data-lang="catalog_page-23"
+                        >
+                          від 2000 грн</label
+                        >
                       </li>
                     </ul>
                   </li>
@@ -540,7 +582,7 @@
                             name="optionInput"
                             id="newInput"
                           />
-                          <label>New</label>
+                          <label id="newInputLi">New</label>
                         </li>
                         <li>
                           <input
@@ -548,7 +590,11 @@
                             name="optionInput"
                             id="discountInput"
                           />
-                          <label data-lang="catalog_page-24">Знижки</label>
+                          <label
+                            id="discountInputLi"
+                            data-lang="catalog_page-24"
+                            >Знижки</label
+                          >
                         </li>
                       </ul>
                     </div>
@@ -557,7 +603,10 @@
               </nav>
             </aside>
             <div class="catalogue-menu-block">
-              <div id="items" class="catalogue-menu-block-items anim-items anim-no-hide"></div>
+              <div
+                id="items"
+                class="catalogue-menu-block-items anim-items anim-no-hide"
+              ></div>
             </div>
           </div>
         </section>

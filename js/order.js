@@ -358,7 +358,7 @@ function checkForm() {
 
   // Check Name and Surname
 
-  patternLatters = /^[А-ЯЁІЇЄа-яёіїєA-Za-z]+$/;
+  patternLatters = /^[а-яА-Яa-zA-Z]+$/;
 
   if (!patternLatters.test(orderNameInput.value)) {
     errorName.style.display = "block";

@@ -91,7 +91,7 @@
             </div>
           </div>
         </div>
-           <a
+        <a
           id="continueBtn"
           class="pop-up-button"
           data-lang="pop-up-cart_page-2"
@@ -162,7 +162,7 @@
         <div class="burger-menu__overlay"></div>
       </div>
       <!-- Burger Menu  -->
-      <header class="header">
+        <header class="header">
         <div class="header__container">
           <div class="header-logo-nav-block">
             <a href="index.html"
@@ -225,6 +225,13 @@
                   class="user-links-image"
                   alt="Search Icon"
               /></a>
+              <a href="order.html"
+                ><img
+                  src="img/main-page/HEADER/shopping-icon.svg"
+                  class="user-links-image"
+                  alt="Shopping Cart Icon" />
+                <span id="headerOrderQuantity"></span
+              ></a>
               <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
               <div class="settings">
                 <div id="panel">
@@ -262,13 +269,6 @@
                 </p>
               </div>
               <!-- Changing Color Theme, Language, Chat GPT, Find Location -->
-              <a href="order.html"
-                ><img
-                  src="img/main-page/HEADER/shopping-icon.svg"
-                  class="user-links-image"
-                  alt="Shopping Cart Icon" />
-                <span id="headerOrderQuantity"></span
-              ></a>
             </div>
             <div class="header__user-profile user-profile">
               <span id="userName"></span>
@@ -349,7 +349,7 @@
                 <p class="size" data-lang="bed-ascold_page-13">Розмір:</p>
                 <div class="sizes" id="sizes">
                   <div id="bigGroup" class="check-group">
-                    <input type="radio" id="big" name="size" checked/>
+                    <input type="radio" id="big" name="size" checked />
                     <label id="bigLabel" data-lang="carrying-remy_page-6"
                       >40x28x21 см</label
                     >
@@ -575,11 +575,11 @@
         }
       });
       // Exact price depends on the size click
-      
-    // Get inner text for english title
+
+      // Get inner text for english title
       window.addEventListener("load", () => {
         let h1texth1 = document.getElementById("h1").innerText;
-        h1text = localStorage.setItem("carrying-remy", h1texth1);
+        h1text = localStorage.setItem("h1text", h1texth1);
       });
       // Get inner text for english title
 
@@ -598,11 +598,11 @@
             }
           }
 
-       var from = mainPicForPopUp.src.search("img");
+          var from = mainPicForPopUp.src.search("img");
           var to = mainPicForPopUp.src.length;
 
           itemsArray.push({
-            name: `${localStorage.getItem("carrying-remy")}`,
+            name: `${localStorage.getItem("h1text")}`,
             imgPath: `${mainPicForPopUp.src.substring(from, to)}`,
             size: `${idSize}`,
             price: `${price.innerText}`,
@@ -620,8 +620,6 @@
         wrapper.style.opacity = "0.3";
 
         document.getElementById("popUpImage").src = mainPicForPopUp.src;
-        
-          popUpGoodsTitle.innerText = h1.innerText;
 
         for (check of checked) {
           if (check.id == "big") {

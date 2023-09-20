@@ -142,52 +142,7 @@ xhr.onload = function () {
 
       // Filter
       // // Filter by price
-      rangeFirstPrice.addEventListener("click", () => {
-        sizesCatalog.forEach((price) => {
-          if (parseInt(price.innerText.split(" ")[0]) < 499) {
-            rangeFirstPriceBlock.forEach((first) => {
-              first.style.display = "flex";
-            });
-            rangeSecondPriceBlock.forEach((second) => {
-              second.style.display = "none";
-            });
-            rangeThirdPriceBlock.forEach((third) => {
-              third.style.display = "none";
-            });
-            rangeFourthPriceBlock.forEach((fourth) => {
-              fourth.style.display = "none";
-            });
-            rangeFifthPriceBlock.forEach((fifth) => {
-              fifth.style.display = "none";
-            });
-          }
-        });
-      });
-      rangeSecondPrice.addEventListener("click", () => {
-        sizesCatalog.forEach((price) => {
-          if (
-            parseInt(price.innerText.split(" ")[0]) >= 500 &&
-            parseInt(price.innerText.split(" ")[0]) <= 999
-          ) {
-            rangeFirstPriceBlock.forEach((first) => {
-              first.style.display = "none";
-            });
-            rangeSecondPriceBlock.forEach((second) => {
-              second.style.display = "flex";
-            });
-            rangeThirdPriceBlock.forEach((third) => {
-              third.style.display = "none";
-            });
-            rangeFourthPriceBlock.forEach((fourth) => {
-              fourth.style.display = "none";
-            });
-            rangeFifthPriceBlock.forEach((fifth) => {
-              fifth.style.display = "none";
-            });
-          }
-        });
-      });
-      rangeThirdPrice.addEventListener("click", () => {
+      rangeThirdPriceLi.addEventListener("click", () => {
         sizesCatalog.forEach((price) => {
           if (
             parseInt(price.innerText.split(" ")[0]) >= 1000 &&
@@ -201,6 +156,7 @@ xhr.onload = function () {
             });
             rangeThirdPriceBlock.forEach((third) => {
               third.style.display = "flex";
+              rangeThirdPrice.checked = true;
             });
             rangeFourthPriceBlock.forEach((fourth) => {
               fourth.style.display = "none";
@@ -211,7 +167,7 @@ xhr.onload = function () {
           }
         });
       });
-      rangeFourthPrice.addEventListener("click", () => {
+      rangeFourthPriceLi.addEventListener("click", () => {
         sizesCatalog.forEach((price) => {
           if (
             parseInt(price.innerText.split(" ")[0]) >= 1500 &&
@@ -228,6 +184,7 @@ xhr.onload = function () {
             });
             rangeFourthPriceBlock.forEach((fourth) => {
               fourth.style.display = "flex";
+              rangeFourthPrice.checked = true;
             });
             rangeFifthPriceBlock.forEach((fifth) => {
               fifth.style.display = "none";
@@ -235,7 +192,7 @@ xhr.onload = function () {
           }
         });
       });
-      rangeFifthPrice.addEventListener("click", () => {
+      rangeFifthPriceLi.addEventListener("click", () => {
         sizesCatalog.forEach((price) => {
           if (parseInt(price.innerText.split(" ")[0]) >= 1999) {
             rangeFirstPriceBlock.forEach((first) => {
@@ -252,11 +209,12 @@ xhr.onload = function () {
             });
             rangeFifthPriceBlock.forEach((fifth) => {
               fifth.style.display = "flex";
+              rangeFifthPrice.checked = true;
             });
           }
         });
       });
-      // Filter by price
+
       // Filter
     }
   }

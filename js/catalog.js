@@ -42,6 +42,17 @@ category.addEventListener("click", () => {
   asideArrowBrand.style.transform = "rotate(0deg)";
   asideArrowPrice.style.transform = "rotate(0deg)";
 
+  petFashion.checked = false;
+  harleyCho.checked = false;
+  trixie.checked = false;
+  collar.checked = false;
+
+  rangeFirstPrice.checked = false;
+  rangeSecondPrice.checked = false;
+  rangeThirdPrice.checked = false;
+  rangeFourthPrice.checked = false;
+  rangeFifthPrice.checked = false;
+
   newInput.checked = false;
   discountInput.checked = false;
 });
@@ -58,6 +69,17 @@ brand.addEventListener("click", () => {
   priceMenuCategory.style.display = "none";
   asideArrowCategory.style.transform = "rotate(0deg)";
   asideArrowPrice.style.transform = "rotate(0deg)";
+
+  wearInput.checked = false;
+  bedsInput.checked = false;
+  accessoriesInput.checked = false;
+  carryingInput.checked = false;
+
+  rangeFirstPrice.checked = false;
+  rangeSecondPrice.checked = false;
+  rangeThirdPrice.checked = false;
+  rangeFourthPrice.checked = false;
+  rangeFifthPrice.checked = false;
 
   newInput.checked = false;
   discountInput.checked = false;
@@ -245,11 +267,12 @@ xhr.onload = function () {
 
     // Filter
     // // Filter by price
-    rangeFirstPrice.addEventListener("click", () => {
+    rangeFirstPriceLi.addEventListener("click", () => {
       sizesCatalog.forEach((price) => {
         if (parseInt(price.innerText.split(" ")[0]) < 499) {
           rangeFirstPriceBlock.forEach((first) => {
             first.style.display = "flex";
+            rangeFirstPrice.checked = true;
           });
           rangeSecondPriceBlock.forEach((second) => {
             second.style.display = "none";
@@ -266,7 +289,7 @@ xhr.onload = function () {
         }
       });
     });
-    rangeSecondPrice.addEventListener("click", () => {
+    rangeSecondPriceLi.addEventListener("click", () => {
       sizesCatalog.forEach((price) => {
         if (
           parseInt(price.innerText.split(" ")[0]) >= 500 &&
@@ -277,6 +300,7 @@ xhr.onload = function () {
           });
           rangeSecondPriceBlock.forEach((second) => {
             second.style.display = "flex";
+            rangeSecondPrice.checked = true;
           });
           rangeThirdPriceBlock.forEach((third) => {
             third.style.display = "none";
@@ -290,7 +314,7 @@ xhr.onload = function () {
         }
       });
     });
-    rangeThirdPrice.addEventListener("click", () => {
+    rangeThirdPriceLi.addEventListener("click", () => {
       sizesCatalog.forEach((price) => {
         if (
           parseInt(price.innerText.split(" ")[0]) >= 1000 &&
@@ -304,6 +328,7 @@ xhr.onload = function () {
           });
           rangeThirdPriceBlock.forEach((third) => {
             third.style.display = "flex";
+            rangeThirdPrice.checked = true;
           });
           rangeFourthPriceBlock.forEach((fourth) => {
             fourth.style.display = "none";
@@ -314,7 +339,7 @@ xhr.onload = function () {
         }
       });
     });
-    rangeFourthPrice.addEventListener("click", () => {
+    rangeFourthPriceLi.addEventListener("click", () => {
       sizesCatalog.forEach((price) => {
         if (
           parseInt(price.innerText.split(" ")[0]) >= 1500 &&
@@ -331,6 +356,7 @@ xhr.onload = function () {
           });
           rangeFourthPriceBlock.forEach((fourth) => {
             fourth.style.display = "flex";
+            rangeFourthPrice.checked = true;
           });
           rangeFifthPriceBlock.forEach((fifth) => {
             fifth.style.display = "none";
@@ -338,7 +364,7 @@ xhr.onload = function () {
         }
       });
     });
-    rangeFifthPrice.addEventListener("click", () => {
+    rangeFifthPriceLi.addEventListener("click", () => {
       sizesCatalog.forEach((price) => {
         if (parseInt(price.innerText.split(" ")[0]) >= 1999) {
           rangeFirstPriceBlock.forEach((first) => {
@@ -355,6 +381,7 @@ xhr.onload = function () {
           });
           rangeFifthPriceBlock.forEach((fifth) => {
             fifth.style.display = "flex";
+            rangeFifthPrice.checked = true;
           });
         }
       });
@@ -362,16 +389,19 @@ xhr.onload = function () {
     // Filter by price
 
     // Filter by category, brand
-    let inputs = document.querySelectorAll("input");
+    let labels = document.querySelectorAll("label");
 
-    inputs.forEach((input) => {
-      input.addEventListener("click", (e) => {
+    // console.log(lis);
+
+    labels.forEach((label) => {
+      label.addEventListener("click", (e) => {
         let catalogueMenuBlockItem = document.querySelectorAll(
           ".catalogue-menu-block-item"
         );
-        if (e.target.id == "wear") {
+        if (e.target.id == "wearLi") {
           wearCategory.forEach((wear) => {
             wear.style.display = "flex";
+            wearInput.checked = true;
           });
           bedsCategory.forEach((beds) => {
             beds.style.display = "none";
@@ -382,12 +412,13 @@ xhr.onload = function () {
           carryingCategory.forEach((carrying) => {
             carrying.style.display = "none";
           });
-        } else if (e.target.id == "beds") {
+        } else if (e.target.id == "bedsLi") {
           wearCategory.forEach((wear) => {
             wear.style.display = "none";
           });
           bedsCategory.forEach((beds) => {
             beds.style.display = "flex";
+            bedsInput.checked = true;
           });
           accessoriesCategory.forEach((accessories) => {
             accessories.style.display = "none";
@@ -395,7 +426,7 @@ xhr.onload = function () {
           carryingCategory.forEach((carrying) => {
             carrying.style.display = "none";
           });
-        } else if (e.target.id == "accessories") {
+        } else if (e.target.id == "accessoriesLi") {
           wearCategory.forEach((wear) => {
             wear.style.display = "none";
           });
@@ -404,11 +435,12 @@ xhr.onload = function () {
           });
           accessoriesCategory.forEach((accessories) => {
             accessories.style.display = "flex";
+            accessoriesInput.checked = true;
           });
           carryingCategory.forEach((carrying) => {
             carrying.style.display = "none";
           });
-        } else if (e.target.id == "carrying") {
+        } else if (e.target.id == "carryingLi") {
           wearCategory.forEach((wear) => {
             wear.style.display = "none";
           });
@@ -420,10 +452,12 @@ xhr.onload = function () {
           });
           carryingCategory.forEach((carrying) => {
             carrying.style.display = "flex";
+            carryingInput.checked = true;
           });
-        } else if (e.target.id == "petFashion") {
+        } else if (e.target.id == "petFashionLi") {
           petFashions.forEach((pf) => {
             pf.style.display = "flex";
+            petFashion.checked = true;
           });
           harleyChos.forEach((hc) => {
             hc.style.display = "none";
@@ -434,12 +468,13 @@ xhr.onload = function () {
           trixies.forEach((t) => {
             t.style.display = "none";
           });
-        } else if (e.target.id == "harleyCho") {
+        } else if (e.target.id == "harleyChoLi") {
           petFashions.forEach((pf) => {
             pf.style.display = "none";
           });
           harleyChos.forEach((hc) => {
             hc.style.display = "flex";
+            harleyCho.checked = true;
           });
           collars.forEach((c) => {
             c.style.display = "none";
@@ -447,7 +482,7 @@ xhr.onload = function () {
           trixies.forEach((t) => {
             t.style.display = "none";
           });
-        } else if (e.target.id == "trixie") {
+        } else if (e.target.id == "trixieLi") {
           petFashions.forEach((pf) => {
             pf.style.display = "none";
           });
@@ -459,8 +494,9 @@ xhr.onload = function () {
           });
           trixies.forEach((t) => {
             t.style.display = "flex";
+            trixie.checked = true;
           });
-        } else if (e.target.id == "collar") {
+        } else if (e.target.id == "collarLi") {
           petFashions.forEach((pf) => {
             pf.style.display = "none";
           });
@@ -469,17 +505,22 @@ xhr.onload = function () {
           });
           collars.forEach((c) => {
             c.style.display = "flex";
+            collar.checked = true;
           });
           trixies.forEach((t) => {
             t.style.display = "none";
           });
-        } else if (e.target.id == "newInput") {
+        } else if (e.target.id == "newInputLi") {
           brandMenuCategory.style.display = "none";
           catalogueMenuCategory.style.display = "none";
           priceMenuCategory.style.display = "none";
           asideArrowCategory.style.transform = "rotate(0deg)";
           asideArrowBrand.style.transform = "rotate(0deg)";
           asideArrowPrice.style.transform = "rotate(0deg)";
+
+          newInput.checked = true;
+          discountInput.checked = false;
+
           catalogueMenuBlockItem.forEach((item) => {
             if (!item.classList.contains("newItem")) {
               item.style.display = "none";
@@ -491,13 +532,17 @@ xhr.onload = function () {
           discountItems.forEach((di) => {
             di.style.display = "none";
           });
-        } else if (e.target.id == "discountInput") {
+        } else if (e.target.id == "discountInputLi") {
           brandMenuCategory.style.display = "none";
           catalogueMenuCategory.style.display = "none";
           priceMenuCategory.style.display = "none";
           asideArrowCategory.style.transform = "rotate(0deg)";
           asideArrowBrand.style.transform = "rotate(0deg)";
           asideArrowPrice.style.transform = "rotate(0deg)";
+
+          discountInput.checked = true;
+          newInput.checked = false;
+
           catalogueMenuBlockItem.forEach((item) => {
             if (!item.classList.contains("discountItem")) {
               item.style.display = "none";

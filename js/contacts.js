@@ -38,7 +38,7 @@ function checkContactsForm() {
 
   // Check Name
 
-  patternLatters = /^[А-ЯЁІЇЄа-яёіїєA-Za-z]+$/;
+  patternLatters = /^[а-яА-Яa-zA-Z]+$/;
 
   if (!patternLatters.test(clientName.value)) {
     errorName.style.display = "block";
