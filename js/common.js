@@ -160,6 +160,6 @@ for (let anchorItem of anchors) {
 $(function () {
   setTimeout(function () {
     $(`body`).addClass("loaded");
-  }, 3000);
+  }, 1000);
 });
 // Preloader
