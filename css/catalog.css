@@ -667,6 +667,18 @@ aside {
   padding: 40px 30px;
 }
 
+.category-item {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.category-item:hover {
+  background-color: rgb(219, 219, 219);
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .clothes-pagt-aside {
   min-width: 220px;
 }
