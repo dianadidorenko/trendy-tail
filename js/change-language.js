@@ -252,7 +252,7 @@ const homeTexts = {
   },
   "home_page-58": {
     ua: "Ім'я повинно складатись лише з літер",
-    en: "Contact us",
+    en: "The name must consist of only letters",
   },
   "home_page-59": {
     ua: "E-mail",
