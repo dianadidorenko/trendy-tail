@@ -1298,7 +1298,7 @@ input[type=search]::-webkit-search-results-decoration {
     left: 26%;
   }
   .burger-menu__button::after {
-    right: -26px;
+    right: -29px;
     top: -2px;
     font-size: 12px;
     padding: 5px 10px;
@@ -1329,7 +1329,7 @@ input[type=search]::-webkit-search-results-decoration {
     font-size: 8px;
   }
 }
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   #userName {
     display: none;
   }
