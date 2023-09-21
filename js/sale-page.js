@@ -149,11 +149,12 @@ xhr.onload = function () {
 
       // Filter
       // // Filter by price
-      rangeFirstPrice.addEventListener("click", () => {
+      rangeFirstPriceLi.addEventListener("click", () => {
         sizesCatalog.forEach((price) => {
           if (parseInt(price.innerText.split(" ")[0]) < 499) {
             rangeFirstPriceBlock.forEach((first) => {
               first.style.display = "flex";
+              rangeFirstPrice.checked = true;
             });
             rangeSecondPriceBlock.forEach((second) => {
               second.style.display = "none";
@@ -170,79 +171,7 @@ xhr.onload = function () {
           }
         });
       });
-      rangeSecondPrice.addEventListener("click", () => {
-        sizesCatalog.forEach((price) => {
-          if (
-            parseInt(price.innerText.split(" ")[0]) >= 500 &&
-            parseInt(price.innerText.split(" ")[0]) <= 999
-          ) {
-            rangeFirstPriceBlock.forEach((first) => {
-              first.style.display = "none";
-            });
-            rangeSecondPriceBlock.forEach((second) => {
-              second.style.display = "flex";
-            });
-            rangeThirdPriceBlock.forEach((third) => {
-              third.style.display = "none";
-            });
-            rangeFourthPriceBlock.forEach((fourth) => {
-              fourth.style.display = "none";
-            });
-            rangeFifthPriceBlock.forEach((fifth) => {
-              fifth.style.display = "none";
-            });
-          }
-        });
-      });
-      rangeThirdPrice.addEventListener("click", () => {
-        sizesCatalog.forEach((price) => {
-          if (
-            parseInt(price.innerText.split(" ")[0]) >= 1000 &&
-            parseInt(price.innerText.split(" ")[0]) <= 1499
-          ) {
-            rangeFirstPriceBlock.forEach((first) => {
-              first.style.display = "none";
-            });
-            rangeSecondPriceBlock.forEach((second) => {
-              second.style.display = "none";
-            });
-            rangeThirdPriceBlock.forEach((third) => {
-              third.style.display = "flex";
-            });
-            rangeFourthPriceBlock.forEach((fourth) => {
-              fourth.style.display = "none";
-            });
-            rangeFifthPriceBlock.forEach((fifth) => {
-              fifth.style.display = "none";
-            });
-          }
-        });
-      });
-      rangeFourthPrice.addEventListener("click", () => {
-        sizesCatalog.forEach((price) => {
-          if (
-            parseInt(price.innerText.split(" ")[0]) >= 1500 &&
-            parseInt(price.innerText.split(" ")[0]) <= 1999
-          ) {
-            rangeFirstPriceBlock.forEach((first) => {
-              first.style.display = "none";
-            });
-            rangeSecondPriceBlock.forEach((second) => {
-              second.style.display = "none";
-            });
-            rangeThirdPriceBlock.forEach((third) => {
-              third.style.display = "none";
-            });
-            rangeFourthPriceBlock.forEach((fourth) => {
-              fourth.style.display = "flex";
-            });
-            rangeFifthPriceBlock.forEach((fifth) => {
-              fifth.style.display = "none";
-            });
-          }
-        });
-      });
-      rangeFifthPrice.addEventListener("click", () => {
+      rangeFifthPriceLi.addEventListener("click", () => {
         sizesCatalog.forEach((price) => {
           if (parseInt(price.innerText.split(" ")[0]) >= 1999) {
             rangeFirstPriceBlock.forEach((first) => {
@@ -259,6 +188,7 @@ xhr.onload = function () {
             });
             rangeFifthPriceBlock.forEach((fifth) => {
               fifth.style.display = "flex";
+              rangeFifthPrice.checked = true;
             });
           }
         });
